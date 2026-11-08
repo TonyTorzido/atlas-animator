@@ -1,0 +1,17 @@
+{
+  "format": "atlas-pack@1",
+  "scale": 1,
+  "pages": [
+    {
+      "file": "three-part.atlas.png",
+      "width": 256,
+      "height": 256,
+      "regions": {
+        "body/base": { "x": 0, "y": 0, "width": 120, "height": 40 },
+        "body/torso": { "x": 128, "y": 0, "width": 60, "height": 120 },
+        "body/head": { "x": 192, "y": 0, "width": 50, "height": 50 },
+        "swag/tunic/torso": { "x": 0, "y": 48, "width": 60, "height": 120 }
+      }
+    }
+  ]
+}

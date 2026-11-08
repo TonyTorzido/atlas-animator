@@ -1,0 +1,226 @@
+/*
+ * Atlas Animator editor: the component layer. Every module's CSS builds on the classes below instead of restyling buttons, fields and
+ * menus on its own; src/cssLint.test.ts enforces the rules in section 2.  Tokens live on :root in index.html.
+ *
+ * 1. TOKENS (see :root in index.html)
+ *    Type      --fs-xs 11 (captions, badges, kbd) / --fs-sm 12 (secondary) / --fs-md 13 (default UI) / --fs-lg 14 (headers, readouts)
+ *              --fs-h4 16 / --fs-h3 18 / --fs-h2 22 / --fs-h1 26. Nothing under 11 px.
+ *    Controls  --ctl-sm 24 (tree head, dock chips, segmented items) / --ctl-md 28 (default button, field, select) / --ctl-lg 32 (primary
+ *              actions). Palette tools are 44. Every visible button, select and text field is one of 24, 28, 32 or 44 px high.
+ *    Space     --s1 4 / --s2 8 / --s3 12 / --s4 16 / --s5 24 / --s6 32.   Radius 4 (chips, items) / 6 (controls) / 8-12 (surfaces).
+ *    Colour    surfaces --bg0 < --bg < --bg1 < --panel < --panel2 < --panel4 < --panel3; lines --line / --line2 / --line3; text --text-hi,
+ *              --text, --text2, --dim, --dim2, --muted; accent --accent (amber) and --accent2 (blue); status --ok / --warn / --bad each with
+ *              -soft / -line / -hi / -bg variants; node kinds --c-bone / --c-slot / --c-image / --c-mesh / --c-constraint / --c-skin.
+ *
+ * 2. RULES (cssLint.test.ts)
+ *    - No raw #hex outside :root; use a token (or rgba() for a translucent black/white/accent veil).
+ *    - font-size is always var(--fs-*); never a px or rem number.
+ *    - height / min-height of 13..43 px must be 16 (icon) or var(--ctl-sm|md|lg); 44+ is a layout size.
+ *    - No scrollbar-width / ::-webkit-scrollbar overrides: scrollbars are hidden globally (index.html) and a list scrolls by wheel,
+ *      touch and keyboard; .scroll-fade shows there is more.
+ *    - Identifiers (bone, slot, clip, constraint names) use .name, never .label (which uppercases).
+ *
+ * 3. CLASSES
+ *    .btn            default button 28 px.  Modifiers: .sm (24) .lg (32), .btn-primary (amber fill), .btn-danger, .btn-ghost, .btn-link,
+ *                    .btn-icon (square, one 16 px .ico), .on (toggled on).
+ *    .seg            segmented control: a row of buttons, one .on.  .seg.pill is rounded.
+ *    .field / .in    text, number and select inputs (28 px).  .field.num is 56 px wide, .num.wide 72 px.
+ *    .kv             label / value grid for inspector rows: <div class="kv"><span class="label">..</span><span class="v">..</span></div>.
+ *    .chip           status pill (24 px incl. border): .chip-ok / -warn / -bad / -info / -count.
+ *    .card           a bordered surface on --panel2 with --s3 padding; .card-title is its heading.
+ *    .menu           a popup list of .menu-item rows (28 px); .ctxmenu (contextMenu.ts) is the same look at the pointer.
+ *    .modal-backdrop + .modal   a dialog (built by src/dialog.ts: openModal / confirmDialog / promptDialog / alertDialog).
+ *    .label          a static caption: uppercase, tracked, --dim.   .name  an identifier: never transformed, tabular, ellipsis.
+ *    .kbd            a key chip.   .ico / .ico-md / .ico-lg  sprite icons (16 / 20 / 32 px).
+ */
+
+/* ---- Control base: every button, select and text field is one height unless a modifier says otherwise ---- */
+:where(button, select, input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]):not([type="hidden"])) {
+  height: var(--ctl-md);
+}
+:where(summary) { display: flex; align-items: center; gap: var(--s2); min-height: var(--ctl-md); overflow: hidden; }
+:where(.btn.sm, button.sm, .seg > button) { height: var(--ctl-sm); }
+:where(.btn.lg, button.lg) { height: var(--ctl-lg); }
+
+/* ---- Fields and rows ---- */
+.field { height: var(--ctl-md); padding: 0 var(--s2); border-radius: 6px; font-size: var(--fs-md); background: var(--panel2); border: 1px solid var(--line); color: var(--text); font-variant-numeric: tabular-nums; }
+.field:focus { border-color: var(--accent2); background: var(--accent2-soft); outline: none; }
+.field.num { width: 56px; text-align: right; }
+.field.num.wide { width: 72px; }
+.kv { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: var(--s1) var(--s2); align-items: center; }
+.kv .v { font-variant-numeric: tabular-nums; }
+.label { color: var(--dim); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em; }
+.name.dim { color: var(--dim); }
+.name { text-transform: none; letter-spacing: 0; font-variant-numeric: tabular-nums; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---- Card and menu surfaces ---- */
+.card { padding: var(--s3); background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; }
+.card-title { margin: 0 0 var(--s2); font-size: var(--fs-lg); font-weight: 600; color: var(--text); }
+.menu { display: flex; flex-direction: column; gap: 2px; padding: var(--s1); background: var(--panel); border: 1px solid var(--line2); border-radius: 8px; box-shadow: var(--shadow-2); }
+.menu-item { display: flex; align-items: center; gap: var(--s2); height: var(--ctl-md); padding: 0 var(--s2); border: 1px solid transparent; border-radius: 4px; background: transparent; color: var(--text); font-size: var(--fs-md); text-align: left; cursor: pointer; }
+.menu-item:hover:not(:disabled) { background: var(--panel3); border-color: transparent; }
+.menu-item:disabled { color: var(--muted); cursor: default; }
+
+/* ---- Dialog extras (src/dialog.ts) ---- */
+.modal.dialog-sm { width: min(420px, 92vw); }
+.modal-body { display: flex; flex-direction: column; gap: var(--s2); min-height: 0; }
+.dialog-text { margin: 0; font-size: var(--fs-md); line-height: 1.45; color: var(--text2); }
+.dialog-list { margin: 0; padding-left: var(--s4, 18px); max-height: 42vh; overflow: auto; scrollbar-width: none; font-size: var(--fs-md); line-height: 1.45; color: var(--text); display: flex; flex-direction: column; gap: 4px; }
+.dialog-list::-webkit-scrollbar { display: none; }
+#spine-loss-dialog .modal, #relink-dialog .modal { width: min(560px, 94vw); }
+
+/* ---- Buttons ---- */
+.btn, .btn-primary, .btn-ghost, .btn-danger, .btn-link, .btn-icon {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s2);
+  height: var(--ctl-md); padding: 0 12px; border-radius: 6px;
+  font-size: var(--fs-md); font-weight: 500; line-height: 1; white-space: nowrap;
+  color: var(--text); background: var(--panel2); border: 1px solid var(--line); cursor: pointer;
+  transition: border-color var(--t-fast) ease-out, background-color var(--t-fast) ease-out, color var(--t-fast) ease-out;
+}
+.btn.sm { height: var(--ctl-sm); padding: 0 10px; }
+.btn.lg { height: var(--ctl-lg); padding: 0 14px; border-radius: 8px; }
+.btn:hover:not(:disabled), .btn-icon:hover:not(:disabled) { border-color: var(--line2); background: var(--panel3); }
+.btn:active:not(:disabled), .btn-icon:active:not(:disabled) { background: var(--panel); transform: none; }
+.btn.on, .btn-icon.on { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-size: var(--fs-lg); font-weight: 700; }
+.btn-primary:hover:not(:disabled) { background: var(--warn); border-color: var(--warn); }
+.btn-primary:active:not(:disabled) { background: var(--accent); }
+.btn-ghost { background: transparent; border-color: transparent; color: var(--dim); }
+.btn-ghost:hover:not(:disabled) { background: var(--panel3); border-color: transparent; color: var(--text); }
+.btn-danger { background: var(--bad-soft); border-color: var(--bad-line); color: var(--bad-hi); }
+.btn-danger:hover:not(:disabled) { background: var(--bad-bg); border-color: var(--bad); }
+.btn-link { background: transparent; border-color: transparent; color: var(--accent2); padding: 0 var(--s1); }
+.btn-link:hover:not(:disabled) { background: transparent; border-color: transparent; text-decoration: underline; }
+.btn-icon { width: var(--ctl-md); padding: 0; font-size: var(--fs-h4); }
+.btn-icon svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+
+/* ---- Inputs ---- */
+.in {
+  height: var(--ctl-md); padding: 0 8px; border-radius: 6px; font-size: var(--fs-md);
+  background: var(--panel2); border: 1px solid var(--line); color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.in.num { width: 56px; text-align: right; }
+.in.num.wide { width: 72px; }
+.in:focus { border-color: var(--accent2); background: var(--accent2-soft); outline: none; }
+.in::placeholder { color: var(--muted); }
+input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
+
+/* ---- Segmented control ---- */
+.seg {
+  display: inline-flex; align-items: center; gap: 2px; padding: 2px;
+  background: var(--bg0); border: 1px solid var(--line); border-radius: 6px;
+}
+.seg.pill { border-radius: 999px; }
+.seg > button {
+  height: var(--ctl-sm); margin: 0; padding: 0 10px; border: 0; border-radius: 4px;
+  background: transparent; color: var(--dim); font-size: var(--fs-sm); font-weight: 500; box-shadow: none;
+}
+.seg.pill > button { border-radius: 999px; }
+.seg > button:hover:not(:disabled):not(.on) { background: var(--panel3); color: var(--text); border: 0; }
+.seg > button.on { background: var(--accent); color: var(--accent-ink); font-weight: 600; box-shadow: none; }
+
+/* ---- Chips ---- */
+.chip, .chip-ok, .chip-warn, .chip-bad, .chip-info, .chip-count {
+  display: inline-flex; align-items: center; gap: var(--s1);
+  height: var(--ctl-sm); padding: 0 10px; border-radius: 999px;
+  font-size: var(--fs-sm); font-weight: 600; line-height: 1; white-space: nowrap;
+  color: var(--text2); background: var(--panel2); border: 1px solid var(--line);
+}
+.chip-ok { color: var(--ok); background: var(--ok-soft); border-color: var(--ok-line); }
+.chip-warn { color: var(--warn); background: var(--warn-soft); border-color: var(--warn-line); }
+.chip-bad { color: var(--bad); background: var(--bad-soft); border-color: var(--bad-line); }
+.chip-info { color: var(--accent2); background: var(--accent2-soft); border-color: transparent; }
+.chip-count { padding: 0 6px; font-size: var(--fs-xs); font-variant-numeric: tabular-nums; color: var(--dim); }
+
+/* ---- Popover, modal, HUD ---- */
+@keyframes ui-rise { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.pop {
+  position: absolute; z-index: var(--z-popover); max-width: 100%; padding: 8px 10px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow-2);
+  animation: ui-rise var(--t-pop) ease-out;
+}
+.modal-backdrop { position: fixed; inset: 0; z-index: var(--z-modal); display: grid; place-items: center; background: rgba(8, 10, 14, 0.7); animation: ui-rise var(--t-pop) ease-out; }
+.modal {
+  max-width: min(520px, 92vw); padding: 20px; background: var(--panel); border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: var(--shadow-3);
+}
+.modal h2, .modal .modal-title { margin: 0 0 var(--s3); font-size: var(--fs-h3); font-weight: 600; }
+.modal .modal-actions { display: flex; justify-content: flex-end; gap: var(--s2); margin-top: var(--s4); }
+.hud {
+  position: absolute; z-index: var(--z-hud); display: flex; align-items: center; gap: var(--s2); padding: 4px 6px;
+  background: rgba(20, 23, 29, 0.88); border: 1px solid var(--line); border-radius: 6px;
+}
+.hud button { height: var(--ctl-sm); }
+
+/* ---- Text helpers ---- */
+.kbd {
+  display: inline-block; padding: 0 4px; font-size: var(--fs-xs); line-height: 16px; color: var(--dim);
+  border: 1px solid var(--line); border-radius: 4px; font-variant-numeric: tabular-nums;
+}
+.btn-primary .kbd { color: var(--accent-ink); border-color: rgba(29, 21, 5, 0.4); opacity: 0.75; }
+@media (max-width: 1499px) { .kbd { display: none; } }
+.help { font-size: var(--fs-sm); line-height: 1.35; color: var(--text2); }
+.empty { padding: var(--s4); text-align: center; font-size: var(--fs-sm); color: var(--text2); }
+.empty .btn-primary { margin-top: var(--s3); }
+.sec {
+  display: flex; align-items: center; gap: var(--s1); min-height: 32px; margin: 0; padding: 0 var(--s1);
+  font-size: var(--fs-xs); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim);
+  cursor: pointer; border-radius: 4px;
+}
+.sec:hover { background: var(--panel3); }
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* ---- Scroll fade: toggle .more on a scroll container while scrollHeight > clientHeight ---- */
+.scroll-fade.more {
+  -webkit-mask-image: linear-gradient(to bottom, var(--black) calc(100% - 24px), transparent);
+  mask-image: linear-gradient(to bottom, var(--black) calc(100% - 24px), transparent);
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0ms !important; animation-iteration-count: 1 !important; transition-duration: 0ms !important; }
+}
+
+/* ---- Toggle ("on"), hover, focus: the one look for every button ---- */
+button.on { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent); }
+.seg > button.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+/* the focus ring must stay visible on amber fills */
+button.on:focus-visible, .btn-primary:focus-visible, .seg > button.on:focus-visible { outline-color: var(--text); }
+.seg > button:focus-visible { outline-offset: -2px; }
+.seg.pill > button { padding: 0 14px; }
+.seg > button { display: inline-flex; align-items: center; justify-content: center; gap: var(--s1); white-space: nowrap; }
+
+/* ---- Icons: one sprite (src/icons.ts), three sizes ---- */
+.ico { width: 16px; height: 16px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; pointer-events: none; }
+.ico-md { width: 20px; height: 20px; }
+.ico-lg { width: 32px; height: 32px; }
+
+/* Section disclosure chevron: the same glyph as the sprite's chevD / chevR, one size */
+section.detail[id]:not(#detail):not(#ikpanel) h2::before {
+  content: ""; flex: none; width: 16px; height: 16px; background: currentColor; color: var(--dim);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 6 5 5 5-5'/%3E%3C/svg%3E") center / 16px no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 6 5 5 5-5'/%3E%3C/svg%3E") center / 16px no-repeat;
+}
+section.detail.collapsed h2::before { transform: rotate(-90deg); }
+
+/* ---- Context menu (contextMenu.ts) ---- */
+.ctxmenu {
+  position: fixed; z-index: var(--z-toast); min-width: 220px; max-width: 320px; padding: var(--s1);
+  display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line2);
+  border-radius: 8px; box-shadow: var(--shadow-2); animation: ui-rise var(--t-pop) ease-out; user-select: none;
+}
+.ctxmenu .ctx-item {
+  display: grid; grid-template-columns: 16px 1fr auto; align-items: center; gap: var(--s2); height: var(--ctl-md);
+  padding: 0 var(--s2); border: 1px solid transparent; border-radius: 4px; background: transparent;
+  color: var(--text); font-size: var(--fs-md); text-align: left; cursor: pointer;
+}
+.ctxmenu .ctx-item:hover:not(:disabled) { background: var(--panel3); border-color: transparent; }
+.ctxmenu .ctx-item:focus-visible { background: var(--panel3); outline: 2px solid var(--accent2); outline-offset: -2px; }
+.ctxmenu .ctx-item:active:not(:disabled) { background: var(--accent-soft); }
+.ctxmenu .ctx-item:disabled { color: var(--muted); cursor: default; }
+.ctxmenu .ctx-tick { color: var(--accent); font-size: var(--fs-sm); text-align: center; }
+.ctxmenu .ctx-hint { color: var(--dim); font-size: var(--fs-xs); font-variant-numeric: tabular-nums; }
+.ctxmenu .ctx-cap { padding: var(--s1) var(--s2) 2px; color: var(--dim); font-size: var(--fs-xs); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.ctxmenu .ctx-sep { height: 1px; margin: var(--s1) 2px; background: var(--line); }
+

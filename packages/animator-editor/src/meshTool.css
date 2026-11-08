@@ -1,0 +1,43 @@
+/* Mesh tool (Setup): panel and UV view. Uses the ui.css tokens and classes (.btn, .seg, .chip-*). */
+.mesh-panel .mesh-slot { color: var(--accent); text-transform: none; letter-spacing: 0; font-size: var(--fs-lg); }
+.mesh-panel .mesh-group { display: flex; flex-direction: column; gap: var(--s2); padding: var(--s2) 0; border-top: 1px solid var(--line); }
+.mesh-panel .mesh-cap { display: flex; align-items: center; justify-content: space-between; font-size: var(--fs-xs); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim); }
+.mesh-panel .mesh-row { display: flex; align-items: center; gap: var(--s2); min-width: 0; }
+.mesh-panel .mesh-row.mesh-between { justify-content: space-between; }
+.mesh-panel .mesh-row.mesh-two > button { flex: 1 1 0; }
+.mesh-panel .mesh-label { min-width: 62px; font-size: var(--fs-sm); color: var(--text2); }
+.mesh-panel .mesh-row input[type="range"] { flex: 1 1 auto; min-width: 0; accent-color: var(--accent); }
+.mesh-panel .mesh-val { font-variant-numeric: tabular-nums; font-size: var(--fs-sm); color: var(--text); text-transform: none; letter-spacing: 0; font-weight: 500; min-width: 28px; text-align: right; }
+.mesh-panel .mesh-dim { font-size: var(--fs-xs); color: var(--dim); line-height: 1.4; }
+.mesh-panel .mesh-sub { display: flex; align-items: center; gap: var(--s2); padding: var(--s1) 0 var(--s2); }
+.mesh-panel .mesh-big { width: 100%; height: var(--ctl-lg); }
+.mesh-panel .mesh-chips { display: flex; flex-wrap: wrap; gap: var(--s1); }
+.mesh-panel .mesh-check { display: flex; align-items: center; gap: var(--s1); font-size: var(--fs-sm); color: var(--text2); }
+.mesh-panel .mesh-warn { font-size: var(--fs-xs); color: var(--warn); background: var(--warn-soft); border: 1px solid var(--warn-line); border-radius: 4px; padding: 4px 6px; line-height: 1.35; }
+.mesh-panel .seg { align-self: flex-start; }
+.mesh-panel select { max-width: 100%; }
+
+.mesh-uv {
+  position: absolute; right: 10px; top: 54px; z-index: var(--z-popover); width: 288px;
+  background: rgba(20, 23, 29, 0.94); border: 1px solid var(--line2); border-radius: 8px; box-shadow: var(--shadow-2); overflow: hidden;
+}
+.mesh-uv-head {
+  display: flex; align-items: center; justify-content: space-between; width: 100%; height: var(--ctl-md); padding: 0 var(--s3);
+  background: var(--panel2); border: 0; border-bottom: 1px solid var(--line); border-radius: 0; color: var(--text); font-size: var(--fs-sm); font-weight: 600; cursor: pointer;
+}
+.mesh-uv-head:hover { background: var(--panel3); }
+.mesh-uv-chev { width: 8px; height: 8px; border-right: 2px solid var(--dim); border-bottom: 2px solid var(--dim); transform: rotate(45deg); margin-top: -3px; transition: transform var(--t-fast) ease-out; }
+.mesh-uv.closed .mesh-uv-chev { transform: rotate(-135deg); margin-top: 3px; }
+.mesh-uv.closed .mesh-uv-body { display: none; }
+.mesh-uv.closed .mesh-uv-head { border-bottom: 0; }
+.mesh-uv-body { padding: var(--s2) var(--s3) var(--s3); display: flex; flex-direction: column; gap: var(--s2); }
+.mesh-uv canvas { display: block; width: 264px; height: 264px; border-radius: 6px; background: var(--bg0); border: 1px solid var(--line); cursor: crosshair; touch-action: none; }
+.mesh-uv-foot { font-size: var(--fs-xs); color: var(--dim); line-height: 1.35; }
+
+/* Region slot with no mesh: the canvas hint, and the UV view docked in the panel */
+.mesh-hint { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: var(--z-popover); display: flex; align-items: center; gap: var(--s3); padding: var(--s2) var(--s3); background: rgba(20, 23, 29, 0.94); border: 1px solid var(--accent-line); border-radius: 8px; box-shadow: var(--shadow-2); color: var(--text); font-size: var(--fs-sm); }
+.mesh-panel .mesh-uv { position: static; width: auto; box-shadow: none; z-index: auto; background: var(--panel2); }
+.mesh-panel .mesh-uv canvas { width: 100%; height: auto; aspect-ratio: 1; }
+.mesh-panel .mesh-lab { display: flex; align-items: center; gap: var(--s1, 4px); min-width: 0; flex: 1 1 0; font-size: var(--fs-xs); color: var(--dim); }
+.mesh-panel .mesh-lab > span { flex: 0 0 auto; }
+.mesh-panel .mesh-lab > .field { flex: 1 1 0; min-width: 0; width: 100%; }

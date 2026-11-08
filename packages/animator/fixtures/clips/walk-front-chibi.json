@@ -1,0 +1,23 @@
+{
+  "period": 0.933,
+  "swing": 0.44,
+  "lift": 2.2,
+  "liftPeak": 0.42,
+  "toeDown": 5,
+  "bob": 0.6,
+  "bobLag": 0.06,
+  "sway": 1.0,
+  "torsoTilt": 1.5,
+  "headTilt": 1.0,
+  "arm": 2.0,
+  "armBase": 1.0,
+  "elbow": 4,
+  "elbowBase": 5,
+  "hand": 2,
+  "armDelay": 2,
+  "elbowDelay": 2,
+  "handDelay": 1,
+  "fps": 30,
+  "depthScale": 0,
+  "depthDrop": 0
+}

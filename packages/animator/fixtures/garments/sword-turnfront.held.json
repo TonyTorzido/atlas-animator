@@ -1,0 +1,35 @@
+{
+ "format": "atlas-held/1",
+ "name": "sword",
+ "hand": {
+  "bone": "hand_l",
+  "fistSlot": "hand"
+ },
+ "grip": {
+  "at": [
+   344.612,
+   942
+  ],
+  "angle": 104.892,
+  "curve": {
+   "maxDegPerSecond": 2700,
+   "minReversalGapFrames": 3
+  }
+ },
+ "art": {
+  "axis": 90,
+  "behind": 96,
+  "ahead": 434,
+  "halfWidth": 82,
+  "minAhead": 400,
+  "fistRadius": 48,
+  "handleHalfWidth": 24
+ },
+ "drawBefore": "hand",
+ "stroke": {
+  "color": "1c1f26ff"
+ },
+ "source": {
+  "note": "PROTOTYPE (turned-front preview, 2026-10-19): fixtures/garments/sword-live.held.json (the live sword sprite, same art and size) moved onto the turned rig jacketb-turn15.anim.json: grip.at = the left fist region's centre at the setup pose, grip.angle solved by scripts/views/turnfront-sword-clips.ts so the ready blade is 45 deg up and out (screen-left)."
+ }
+}

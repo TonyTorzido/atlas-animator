@@ -1,0 +1,196 @@
+{
+ "name": "sword_ready",
+ "about": "PROTOTYPE idle on the full character with the live sword: 2.0 s breath loop, the sword arm hanging straight 27 deg out, the blade 25 deg off vertical, out, above the fist (grip constant, no grip keys). f0 is the chop's start and end pose.",
+ "clip": {
+  "duration": 2,
+  "loop": true,
+  "fps": 30,
+  "bones": {
+   "pelvis": {
+    "translate": [
+     {
+      "time": 0,
+      "x": 0,
+      "y": 0,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 1,
+      "x": 0,
+      "y": -1,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 2,
+      "x": 0,
+      "y": 0,
+      "curve": "linear"
+     }
+    ]
+   },
+   "chest": {
+    "scale": [
+     {
+      "time": 0,
+      "x": 1,
+      "y": 1,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 1,
+      "x": 1.012,
+      "y": 1.01,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 2,
+      "x": 1,
+      "y": 1,
+      "curve": "linear"
+     }
+    ],
+    "rotate": [
+     {
+      "time": 0,
+      "value": 0,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 1,
+      "value": -0.5,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 2,
+      "value": 0,
+      "curve": "linear"
+     }
+    ]
+   },
+   "head": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": 0,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 1,
+      "value": -0.5,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 2,
+      "value": 0,
+      "curve": "linear"
+     }
+    ]
+   },
+   "upper_arm_l": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": -2.085,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 1,
+      "value": -2.085,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 2,
+      "value": -2.085,
+      "curve": "linear"
+     }
+    ]
+   },
+   "upper_arm_r": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": 2.085,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 1,
+      "value": 2.085,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 2,
+      "value": 2.085,
+      "curve": "linear"
+     }
+    ]
+   }
+  }
+ },
+ "drawPhases": [
+  {
+   "from": 0,
+   "to": 2.000001,
+   "order": "back"
+  }
+ ]
+}

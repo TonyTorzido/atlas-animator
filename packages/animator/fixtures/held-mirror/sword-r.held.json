@@ -1,0 +1,35 @@
+{
+ "format": "atlas-held/1",
+ "name": "sword",
+ "hand": {
+  "bone": "hand_r",
+  "fistSlot": "hand_r"
+ },
+ "grip": {
+  "at": [
+   743,
+   951
+  ],
+  "angle": -135.891,
+  "curve": {
+   "maxDegPerSecond": 2700,
+   "minReversalGapFrames": 3
+  }
+ },
+ "art": {
+  "axis": 90,
+  "behind": 99,
+  "ahead": 331,
+  "halfWidth": 70,
+  "minAhead": 280,
+  "fistRadius": 48,
+  "handleHalfWidth": 24
+ },
+ "drawBefore": "hand",
+ "stroke": {
+  "color": "1c1f26ff"
+ },
+ "source": {
+  "note": "Mirror of sword.held.json onto hand_r (scripts/sword-mirror.ts): grip.at and the art reflected about x = 542, grip angle negated."
+ }
+}

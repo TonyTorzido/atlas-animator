@@ -1,0 +1,45 @@
+/* New rig dialog and the new-rig steps card. Tokens come from ui.css / index.html. */
+.newrig { width: min(560px, 92vw); max-height: 88vh; overflow: hidden; display: flex; flex-direction: column; gap: var(--s2); }
+.newrig-grid { display: grid; grid-template-columns: 76px 1fr; gap: var(--s2); align-items: center; }
+.newrig-grid input { width: 100%; box-sizing: border-box; }
+.newrig-label { font-size: var(--fs-xs); color: var(--dim); text-transform: uppercase; letter-spacing: 0.04em; }
+.newrig-msg { min-height: 16px; font-size: var(--fs-xs); color: var(--dim); }
+.newrig-msg.bad { color: var(--bad, var(--bad)); }
+.newrig-start { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s2); }
+.newrig-choice { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; height: auto; padding: var(--s2) var(--s3); text-align: left; white-space: normal; }
+.newrig-choice span { font-size: var(--fs-xs); color: var(--dim); }
+.newrig-choice.on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.newrig-drop { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: var(--s4); border: 1px dashed var(--line); border-radius: 8px; color: var(--dim); cursor: pointer; }
+.newrig-drop b { color: var(--text, inherit); }
+.newrig-drop.over, .newrig-drop:focus-visible { border-color: var(--accent); background: rgba(240, 184, 74, 0.08); outline: none; }
+.newrig-parts { overflow-y: auto; max-height: 190px; display: flex; flex-direction: column; gap: 4px; scrollbar-width: none; }
+.newrig-parts::-webkit-scrollbar { display: none; }
+.newrig-part { display: grid; grid-template-columns: 28px 1fr auto auto auto; gap: var(--s2); align-items: center; }
+.newrig-part img { width: 28px; height: 28px; object-fit: contain; background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
+.newrig-part input { min-width: 0; }
+.newrig-size, .newrig-tag { font-size: var(--fs-xs); color: var(--dim); font-variant-numeric: tabular-nums; }
+.newrig .modal-actions { align-items: center; }
+.newrig .modal-actions .newrig-msg { margin-right: auto; }
+
+/* Progress stepper along the top of the Rig canvas: Parts - Bones - Bind - Mesh - Animate. */
+.newrig-steps {
+  position: absolute; left: 50%; transform: translateX(-50%); top: 52px; z-index: var(--z-hud); max-width: calc(100% - 24px);
+  display: flex; align-items: center; gap: var(--s2); padding: var(--s1) var(--s2);
+  background: rgba(20, 23, 29, 0.94); border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow-2);
+}
+.newrig-steps[hidden] { display: none; }
+.newrig-steps ol { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: var(--s2); }
+.newrig-steps li { display: flex; align-items: center; gap: var(--s1); font-size: var(--fs-sm); color: var(--dim); white-space: nowrap; }
+.newrig-steps li + li::before { content: ""; width: 14px; height: 1px; background: var(--line2); margin-right: var(--s1); }
+.newrig-steps li.done { color: var(--text); }
+.newrig-steps li.now { color: var(--accent); font-weight: 600; }
+.newrig-steps li em { font-style: normal; font-size: var(--fs-xs); color: var(--muted); }
+.newrig-steps .dot { width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; display: inline-flex; align-items: center; justify-content: center; font-size: var(--fs-xs); font-weight: 700; flex: none; }
+.newrig-steps li.done .dot { background: var(--ok); border-color: var(--ok); color: var(--bg0); }
+.newrig-steps li.now .dot { background: var(--accent-bg); }
+.newrig-steps li:not(.now) button { height: var(--ctl-sm); padding: 0 var(--s2); font-size: var(--fs-xs); }
+.newrig-steps li.now button { height: var(--ctl-sm); padding: 0 var(--s2); }
+.newrig-steps .close { height: var(--ctl-sm); padding: 0 var(--s2); font-size: var(--fs-xs); color: var(--dim); }
+@media (max-width: 1499px) { .newrig-steps li:not(.now) .step-label, .newrig-steps li em { display: none; } }
+
+.home-newrig { display: flex; align-items: center; gap: var(--s3); justify-content: center; margin-top: var(--s4); }

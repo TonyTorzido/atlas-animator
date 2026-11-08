@@ -1,0 +1,227 @@
+{"op": "clip.remove", "name": "still_ready"}
+{"op": "clip.remove", "name": "still_axe_raised"}
+{"op": "clip.remove", "name": "still_chop_contact"}
+{"op": "clip.remove", "name": "still_follow"}
+{"op": "clip.remove", "name": "still_overhead"}
+{"op": "clip.remove", "name": "still_across_chest"}
+{"op": "clip.remove", "name": "still_low_guard"}
+{"op": "clip.remove", "name": "still_walk_contact"}
+{"op": "clip.remove", "name": "still_walk_pass"}
+{"op": "clip.remove", "name": "still_gather_chop"}
+{"op": "clip.remove", "name": "still_gather_mine"}
+{"op": "clip.add", "name": "still_ready", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "still_ready", "bone": "chest", "timeline": "rotate", "time": 0, "value": -6}
+{"op": "key.set", "clip": "still_ready", "bone": "head", "timeline": "rotate", "time": 0, "value": 5}
+{"op": "key.set", "clip": "still_ready", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": -1.085}
+{"op": "key.set", "clip": "still_ready", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -58.1}
+{"op": "key.set", "clip": "still_ready", "bone": "weapon", "timeline": "rotate", "time": 0, "value": 0}
+{"op": "key.set", "clip": "still_ready", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": -88.009}
+{"op": "key.set", "clip": "still_ready", "bone": "upper_arm_r", "timeline": "rotate", "time": 0, "value": 23.085}
+{"op": "key.set", "clip": "still_ready", "bone": "forearm_r", "timeline": "rotate", "time": 0, "value": 146.1}
+{"op": "key.set", "clip": "still_ready", "bone": "hand_r", "timeline": "rotate", "time": 0, "value": 0.009}
+{"op": "key.set", "clip": "still_ready", "bone": "thigh_l", "timeline": "rotate", "time": 0, "value": 29.169}
+{"op": "key.set", "clip": "still_ready", "bone": "shin_l", "timeline": "rotate", "time": 0, "value": 19.243}
+{"op": "key.set", "clip": "still_ready", "bone": "foot_l", "timeline": "rotate", "time": 0, "value": -48.412}
+{"op": "key.set", "clip": "still_ready", "bone": "thigh_r", "timeline": "rotate", "time": 0, "value": -38.043}
+{"op": "key.set", "clip": "still_ready", "bone": "shin_r", "timeline": "rotate", "time": 0, "value": -3.423}
+{"op": "key.set", "clip": "still_ready", "bone": "foot_r", "timeline": "rotate", "time": 0, "value": 41.466}
+{"op": "key.set", "clip": "still_ready", "bone": "pelvis", "timeline": "translate", "time": 0, "x": -8.0, "y": 42.0}
+{"op": "key.set", "clip": "still_ready", "slot": "hand_l", "timeline": "attachment", "time": 0, "name": "grip_back"}
+{"op": "key.set", "clip": "still_ready", "slot": "hand_l_fingers", "timeline": "attachment", "time": 0, "name": "grip_fingers"}
+{"op": "key.set", "clip": "still_ready", "slot": "weapon", "timeline": "attachment", "time": 0, "name": "double_axe"}
+{"op": "clip.add", "name": "still_axe_raised", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "chest", "timeline": "rotate", "time": 0, "value": 9}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "head", "timeline": "rotate", "time": 0, "value": -7}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 86.915}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": 38.9}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "weapon", "timeline": "rotate", "time": 0, "value": 0}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 85.991}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "upper_arm_r", "timeline": "rotate", "time": 0, "value": 10.085}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "forearm_r", "timeline": "rotate", "time": 0, "value": 114.1}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "hand_r", "timeline": "rotate", "time": 0, "value": 0.009}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "thigh_l", "timeline": "rotate", "time": 0, "value": 43.697}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "shin_l", "timeline": "rotate", "time": 0, "value": 2.883}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "foot_l", "timeline": "rotate", "time": 0, "value": -46.58}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "thigh_r", "timeline": "rotate", "time": 0, "value": -6.174}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "shin_r", "timeline": "rotate", "time": 0, "value": -53.003}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "foot_r", "timeline": "rotate", "time": 0, "value": 59.178}
+{"op": "key.set", "clip": "still_axe_raised", "bone": "pelvis", "timeline": "translate", "time": 0, "x": 14.0, "y": 36.0}
+{"op": "key.set", "clip": "still_axe_raised", "slot": "hand_l", "timeline": "attachment", "time": 0, "name": "grip_back"}
+{"op": "key.set", "clip": "still_axe_raised", "slot": "hand_l_fingers", "timeline": "attachment", "time": 0, "name": "grip_fingers"}
+{"op": "key.set", "clip": "still_axe_raised", "slot": "weapon", "timeline": "attachment", "time": 0, "name": "double_axe"}
+{"op": "clip.add", "name": "still_chop_contact", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "chest", "timeline": "rotate", "time": 0, "value": -15}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "head", "timeline": "rotate", "time": 0, "value": 9}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 45.915}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -18.1}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "weapon", "timeline": "rotate", "time": 0, "value": -180}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": -58.009}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "upper_arm_r", "timeline": "rotate", "time": 0, "value": 26.085}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "forearm_r", "timeline": "rotate", "time": 0, "value": 128.1}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "hand_r", "timeline": "rotate", "time": 0, "value": 0.009}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "thigh_l", "timeline": "rotate", "time": 0, "value": 21.824}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "shin_l", "timeline": "rotate", "time": 0, "value": 45.75}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "foot_l", "timeline": "rotate", "time": 0, "value": -67.574}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "thigh_r", "timeline": "rotate", "time": 0, "value": -50.645}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "shin_r", "timeline": "rotate", "time": 0, "value": -3.423}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "foot_r", "timeline": "rotate", "time": 0, "value": 54.069}
+{"op": "key.set", "clip": "still_chop_contact", "bone": "pelvis", "timeline": "translate", "time": 0, "x": -26.0, "y": 54.0}
+{"op": "key.set", "clip": "still_chop_contact", "slot": "hand_l", "timeline": "attachment", "time": 0, "name": "grip_back"}
+{"op": "key.set", "clip": "still_chop_contact", "slot": "hand_l_fingers", "timeline": "attachment", "time": 0, "name": "grip_fingers"}
+{"op": "key.set", "clip": "still_chop_contact", "slot": "weapon", "timeline": "attachment", "time": 0, "name": "double_axe"}
+{"op": "clip.add", "name": "still_follow", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "still_follow", "bone": "chest", "timeline": "rotate", "time": 0, "value": -17}
+{"op": "key.set", "clip": "still_follow", "bone": "head", "timeline": "rotate", "time": 0, "value": 10}
+{"op": "key.set", "clip": "still_follow", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": -30.085}
+{"op": "key.set", "clip": "still_follow", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -24.1}
+{"op": "key.set", "clip": "still_follow", "bone": "weapon", "timeline": "rotate", "time": 0, "value": 0}
+{"op": "key.set", "clip": "still_follow", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 67.991}
+{"op": "key.set", "clip": "still_follow", "bone": "upper_arm_r", "timeline": "rotate", "time": 0, "value": 18.085}
+{"op": "key.set", "clip": "still_follow", "bone": "forearm_r", "timeline": "rotate", "time": 0, "value": 121.1}
+{"op": "key.set", "clip": "still_follow", "bone": "hand_r", "timeline": "rotate", "time": 0, "value": 0.009}
+{"op": "key.set", "clip": "still_follow", "bone": "thigh_l", "timeline": "rotate", "time": 0, "value": 27.826}
+{"op": "key.set", "clip": "still_follow", "bone": "shin_l", "timeline": "rotate", "time": 0, "value": 38.329}
+{"op": "key.set", "clip": "still_follow", "bone": "foot_l", "timeline": "rotate", "time": 0, "value": -66.155}
+{"op": "key.set", "clip": "still_follow", "bone": "thigh_r", "timeline": "rotate", "time": 0, "value": -32.022}
+{"op": "key.set", "clip": "still_follow", "bone": "shin_r", "timeline": "rotate", "time": 0, "value": -29.364}
+{"op": "key.set", "clip": "still_follow", "bone": "foot_r", "timeline": "rotate", "time": 0, "value": 61.386}
+{"op": "key.set", "clip": "still_follow", "bone": "pelvis", "timeline": "translate", "time": 0, "x": 6.0, "y": 58.0}
+{"op": "key.set", "clip": "still_follow", "slot": "hand_l", "timeline": "attachment", "time": 0, "name": "grip_back"}
+{"op": "key.set", "clip": "still_follow", "slot": "hand_l_fingers", "timeline": "attachment", "time": 0, "name": "grip_fingers"}
+{"op": "key.set", "clip": "still_follow", "slot": "weapon", "timeline": "attachment", "time": 0, "name": "double_axe"}
+{"op": "clip.add", "name": "still_overhead", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "still_overhead", "bone": "chest", "timeline": "rotate", "time": 0, "value": 5}
+{"op": "key.set", "clip": "still_overhead", "bone": "head", "timeline": "rotate", "time": 0, "value": -5}
+{"op": "key.set", "clip": "still_overhead", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 93.915}
+{"op": "key.set", "clip": "still_overhead", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": 35.9}
+{"op": "key.set", "clip": "still_overhead", "bone": "weapon", "timeline": "rotate", "time": 0, "value": -180}
+{"op": "key.set", "clip": "still_overhead", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": -78.009}
+{"op": "key.set", "clip": "still_overhead", "bone": "upper_arm_r", "timeline": "rotate", "time": 0, "value": 12.085}
+{"op": "key.set", "clip": "still_overhead", "bone": "forearm_r", "timeline": "rotate", "time": 0, "value": 108.1}
+{"op": "key.set", "clip": "still_overhead", "bone": "hand_r", "timeline": "rotate", "time": 0, "value": 0.009}
+{"op": "key.set", "clip": "still_overhead", "bone": "thigh_l", "timeline": "rotate", "time": 0, "value": 38.433}
+{"op": "key.set", "clip": "still_overhead", "bone": "shin_l", "timeline": "rotate", "time": 0, "value": 2.883}
+{"op": "key.set", "clip": "still_overhead", "bone": "foot_l", "timeline": "rotate", "time": 0, "value": -41.315}
+{"op": "key.set", "clip": "still_overhead", "bone": "thigh_r", "timeline": "rotate", "time": 0, "value": -33.404}
+{"op": "key.set", "clip": "still_overhead", "bone": "shin_r", "timeline": "rotate", "time": 0, "value": -3.423}
+{"op": "key.set", "clip": "still_overhead", "bone": "foot_r", "timeline": "rotate", "time": 0, "value": 36.828}
+{"op": "key.set", "clip": "still_overhead", "bone": "pelvis", "timeline": "translate", "time": 0, "x": 2.0, "y": 34.0}
+{"op": "key.set", "clip": "still_overhead", "slot": "hand_l", "timeline": "attachment", "time": 0, "name": "grip_back"}
+{"op": "key.set", "clip": "still_overhead", "slot": "hand_l_fingers", "timeline": "attachment", "time": 0, "name": "grip_fingers"}
+{"op": "key.set", "clip": "still_overhead", "slot": "weapon", "timeline": "attachment", "time": 0, "name": "double_axe"}
+{"op": "clip.add", "name": "still_across_chest", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "still_across_chest", "bone": "chest", "timeline": "rotate", "time": 0, "value": 9}
+{"op": "key.set", "clip": "still_across_chest", "bone": "head", "timeline": "rotate", "time": 0, "value": -6}
+{"op": "key.set", "clip": "still_across_chest", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": -32.085}
+{"op": "key.set", "clip": "still_across_chest", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -68.1}
+{"op": "key.set", "clip": "still_across_chest", "bone": "weapon", "timeline": "rotate", "time": 0, "value": 0}
+{"op": "key.set", "clip": "still_across_chest", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 67.991}
+{"op": "key.set", "clip": "still_across_chest", "bone": "upper_arm_r", "timeline": "rotate", "time": 0, "value": 6.085}
+{"op": "key.set", "clip": "still_across_chest", "bone": "forearm_r", "timeline": "rotate", "time": 0, "value": 136.1}
+{"op": "key.set", "clip": "still_across_chest", "bone": "hand_r", "timeline": "rotate", "time": 0, "value": 0.009}
+{"op": "key.set", "clip": "still_across_chest", "bone": "thigh_l", "timeline": "rotate", "time": 0, "value": 42.251}
+{"op": "key.set", "clip": "still_across_chest", "bone": "shin_l", "timeline": "rotate", "time": 0, "value": 2.883}
+{"op": "key.set", "clip": "still_across_chest", "bone": "foot_l", "timeline": "rotate", "time": 0, "value": -45.133}
+{"op": "key.set", "clip": "still_across_chest", "bone": "thigh_r", "timeline": "rotate", "time": 0, "value": -9.981}
+{"op": "key.set", "clip": "still_across_chest", "bone": "shin_r", "timeline": "rotate", "time": 0, "value": -51.505}
+{"op": "key.set", "clip": "still_across_chest", "bone": "foot_r", "timeline": "rotate", "time": 0, "value": 61.486}
+{"op": "key.set", "clip": "still_across_chest", "bone": "pelvis", "timeline": "translate", "time": 0, "x": 22.0, "y": 40.0}
+{"op": "key.set", "clip": "still_across_chest", "slot": "hand_l", "timeline": "attachment", "time": 0, "name": "grip_back"}
+{"op": "key.set", "clip": "still_across_chest", "slot": "hand_l_fingers", "timeline": "attachment", "time": 0, "name": "grip_fingers"}
+{"op": "key.set", "clip": "still_across_chest", "slot": "weapon", "timeline": "attachment", "time": 0, "name": "double_axe"}
+{"op": "clip.add", "name": "still_low_guard", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "still_low_guard", "bone": "chest", "timeline": "rotate", "time": 0, "value": -13}
+{"op": "key.set", "clip": "still_low_guard", "bone": "head", "timeline": "rotate", "time": 0, "value": 8}
+{"op": "key.set", "clip": "still_low_guard", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 23.915}
+{"op": "key.set", "clip": "still_low_guard", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -26.1}
+{"op": "key.set", "clip": "still_low_guard", "bone": "weapon", "timeline": "rotate", "time": 0, "value": -180}
+{"op": "key.set", "clip": "still_low_guard", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": -40.009}
+{"op": "key.set", "clip": "still_low_guard", "bone": "upper_arm_r", "timeline": "rotate", "time": 0, "value": 26.085}
+{"op": "key.set", "clip": "still_low_guard", "bone": "forearm_r", "timeline": "rotate", "time": 0, "value": 132.1}
+{"op": "key.set", "clip": "still_low_guard", "bone": "hand_r", "timeline": "rotate", "time": 0, "value": 0.009}
+{"op": "key.set", "clip": "still_low_guard", "bone": "thigh_l", "timeline": "rotate", "time": 0, "value": 39.23}
+{"op": "key.set", "clip": "still_low_guard", "bone": "shin_l", "timeline": "rotate", "time": 0, "value": 18.043}
+{"op": "key.set", "clip": "still_low_guard", "bone": "foot_l", "timeline": "rotate", "time": 0, "value": -57.274}
+{"op": "key.set", "clip": "still_low_guard", "bone": "thigh_r", "timeline": "rotate", "time": 0, "value": -48.61}
+{"op": "key.set", "clip": "still_low_guard", "bone": "shin_r", "timeline": "rotate", "time": 0, "value": -3.423}
+{"op": "key.set", "clip": "still_low_guard", "bone": "foot_r", "timeline": "rotate", "time": 0, "value": 52.034}
+{"op": "key.set", "clip": "still_low_guard", "bone": "pelvis", "timeline": "translate", "time": 0, "x": -12.0, "y": 62.0}
+{"op": "key.set", "clip": "still_low_guard", "slot": "hand_l", "timeline": "attachment", "time": 0, "name": "grip_back"}
+{"op": "key.set", "clip": "still_low_guard", "slot": "hand_l_fingers", "timeline": "attachment", "time": 0, "name": "grip_fingers"}
+{"op": "key.set", "clip": "still_low_guard", "slot": "weapon", "timeline": "attachment", "time": 0, "name": "double_axe"}
+{"op": "clip.add", "name": "still_walk_contact", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "chest", "timeline": "rotate", "time": 0, "value": 0}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "head", "timeline": "rotate", "time": 0, "value": 0}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 26.041}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -20.014}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": -0.009}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "upper_arm_r", "timeline": "rotate", "time": 0, "value": -26.041}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "forearm_r", "timeline": "rotate", "time": 0, "value": 20.014}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "hand_r", "timeline": "rotate", "time": 0, "value": 0.009}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "thigh_l", "timeline": "rotate", "time": 0, "value": 16}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "shin_l", "timeline": "rotate", "time": 0, "value": -6}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "foot_l", "timeline": "rotate", "time": 0, "value": -10}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "thigh_r", "timeline": "rotate", "time": 0, "value": -14}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "shin_r", "timeline": "rotate", "time": 0, "value": 10}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "foot_r", "timeline": "rotate", "time": 0, "value": 4}
+{"op": "key.set", "clip": "still_walk_contact", "bone": "pelvis", "timeline": "translate", "time": 0, "x": 0.0, "y": 6.0}
+{"op": "clip.add", "name": "still_walk_pass", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "chest", "timeline": "rotate", "time": 0, "value": 0}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "head", "timeline": "rotate", "time": 0, "value": 0}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 12.041}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -20.014}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": -0.009}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "upper_arm_r", "timeline": "rotate", "time": 0, "value": -12.041}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "forearm_r", "timeline": "rotate", "time": 0, "value": 20.014}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "hand_r", "timeline": "rotate", "time": 0, "value": 0.009}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "thigh_l", "timeline": "rotate", "time": 0, "value": -2}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "shin_l", "timeline": "rotate", "time": 0, "value": 8}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "foot_l", "timeline": "rotate", "time": 0, "value": -6}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "thigh_r", "timeline": "rotate", "time": 0, "value": 0}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "shin_r", "timeline": "rotate", "time": 0, "value": 0}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "foot_r", "timeline": "rotate", "time": 0, "value": 0}
+{"op": "key.set", "clip": "still_walk_pass", "bone": "pelvis", "timeline": "translate", "time": 0, "x": 0.0, "y": 0.0}
+{"op": "clip.add", "name": "still_gather_chop", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "chest", "timeline": "rotate", "time": 0, "value": -10}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "head", "timeline": "rotate", "time": 0, "value": 6}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 30.915}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -36.1}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "weapon", "timeline": "rotate", "time": 0, "value": -180}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": -62.009}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "upper_arm_r", "timeline": "rotate", "time": 0, "value": 73.2}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "forearm_r", "timeline": "rotate", "time": 0, "value": -3.523}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "hand_r", "timeline": "rotate", "time": 0, "value": -86.484}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "thigh_l", "timeline": "rotate", "time": 0, "value": 0.295}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "shin_l", "timeline": "rotate", "time": 0, "value": 50.184}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "foot_l", "timeline": "rotate", "time": 0, "value": -50.479}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "thigh_r", "timeline": "rotate", "time": 0, "value": -15.967}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "shin_r", "timeline": "rotate", "time": 0, "value": -26.512}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "foot_r", "timeline": "rotate", "time": 0, "value": 42.478}
+{"op": "key.set", "clip": "still_gather_chop", "bone": "pelvis", "timeline": "translate", "time": 0, "x": -8.0, "y": 26.0}
+{"op": "key.set", "clip": "still_gather_chop", "slot": "hand_l", "timeline": "attachment", "time": 0, "name": "grip_back"}
+{"op": "key.set", "clip": "still_gather_chop", "slot": "hand_l_fingers", "timeline": "attachment", "time": 0, "name": "grip_fingers"}
+{"op": "key.set", "clip": "still_gather_chop", "slot": "weapon", "timeline": "attachment", "time": 0, "name": "double_axe"}
+{"op": "key.set", "clip": "still_gather_chop", "slot": "hand_r", "timeline": "attachment", "time": 0, "name": "grip_back"}
+{"op": "key.set", "clip": "still_gather_chop", "slot": "hand_r_fingers", "timeline": "attachment", "time": 0, "name": "grip_fingers"}
+{"op": "clip.add", "name": "still_gather_mine", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "chest", "timeline": "rotate", "time": 0, "value": -8}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "head", "timeline": "rotate", "time": 0, "value": 5}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 34.915}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -26.1}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "weapon", "timeline": "rotate", "time": 0, "value": -180}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": -88.009}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "upper_arm_r", "timeline": "rotate", "time": 0, "value": 82.173}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "forearm_r", "timeline": "rotate", "time": 0, "value": -4.278}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "hand_r", "timeline": "rotate", "time": 0, "value": 73.299}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "thigh_l", "timeline": "rotate", "time": 0, "value": 0.448}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "shin_l", "timeline": "rotate", "time": 0, "value": 45.457}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "foot_l", "timeline": "rotate", "time": 0, "value": -45.904}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "thigh_r", "timeline": "rotate", "time": 0, "value": -13.312}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "shin_r", "timeline": "rotate", "time": 0, "value": -26.227}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "foot_r", "timeline": "rotate", "time": 0, "value": 39.539}
+{"op": "key.set", "clip": "still_gather_mine", "bone": "pelvis", "timeline": "translate", "time": 0, "x": -6.0, "y": 22.0}
+{"op": "key.set", "clip": "still_gather_mine", "slot": "hand_l", "timeline": "attachment", "time": 0, "name": "grip_back"}
+{"op": "key.set", "clip": "still_gather_mine", "slot": "hand_l_fingers", "timeline": "attachment", "time": 0, "name": "grip_fingers"}
+{"op": "key.set", "clip": "still_gather_mine", "slot": "weapon", "timeline": "attachment", "time": 0, "name": "double_axe"}
+{"op": "key.set", "clip": "still_gather_mine", "slot": "hand_r", "timeline": "attachment", "time": 0, "name": "grip_back"}
+{"op": "key.set", "clip": "still_gather_mine", "slot": "hand_r_fingers", "timeline": "attachment", "time": 0, "name": "grip_fingers"}

@@ -1,0 +1,985 @@
+{
+ "format": "parts-template@1",
+ "view": "turn15",
+ "rig": "rigs/stock/front-turn15-faceA.anim.json",
+ "canvas": {
+  "width": 1086,
+  "height": 1448,
+  "originX": 542,
+  "originY": 960
+ },
+ "sheet": {
+  "size": 1254,
+  "scale": 0.72,
+  "pad": 700,
+  "bbox": [
+   726,
+   722
+  ],
+  "t": [
+   252.57,
+   40.0
+  ],
+  "frozenLayout": true,
+  "note": "sheet = scale * (canvas + offset + pad - bbox) + t"
+ },
+ "ink": 10,
+ "inkSheetPx": 7.2,
+ "torsoCutY": 1034,
+ "restOrder": [
+  "foot_l",
+  "shin_l",
+  "thigh_l",
+  "foot_r",
+  "shin_r",
+  "thigh_r",
+  "upper_arm_l",
+  "forearm_l",
+  "hand_l",
+  "upper_arm_r",
+  "forearm_r",
+  "hand_r",
+  "torso",
+  "head"
+ ],
+ "overpaint": 26,
+ "margin": 14,
+ "minGap": 22,
+ "radii": {
+  "shoulder_l": 42.6,
+  "elbow_l": 43.0,
+  "wrist_l": 46.0,
+  "hip_l": 55.0,
+  "knee_l": 53.5,
+  "ankle_l": 55.0,
+  "shoulder_r": 44.8,
+  "elbow_r": 47.0,
+  "wrist_r": 49.0,
+  "hip_r": 56.0,
+  "knee_r": 53.5,
+  "ankle_r": 55.0
+ },
+ "halfWidths": {
+  "upper_arm_l": [
+   43,
+   42,
+   42,
+   41,
+   42
+  ],
+  "forearm_l": [
+   42,
+   44,
+   45,
+   47,
+   46
+  ],
+  "hand_l": [
+   45,
+   46,
+   47,
+   48,
+   49
+  ],
+  "thigh_l": [
+   46,
+   48,
+   50,
+   52,
+   53
+  ],
+  "shin_l": [
+   53,
+   54,
+   54,
+   55,
+   55
+  ],
+  "foot_l": [
+   56,
+   56,
+   62,
+   67,
+   70
+  ],
+  "upper_arm_r": [
+   46,
+   46,
+   46,
+   45,
+   44
+  ],
+  "forearm_r": [
+   46,
+   48,
+   50,
+   50,
+   49
+  ],
+  "hand_r": [
+   49,
+   50,
+   51,
+   52,
+   50
+  ],
+  "thigh_r": [
+   46,
+   49,
+   51,
+   52,
+   53
+  ],
+  "shin_r": [
+   53,
+   54,
+   54,
+   55,
+   55
+  ],
+  "foot_r": [
+   56,
+   56,
+   60,
+   61,
+   58
+  ]
+ },
+ "pivotAdjust": {
+  "thigh_l": {
+   "from": [
+    468.59,
+    1000
+   ],
+   "to": [
+    470.0,
+    1000
+   ]
+  },
+  "thigh_r": {
+   "from": [
+    615.41,
+    1000
+   ],
+   "to": [
+    613.0,
+    1000
+   ]
+  }
+ },
+ "crotchY": 1028,
+ "torsoSides": {
+  "l": [
+   507.58,
+   -0.09
+  ],
+  "r": [
+   531.56,
+   0.13
+  ]
+ },
+ "parts": [
+  {
+   "name": "upper_arm_l",
+   "index": 1,
+   "bone": "upper_arm_l",
+   "offset": [
+    -129,
+    -38
+   ],
+   "pivot": [
+    442.31,
+    729.0
+   ],
+   "pivotSheet": [
+    459.43,
+    521.68
+   ],
+   "areaCanvas": 12762,
+   "cut": [],
+   "drawnBy": "item"
+  },
+  {
+   "name": "forearm_l",
+   "index": 2,
+   "bone": "forearm_l",
+   "offset": [
+    -194,
+    60
+   ],
+   "pivot": [
+    397.81,
+    809.0
+   ],
+   "pivotSheet": [
+    380.59,
+    649.84
+   ],
+   "areaCanvas": 11218,
+   "cut": [
+    [
+     [
+      442.56,
+      830.04
+     ],
+     [
+      353.06,
+      787.96
+     ]
+    ]
+   ],
+   "drawnBy": "item"
+  },
+  {
+   "name": "hand_l",
+   "index": 3,
+   "bone": "hand_l",
+   "offset": [
+    -248,
+    167
+   ],
+   "pivot": [
+    358.31,
+    893.0
+   ],
+   "pivotSheet": [
+    313.27,
+    787.36
+   ],
+   "areaCanvas": 10359,
+   "cut": [
+    [
+     [
+      406.18,
+      915.52
+     ],
+     [
+      310.44,
+      870.48
+     ]
+    ]
+   ],
+   "drawnBy": "item"
+  },
+  {
+   "name": "thigh_l",
+   "index": 4,
+   "bone": "thigh_l",
+   "offset": [
+    -52,
+    165
+   ],
+   "pivot": [
+    470.0,
+    1000.0
+   ],
+   "pivotSheet": [
+    534.81,
+    862.96
+   ],
+   "areaCanvas": 20694,
+   "cut": [],
+   "drawnBy": "item"
+  },
+  {
+   "name": "shin_l",
+   "index": 5,
+   "bone": "shin_l",
+   "offset": [
+    -72,
+    294
+   ],
+   "pivot": [
+    460.59,
+    1105.0
+   ],
+   "pivotSheet": [
+    513.63,
+    1031.44
+   ],
+   "areaCanvas": 11102,
+   "cut": [
+    [
+     [
+      522.05,
+      1107.84
+     ],
+     [
+      399.13,
+      1102.16
+     ]
+    ]
+   ],
+   "drawnBy": "item"
+  },
+  {
+   "name": "foot_l",
+   "index": 6,
+   "bone": "foot_l",
+   "offset": [
+    -98,
+    397
+   ],
+   "pivot": [
+    457.59,
+    1170.0
+   ],
+   "pivotSheet": [
+    492.75,
+    1152.4
+   ],
+   "areaCanvas": 12344,
+   "cut": [
+    [
+     [
+      527.36,
+      1164.29
+     ],
+     [
+      409.02,
+      1119.58
+     ]
+    ]
+   ],
+   "drawnBy": "item"
+  },
+  {
+   "name": "upper_arm_r",
+   "index": 7,
+   "bone": "upper_arm_r",
+   "offset": [
+    132,
+    -39
+   ],
+   "pivot": [
+    643.31,
+    729.0
+   ],
+   "pivotSheet": [
+    792.07,
+    520.96
+   ],
+   "areaCanvas": 14604,
+   "cut": [],
+   "drawnBy": "item"
+  },
+  {
+   "name": "forearm_r",
+   "index": 8,
+   "bone": "forearm_r",
+   "offset": [
+    200,
+    64
+   ],
+   "pivot": [
+    687.81,
+    809.0
+   ],
+   "pivotSheet": [
+    873.07,
+    652.72
+   ],
+   "areaCanvas": 12377,
+   "cut": [
+    [
+     [
+      736.72,
+      786.0
+     ],
+     [
+      638.9,
+      832.0
+     ]
+    ]
+   ],
+   "drawnBy": "item"
+  },
+  {
+   "name": "hand_r",
+   "index": 9,
+   "bone": "hand_r",
+   "offset": [
+    255,
+    173
+   ],
+   "pivot": [
+    727.31,
+    893.0
+   ],
+   "pivotSheet": [
+    941.11,
+    791.68
+   ],
+   "areaCanvas": 10405,
+   "cut": [
+    [
+     [
+      778.3,
+      869.01
+     ],
+     [
+      676.32,
+      916.99
+     ]
+    ]
+   ],
+   "drawnBy": "item"
+  },
+  {
+   "name": "thigh_r",
+   "index": 10,
+   "bone": "thigh_r",
+   "offset": [
+    52,
+    165
+   ],
+   "pivot": [
+    613.0,
+    1000.0
+   ],
+   "pivotSheet": [
+    712.65,
+    862.96
+   ],
+   "areaCanvas": 21070,
+   "cut": [],
+   "drawnBy": "item"
+  },
+  {
+   "name": "shin_r",
+   "index": 11,
+   "bone": "shin_r",
+   "offset": [
+    72,
+    294
+   ],
+   "pivot": [
+    623.41,
+    1105.0
+   ],
+   "pivotSheet": [
+    734.55,
+    1031.44
+   ],
+   "areaCanvas": 11103,
+   "cut": [
+    [
+     [
+      684.87,
+      1102.16
+     ],
+     [
+      561.95,
+      1107.84
+     ]
+    ]
+   ],
+   "drawnBy": "item"
+  },
+  {
+   "name": "foot_r",
+   "index": 12,
+   "bone": "foot_r",
+   "offset": [
+    98,
+    397
+   ],
+   "pivot": [
+    626.41,
+    1170.0
+   ],
+   "pivotSheet": [
+    755.43,
+    1152.4
+   ],
+   "areaCanvas": 12199,
+   "cut": [
+    [
+     [
+      674.98,
+      1119.58
+     ],
+     [
+      556.64,
+      1164.29
+     ]
+    ]
+   ],
+   "drawnBy": "item"
+  },
+  {
+   "name": "torso",
+   "index": 13,
+   "bone": "chest",
+   "offset": [
+    0,
+    0
+   ],
+   "pivot": [
+    542.0,
+    960.0
+   ],
+   "pivotSheet": [
+    624.09,
+    715.36
+   ],
+   "areaCanvas": 85011,
+   "cut": [],
+   "drawnBy": "item"
+  },
+  {
+   "name": "head",
+   "index": 14,
+   "bone": "head",
+   "offset": [
+    0,
+    -86
+   ],
+   "pivot": [
+    535.71,
+    650.0
+   ],
+   "pivotSheet": [
+    619.56,
+    430.24
+   ],
+   "areaCanvas": 223266,
+   "cut": [],
+   "drawnBy": "existing head art (never swaps)"
+  }
+ ],
+ "circles": [
+  {
+   "part": "upper_arm_l",
+   "joint": "shoulder_l",
+   "centre": [
+    442.31,
+    729.0
+   ],
+   "r": 42.6
+  },
+  {
+   "part": "upper_arm_l",
+   "joint": "elbow_l",
+   "centre": [
+    397.81,
+    809.0
+   ],
+   "r": 43.0
+  },
+  {
+   "part": "forearm_l",
+   "joint": "wrist_l",
+   "centre": [
+    358.31,
+    893.0
+   ],
+   "r": 46.0
+  },
+  {
+   "part": "thigh_l",
+   "joint": "hip_l",
+   "centre": [
+    470.0,
+    1000.0
+   ],
+   "r": 55.0
+  },
+  {
+   "part": "thigh_l",
+   "joint": "knee_l",
+   "centre": [
+    460.59,
+    1105.0
+   ],
+   "r": 53.5
+  },
+  {
+   "part": "upper_arm_r",
+   "joint": "shoulder_r",
+   "centre": [
+    643.31,
+    729.0
+   ],
+   "r": 44.8
+  },
+  {
+   "part": "upper_arm_r",
+   "joint": "elbow_r",
+   "centre": [
+    687.81,
+    809.0
+   ],
+   "r": 47.0
+  },
+  {
+   "part": "forearm_r",
+   "joint": "wrist_r",
+   "centre": [
+    727.31,
+    893.0
+   ],
+   "r": 49.0
+  },
+  {
+   "part": "thigh_r",
+   "joint": "hip_r",
+   "centre": [
+    613.0,
+    1000.0
+   ],
+   "r": 56.0
+  },
+  {
+   "part": "thigh_r",
+   "joint": "knee_r",
+   "centre": [
+    623.41,
+    1105.0
+   ],
+   "r": 53.5
+  }
+ ],
+ "gaps": {
+  "min": 0.0,
+  "pair": "thigh_l|shin_l"
+ },
+ "drawOrder": {
+  "rest": [
+   "B",
+   "FL",
+   "NL",
+   "LA",
+   "LH",
+   "TA",
+   "TH",
+   "T",
+   "H"
+  ],
+  "lead_front": [
+   "B",
+   "FL",
+   "NL",
+   "TU",
+   "T",
+   "TF",
+   "TH",
+   "LA",
+   "LH",
+   "H"
+  ],
+  "lead_behind": [
+   "B",
+   "LA",
+   "LH",
+   "FL",
+   "NL",
+   "TU",
+   "T",
+   "TF",
+   "TH",
+   "H"
+  ],
+  "overhead_back": [
+   "B",
+   "FL",
+   "NL",
+   "TU",
+   "T",
+   "LA",
+   "TF",
+   "LH",
+   "TH",
+   "H"
+  ],
+  "overhead_down": [
+   "B",
+   "FL",
+   "NL",
+   "TU",
+   "T",
+   "LA",
+   "TF",
+   "H",
+   "LH",
+   "TH"
+  ],
+  "straight_front": [
+   "B",
+   "FL",
+   "NL",
+   "LA",
+   "LH",
+   "TA",
+   "TH",
+   "T",
+   "H"
+  ]
+ },
+ "groups": {
+  "B": [
+   "weapon_back",
+   "cape_back",
+   "hair_back",
+   "helmet_back"
+  ],
+  "FL": [
+   "foot_l",
+   "shin_l",
+   "thigh_l"
+  ],
+  "NL": [
+   "foot_r",
+   "shin_r",
+   "thigh_r"
+  ],
+  "T": [
+   "torso"
+  ],
+  "H": [
+   "head"
+  ],
+  "LA": [
+   "upper_arm_l",
+   "forearm_l"
+  ],
+  "LH": [
+   "weapon_under",
+   "hand_l",
+   "weapon_over",
+   "fingers_l"
+  ],
+  "TA": [
+   "upper_arm_r",
+   "forearm_r"
+  ],
+  "TU": [
+   "upper_arm_r"
+  ],
+  "TF": [
+   "forearm_r"
+  ],
+  "TH": [
+   "hand_r",
+   "fingers_r"
+  ]
+ },
+ "layers": {
+  "back": [
+   "weapon_back",
+   "cape_back",
+   "hair_back",
+   "helmet_back"
+  ],
+  "torso": [
+   "skin",
+   "pants_waist",
+   "chest_torso|tank",
+   "chain",
+   "cape_clasp"
+  ],
+  "upper_arm": [
+   "skin",
+   "chest_sleeve"
+  ],
+  "forearm": [
+   "skin",
+   "chest_sleeve",
+   "gloves_cuff"
+  ],
+  "hand": [
+   "gloves_hand|skin",
+   "fingers"
+  ],
+  "thigh": [
+   "skin",
+   "pants_thigh"
+  ],
+  "shin": [
+   "skin",
+   "boots_shaft",
+   "pants_shin"
+  ],
+  "foot": [
+   "boots_foot|skin"
+  ],
+  "head": [
+   "head_skin+face",
+   "hair_front",
+   "mask",
+   "helmet_front"
+  ],
+  "weapon": [
+   "weapon_under",
+   "weapon_over"
+  ]
+ },
+ "slots": {
+  "weapon": {
+   "turned": [],
+   "front": [],
+   "note": "existing sprite split at the guard (sword) / head-haft line (axe); same sprite sheathed",
+   "flags": [
+    "grip",
+    "tip",
+    "split",
+    "twoHanded"
+   ]
+  },
+  "chest": {
+   "turned": [
+    "torso",
+    "torso_twist?",
+    "upper_arm_rest",
+    "upper_arm_raised",
+    "upper_arm_across",
+    "forearm_rest",
+    "forearm_across",
+    "forearm_foreshort"
+   ],
+   "front": [
+    "torso",
+    "upper_arm",
+    "forearm"
+   ],
+   "note": "sleeveless 1-2, short 4-5, long 7-8 turned cells",
+   "flags": [
+    "sleeve",
+    "coversNeck",
+    "margin"
+   ]
+  },
+  "pants": {
+   "turned": [
+    "waist",
+    "thigh_rest",
+    "thigh_lunge",
+    "shin"
+   ],
+   "front": [
+    "waist",
+    "thigh",
+    "shin"
+   ],
+   "flags": [
+    "hem"
+   ]
+  },
+  "boots": {
+   "turned": [
+    "foot_flat",
+    "foot_toe",
+    "shaft"
+   ],
+   "front": [
+    "foot",
+    "shaft"
+   ],
+   "flags": [
+    "tuck"
+   ]
+  },
+  "gloves": {
+   "turned": [
+    "hand_relaxed",
+    "fist",
+    "grip_palm",
+    "grip_fingers",
+    "cuff_rest?",
+    "cuff_across?",
+    "cuff_foreshort?"
+   ],
+   "front": [
+    "hand",
+    "cuff?"
+   ],
+   "flags": [
+    "cuff"
+   ]
+  },
+  "chain": {
+   "turned": [
+    "chest",
+    "chest_twist?",
+    "pendant?"
+   ],
+   "front": [
+    "chest",
+    "pendant?"
+   ],
+   "flags": [
+    "pendantSpring"
+   ]
+  },
+  "cape": {
+   "turned": [
+    "back_panel(mesh)",
+    "clasp"
+   ],
+   "front": [
+    "panel_edges",
+    "clasp"
+   ],
+   "flags": [
+    "length",
+    "physics"
+   ],
+   "note": "draws OVER weapon_back (owner)"
+  },
+  "helmet": {
+   "turned": [
+    "front_shell",
+    "back_shell"
+   ],
+   "front": [
+    "front_shell",
+    "back_shell"
+   ],
+   "flags": [
+    "hairMode=hide",
+    "maskMode"
+   ]
+  },
+  "hair": {
+   "appearance": true,
+   "turned": [
+    "back",
+    "front"
+   ],
+   "front": [
+    "back",
+    "front"
+   ],
+   "note": "no compressed variants (owner)"
+  },
+  "face": {
+   "appearance": true,
+   "turned": [
+    "existing face layers + 15 deg turn rule"
+   ],
+   "front": [
+    "existing"
+   ]
+  },
+  "mask": {
+   "appearance": true,
+   "turned": [
+    "mask"
+   ],
+   "front": [
+    "mask"
+   ],
+   "flags": [
+    "lower|full"
+   ]
+  }
+ },
+ "jointRules": {
+  "chain": "inside a limb the child draws over the parent: the parent ends in a full inked circle at the pivot, the child is cut flat (no ink) through the pivot perpendicular to its own bone",
+  "shoulder": "the upper arm starts with a full circle (r = half-width + 6, capped inside today's shoulder line); the torso edge inside it is a cut",
+  "hip": "the thigh top is a full circle tucked under the torso; the torso edge inside it is a cut",
+  "neck": "the torso's neck stub tucks under the head; its top is a cut",
+  "limits": "75 deg shoulder raise, elbows fold inward only (bone limits in the rig)"
+ },
+ "restIoU": 0.9968
+}

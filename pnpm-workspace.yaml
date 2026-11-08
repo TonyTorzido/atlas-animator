@@ -1,0 +1,7 @@
+packages:
+  - "packages/*"
+allowBuilds:
+  esbuild: true
+
+# pnpm 11 aborts a script run without a TTY when it wants to re-install first.
+verifyDepsBeforeRun: false

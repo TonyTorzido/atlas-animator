@@ -1,0 +1,165 @@
+{
+ "format": "atlas-garment-domain/1",
+ "name": "jacketb_far",
+ "skin": {
+  "slot": "upper_arm_l",
+  "attachment": "arm"
+ },
+ "groups": [
+  "upper_arm_l",
+  "forearm_l"
+ ],
+ "cuts": [
+  {
+   "name": "cuff_forearm_l",
+   "kind": "cuff",
+   "groups": [
+    "forearm_l"
+   ],
+   "points": [
+    [
+     307,
+     0,
+     0
+    ],
+    [
+     307,
+     0.24893486,
+     0.670344311
+    ],
+    [
+     429,
+     0.565163511,
+     0.113591998
+    ],
+    [
+     431,
+     0.88649077,
+     0.012468099
+    ],
+    [
+     430,
+     0.229291122,
+     0.113426875
+    ],
+    [
+     432,
+     0.563560761,
+     0.113344347
+    ],
+    [
+     435,
+     0.886738359,
+     0.010671294
+    ],
+    [
+     434,
+     0.227665423,
+     0.113178835
+    ],
+    [
+     436,
+     0.561918611,
+     0.113096258
+    ],
+    [
+     439,
+     0.88698621,
+     0.008837042
+    ],
+    [
+     438,
+     0.226001063,
+     0.112931448
+    ],
+    [
+     440,
+     0.560234765,
+     0.112847658
+    ],
+    [
+     443,
+     0.887235225,
+     0.006956251
+    ],
+    [
+     442,
+     0.224296884,
+     0.112682105
+    ],
+    [
+     257,
+     0.328883409,
+     0.558517082
+    ],
+    [
+     254,
+     0,
+     0
+    ]
+   ]
+  }
+ ],
+ "seeds": [
+  {
+   "group": "upper_arm_l",
+   "point": [
+    54,
+    0.227999743,
+    0.692595073
+   ]
+  },
+  {
+   "group": "forearm_l",
+   "point": [
+    408,
+    0.47826986,
+    0.025066114
+   ]
+  }
+ ],
+ "gaps": [],
+ "margin": 4.5,
+ "stroke": {
+  "color": "181210ff"
+ },
+ "source": {
+  "derivedBy": "scripts/views/side-domain.ts",
+  "frontDomain": "fixtures/garments/kungfu-jacket.domain.json",
+  "hemFrac": 0.0033,
+  "neckEndFrac": 1.0287,
+  "neckMidFrac": 0.9867,
+  "cuffOffsetFromDip": 0,
+  "frontCuffOffsets": [
+   1.5,
+   -1.5
+  ],
+  "cuffs": {
+   "near": {
+    "arm": {
+     "limbSlot": "forearm_r",
+     "handSlot": "hand_r",
+     "handBone": "hand_r"
+    },
+    "uDipRest": 6,
+    "uDip": 10,
+    "uCut": 10
+   },
+   "far": {
+    "arm": {
+     "limbSlot": "forearm_l",
+     "handSlot": "hand_l",
+     "handBone": "hand_l"
+    },
+    "uDipRest": -36,
+    "uDip": -26,
+    "uCut": -26
+   }
+  },
+  "hemCentre": [
+   545.1,
+   959
+  ],
+  "piece": "far"
+ }
+}

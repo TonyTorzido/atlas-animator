@@ -1,0 +1,23 @@
+{
+ "width": 64,
+ "height": 64,
+ "maxBreak": 2.0,
+ "inkMax": 40,
+ "cases": {
+  "clean": {
+   "breaks": 0,
+   "longest": 0.0,
+   "badPixels": 0
+  },
+  "gaps": {
+   "breaks": 2,
+   "longest": 12.0,
+   "badPixels": 44
+  },
+  "occluded": {
+   "breaks": 1,
+   "longest": 8.0,
+   "badPixels": 16
+  }
+ }
+}

@@ -1,0 +1,86 @@
+// Batch 12a screenshots (clip mask, hit box, image sequence, overlays toggles, dock Make sequence). Starts its own sandboxed server (never :5211).
+//   node packages/animator-editor/scripts/demo-batch12a.mjs [outDir]
+import { createRequire } from "node:module";
+import { mkdirSync } from "node:fs";
+import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import { demoServer } from "./demo-server.mjs";
+
+const here = fileURLToPath(new URL(".", import.meta.url));
+const require = createRequire(resolve(here, "../../animator/package.json"));
+const { chromium } = require("@playwright/test");
+const out = resolve(process.argv[2] && !process.argv[2].startsWith("--") ? process.argv[2] : resolve(here, "../../../test-results/batch-shots/b12"));
+const { url } = await demoServer(undefined);
+mkdirSync(out, { recursive: true });
+const browser = await chromium.launch({ args: ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"] });
+const page = await browser.newPage({ viewport: { width: 1600, height: 1000 } });
+const errors = [];
+page.on("pageerror", (e) => errors.push(String(e)));
+page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
+await page.addInitScript(() => {
+  const Real = window.WebSocket;
+  const Stub = function (u, p) {
+    if (String(p ?? "").includes("vite")) return { addEventListener() {}, removeEventListener() {}, send() {}, close() {}, readyState: 1 };
+    return new Real(u, p);
+  };
+  Stub.prototype = Real.prototype;
+  Object.assign(Stub, { CONNECTING: 0, OPEN: 1, CLOSING: 2, CLOSED: 3 });
+  window.WebSocket = Stub;
+});
+await page.goto(url);
+await page.waitForFunction(() => !!window.atlasEditor, null, { timeout: 60_000 });
+await page.addStyleTag({ content: "#restorebar { display: none !important; }" });
+await page.waitForTimeout(1500);
+const E = (fn, arg) => page.evaluate(fn, arg);
+let failed = 0;
+const check = (label, ok, detail) => {
+  if (!ok) failed++;
+  console.log(`${ok ? "PASS" : "FAIL"} ${label}${detail !== undefined ? ` ${JSON.stringify(detail)}` : ""}`);
+};
+const shot = async (name) => {
+  await page.waitForTimeout(500);
+  await page.screenshot({ path: resolve(out, name) });
+};
+const raw = () => E(() => window.atlasEditor.setupRaw());
+const edits = () => E(() => window.atlasEditor.setupState().undoable);
+await E(() => window.atlasEditor.workspace("rig"));
+await page.waitForTimeout(800);
+await E(() => window.atlasEditor.showTab("rig"));
+await page.waitForTimeout(500);
+await E(() => window.atlasEditor.setupSelectSlot("skin_forearm_near"));
+await page.waitForTimeout(400);
+await E(() => window.atlasEditor.inspectorOpen("slot.images", true));
+await page.waitForTimeout(300);
+await shot("01-slot-add-buttons.png");
+await page.click("#setup-add-boundingbox");
+await page.waitForTimeout(700);
+check("hit box added", (await raw()).skins.body.attachments.skin_forearm_near_hitbox.hitbox?.type === "boundingbox");
+await shot("02-hit-box-page-and-stage.png");
+await page.click("#ctx-overlays");
+await page.waitForTimeout(400);
+await shot("03-overlays-toggles.png");
+await page.keyboard.press("Escape");
+await E(() => window.atlasEditor.setupSelectSlot("skin_forearm_near"));
+await page.click("#setup-add-clipping");
+await page.waitForTimeout(800);
+await shot("04-clip-mask-page-and-stage.png");
+await page.fill("#poly-x0", "-5");
+await page.press("#poly-x0", "Enter");
+await page.waitForTimeout(600);
+await shot("05-clip-mask-clipping-the-rig.png");
+await page.fill("#outliner .ol-search", "clip");
+await page.waitForTimeout(500);
+await shot("06-tree-badge.png");
+await page.fill("#outliner .ol-search", "");
+await E(() => window.atlasEditor.setupSelectSlot("shirt_tip_far", "tip"));
+await page.waitForTimeout(400);
+await E(() => window.atlasEditor.inspectorOpen("att.sequence", true));
+await page.waitForTimeout(300);
+await shot("07-sequence-card-off.png");
+await page.click("#seq-make");
+await page.waitForTimeout(700);
+await shot("08-sequence-card-on.png");
+console.log(errors.length ? `console errors: ${errors.join(" | ")}` : "no console errors");
+console.log(failed ? `${failed} FAILED` : "all passed");
+await browser.close();
+process.exit(failed || errors.length ? 1 : 0);

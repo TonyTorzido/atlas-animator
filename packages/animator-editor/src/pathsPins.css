@@ -1,0 +1,115 @@
+/*
+ * Atlas Animator editor: styles for the motion path and pin controls (motionPath.ts, pins.ts). They stack at the canvas's
+ * bottom-left in the Animate and Pro workspaces. Colours come from the tokens in index.html (:root).
+ */
+
+#pathstack {
+  display: none;
+  position: relative;
+  z-index: 6;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+body.ws-animate:not(.setup) #pathstack,
+body.ws-pro:not(.setup) #pathstack {
+  display: flex;
+}
+
+/* Small icon buttons in the canvas toolbar; each one opens its options as a popover under the toolbar. */
+#pathsbar,
+#pinsbar {
+  position: relative;
+}
+
+.tb-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 30px;
+  height: 28px;
+  padding: 0 7px;
+  background: rgba(20, 23, 29, 0.85);
+}
+
+/* From 1600 px up the icon gets its word (the name is the aria-label), so the icon alone never has to be guessed. */
+@media (min-width: 1600px) {
+  .tb-icon::after {
+    content: attr(aria-label);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+  }
+}
+
+.tb-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+#paths-opts,
+#pins-body {
+  position: absolute;
+  top: 32px;
+  right: 0;
+  z-index: var(--z-popover);
+  width: max-content;
+  max-width: 420px;
+  box-shadow: var(--shadow-2);
+}
+
+#paths-opts,
+#pins-body {
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  padding: 6px 8px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: var(--fs-sm);
+}
+
+#pathsbar.open #paths-opts,
+#pinsbar.open #pins-body {
+  display: flex;
+}
+
+#paths-toggle,
+#pins-toggle {
+  font-weight: 700;
+}
+
+#pins-body {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#pins-add,
+#pins-list,
+.pin-row,
+.pins-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+#pins-list {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#pins-from,
+#pins-to {
+  width: 54px;
+}
+
+.pin-add[data-kind="hand"],
+.pin-chip[data-kind="hand"] { border-left: 4px solid var(--accent); }
+.pin-add[data-kind="foot"],
+.pin-chip[data-kind="foot"] { border-left: 4px solid var(--ok); }
+.pin-add[data-kind="grip"],
+.pin-chip[data-kind="grip"] { border-left: 4px solid var(--accent2); }

@@ -1,0 +1,35 @@
+{
+ "format": "atlas-held/1",
+ "name": "sword",
+ "hand": {
+  "bone": "hand_l",
+  "fistSlot": "hand"
+ },
+ "grip": {
+  "at": [
+   344.612,
+   951
+  ],
+  "angle": 131.891,
+  "curve": {
+   "maxDegPerSecond": 2700,
+   "minReversalGapFrames": 3
+  }
+ },
+ "art": {
+  "axis": 90,
+  "behind": 96,
+  "ahead": 434,
+  "halfWidth": 82,
+  "minAhead": 400,
+  "fistRadius": 48,
+  "handleHalfWidth": 24
+ },
+ "drawBefore": "hand",
+ "stroke": {
+  "color": "1c1f26ff"
+ },
+ "source": {
+  "note": "PROTOTYPE (turned-front, 2026-10-19): fixtures/garments/sword-live.held.json (live sprite, same art and size) on armlayer-turn15-face-shift.anim.json: grip.at = the front chop's grip point moved with the left hand, grip.angle solved by scripts/views/turnfront-round2-sword-clips.ts so the ready blade is 25 deg off vertical, out."
+ }
+}

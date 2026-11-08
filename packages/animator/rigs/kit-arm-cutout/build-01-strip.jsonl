@@ -1,0 +1,22 @@
+{"op": "clip.remove", "name": "still_ready"}
+{"op": "clip.remove", "name": "still_axe_raised"}
+{"op": "clip.remove", "name": "still_chop_contact"}
+{"op": "clip.remove", "name": "still_follow"}
+{"op": "clip.remove", "name": "still_overhead"}
+{"op": "clip.remove", "name": "still_across_chest"}
+{"op": "clip.remove", "name": "still_low_guard"}
+{"op": "clip.remove", "name": "still_walk_contact"}
+{"op": "clip.remove", "name": "still_walk_pass"}
+{"op": "clip.remove", "name": "still_gather_chop"}
+{"op": "clip.remove", "name": "still_gather_mine"}
+{"op": "driven.remove", "name": "shoulder_l_socket"}
+{"op": "driven.remove", "name": "arm_l_front"}
+{"op": "driven.remove", "name": "arm_l_fold"}
+{"op": "attachment.remove", "skin": "body", "slot": "arm_l", "name": "straight"}
+{"op": "attachment.remove", "skin": "body", "slot": "arm_l", "name": "curled"}
+{"op": "attachment.remove", "skin": "body", "slot": "shoulder_l", "name": "rest"}
+{"op": "attachment.remove", "skin": "body", "slot": "shoulder_l", "name": "raised"}
+{"op": "slot.remove", "name": "arm_l"}
+{"op": "slot.remove", "name": "shoulder_l"}
+{"op": "bone.add", "name": "wrist_l", "parent": "forearm_l", "world": [358.31, 893], "tip": [348.0950872887532, 914.71763242855]}
+{"op": "constraint.add", "kind": "transform", "constraint": {"name": "wrist_l_half", "bones": ["wrist_l"], "target": "hand_l", "local": true, "relative": true, "mixRotate": 0.5, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}}

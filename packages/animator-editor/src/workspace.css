@@ -1,0 +1,634 @@
+/*
+ * Atlas Animator editor: styles for the game-tailored layer (workspaces, Home, placeholders, dock and animate bar).
+ * Colours come from the tokens in index.html (:root). No native scrollbars: index.html hides them everywhere.
+ */
+
+/* The hidden attribute must win over the display values the editor's own rules set (.seg, .label ...). */
+[data-ws][hidden],
+#tabs button[hidden],
+#home[hidden],
+#soon[hidden] {
+  display: none !important;
+}
+
+/* ---- Header: logo and the workspace switcher ------------------------------------------------------------------------ */
+
+header h1 {
+  margin: 0 6px 0 0;
+  font-size: inherit;
+}
+
+#logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  padding: 4px 6px;
+  margin-left: -6px;
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  border-radius: 6px;
+}
+
+#logo svg {
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#logo:hover:not(:disabled) {
+  background: var(--panel2);
+}
+
+#wsbar {
+  margin-right: 8px;
+  flex: none;
+}
+
+#wsbar button {
+  padding: 0 14px;
+  font-weight: 600;
+  font-size: var(--fs-md);
+}
+
+
+
+@media (max-width: 1599px) {
+  #wsbar button {
+    padding: 0 10px;
+  }
+}
+
+/* ---- Header: outfit picker, new-clip popover, one row at every width ---------------------------------- */
+
+#outfits {
+  position: relative;
+}
+
+#outfits-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#outfits-menu {
+  display: none;
+  position: fixed;
+  z-index: var(--z-popover);
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px;
+  min-width: 150px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow-2);
+}
+
+#outfits-menu.open {
+  display: flex;
+}
+
+#outfits-menu button {
+  text-align: left;
+  justify-content: flex-start;
+  height: var(--ctl-md);
+}
+
+/* The two pro rigs are the everyday picks; the labels (Outfit, Mode, Clip) drop out first when the row gets tight. */
+@media (max-width: 1499px) {
+  header .label {
+    display: none;
+  }
+  header .seg button {
+    padding: 0 8px;
+  }
+}
+
+/* ---- Home -------------------------------------------------------------------------------------------------------- */
+
+#home {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: var(--hdr, 44px);
+  z-index: 40;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: auto;
+  padding: clamp(24px, 9vh, 96px) 32px 24px;
+  background:
+    radial-gradient(1200px 520px at 50% -10%, rgba(240, 184, 74, 0.08), transparent 60%),
+    radial-gradient(900px 500px at 90% 110%, rgba(95, 179, 255, 0.07), transparent 60%),
+    var(--bg);
+}
+
+.home-inner {
+  width: min(1180px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.home-hero h2 {
+  margin: 0;
+  font-size: var(--fs-h1);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.home-hero p {
+  margin: 6px 0 0;
+  font-size: var(--fs-lg);
+  color: var(--dim);
+}
+
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.home-cards.five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.home-milestones { display: flex; flex-wrap: wrap; gap: var(--s2); align-items: center; margin-top: var(--s2); }
+.home-recovery-row { align-items: center; gap: var(--s2); }
+
+@media (max-width: 1100px) {
+  .home-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.home-card {
+  --c: var(--accent);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-height: 218px;
+  padding: 22px 22px 18px;
+  text-align: left;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--panel2), var(--panel));
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.14s, border-color 0.14s, box-shadow 0.14s;
+}
+
+.home-card.c-animate { --c: var(--accent); }
+.home-card.c-swag { --c: var(--c-constraint); }
+.home-card.c-rig { --c: var(--accent2); }
+.home-card.c-ship { --c: var(--ok); }
+
+.home-card:hover:not(:disabled) {
+  transform: translateY(-3px);
+  border-color: var(--c);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 14px 32px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--c);
+}
+
+.home-card:focus-visible {
+  outline: 2px solid var(--c);
+  outline-offset: 3px;
+}
+
+.home-badge {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 12px;
+  border-radius: 16px;
+  color: var(--c);
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 40%, transparent);
+}
+
+.home-badge svg {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.home-card-title {
+  font-size: var(--fs-h3);
+  font-weight: 650;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.home-card-blurb {
+  font-size: var(--fs-lg);
+  line-height: 1.4;
+  color: var(--dim);
+}
+
+.home-card-cta {
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--c);
+}
+
+.home-card-cta::after {
+  content: " \203A";
+  transition: margin-left 0.14s;
+}
+
+.home-card:hover .home-card-cta::after {
+  margin-left: 4px;
+}
+
+.home-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.home-continue,
+.home-recent {
+  min-width: 0;
+}
+
+.home-clip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px 8px 8px;
+  text-align: left;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.home-clip:hover:not(:disabled) {
+  background: var(--panel2);
+}
+
+.home-clip-large {
+  width: min(460px, 100%);
+  padding: 10px 18px 10px 10px;
+  border-color: var(--accent-line);
+  background: linear-gradient(90deg, rgba(240, 184, 74, 0.1), var(--panel) 70%);
+}
+
+.home-clip-large:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.home-thumb {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg0);
+  border: 1px solid var(--line);
+  color: var(--dim);
+}
+
+.home-clip-large .home-thumb {
+  width: 72px;
+  height: 72px;
+}
+
+.home-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.home-thumb svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.home-clip-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 2px;
+}
+
+.home-clip-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+
+.home-clip-large .home-clip-name {
+  font-size: var(--fs-h3);
+}
+
+.home-clip-meta {
+  font-size: var(--fs-sm);
+  color: var(--dim);
+}
+
+.home-clip-meta.dirty {
+  color: var(--warn);
+}
+
+.home-recent-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.home-recent-row .home-clip {
+  flex: 0 1 230px;
+  min-width: 0;
+}
+
+.home-recent-empty {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s3);
+}
+
+.home-progress {
+  font-variant-numeric: tabular-nums;
+}
+
+.home-empty {
+  font-size: var(--fs-md);
+  color: var(--dim);
+}
+
+.home-foot {
+  margin: 4px 0 0;
+  font-size: var(--fs-sm);
+  color: var(--dim);
+}
+
+/* ---- Coming-next panel (Swag, Ship) ------------------------------------------------------------------------------- */
+
+/* The Ship screen sits over the whole work area (left, canvas, side panel, timeline), under the header and the status bar. */
+#soon {
+  grid-area: 2 / 1 / 4 / -1;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  padding: var(--s5);
+  background: var(--bg);
+}
+
+.soon-card {
+  width: min(560px, 100%);
+  padding: var(--s5);
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--panel2), var(--panel));
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s4);
+}
+
+.soon-card h2 {
+  margin: 0;
+  font-size: var(--fs-h2);
+}
+
+.soon-card p {
+  margin: 0;
+  font-size: var(--fs-md);
+  line-height: 1.4;
+  color: var(--text2);
+}
+
+.ship-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s2);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--line);
+}
+
+.ship-h {
+  margin: 0;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.ship-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2);
+  font-size: var(--fs-sm);
+  color: var(--text2);
+}
+
+.ship-progress {
+  margin: 0 0 0 var(--s2) !important;
+  font-size: var(--fs-sm) !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.soon-card .ship-note {
+  font-size: var(--fs-sm);
+}
+
+.ship-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2) var(--s3);
+  width: 100%;
+}
+
+.ship-row .btn,
+.ship-row .btn-primary {
+  min-width: 130px;
+}
+
+.ship-help {
+  flex: 1 1 200px;
+  font-size: var(--fs-sm);
+  color: var(--text2);
+}
+
+.ship-all {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+  font-size: var(--fs-md);
+}
+
+.ship-out {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.ship-out:empty {
+  display: none;
+}
+
+.ship-out .imgs {
+  display: flex;
+  gap: var(--s2);
+}
+
+.ship-out img {
+  max-width: 240px;
+  max-height: 240px;
+  image-rendering: pixelated;
+}
+
+.soon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+
+
+/* ---- Containers for later phases: the phone dock and the animate bar ---------------------------------------------- */
+
+#dock {
+  grid-area: dock;
+  display: none;
+  background: var(--panel);
+  border-left: 1px solid var(--line);
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#app.dockopen {
+  grid-template-columns: var(--lw) minmax(0, 1fr) 260px var(--rw);
+  grid-template-areas: "top top top top" "left view dock right" "time time time right" "stat stat stat stat";
+}
+
+#app.dockopen #dock {
+  display: block;
+}
+
+/* ---- Workspace tweaks ----------------------------------------------------------------------------------------------- */
+
+/* Ship has nothing to pose: keep the timeline out of the way of its panel. */
+
+
+/* ---- Game view: its own column, in place of the phone dock (it shows game size itself), never over the posing canvas ------ */
+
+#app.gvopen,
+#app.gvopen.dockopen,
+#app.gvopen.dockopen.dockrail {
+  grid-template-columns: var(--lw) minmax(0, 1fr) 500px var(--rw);
+  grid-template-areas: "top top top top" "left view dock right" "time time time right" "stat stat stat stat";
+}
+
+#app.gvopen #dock {
+  display: none !important;
+}
+
+#app > #gameview {
+  grid-area: dock;
+  position: static !important;
+  inset: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border: 0 !important;
+  border-left: 1px solid var(--line) !important;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden auto;
+}
+
+/* Under the Ship screen the editor is out of reach: hidden from sight, tab order and clicks (its buttons still answer to the Ship buttons). */
+body.ws-ship :is(#left, #view, #right, #dock, footer) {
+  visibility: hidden;
+}
+
+/* The new-clip row belongs to the clip picker, which only Animate and Pro show. */
+body:is(.ws-home, .ws-swag, .ws-rig, .ws-ship) #newclip {
+  display: none !important;
+}
+
+/* Phone preview needs a clip: not on Home. */
+body.ws-home #phonebtn {
+  display: none !important;
+}
+
+/* Ship: why an action is unavailable, and the Spine export result with its path. */
+.ship-row .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.ship-help.why { color: var(--warn); }
+.ship-result { width: 100%; box-sizing: border-box; padding: var(--s2) var(--s3); border: 1px solid var(--line); border-radius: 6px; background: var(--panel); font-size: var(--fs-sm); color: var(--text2); display: flex; flex-direction: column; gap: 2px; }
+.ship-result[hidden] { display: none; }
+.ship-result.ok { border-color: var(--ok); }
+.ship-result.bad { border-color: var(--bad); color: var(--bad); }
+.ship-result .path { font-family: ui-monospace, Consolas, monospace; color: var(--text); word-break: break-all; }
+.ship-result .acts { display: flex; gap: var(--s2); margin-top: var(--s1); }
+
+/* ---- Home: first-run steps (home.ts) ---- */
+.home-steps { display: flex; flex-direction: column; gap: var(--s2); margin-top: var(--s3); }
+.home-steps-list { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); margin: 0; padding: 0; }
+.home-step { display: grid; grid-template-columns: 24px minmax(0, 1fr); column-gap: var(--s2); row-gap: 2px; padding: var(--s3); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+.home-step-n { grid-row: 1 / 3; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--accent-soft); border: 1px solid var(--accent-line); color: var(--accent); font-size: var(--fs-sm); font-weight: 700; }
+.home-step-title { font-size: var(--fs-md); font-weight: 600; color: var(--text); }
+.home-step-text { font-size: var(--fs-sm); line-height: 1.4; color: var(--text2); }
+.home-foot .btn { vertical-align: middle; }
+@media (max-width: 1100px) { .home-steps-list { grid-template-columns: 1fr; } }
+
+/* Rig picker groups */
+#outfits-menu .outfit-head {
+  margin: 4px 4px 0;
+}
+#outfits-menu .outfit-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+#outfits-menu .outfit-group[hidden] {
+  display: none;
+}
+#outfits-menu .outfit-empty,
+#outfits-menu .outfit-note {
+  padding: 2px 6px;
+  max-width: 220px;
+  white-space: normal;
+}
+
+/* Home sections keep their height when the page is taller than the window (the page scrolls; nothing is squashed). */
+.home-inner > * { flex-shrink: 0; }
+.home-clip { height: auto; min-height: 72px; }

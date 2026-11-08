@@ -1,0 +1,15 @@
+{
+  "format": "atlas-anim@1",
+  "name": "minimal",
+  "canvas": {
+    "width": 256,
+    "height": 256,
+    "originX": 128,
+    "originY": 240
+  },
+  "bones": [
+    {
+      "name": "root"
+    }
+  ]
+}

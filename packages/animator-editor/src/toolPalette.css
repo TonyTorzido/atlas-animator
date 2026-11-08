@@ -1,0 +1,87 @@
+/* The tool palette (toolPalette.ts) and the stage context bar (#vtop, filled by transformStrip.ts, canvasTools.ts and viewHud.ts). */
+
+/* ---- Palette: a vertical rail on the stage's left edge, icon + label per tool ---- */
+#toolpalette {
+  position: absolute;
+  left: var(--s2);
+  top: calc(var(--vt-h, 40px) + var(--s4));
+  z-index: var(--z-hud);
+  display: grid;
+  grid-template-columns: repeat(var(--tp-cols, 1), 64px);
+  gap: 2px;
+  padding: var(--s1);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow-1);
+}
+#toolpalette[data-cols="2"] { --tp-cols: 2; }
+.tp-head { grid-column: 1 / -1; padding: var(--s1) 0 2px; font-size: var(--fs-xs); letter-spacing: 0.06em; text-transform: uppercase; text-align: center; color: var(--muted); }
+.tp-head:not(:first-child) { margin-top: var(--s1); border-top: 1px solid var(--line); padding-top: var(--s2); }
+.tp-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; width: 64px; height: 44px; padding: 0; border-color: transparent; background: transparent; color: var(--text2); border-radius: 6px; }
+.tp-btn .ico { width: 16px; height: 16px; }
+.tp-label { font-size: var(--fs-xs); line-height: 12px; max-width: 62px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tp-btn:hover:not(:disabled) { background: var(--panel3); color: var(--text); }
+.tp-btn.on { background: var(--accent); color: var(--accent-ink); font-weight: 700; border-color: var(--accent); }
+.tp-btn:disabled { opacity: 0.4; }
+body.xs-ruler #toolpalette { left: 28px; top: calc(var(--vt-h, 40px) + 34px); }
+/* Where there is no stage tool: Home and Ship hide it; Swag keeps Select only. */
+body:is(.ws-home, .ws-ship) #toolpalette { display: none; }
+body.ws-swag #toolpalette .tp-btn:not(#tp-select), body.ws-swag #toolpalette .tp-head { display: none; }
+
+/* ---- Stage context bar: one row of tool options above the canvas ---- */
+#vtop { pointer-events: auto; padding: 3px var(--s2); min-height: var(--ctl-lg); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow-1); }
+.ctx-grp { display: inline-flex; align-items: center; gap: var(--s1); }
+.ctx-grp:empty { display: none; }
+.ctx-cap { font-size: var(--fs-xs); letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim); margin-right: var(--s1); }
+#ctx-axes { order: 1; }
+#ctx-keep { order: 2; }
+#ctx-snap { order: 3; }
+#ctx-overlays { order: 4; display: inline-flex; align-items: center; gap: var(--s1); }
+#vtop > .spacer { order: 5; }
+#vtop > #hitlock { order: 6; }
+#vtop > #setuphud { order: 7; padding: 0; background: none; border: 0; box-shadow: none; }
+#vtop > #ctx-view { order: 8; }
+#vtop > #ctx-vis { order: 9; }
+#vtop > #setupsavebox { order: 10; }
+#vtop .ovf-btn { order: 11; }
+#vtop > .ovf-pop { order: 12; }
+#ctx-view .readout { min-width: 40px; text-align: center; color: var(--dim); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
+#ctx-view button, #ctx-vis button { height: var(--ctl-sm); padding: 0 var(--s2); }
+#ctx-view #zoomin, #ctx-view #zoomout { width: var(--ctl-sm); padding: 0; }
+#ctx-view #zoom { padding: 0; }
+.ctx-btn { height: var(--ctl-sm); padding: 0 var(--s2); font-size: var(--fs-sm); }
+.ctx-btn .ico { width: 14px; height: 14px; }
+/* Buttons moved into the context bar: text buttons, 24 px, one look. */
+#vtop .xs-btn, #vtop .vh-btn.ctx-text { width: auto; height: var(--ctl-sm); padding: 0 var(--s2); display: inline-flex; align-items: center; gap: var(--s1); font-size: var(--fs-sm); white-space: nowrap; }
+#vtop .vh-btn.ctx-text .vh-txt { display: inline; font-size: var(--fs-sm); }
+#vtop .seg { display: inline-flex; }
+#vtop .xs-btn svg, #vtop .vh-btn .ico { width: 14px; height: 14px; }
+/* Setup keeps Images, Animate has nothing to keep: only what applies shows. */
+body.ws-animate:not(.setup) #xs-comp-images { display: none; }
+/* Keep children / Axes do nothing in Swag or Ship. */
+body:is(.ws-swag) :is(#ctx-axes, #ctx-keep, #ctx-snap, #ctx-view .readout) { display: none; }
+
+/* ---- Overlays popover (a fixed card under the Overlays button; sections in columns, no scrollbars) ---- */
+#ctx-pop { position: fixed; z-index: var(--z-popover); display: grid; grid-template-columns: repeat(3, minmax(168px, 1fr)); gap: var(--s2) var(--s4); width: min(720px, calc(100vw - 24px)); padding: var(--s3); }
+#ctx-pop[hidden] { display: none; }
+.ctx-sec { display: flex; flex-direction: column; gap: var(--s1); min-width: 0; }
+.ctx-sec:has(.ctx-body:empty) { display: none; }
+.ctx-h { margin: 0; font-size: var(--fs-xs); letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim); font-weight: 600; }
+.ctx-body { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s1); min-width: 0; }
+#ctx-pop .vh-btn { width: auto; height: var(--ctl-sm); padding: 0 var(--s2); justify-content: flex-start; border-color: var(--line); background: var(--panel2); }
+#ctx-pop .vh-btn .vh-txt { display: inline; font-size: var(--fs-sm); }
+#ctx-pop .vh-btn.on { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent); }
+#ctx-pop #vh-onion-set, #ctx-pop #vh-ab { width: auto; margin: 0; }
+#ctx-pop .vh-block { display: flex; flex-direction: column; gap: var(--s1); width: 100%; padding: var(--s1) 0 0; }
+#ctx-pop .vh-block[hidden] { display: none; }
+#ctx-pop .xs-btn { width: auto; height: var(--ctl-sm); padding: 0 var(--s2); display: inline-flex; align-items: center; gap: var(--s1); font-size: var(--fs-sm); }
+#ctx-pop .xs-table { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+#ctx-pop .xs-grow { height: var(--ctl-sm); }
+#ctx-pop .xs-gname { font-size: var(--fs-sm); }
+#ctx-pop .xs-ebtn { width: var(--ctl-sm); height: var(--ctl-sm); }
+#ctx-pop #xs-zoom { width: 100%; height: var(--ctl-sm); writing-mode: horizontal-tb; direction: ltr; margin: 0; }
+#ctx-pop #bonesize { width: 96px; }
+#ctx-pop #boneview { width: auto; padding: 0 var(--s2); height: var(--ctl-sm); display: inline-flex; align-items: center; gap: var(--s1); font-size: var(--fs-sm); }
+#ctx-pop #bgs button { width: 24px; height: 24px; padding: 0; }
+#ctx-pop #gate-overlay { position: static; width: 100%; max-width: none; z-index: auto; box-shadow: none; background: none; border: 0; padding: 0; }

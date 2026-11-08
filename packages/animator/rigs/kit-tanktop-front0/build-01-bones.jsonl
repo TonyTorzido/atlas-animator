@@ -1,0 +1,29 @@
+{"op": "bone.add", "name": "pelvis", "parent": "root", "world": [542.0, 960.0], "tip": [542.0, 1010.0]}
+{"op": "bone.add", "name": "chest", "parent": "pelvis", "world": [542.0, 960.0], "tip": [542.0, 660.0]}
+{"op": "bone.add", "name": "neck", "parent": "chest", "world": [542.0, 700.0], "tip": [542.0, 650.0]}
+{"op": "bone.add", "name": "head", "parent": "neck", "world": [542, 650], "tip": [542, 400]}
+{"op": "bone.add", "name": "upper_arm_l", "parent": "chest", "world": [436, 729], "tip": [391.5, 809]}
+{"op": "bone.add", "name": "forearm_l", "parent": "upper_arm_l", "world": [391.5, 809], "tip": [352, 893]}
+{"op": "bone.add", "name": "hand_l", "parent": "forearm_l", "world": [352, 893], "tip": [334.98, 929.18]}
+{"op": "bone.add", "name": "upper_arm_r", "parent": "chest", "world": [648, 729], "tip": [692.5, 809]}
+{"op": "bone.add", "name": "forearm_r", "parent": "upper_arm_r", "world": [692.5, 809], "tip": [732, 893]}
+{"op": "bone.add", "name": "hand_r", "parent": "forearm_r", "world": [732, 893], "tip": [749.02, 929.18]}
+{"op": "bone.add", "name": "thigh_l", "parent": "pelvis", "world": [466, 1000], "tip": [458, 1105]}
+{"op": "bone.add", "name": "shin_l", "parent": "thigh_l", "world": [458, 1105], "tip": [455, 1170]}
+{"op": "bone.add", "name": "foot_l", "parent": "shin_l", "world": [455, 1170], "tip": [438, 1215]}
+{"op": "bone.add", "name": "thigh_r", "parent": "pelvis", "world": [618, 1000], "tip": [626, 1105]}
+{"op": "bone.add", "name": "shin_r", "parent": "thigh_r", "world": [626, 1105], "tip": [629, 1170]}
+{"op": "bone.add", "name": "foot_r", "parent": "shin_r", "world": [629, 1170], "tip": [646, 1215]}
+{"op": "bone.add", "name": "weapon", "parent": "hand_l", "world": [352, 893], "tip": [406.29252249527633, 918.5405951594694]}
+{"op": "bone.set", "name": "upper_arm_l", "role": "limb"}
+{"op": "bone.set", "name": "forearm_l", "role": "limb"}
+{"op": "bone.set", "name": "hand_l", "role": "limb"}
+{"op": "bone.set", "name": "thigh_l", "role": "limb"}
+{"op": "bone.set", "name": "shin_l", "role": "limb"}
+{"op": "bone.set", "name": "foot_l", "role": "limb"}
+{"op": "bone.set", "name": "upper_arm_r", "role": "limb"}
+{"op": "bone.set", "name": "forearm_r", "role": "limb"}
+{"op": "bone.set", "name": "hand_r", "role": "limb"}
+{"op": "bone.set", "name": "thigh_r", "role": "limb"}
+{"op": "bone.set", "name": "shin_r", "role": "limb"}
+{"op": "bone.set", "name": "foot_r", "role": "limb"}

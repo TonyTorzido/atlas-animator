@@ -1,0 +1,35 @@
+{
+ "format": "atlas-held/1",
+ "name": "sword",
+ "hand": {
+  "bone": "hand_l",
+  "fistSlot": "hand"
+ },
+ "grip": {
+  "at": [
+   341,
+   951
+  ],
+  "angle": 131.891,
+  "curve": {
+   "maxDegPerSecond": 2700,
+   "minReversalGapFrames": 3
+  }
+ },
+ "art": {
+  "axis": 90,
+  "behind": 96,
+  "ahead": 434,
+  "halfWidth": 82,
+  "minAhead": 400,
+  "fistRadius": 48,
+  "handleHalfWidth": 24
+ },
+ "drawBefore": "hand",
+ "stroke": {
+  "color": "1c1f26ff"
+ },
+ "source": {
+  "note": "PROTOTYPE (sword chop round, 2026-10-17): the LIVE sword sprite (a project sprite, the art the live render draws) at the live weapon/body size ratio: live weapon scale 0.045 x 3.6 frame px per texture px over the live body's 0.2356 frame px per canvas px = 0.687 canvas px per texture px; art docs/plans/atlas-animator-demos/attacks/sword-chop/art/sword-live-held.png painted straight down (axis 90) with the grip on the handle just under the guard at grip.at. Box 93 px behind (pommel), 432 ahead (tip), guard half-width 81. grip.angle is solved by scripts/sword-chop-clips.ts for the full-body idle (blade 25 deg off vertical, outward)."
+ }
+}

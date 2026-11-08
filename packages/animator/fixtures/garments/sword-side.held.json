@@ -1,0 +1,35 @@
+{
+ "format": "atlas-held/1",
+ "name": "sword",
+ "hand": {
+  "bone": "hand_r",
+  "fistSlot": "hand_r"
+ },
+ "grip": {
+  "at": [
+   666,
+   966
+  ],
+  "angle": 98.888,
+  "curve": {
+   "maxDegPerSecond": 2700,
+   "minReversalGapFrames": 3
+  }
+ },
+ "art": {
+  "axis": 90,
+  "behind": 96,
+  "ahead": 434,
+  "halfWidth": 82,
+  "minAhead": 400,
+  "fistRadius": 48,
+  "handleHalfWidth": 24
+ },
+ "drawBefore": "hand_r",
+ "stroke": {
+  "color": "1c1f26ff"
+ },
+ "source": {
+  "note": "PROTOTYPE (side sword go/no-go, scripts/views/side-sword-clips.ts): sword-live.held.json (the LIVE sword sprite at the live weapon/body size) on the turned-side rig's near hand hand_r. grip.at = the side near fist's opaque centre at setup; the art is the live art translated by (325, 15) only. grip.angle solved for the idle carry: blade 45 deg up and forward (toward the facing, screen-left)."
+ }
+}

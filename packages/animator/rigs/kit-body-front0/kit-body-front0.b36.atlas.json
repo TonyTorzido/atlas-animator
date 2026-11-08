@@ -1,0 +1,2650 @@
+{
+ "format": "atlas-pack@1",
+ "scale": 1,
+ "pages": [
+  {
+   "file": "kit-body-front0.b36.0.png",
+   "width": 1996,
+   "height": 1928,
+   "regions": {
+    "body/weapon__double_axe": {
+     "x": 2,
+     "y": 2,
+     "width": 380,
+     "height": 671
+    },
+    "body/head__head": {
+     "x": 384,
+     "y": 2,
+     "width": 388,
+     "height": 482
+    },
+    "body/hair_back__hair": {
+     "x": 774,
+     "y": 2,
+     "width": 608,
+     "height": 431
+    },
+    "body/skin_torso__torso": {
+     "x": 1384,
+     "y": 2,
+     "width": 264,
+     "height": 386
+    },
+    "body/skin_arm_straight_near__straight": {
+     "x": 1650,
+     "y": 2,
+     "width": 201,
+     "height": 315
+    },
+    "body/skin_upper_arm_near__straight": {
+     "x": 2,
+     "y": 675,
+     "width": 201,
+     "height": 315
+    },
+    "body/skin_arm_straight_far__straight": {
+     "x": 205,
+     "y": 675,
+     "width": 199,
+     "height": 313
+    },
+    "body/skin_upper_arm_far__straight": {
+     "x": 406,
+     "y": 675,
+     "width": 199,
+     "height": 313
+    },
+    "chest.jacket_b/shirt_torso__torso": {
+     "x": 607,
+     "y": 675,
+     "width": 249,
+     "height": 289
+    },
+    "chest.leather/shirt_torso__torso": {
+     "x": 858,
+     "y": 675,
+     "width": 238,
+     "height": 282
+    },
+    "body/shirt_torso__torso": {
+     "x": 1098,
+     "y": 675,
+     "width": 234,
+     "height": 275
+    },
+    "chest.jacket_b/shirt_sleeve_near__c020": {
+     "x": 1334,
+     "y": 675,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c025": {
+     "x": 1515,
+     "y": 675,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c030": {
+     "x": 1696,
+     "y": 675,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c035": {
+     "x": 2,
+     "y": 992,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c040": {
+     "x": 183,
+     "y": 992,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c045": {
+     "x": 364,
+     "y": 992,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c050": {
+     "x": 545,
+     "y": 992,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c055": {
+     "x": 726,
+     "y": 992,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c060": {
+     "x": 907,
+     "y": 992,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c065": {
+     "x": 1088,
+     "y": 992,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c070": {
+     "x": 1269,
+     "y": 992,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c075": {
+     "x": 1450,
+     "y": 992,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c080": {
+     "x": 1631,
+     "y": 992,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c085": {
+     "x": 1812,
+     "y": 992,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c090": {
+     "x": 2,
+     "y": 1226,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c095": {
+     "x": 183,
+     "y": 1226,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c100": {
+     "x": 364,
+     "y": 1226,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c105": {
+     "x": 545,
+     "y": 1226,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c110": {
+     "x": 726,
+     "y": 1226,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c115": {
+     "x": 907,
+     "y": 1226,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c120": {
+     "x": 1088,
+     "y": 1226,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c125": {
+     "x": 1269,
+     "y": 1226,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c130": {
+     "x": 1450,
+     "y": 1226,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c135": {
+     "x": 1631,
+     "y": 1226,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__c140": {
+     "x": 1812,
+     "y": 1226,
+     "width": 179,
+     "height": 232
+    },
+    "chest.jacket_b/shirt_sleeve_near__sleeve": {
+     "x": 2,
+     "y": 1460,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c020": {
+     "x": 183,
+     "y": 1460,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c025": {
+     "x": 364,
+     "y": 1460,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c030": {
+     "x": 545,
+     "y": 1460,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c035": {
+     "x": 726,
+     "y": 1460,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c040": {
+     "x": 907,
+     "y": 1460,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c045": {
+     "x": 1088,
+     "y": 1460,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c050": {
+     "x": 1269,
+     "y": 1460,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c055": {
+     "x": 1450,
+     "y": 1460,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c060": {
+     "x": 1631,
+     "y": 1460,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c065": {
+     "x": 1812,
+     "y": 1460,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c070": {
+     "x": 2,
+     "y": 1694,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c075": {
+     "x": 183,
+     "y": 1694,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c080": {
+     "x": 364,
+     "y": 1694,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c085": {
+     "x": 545,
+     "y": 1694,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c090": {
+     "x": 726,
+     "y": 1694,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c095": {
+     "x": 907,
+     "y": 1694,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c100": {
+     "x": 1088,
+     "y": 1694,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c105": {
+     "x": 1269,
+     "y": 1694,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c110": {
+     "x": 1450,
+     "y": 1694,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c115": {
+     "x": 1631,
+     "y": 1694,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c120": {
+     "x": 1812,
+     "y": 1694,
+     "width": 179,
+     "height": 232
+    }
+   }
+  },
+  {
+   "file": "kit-body-front0.b36.1.png",
+   "width": 1984,
+   "height": 1860,
+   "regions": {
+    "chest.leather/shirt_sleeve_near__c125": {
+     "x": 2,
+     "y": 2,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c130": {
+     "x": 183,
+     "y": 2,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c135": {
+     "x": 364,
+     "y": 2,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__c140": {
+     "x": 545,
+     "y": 2,
+     "width": 179,
+     "height": 232
+    },
+    "chest.leather/shirt_sleeve_near__sleeve": {
+     "x": 726,
+     "y": 2,
+     "width": 179,
+     "height": 232
+    },
+    "body/skin_arm_near__c020": {
+     "x": 907,
+     "y": 2,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c025": {
+     "x": 1083,
+     "y": 2,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c030": {
+     "x": 1259,
+     "y": 2,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c035": {
+     "x": 1435,
+     "y": 2,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c040": {
+     "x": 1611,
+     "y": 2,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c045": {
+     "x": 1787,
+     "y": 2,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c050": {
+     "x": 2,
+     "y": 236,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c055": {
+     "x": 178,
+     "y": 236,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c060": {
+     "x": 354,
+     "y": 236,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c065": {
+     "x": 530,
+     "y": 236,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c070": {
+     "x": 706,
+     "y": 236,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c075": {
+     "x": 882,
+     "y": 236,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c080": {
+     "x": 1058,
+     "y": 236,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c085": {
+     "x": 1234,
+     "y": 236,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c090": {
+     "x": 1410,
+     "y": 236,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c095": {
+     "x": 1586,
+     "y": 236,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c100": {
+     "x": 1762,
+     "y": 236,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c105": {
+     "x": 2,
+     "y": 469,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c110": {
+     "x": 178,
+     "y": 469,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c115": {
+     "x": 354,
+     "y": 469,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c120": {
+     "x": 530,
+     "y": 469,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c125": {
+     "x": 706,
+     "y": 469,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c130": {
+     "x": 882,
+     "y": 469,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c135": {
+     "x": 1058,
+     "y": 469,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__c140": {
+     "x": 1234,
+     "y": 469,
+     "width": 174,
+     "height": 231
+    },
+    "body/skin_arm_near__mesh": {
+     "x": 1410,
+     "y": 469,
+     "width": 174,
+     "height": 231
+    },
+    "chest.jacket_b/shirt_sleeve_far__c020": {
+     "x": 1586,
+     "y": 469,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c025": {
+     "x": 1766,
+     "y": 469,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c030": {
+     "x": 2,
+     "y": 702,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c035": {
+     "x": 182,
+     "y": 702,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c040": {
+     "x": 362,
+     "y": 702,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c045": {
+     "x": 542,
+     "y": 702,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c050": {
+     "x": 722,
+     "y": 702,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c055": {
+     "x": 902,
+     "y": 702,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c060": {
+     "x": 1082,
+     "y": 702,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c065": {
+     "x": 1262,
+     "y": 702,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c070": {
+     "x": 1442,
+     "y": 702,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c075": {
+     "x": 1622,
+     "y": 702,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c080": {
+     "x": 1802,
+     "y": 702,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c085": {
+     "x": 2,
+     "y": 933,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c090": {
+     "x": 182,
+     "y": 933,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c095": {
+     "x": 362,
+     "y": 933,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c100": {
+     "x": 542,
+     "y": 933,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c105": {
+     "x": 722,
+     "y": 933,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c110": {
+     "x": 902,
+     "y": 933,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c115": {
+     "x": 1082,
+     "y": 933,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c120": {
+     "x": 1262,
+     "y": 933,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c125": {
+     "x": 1442,
+     "y": 933,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c130": {
+     "x": 1622,
+     "y": 933,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c135": {
+     "x": 1802,
+     "y": 933,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__c140": {
+     "x": 2,
+     "y": 1164,
+     "width": 178,
+     "height": 229
+    },
+    "chest.jacket_b/shirt_sleeve_far__sleeve": {
+     "x": 182,
+     "y": 1164,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c020": {
+     "x": 362,
+     "y": 1164,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c025": {
+     "x": 542,
+     "y": 1164,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c030": {
+     "x": 722,
+     "y": 1164,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c035": {
+     "x": 902,
+     "y": 1164,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c040": {
+     "x": 1082,
+     "y": 1164,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c045": {
+     "x": 1262,
+     "y": 1164,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c050": {
+     "x": 1442,
+     "y": 1164,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c055": {
+     "x": 1622,
+     "y": 1164,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c060": {
+     "x": 1802,
+     "y": 1164,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c065": {
+     "x": 2,
+     "y": 1395,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c070": {
+     "x": 182,
+     "y": 1395,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c075": {
+     "x": 362,
+     "y": 1395,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c080": {
+     "x": 542,
+     "y": 1395,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c085": {
+     "x": 722,
+     "y": 1395,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c090": {
+     "x": 902,
+     "y": 1395,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c095": {
+     "x": 1082,
+     "y": 1395,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c100": {
+     "x": 1262,
+     "y": 1395,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c105": {
+     "x": 1442,
+     "y": 1395,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c110": {
+     "x": 1622,
+     "y": 1395,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c115": {
+     "x": 1802,
+     "y": 1395,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c120": {
+     "x": 2,
+     "y": 1626,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c125": {
+     "x": 182,
+     "y": 1626,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c130": {
+     "x": 362,
+     "y": 1626,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c135": {
+     "x": 542,
+     "y": 1626,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__c140": {
+     "x": 722,
+     "y": 1626,
+     "width": 178,
+     "height": 229
+    },
+    "chest.leather/shirt_sleeve_far__sleeve": {
+     "x": 902,
+     "y": 1626,
+     "width": 178,
+     "height": 229
+    },
+    "body/skin_arm_far__c020": {
+     "x": 1082,
+     "y": 1626,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c025": {
+     "x": 1258,
+     "y": 1626,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c030": {
+     "x": 1434,
+     "y": 1626,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c035": {
+     "x": 1610,
+     "y": 1626,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c040": {
+     "x": 1786,
+     "y": 1626,
+     "width": 174,
+     "height": 229
+    }
+   }
+  },
+  {
+   "file": "kit-body-front0.b36.2.png",
+   "width": 2040,
+   "height": 2036,
+   "regions": {
+    "body/skin_arm_far__c045": {
+     "x": 2,
+     "y": 2,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c050": {
+     "x": 178,
+     "y": 2,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c055": {
+     "x": 354,
+     "y": 2,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c060": {
+     "x": 530,
+     "y": 2,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c065": {
+     "x": 706,
+     "y": 2,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c070": {
+     "x": 882,
+     "y": 2,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c075": {
+     "x": 1058,
+     "y": 2,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c080": {
+     "x": 1234,
+     "y": 2,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c085": {
+     "x": 1410,
+     "y": 2,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c090": {
+     "x": 1586,
+     "y": 2,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c095": {
+     "x": 1762,
+     "y": 2,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c100": {
+     "x": 2,
+     "y": 233,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c105": {
+     "x": 178,
+     "y": 233,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c110": {
+     "x": 354,
+     "y": 233,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c115": {
+     "x": 530,
+     "y": 233,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c120": {
+     "x": 706,
+     "y": 233,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c125": {
+     "x": 882,
+     "y": 233,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c130": {
+     "x": 1058,
+     "y": 233,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c135": {
+     "x": 1234,
+     "y": 233,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__c140": {
+     "x": 1410,
+     "y": 233,
+     "width": 174,
+     "height": 229
+    },
+    "body/skin_arm_far__mesh": {
+     "x": 1586,
+     "y": 233,
+     "width": 174,
+     "height": 229
+    },
+    "body/hair_front__fringe": {
+     "x": 2,
+     "y": 464,
+     "width": 438,
+     "height": 191
+    },
+    "body/skin_upper_arm_near__fore_up_cx": {
+     "x": 442,
+     "y": 464,
+     "width": 112,
+     "height": 163
+    },
+    "body/shirt_strap_near__fore_up_cx": {
+     "x": 556,
+     "y": 464,
+     "width": 102,
+     "height": 153
+    },
+    "body/skin_upper_arm_near__upper": {
+     "x": 660,
+     "y": 464,
+     "width": 131,
+     "height": 149
+    },
+    "body/skin_upper_arm_far__upper": {
+     "x": 793,
+     "y": 464,
+     "width": 129,
+     "height": 147
+    },
+    "body/skin_hand_near__open": {
+     "x": 924,
+     "y": 464,
+     "width": 135,
+     "height": 145
+    },
+    "body/skin_foot_far__flat": {
+     "x": 1061,
+     "y": 464,
+     "width": 141,
+     "height": 144
+    },
+    "body/skin_foot_near__flat": {
+     "x": 1204,
+     "y": 464,
+     "width": 141,
+     "height": 143
+    },
+    "body/skin_forearm_far__f0025": {
+     "x": 1347,
+     "y": 464,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f0200": {
+     "x": 1474,
+     "y": 464,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f0350": {
+     "x": 1601,
+     "y": 464,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f0500": {
+     "x": 1728,
+     "y": 464,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f0650": {
+     "x": 1855,
+     "y": 464,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f0800": {
+     "x": 2,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f0900": {
+     "x": 129,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f0950": {
+     "x": 256,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f1000": {
+     "x": 383,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f1050": {
+     "x": 510,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f1100": {
+     "x": 637,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f1150": {
+     "x": 764,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f1200": {
+     "x": 891,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f1250": {
+     "x": 1018,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f1320": {
+     "x": 1145,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f1400": {
+     "x": 1272,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__f1500": {
+     "x": 1399,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_far__fore": {
+     "x": 1526,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f0025": {
+     "x": 1653,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f0200": {
+     "x": 1780,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f0350": {
+     "x": 1907,
+     "y": 657,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f0500": {
+     "x": 2,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f0650": {
+     "x": 129,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f0800": {
+     "x": 256,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f0900": {
+     "x": 383,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f0950": {
+     "x": 510,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f1000": {
+     "x": 637,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f1050": {
+     "x": 764,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f1100": {
+     "x": 891,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f1150": {
+     "x": 1018,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f1200": {
+     "x": 1145,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f1250": {
+     "x": 1272,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f1320": {
+     "x": 1399,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f1400": {
+     "x": 1526,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__f1500": {
+     "x": 1653,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_forearm_near__fore": {
+     "x": 1780,
+     "y": 798,
+     "width": 125,
+     "height": 139
+    },
+    "body/skin_hand_far__fist_c": {
+     "x": 1907,
+     "y": 798,
+     "width": 120,
+     "height": 139
+    },
+    "body/skin_hand_near__fist_c": {
+     "x": 2,
+     "y": 939,
+     "width": 122,
+     "height": 138
+    },
+    "body/skin_hand_far_back__grip_back": {
+     "x": 126,
+     "y": 939,
+     "width": 128,
+     "height": 136
+    },
+    "body/skin_hand_near_back__grip_back": {
+     "x": 256,
+     "y": 939,
+     "width": 128,
+     "height": 136
+    },
+    "body/pants_knee_near__joint": {
+     "x": 386,
+     "y": 939,
+     "width": 125,
+     "height": 126
+    },
+    "body/skin_forearm_near__deep": {
+     "x": 513,
+     "y": 939,
+     "width": 125,
+     "height": 125
+    },
+    "body/skin_forearm_near__deep2": {
+     "x": 640,
+     "y": 939,
+     "width": 125,
+     "height": 125
+    },
+    "body/skin_hand_near_back__grip_back_s": {
+     "x": 767,
+     "y": 939,
+     "width": 121,
+     "height": 125
+    },
+    "body/skin_hand_far_back__grip_back_s": {
+     "x": 890,
+     "y": 939,
+     "width": 120,
+     "height": 125
+    },
+    "body/skin_forearm_far__deep": {
+     "x": 1012,
+     "y": 939,
+     "width": 125,
+     "height": 124
+    },
+    "body/skin_forearm_far__deep2": {
+     "x": 1139,
+     "y": 939,
+     "width": 125,
+     "height": 124
+    },
+    "body/pants_knee_far__joint": {
+     "x": 1266,
+     "y": 939,
+     "width": 124,
+     "height": 124
+    },
+    "body/pants_hip_far__joint": {
+     "x": 1392,
+     "y": 939,
+     "width": 123,
+     "height": 124
+    },
+    "body/skin_upper_arm_near__fore_up": {
+     "x": 1517,
+     "y": 939,
+     "width": 116,
+     "height": 122
+    },
+    "body/pants_crotch__fill": {
+     "x": 1635,
+     "y": 939,
+     "width": 65,
+     "height": 121
+    },
+    "body/skin_hand_far_back__endon_back": {
+     "x": 1702,
+     "y": 939,
+     "width": 123,
+     "height": 120
+    },
+    "body/skin_hand_near_back__endon_back": {
+     "x": 1827,
+     "y": 939,
+     "width": 123,
+     "height": 120
+    },
+    "body/pants_hip_near__joint": {
+     "x": 2,
+     "y": 1079,
+     "width": 121,
+     "height": 120
+    },
+    "body/skin_hand_near__guard": {
+     "x": 125,
+     "y": 1079,
+     "width": 128,
+     "height": 116
+    },
+    "body/skin_hand_far__guard": {
+     "x": 255,
+     "y": 1079,
+     "width": 126,
+     "height": 116
+    },
+    "body/skin_hand_far__grip_fingers": {
+     "x": 383,
+     "y": 1079,
+     "width": 136,
+     "height": 115
+    },
+    "body/skin_hand_near__grip_fingers": {
+     "x": 521,
+     "y": 1079,
+     "width": 136,
+     "height": 115
+    },
+    "body/skin_neck__neck": {
+     "x": 659,
+     "y": 1079,
+     "width": 144,
+     "height": 113
+    },
+    "body/pants_waist__pants": {
+     "x": 805,
+     "y": 1079,
+     "width": 264,
+     "height": 110
+    },
+    "body/skin_knee_near__joint": {
+     "x": 1071,
+     "y": 1079,
+     "width": 111,
+     "height": 110
+    },
+    "body/skin_knee_far__joint": {
+     "x": 1184,
+     "y": 1079,
+     "width": 110,
+     "height": 110
+    },
+    "chest.leather/skin_arm_near__c020": {
+     "x": 1296,
+     "y": 1079,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c025": {
+     "x": 1402,
+     "y": 1079,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c030": {
+     "x": 1508,
+     "y": 1079,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c035": {
+     "x": 1614,
+     "y": 1079,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c040": {
+     "x": 1720,
+     "y": 1079,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c045": {
+     "x": 1826,
+     "y": 1079,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c050": {
+     "x": 1932,
+     "y": 1079,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c055": {
+     "x": 2,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c060": {
+     "x": 108,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c065": {
+     "x": 214,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c070": {
+     "x": 320,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c075": {
+     "x": 426,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c080": {
+     "x": 532,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c085": {
+     "x": 638,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c090": {
+     "x": 744,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c095": {
+     "x": 850,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c100": {
+     "x": 956,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c105": {
+     "x": 1062,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c110": {
+     "x": 1168,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c115": {
+     "x": 1274,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c120": {
+     "x": 1380,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c125": {
+     "x": 1486,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c130": {
+     "x": 1592,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c135": {
+     "x": 1698,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__c140": {
+     "x": 1804,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.leather/skin_arm_near__mesh": {
+     "x": 1910,
+     "y": 1201,
+     "width": 104,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c020": {
+     "x": 2,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c025": {
+     "x": 107,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c030": {
+     "x": 212,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c035": {
+     "x": 317,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c040": {
+     "x": 422,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c045": {
+     "x": 527,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c050": {
+     "x": 632,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c055": {
+     "x": 737,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c060": {
+     "x": 842,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c065": {
+     "x": 947,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c070": {
+     "x": 1052,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c075": {
+     "x": 1157,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c080": {
+     "x": 1262,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c085": {
+     "x": 1367,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c090": {
+     "x": 1472,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c095": {
+     "x": 1577,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c100": {
+     "x": 1682,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c105": {
+     "x": 1787,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c110": {
+     "x": 1892,
+     "y": 1312,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c115": {
+     "x": 2,
+     "y": 1423,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c120": {
+     "x": 107,
+     "y": 1423,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c125": {
+     "x": 212,
+     "y": 1423,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c130": {
+     "x": 317,
+     "y": 1423,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c135": {
+     "x": 422,
+     "y": 1423,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__c140": {
+     "x": 527,
+     "y": 1423,
+     "width": 103,
+     "height": 109
+    },
+    "chest.jacket_b/skin_arm_near__mesh": {
+     "x": 632,
+     "y": 1423,
+     "width": 103,
+     "height": 109
+    },
+    "body/skin_hand_far__endon_fingers": {
+     "x": 737,
+     "y": 1423,
+     "width": 122,
+     "height": 108
+    },
+    "body/skin_hand_near__endon_fingers": {
+     "x": 861,
+     "y": 1423,
+     "width": 122,
+     "height": 108
+    },
+    "body/skin_hip_far__joint": {
+     "x": 985,
+     "y": 1423,
+     "width": 107,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c020": {
+     "x": 1094,
+     "y": 1423,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c025": {
+     "x": 1199,
+     "y": 1423,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c030": {
+     "x": 1304,
+     "y": 1423,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c035": {
+     "x": 1409,
+     "y": 1423,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c040": {
+     "x": 1514,
+     "y": 1423,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c045": {
+     "x": 1619,
+     "y": 1423,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c050": {
+     "x": 1724,
+     "y": 1423,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c055": {
+     "x": 1829,
+     "y": 1423,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c060": {
+     "x": 1934,
+     "y": 1423,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c065": {
+     "x": 2,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c070": {
+     "x": 107,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c075": {
+     "x": 212,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c080": {
+     "x": 317,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c085": {
+     "x": 422,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c090": {
+     "x": 527,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c095": {
+     "x": 632,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c100": {
+     "x": 737,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c105": {
+     "x": 842,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c110": {
+     "x": 947,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c115": {
+     "x": 1052,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c120": {
+     "x": 1157,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c125": {
+     "x": 1262,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c130": {
+     "x": 1367,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c135": {
+     "x": 1472,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__c140": {
+     "x": 1577,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.jacket_b/skin_arm_far__mesh": {
+     "x": 1682,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c020": {
+     "x": 1787,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c025": {
+     "x": 1892,
+     "y": 1534,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c030": {
+     "x": 2,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c035": {
+     "x": 107,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c040": {
+     "x": 212,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c045": {
+     "x": 317,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c050": {
+     "x": 422,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c055": {
+     "x": 527,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c060": {
+     "x": 632,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c065": {
+     "x": 737,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c070": {
+     "x": 842,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c075": {
+     "x": 947,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c080": {
+     "x": 1052,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c085": {
+     "x": 1157,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c090": {
+     "x": 1262,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c095": {
+     "x": 1367,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c100": {
+     "x": 1472,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c105": {
+     "x": 1577,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c110": {
+     "x": 1682,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c115": {
+     "x": 1787,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c120": {
+     "x": 1892,
+     "y": 1644,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c125": {
+     "x": 2,
+     "y": 1754,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c130": {
+     "x": 107,
+     "y": 1754,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c135": {
+     "x": 212,
+     "y": 1754,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__c140": {
+     "x": 317,
+     "y": 1754,
+     "width": 103,
+     "height": 108
+    },
+    "chest.leather/skin_arm_far__mesh": {
+     "x": 422,
+     "y": 1754,
+     "width": 103,
+     "height": 108
+    },
+    "body/skin_hip_near__joint": {
+     "x": 527,
+     "y": 1754,
+     "width": 105,
+     "height": 106
+    },
+    "body/skin_wrist_near__joint": {
+     "x": 634,
+     "y": 1754,
+     "width": 96,
+     "height": 96
+    },
+    "body/skin_wrist_far__joint": {
+     "x": 732,
+     "y": 1754,
+     "width": 94,
+     "height": 94
+    },
+    "body/skin_elbow_far__joint": {
+     "x": 828,
+     "y": 1754,
+     "width": 93,
+     "height": 94
+    },
+    "body/skin_elbow_near__joint": {
+     "x": 923,
+     "y": 1754,
+     "width": 93,
+     "height": 92
+    },
+    "body/pants_thigh_far__thigh": {
+     "x": 1018,
+     "y": 1754,
+     "width": 135,
+     "height": 89
+    },
+    "body/pants_thigh_near__thigh": {
+     "x": 1155,
+     "y": 1754,
+     "width": 135,
+     "height": 87
+    },
+    "body/skin_thigh_far__thigh": {
+     "x": 1292,
+     "y": 1754,
+     "width": 121,
+     "height": 87
+    },
+    "body/skin_thigh_near__thigh": {
+     "x": 1415,
+     "y": 1754,
+     "width": 121,
+     "height": 86
+    },
+    "body/skin_hand_far__grip_fingers_s": {
+     "x": 1538,
+     "y": 1754,
+     "width": 106,
+     "height": 75
+    },
+    "body/skin_hand_near__grip_fingers_s": {
+     "x": 1646,
+     "y": 1754,
+     "width": 107,
+     "height": 74
+    },
+    "body/eyes__eyes": {
+     "x": 2,
+     "y": 1864,
+     "width": 343,
+     "height": 69
+    },
+    "body/skin_shin_far__shin": {
+     "x": 347,
+     "y": 1864,
+     "width": 115,
+     "height": 62
+    },
+    "body/skin_shin_near__shin": {
+     "x": 464,
+     "y": 1864,
+     "width": 115,
+     "height": 62
+    },
+    "body/eyes__eyes_blink_half": {
+     "x": 581,
+     "y": 1864,
+     "width": 342,
+     "height": 53
+    },
+    "body/eyes__eyes_blink_closed": {
+     "x": 925,
+     "y": 1864,
+     "width": 342,
+     "height": 51
+    },
+    "body/shirt_tip_far__front": {
+     "x": 1269,
+     "y": 1864,
+     "width": 58,
+     "height": 49
+    },
+    "body/shirt_tip_near__front": {
+     "x": 1329,
+     "y": 1864,
+     "width": 58,
+     "height": 49
+    },
+    "body/shirt_tip_near__tip": {
+     "x": 1389,
+     "y": 1864,
+     "width": 57,
+     "height": 48
+    },
+    "body/pants_shin_near__deep": {
+     "x": 1448,
+     "y": 1864,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__deep2": {
+     "x": 1577,
+     "y": 1864,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g0100": {
+     "x": 1706,
+     "y": 1864,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g0200": {
+     "x": 1835,
+     "y": 1864,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g0300": {
+     "x": 2,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g0400": {
+     "x": 131,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g0500": {
+     "x": 260,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g0600": {
+     "x": 389,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g0700": {
+     "x": 518,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g0800": {
+     "x": 647,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g0900": {
+     "x": 776,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g1000": {
+     "x": 905,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g1100": {
+     "x": 1034,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g1200": {
+     "x": 1163,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g1300": {
+     "x": 1292,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g1400": {
+     "x": 1421,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__g1500": {
+     "x": 1550,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_near__shin": {
+     "x": 1679,
+     "y": 1935,
+     "width": 127,
+     "height": 47
+    },
+    "body/pants_shin_far__deep": {
+     "x": 1808,
+     "y": 1935,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__deep2": {
+     "x": 2,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g0100": {
+     "x": 130,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g0200": {
+     "x": 258,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g0300": {
+     "x": 386,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g0400": {
+     "x": 514,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g0500": {
+     "x": 642,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g0600": {
+     "x": 770,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g0700": {
+     "x": 898,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g0800": {
+     "x": 1026,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g0900": {
+     "x": 1154,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g1000": {
+     "x": 1282,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g1100": {
+     "x": 1410,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g1200": {
+     "x": 1538,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g1300": {
+     "x": 1666,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__g1400": {
+     "x": 1794,
+     "y": 1984,
+     "width": 126,
+     "height": 47
+    }
+   }
+  },
+  {
+   "file": "kit-body-front0.b36.3.png",
+   "width": 2028,
+   "height": 132,
+   "regions": {
+    "body/pants_shin_far__g1500": {
+     "x": 2,
+     "y": 2,
+     "width": 126,
+     "height": 47
+    },
+    "body/pants_shin_far__shin": {
+     "x": 130,
+     "y": 2,
+     "width": 126,
+     "height": 47
+    },
+    "body/shirt_tip_far__tip": {
+     "x": 258,
+     "y": 2,
+     "width": 56,
+     "height": 47
+    },
+    "body/shirt_strap_near__fore_up": {
+     "x": 316,
+     "y": 2,
+     "width": 33,
+     "height": 38
+    },
+    "body/pants_cuff_far__cuff": {
+     "x": 351,
+     "y": 2,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g0100": {
+     "x": 480,
+     "y": 2,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g0200": {
+     "x": 609,
+     "y": 2,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g0300": {
+     "x": 738,
+     "y": 2,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g0400": {
+     "x": 867,
+     "y": 2,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g0500": {
+     "x": 996,
+     "y": 2,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g0600": {
+     "x": 1125,
+     "y": 2,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g0700": {
+     "x": 1254,
+     "y": 2,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g0800": {
+     "x": 1383,
+     "y": 2,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g0900": {
+     "x": 1512,
+     "y": 2,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g1000": {
+     "x": 1641,
+     "y": 2,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g1100": {
+     "x": 1770,
+     "y": 2,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g1200": {
+     "x": 1899,
+     "y": 2,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g1300": {
+     "x": 2,
+     "y": 51,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g1400": {
+     "x": 131,
+     "y": 51,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_far__g1500": {
+     "x": 260,
+     "y": 51,
+     "width": 127,
+     "height": 37
+    },
+    "body/pants_cuff_near__cuff": {
+     "x": 389,
+     "y": 51,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g0100": {
+     "x": 517,
+     "y": 51,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g0200": {
+     "x": 645,
+     "y": 51,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g0300": {
+     "x": 773,
+     "y": 51,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g0400": {
+     "x": 901,
+     "y": 51,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g0500": {
+     "x": 1029,
+     "y": 51,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g0600": {
+     "x": 1157,
+     "y": 51,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g0700": {
+     "x": 1285,
+     "y": 51,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g0800": {
+     "x": 1413,
+     "y": 51,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g0900": {
+     "x": 1541,
+     "y": 51,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g1000": {
+     "x": 1669,
+     "y": 51,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g1100": {
+     "x": 1797,
+     "y": 51,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g1200": {
+     "x": 2,
+     "y": 90,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g1300": {
+     "x": 130,
+     "y": 90,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g1400": {
+     "x": 258,
+     "y": 90,
+     "width": 126,
+     "height": 37
+    },
+    "body/pants_cuff_near__g1500": {
+     "x": 386,
+     "y": 90,
+     "width": 126,
+     "height": 37
+    },
+    "body/brows__brows": {
+     "x": 514,
+     "y": 90,
+     "width": 329,
+     "height": 28
+    },
+    "body/mouth__mouth": {
+     "x": 845,
+     "y": 90,
+     "width": 94,
+     "height": 17
+    },
+    "body/nose__nose": {
+     "x": 941,
+     "y": 90,
+     "width": 38,
+     "height": 8
+    }
+   }
+  }
+ ]
+}

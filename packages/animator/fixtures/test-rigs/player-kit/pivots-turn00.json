@@ -1,0 +1,348 @@
+{
+ "format": "parts-pivots@1",
+ "rig": "rigs/stock/front-turn00-faceA.anim.json",
+ "canvas": {
+  "width": 1086,
+  "height": 1448,
+  "originX": 542,
+  "originY": 960
+ },
+ "bones": {
+  "root": {
+   "head": [
+    542,
+    960
+   ],
+   "tail": [
+    542,
+    960
+   ],
+   "angle": 0,
+   "length": 0,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "pelvis": {
+   "head": [
+    542,
+    960
+   ],
+   "tail": [
+    542,
+    1010
+   ],
+   "angle": 90,
+   "length": 50,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "chest": {
+   "head": [
+    542,
+    960
+   ],
+   "tail": [
+    542,
+    660
+   ],
+   "angle": -90,
+   "length": 300,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "neck": {
+   "head": [
+    542,
+    700
+   ],
+   "tail": [
+    542,
+    650
+   ],
+   "angle": -90,
+   "length": 50,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "head": {
+   "head": [
+    542,
+    650
+   ],
+   "tail": [
+    542,
+    400
+   ],
+   "angle": -90,
+   "length": 250,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "clavicle_l": {
+   "head": [
+    505,
+    708
+   ],
+   "tail": [
+    436,
+    729
+   ],
+   "angle": 163.07,
+   "length": 72.1249,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "upper_arm_l": {
+   "head": [
+    436,
+    729
+   ],
+   "tail": [
+    391.5,
+    809
+   ],
+   "angle": 119.09,
+   "length": 91.5437,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "forearm_l": {
+   "head": [
+    391.5,
+    809
+   ],
+   "tail": [
+    352,
+    893
+   ],
+   "angle": 115.18,
+   "length": 92.8238,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "hand_l": {
+   "head": [
+    352,
+    893
+   ],
+   "tail": [
+    334.98,
+    929.18
+   ],
+   "angle": 115.19,
+   "length": 39.9834,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "clavicle_r": {
+   "head": [
+    579,
+    708
+   ],
+   "tail": [
+    648,
+    729
+   ],
+   "angle": 16.93,
+   "length": 72.1249,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "upper_arm_r": {
+   "head": [
+    648,
+    729
+   ],
+   "tail": [
+    692.5,
+    809
+   ],
+   "angle": 60.91,
+   "length": 91.5437,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "forearm_r": {
+   "head": [
+    692.5,
+    809
+   ],
+   "tail": [
+    732,
+    893
+   ],
+   "angle": 64.82,
+   "length": 92.8238,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "hand_r": {
+   "head": [
+    732,
+    893
+   ],
+   "tail": [
+    749.02,
+    929.18
+   ],
+   "angle": 64.81,
+   "length": 39.9834,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "thigh_l": {
+   "head": [
+    466,
+    1000
+   ],
+   "tail": [
+    458,
+    1105
+   ],
+   "angle": 94.36,
+   "length": 105.3043,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "shin_l": {
+   "head": [
+    458,
+    1105
+   ],
+   "tail": [
+    455,
+    1170
+   ],
+   "angle": 92.64,
+   "length": 65.0692,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "foot_l": {
+   "head": [
+    455,
+    1170
+   ],
+   "tail": [
+    438,
+    1215
+   ],
+   "angle": 110.7,
+   "length": 48.1041,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "thigh_r": {
+   "head": [
+    618,
+    1000
+   ],
+   "tail": [
+    626,
+    1105
+   ],
+   "angle": 85.64,
+   "length": 105.3043,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "shin_r": {
+   "head": [
+    626,
+    1105
+   ],
+   "tail": [
+    629,
+    1170
+   ],
+   "angle": 87.36,
+   "length": 65.0692,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "foot_r": {
+   "head": [
+    629,
+    1170
+   ],
+   "tail": [
+    646,
+    1215
+   ],
+   "angle": 69.3,
+   "length": 48.1041,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "foot_l_target": {
+   "head": [
+    455,
+    1170
+   ],
+   "tail": [
+    455,
+    1170
+   ],
+   "angle": 0,
+   "length": 0,
+   "scale": [
+    1,
+    1
+   ]
+  },
+  "foot_r_target": {
+   "head": [
+    629,
+    1170
+   ],
+   "tail": [
+    629,
+    1170
+   ],
+   "angle": 0,
+   "length": 0,
+   "scale": [
+    1,
+    1
+   ]
+  }
+ }
+}

@@ -1,0 +1,196 @@
+{
+ "name": "sword_ready",
+ "about": "Mirror of sword-ready.json onto the screen-right hand (scripts/sword-mirror.ts). The default idle with the one-handed sword (sword_idle = this clip), matched to the LIVE idle carry: front view, 2.0 s loop at 30 fps held frames; the sword arm hangs straight 17 deg out from the body (live REST_ARM_DEGREES), the blade stands up out of the fist 25 deg off vertical toward the outside (live idle rotationDegrees -25), the hilt through the fist, pommel below it; the item grip constant gives that angle, so no grip keys. Breath in over 1 s (chest scale to 1.012 x 1.01, the body lifts about 1 px) and out over 1 s. f0 is the exact sword_slash start and end pose. Item behind the body.",
+ "clip": {
+  "duration": 2,
+  "loop": true,
+  "fps": 30,
+  "bones": {
+   "pelvis": {
+    "translate": [
+     {
+      "time": 0,
+      "x": 0,
+      "y": 0,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 1,
+      "x": 0,
+      "y": -1,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 2,
+      "x": 0,
+      "y": 0,
+      "curve": "linear"
+     }
+    ]
+   },
+   "chest": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": 0,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 1,
+      "value": 0.5,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 2,
+      "value": 0,
+      "curve": "linear"
+     }
+    ],
+    "scale": [
+     {
+      "time": 0,
+      "x": 1,
+      "y": 1,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 1,
+      "x": 1.012,
+      "y": 1.01,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 2,
+      "x": 1,
+      "y": 1,
+      "curve": "linear"
+     }
+    ]
+   },
+   "head": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": 0,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 1,
+      "value": 0.5,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 2,
+      "value": 0,
+      "curve": "linear"
+     }
+    ]
+   },
+   "upper_arm_r": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": 6.085,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 1,
+      "value": 6.085,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 2,
+      "value": 6.085,
+      "curve": "linear"
+     }
+    ]
+   },
+   "upper_arm_l": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": -6.085,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 1,
+      "value": -6.085,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 2,
+      "value": -6.085,
+      "curve": "linear"
+     }
+    ]
+   }
+  }
+ },
+ "drawPhases": [
+  {
+   "from": 0,
+   "to": 2.000001,
+   "order": "back"
+  }
+ ]
+}

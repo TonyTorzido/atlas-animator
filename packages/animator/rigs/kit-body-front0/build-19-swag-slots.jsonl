@@ -1,0 +1,2 @@
+{"op": "slot.set", "name": "shirt_sleeve_near", "bone": "upper_arm_near", "drawAfter": "skin_forearm_near", "drawBefore": null}
+{"op": "slot.set", "name": "shirt_sleeve_far", "bone": "upper_arm_far", "drawAfter": "skin_forearm_far", "drawBefore": null}

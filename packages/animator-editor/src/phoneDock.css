@@ -1,0 +1,174 @@
+/*
+ * Atlas Animator editor: styles for the phone dock (phoneDock.ts). Pinned in #dock, 300 to 504 px wide when open, a thin rail when collapsed.
+ */
+#app.dockopen {
+  grid-template-columns: var(--lw) minmax(0, 1fr) var(--dock-w, 324px) var(--rw);
+}
+
+#app.dockopen.dockrail {
+  grid-template-columns: var(--lw) minmax(0, 1fr) 28px var(--rw);
+}
+
+#app.dockopen #dock {
+  display: flex;
+  flex-direction: column;
+}
+
+.dk-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px;
+  min-width: 0;
+}
+
+#app.dockrail .dk-body {
+  display: none;
+}
+
+.dk-rail {
+  display: none;
+}
+
+/* Same rail as the panels' (layout.css .pn-rail): SVG chevron on top, the label running down the side. */
+#app.dockrail .dk-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--dim);
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+#app.dockrail .dk-rail:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dk-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dk-btn {
+  padding: 0 8px;
+  line-height: 20px;
+}
+
+.dk-zoom {
+  align-self: center;
+}
+
+.dk-zoom button {
+  min-width: 72px;
+}
+
+/* The bezel: a dark rounded body around a screen showing the game's ground. */
+.dk-phone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.dk-screen {
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--bg0);
+  border: 1px solid var(--panel3);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+  line-height: 0;
+}
+
+.dk-canvas {
+  display: block;
+  border-radius: 8px;
+  image-rendering: pixelated;
+  background: var(--ok-lo);
+}
+
+.dk-cap {
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: var(--fs-sm);
+  color: var(--text2, var(--dim));
+}
+
+.dk-tool svg {
+  width: 14px;
+  height: 14px;
+  vertical-align: -2px;
+  margin-right: 4px;
+}
+
+.dk-tools {
+  display: flex;
+  gap: 4px;
+}
+
+.dk-tool {
+  flex: 1;
+  padding: 4px;
+}
+
+.dk-info {
+  min-width: 0;
+  font-size: var(--fs-xs);
+  text-align: center;
+  color: var(--dim);
+}
+
+/* ---- Stacked (window under DOCK_STACK_WIDTH): the dock sits above the side panel's content, so the canvas keeps its width ---- */
+#app.dockopen.dockstack:not(.gvopen) {
+  grid-template-columns: var(--lw) minmax(0, 1fr) var(--rw);
+  grid-template-areas: "top top top" "left view right" "time time right" "stat stat stat";
+}
+
+#app.dockstack:not(.gvopen) #dock {
+  grid-area: right;
+  align-self: start;
+  z-index: 3;
+  border-left: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: visible;
+}
+
+#app.dockstack.dockopen:not(.dockrail):not(.gvopen) #right {
+  padding-top: var(--dock-h, 0px);
+}
+
+#app.dockstack.dockrail:not(.gvopen) #right {
+  padding-top: 28px;
+}
+
+#app.dockstack.dockrail #dock {
+  height: calc(var(--ctl-md) + 1px);
+}
+
+#app.dockstack.dockrail .dk-rail {
+  height: var(--ctl-md);
+  flex-direction: row;
+  justify-content: center;
+  padding: 0;
+}
+
+#app.dockstack.dockrail .dk-rail .rail-label {
+  writing-mode: horizontal-tb;
+}
+
+#app.rcol.dockstack #dock {
+  display: none !important;
+}
+
+#app.rcol.dockstack #right {
+  padding-top: 0 !important;
+}

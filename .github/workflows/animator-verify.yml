@@ -1,0 +1,51 @@
+name: Atlas Animator verify
+
+# Skip it with the repository variable ANIMATOR_VERIFY=off. The browser suites (qa, persistence, data safety) run only on a manual run
+# (workflow_dispatch, "browser" = true); a push or PR runs `verify --fast` (tsc + vitest for both packages).
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: "Also run the browser suites (needs Playwright chromium on the runner)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: animator-verify-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    if: vars.ANIMATOR_VERIFY != 'off'
+    name: Animator verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CI: "true"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.10.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: pnpm install --frozen-lockfile
+      - name: Verify (type-check and unit tests)
+        if: github.event_name != 'workflow_dispatch' || !inputs.browser
+        run: pnpm verify --fast
+      - name: Install Playwright Chromium
+        if: github.event_name == 'workflow_dispatch' && inputs.browser
+        run: pnpm --filter @atlas-animator/core exec playwright install --with-deps chromium
+      - name: Verify (everything, with the browser suites)
+        if: github.event_name == 'workflow_dispatch' && inputs.browser
+        run: pnpm verify

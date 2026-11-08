@@ -1,0 +1,55 @@
+{
+  "format": "atlas-pack@1",
+  "scale": 1,
+  "pages": [
+    {
+      "file": "template7-shoulder-legs.atlas.png",
+      "width": 548,
+      "height": 1681,
+      "regions": {
+        "canonical/template7-head": {
+          "x": 2,
+          "y": 2,
+          "width": 544,
+          "height": 497
+        },
+        "canonical/template7-shoulder-skin": {
+          "x": 2,
+          "y": 503,
+          "width": 522,
+          "height": 422
+        },
+        "canonical/template7-leg-skin": {
+          "x": 2,
+          "y": 929,
+          "width": 336,
+          "height": 336
+        },
+        "canonical/template7-shoulder-tank": {
+          "x": 2,
+          "y": 1269,
+          "width": 238,
+          "height": 282
+        },
+        "canonical/template7-leg-shorts": {
+          "x": 242,
+          "y": 1269,
+          "width": 276,
+          "height": 129
+        },
+        "canonical/template7-fist": {
+          "x": 2,
+          "y": 1555,
+          "width": 130,
+          "height": 124
+        },
+        "canonical/template7-fist_r": {
+          "x": 134,
+          "y": 1555,
+          "width": 130,
+          "height": 124
+        }
+      }
+    }
+  ]
+}

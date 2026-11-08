@@ -1,0 +1,49 @@
+{
+  "format": "atlas-pack@1",
+  "scale": 1,
+  "pages": [
+    {
+      "file": "template7-shoulder-probe.atlas.png",
+      "width": 548,
+      "height": 1725,
+      "regions": {
+        "canonical/template7-head": {
+          "x": 2,
+          "y": 2,
+          "width": 544,
+          "height": 497
+        },
+        "canonical/template7-shoulder-skin": {
+          "x": 2,
+          "y": 503,
+          "width": 522,
+          "height": 422
+        },
+        "canonical/template7-shoulder-tank": {
+          "x": 2,
+          "y": 929,
+          "width": 252,
+          "height": 346
+        },
+        "probe/tunic": {
+          "x": 2,
+          "y": 1279,
+          "width": 412,
+          "height": 340
+        },
+        "probe/pauldron_l": {
+          "x": 416,
+          "y": 1279,
+          "width": 78,
+          "height": 100
+        },
+        "probe/pauldron_r": {
+          "x": 2,
+          "y": 1623,
+          "width": 78,
+          "height": 100
+        }
+      }
+    }
+  ]
+}

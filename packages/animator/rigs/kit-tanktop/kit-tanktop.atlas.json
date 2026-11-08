@@ -1,0 +1,235 @@
+{
+ "format": "atlas-pack@1",
+ "scale": 1,
+ "pages": [
+  {
+   "file": "kit-tanktop.b1.0.png",
+   "width": 1960,
+   "height": 1068,
+   "regions": {
+    "body/weapon__double_axe": {
+     "x": 2,
+     "y": 2,
+     "width": 380,
+     "height": 671
+    },
+    "body/head__head": {
+     "x": 384,
+     "y": 2,
+     "width": 440,
+     "height": 481
+    },
+    "body/hair_back__hair": {
+     "x": 826,
+     "y": 2,
+     "width": 608,
+     "height": 431
+    },
+    "body/chest__tank": {
+     "x": 1436,
+     "y": 2,
+     "width": 230,
+     "height": 296
+    },
+    "body/leg_r__straight": {
+     "x": 1668,
+     "y": 2,
+     "width": 144,
+     "height": 247
+    },
+    "body/leg_l__straight": {
+     "x": 1814,
+     "y": 2,
+     "width": 143,
+     "height": 246
+    },
+    "body/arm_r__straight": {
+     "x": 2,
+     "y": 675,
+     "width": 150,
+     "height": 211
+    },
+    "body/arm_l__straight": {
+     "x": 154,
+     "y": 675,
+     "width": 138,
+     "height": 201
+    },
+    "body/hair_front__fringe": {
+     "x": 294,
+     "y": 675,
+     "width": 438,
+     "height": 191
+    },
+    "body/arm_r__curled": {
+     "x": 734,
+     "y": 675,
+     "width": 159,
+     "height": 185
+    },
+    "body/arm_l__curled": {
+     "x": 895,
+     "y": 675,
+     "width": 156,
+     "height": 179
+    },
+    "body/hand_r__open": {
+     "x": 1053,
+     "y": 675,
+     "width": 129,
+     "height": 169
+    },
+    "body/hand_l__open": {
+     "x": 1184,
+     "y": 675,
+     "width": 128,
+     "height": 169
+    },
+    "body/foot_l__toe": {
+     "x": 1314,
+     "y": 675,
+     "width": 130,
+     "height": 139
+    },
+    "body/hand_l__relaxed": {
+     "x": 1446,
+     "y": 675,
+     "width": 120,
+     "height": 133
+    },
+    "body/hand_r__relaxed": {
+     "x": 1568,
+     "y": 675,
+     "width": 119,
+     "height": 133
+    },
+    "body/hand_r__fist": {
+     "x": 1689,
+     "y": 675,
+     "width": 120,
+     "height": 125
+    },
+    "body/foot_l__flat": {
+     "x": 1811,
+     "y": 675,
+     "width": 145,
+     "height": 123
+    },
+    "body/foot_r__flat": {
+     "x": 2,
+     "y": 888,
+     "width": 140,
+     "height": 123
+    },
+    "body/hand_l__fist": {
+     "x": 144,
+     "y": 888,
+     "width": 121,
+     "height": 123
+    },
+    "body/waist__pants": {
+     "x": 267,
+     "y": 888,
+     "width": 267,
+     "height": 117
+    },
+    "body/foot_r__toe": {
+     "x": 536,
+     "y": 888,
+     "width": 149,
+     "height": 117
+    },
+    "body/shoulder_l__raised": {
+     "x": 687,
+     "y": 888,
+     "width": 84,
+     "height": 114
+    },
+    "body/shoulder_l__rest": {
+     "x": 773,
+     "y": 888,
+     "width": 84,
+     "height": 114
+    },
+    "body/neck__neck": {
+     "x": 859,
+     "y": 888,
+     "width": 123,
+     "height": 113
+    },
+    "body/shoulder_r__raised": {
+     "x": 984,
+     "y": 888,
+     "width": 87,
+     "height": 113
+    },
+    "body/shoulder_r__rest": {
+     "x": 1073,
+     "y": 888,
+     "width": 87,
+     "height": 113
+    },
+    "body/hand_r__grip_back": {
+     "x": 1162,
+     "y": 888,
+     "width": 123,
+     "height": 107
+    },
+    "body/hand_l__grip_back": {
+     "x": 1287,
+     "y": 888,
+     "width": 121,
+     "height": 106
+    },
+    "body/eyes__eyes": {
+     "x": 1410,
+     "y": 888,
+     "width": 297,
+     "height": 69
+    },
+    "body/hand_r_fingers__grip_fingers": {
+     "x": 1709,
+     "y": 888,
+     "width": 122,
+     "height": 68
+    },
+    "body/hand_l_fingers__grip_fingers": {
+     "x": 1833,
+     "y": 888,
+     "width": 121,
+     "height": 68
+    },
+    "body/eyes__eyes_blink_half": {
+     "x": 2,
+     "y": 1013,
+     "width": 297,
+     "height": 53
+    },
+    "body/eyes__eyes_blink_closed": {
+     "x": 301,
+     "y": 1013,
+     "width": 297,
+     "height": 51
+    },
+    "body/brows__brows": {
+     "x": 600,
+     "y": 1013,
+     "width": 286,
+     "height": 28
+    },
+    "body/mouth__mouth": {
+     "x": 888,
+     "y": 1013,
+     "width": 90,
+     "height": 17
+    },
+    "body/nose__nose": {
+     "x": 980,
+     "y": 1013,
+     "width": 37,
+     "height": 8
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,405 @@
+{
+ "format": "atlas-anim@1",
+ "name": "kit-tanktop-front0",
+ "canvas": {
+  "width": 1086,
+  "height": 1448,
+  "originX": 542,
+  "originY": 960
+ },
+ "bones": [
+  {
+   "name": "root"
+  },
+  {
+   "name": "pelvis",
+   "parent": "root",
+   "x": 0,
+   "y": 0,
+   "rotation": 90,
+   "length": 50
+  },
+  {
+   "name": "chest",
+   "parent": "pelvis",
+   "x": 0,
+   "y": 0,
+   "rotation": -180,
+   "length": 300
+  },
+  {
+   "name": "neck",
+   "parent": "chest",
+   "x": 260,
+   "y": 0,
+   "rotation": 0,
+   "length": 50
+  },
+  {
+   "name": "head",
+   "parent": "neck",
+   "x": 50,
+   "y": 0,
+   "rotation": 0,
+   "length": 250
+  },
+  {
+   "name": "upper_arm_l",
+   "parent": "chest",
+   "x": 231,
+   "y": -106,
+   "rotation": -150.915,
+   "length": 91.5437,
+   "role": "limb"
+  },
+  {
+   "name": "forearm_l",
+   "parent": "upper_arm_l",
+   "x": 91.5437,
+   "y": 0,
+   "rotation": -3.9003,
+   "length": 92.8238,
+   "role": "limb"
+  },
+  {
+   "name": "hand_l",
+   "parent": "forearm_l",
+   "x": 92.8238,
+   "y": 0,
+   "rotation": 0.0088,
+   "length": 39.9834,
+   "role": "limb"
+  },
+  {
+   "name": "weapon",
+   "parent": "hand_l",
+   "x": 0,
+   "y": 0,
+   "rotation": -90,
+   "length": 60
+  },
+  {
+   "name": "upper_arm_r",
+   "parent": "chest",
+   "x": 231,
+   "y": 106,
+   "rotation": 150.915,
+   "length": 91.5437,
+   "role": "limb"
+  },
+  {
+   "name": "forearm_r",
+   "parent": "upper_arm_r",
+   "x": 91.5437,
+   "y": 0,
+   "rotation": 3.9003,
+   "length": 92.8238,
+   "role": "limb"
+  },
+  {
+   "name": "hand_r",
+   "parent": "forearm_r",
+   "x": 92.8238,
+   "y": 0,
+   "rotation": -0.0088,
+   "length": 39.9834,
+   "role": "limb"
+  },
+  {
+   "name": "thigh_l",
+   "parent": "pelvis",
+   "x": 40,
+   "y": 76,
+   "rotation": 4.357,
+   "length": 105.3043,
+   "role": "limb"
+  },
+  {
+   "name": "shin_l",
+   "parent": "thigh_l",
+   "x": 105.3043,
+   "y": 0,
+   "rotation": -1.7145,
+   "length": 65.0692,
+   "role": "limb"
+  },
+  {
+   "name": "foot_l",
+   "parent": "shin_l",
+   "x": 65.0692,
+   "y": 0,
+   "rotation": 18.053,
+   "length": 48.1041,
+   "role": "limb"
+  },
+  {
+   "name": "thigh_r",
+   "parent": "pelvis",
+   "x": 40,
+   "y": -76,
+   "rotation": -4.357,
+   "length": 105.3043,
+   "role": "limb"
+  },
+  {
+   "name": "shin_r",
+   "parent": "thigh_r",
+   "x": 105.3043,
+   "y": 0,
+   "rotation": 1.7145,
+   "length": 65.0692,
+   "role": "limb"
+  },
+  {
+   "name": "foot_r",
+   "parent": "shin_r",
+   "x": 65.0692,
+   "y": 0,
+   "rotation": -18.053,
+   "length": 48.1041,
+   "role": "limb"
+  }
+ ],
+ "slots": [
+  {
+   "name": "foot_l",
+   "bone": "foot_l"
+  },
+  {
+   "name": "leg_l",
+   "bone": "thigh_l"
+  },
+  {
+   "name": "foot_r",
+   "bone": "foot_r"
+  },
+  {
+   "name": "leg_r",
+   "bone": "thigh_r"
+  },
+  {
+   "name": "waist",
+   "bone": "pelvis"
+  },
+  {
+   "name": "neck",
+   "bone": "neck",
+   "attachment": "neck"
+  },
+  {
+   "name": "head",
+   "bone": "head",
+   "attachment": "head"
+  },
+  {
+   "name": "eyes",
+   "bone": "head",
+   "attachment": "eyes"
+  },
+  {
+   "name": "brows",
+   "bone": "head",
+   "attachment": "brows"
+  },
+  {
+   "name": "nose",
+   "bone": "head",
+   "attachment": "nose"
+  },
+  {
+   "name": "mouth",
+   "bone": "head",
+   "attachment": "mouth"
+  },
+  {
+   "name": "hair_back",
+   "bone": "head",
+   "attachment": "hair"
+  },
+  {
+   "name": "arm_l",
+   "bone": "upper_arm_l"
+  },
+  {
+   "name": "arm_r",
+   "bone": "upper_arm_r"
+  },
+  {
+   "name": "chest",
+   "bone": "chest"
+  },
+  {
+   "name": "arm_l_fore",
+   "bone": "forearm_l"
+  },
+  {
+   "name": "arm_r_fore",
+   "bone": "forearm_r"
+  },
+  {
+   "name": "shoulder_l",
+   "bone": "chest"
+  },
+  {
+   "name": "shoulder_r",
+   "bone": "chest"
+  },
+  {
+   "name": "hand_l",
+   "bone": "hand_l"
+  },
+  {
+   "name": "weapon",
+   "bone": "weapon"
+  },
+  {
+   "name": "hand_l_fingers",
+   "bone": "hand_l"
+  },
+  {
+   "name": "hand_r",
+   "bone": "hand_r"
+  },
+  {
+   "name": "hand_r_fingers",
+   "bone": "hand_r"
+  },
+  {
+   "name": "hair_front",
+   "bone": "head",
+   "attachment": "fringe"
+  }
+ ],
+ "skins": {
+  "body": {
+   "attachments": {
+    "head": {
+     "head": {
+      "type": "region",
+      "path": "body/head__head",
+      "x": 237.5,
+      "y": 1,
+      "rotation": 90,
+      "width": 440,
+      "height": 481
+     }
+    },
+    "eyes": {
+     "eyes": {
+      "type": "region",
+      "path": "body/eyes__eyes",
+      "x": 177.5,
+      "y": 0.5,
+      "rotation": 90,
+      "width": 343,
+      "height": 69
+     },
+     "eyes_blink_half": {
+      "type": "region",
+      "path": "body/eyes__eyes_blink_half",
+      "x": 169.5,
+      "y": 1,
+      "rotation": 90,
+      "width": 342,
+      "height": 53
+     },
+     "eyes_blink_closed": {
+      "type": "region",
+      "path": "body/eyes__eyes_blink_closed",
+      "x": 168.5,
+      "y": 1,
+      "rotation": 90,
+      "width": 342,
+      "height": 51
+     }
+    },
+    "brows": {
+     "brows": {
+      "type": "region",
+      "path": "body/brows__brows",
+      "x": 240,
+      "y": 0.5,
+      "rotation": 90,
+      "width": 329,
+      "height": 28
+     }
+    },
+    "nose": {
+     "nose": {
+      "type": "region",
+      "path": "body/nose__nose",
+      "x": 98,
+      "y": 1,
+      "rotation": 90,
+      "width": 38,
+      "height": 8
+     }
+    },
+    "mouth": {
+     "mouth": {
+      "type": "region",
+      "path": "body/mouth__mouth",
+      "x": 58.5,
+      "y": 1,
+      "rotation": 90,
+      "width": 94,
+      "height": 17
+     }
+    },
+    "hair_back": {
+     "hair": {
+      "type": "region",
+      "path": "body/hair_back__hair",
+      "x": 313.5,
+      "y": 3,
+      "rotation": 90,
+      "width": 608,
+      "height": 431
+     }
+    },
+    "hair_front": {
+     "fringe": {
+      "type": "region",
+      "path": "body/hair_front__fringe",
+      "x": 194.5,
+      "y": 1,
+      "rotation": 90,
+      "width": 438,
+      "height": 191
+     }
+    },
+    "neck": {
+     "neck": {
+      "type": "region",
+      "path": "body/neck__neck",
+      "x": 43.5,
+      "y": 0,
+      "rotation": 90,
+      "width": 102,
+      "height": 113
+     }
+    },
+    "weapon": {
+     "double_axe": {
+      "type": "region",
+      "path": "body/weapon__double_axe",
+      "x": 150.4416,
+      "y": -2.4768,
+      "rotation": 90,
+      "scaleX": -0.8,
+      "scaleY": 0.8,
+      "width": 380,
+      "height": 671
+     }
+    }
+   }
+  }
+ },
+ "animations": {},
+ "atlas": {
+  "pages": [
+   "kit-tanktop-front0.b1.0.png"
+  ],
+  "scale": 1
+ }
+}

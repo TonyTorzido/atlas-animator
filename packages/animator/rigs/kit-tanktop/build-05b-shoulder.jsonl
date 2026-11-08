@@ -1,0 +1,4 @@
+{"op": "driven.add", "name": "shoulder_l_socket", "bone": "upper_arm_l", "keys": [{"at": 0, "attachments": {"shoulder_l": "rest"}}, {"at": 55, "attachments": {"shoulder_l": "raised"}}]}
+{"op": "driven.add", "name": "arm_l_front", "bone": "upper_arm_l", "keys": [{"at": -15, "drawOrder": [{"slot": "arm_l", "offset": 3}]}, {"at": -14, "drawOrder": []}]}
+{"op": "driven.add", "name": "shoulder_r_socket", "bone": "upper_arm_r", "keys": [{"at": -55, "attachments": {"shoulder_r": "raised"}}, {"at": -54, "attachments": {"shoulder_r": "rest"}}]}
+{"op": "driven.add", "name": "arm_r_front", "bone": "upper_arm_r", "keys": [{"at": 14, "drawOrder": []}, {"at": 15, "drawOrder": [{"slot": "arm_r", "offset": 3}]}]}

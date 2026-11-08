@@ -1,0 +1,88 @@
+{"op": "bone.add", "name": "hips", "parent": "root", "world": [542, 968], "tip": [598, 968]}
+{"op": "bone.add", "name": "pelvis", "parent": "hips", "world": [542, 968], "tip": [590, 968]}
+{"op": "bone.add", "name": "lean", "parent": "hips", "world": [542, 968], "tip": [602, 968]}
+{"op": "bone.add", "name": "spine_1", "parent": "hips", "world": [542, 968], "tip": [542, 902]}
+{"op": "bone.add", "name": "spine_2", "parent": "spine_1", "world": [542, 902], "tip": [542, 835]}
+{"op": "bone.add", "name": "chest", "parent": "spine_2", "world": [542, 835], "tip": [542, 703]}
+{"op": "bone.add", "name": "neck", "parent": "chest", "world": [542, 703], "tip": [540, 664]}
+{"op": "bone.add", "name": "head", "parent": "neck", "world": [540, 664], "tip": [540, 400]}
+{"op": "bone.add", "name": "hair_1", "parent": "head", "world": [540, 420], "tip": [540, 330]}
+{"op": "bone.add", "name": "clavicle_near", "parent": "chest", "world": [542, 703], "tip": [442, 729]}
+{"op": "bone.add", "name": "upper_arm_near", "parent": "clavicle_near", "world": [442, 729], "tip": [397.8, 809]}
+{"op": "bone.add", "name": "elbow_near", "parent": "upper_arm_near", "world": [397.8, 809], "tip": [387.5871, 830.7186]}
+{"op": "bone.add", "name": "forearm_near", "parent": "upper_arm_near", "world": [397.8, 809], "tip": [358.3, 893]}
+{"op": "bone.add", "name": "hand_near", "parent": "forearm_near", "world": [358.3, 893], "tip": [341.3, 929.2]}
+{"op": "bone.add", "name": "weapon", "parent": "hand_near", "world": [342.0, 928.0], "tip": [396.0, 953.0]}
+{"op": "bone.add", "name": "weapon_tip", "parent": "weapon", "world": [714.0614, 1100.2507], "tip": [732.2108, 1108.6531]}
+{"op": "bone.add", "name": "clavicle_far", "parent": "chest", "world": [542, 703], "tip": [643, 729]}
+{"op": "bone.add", "name": "upper_arm_far", "parent": "clavicle_far", "world": [643, 729], "tip": [687.8, 809]}
+{"op": "bone.add", "name": "elbow_far", "parent": "upper_arm_far", "world": [687.8, 809], "tip": [698.0129, 830.7186]}
+{"op": "bone.add", "name": "forearm_far", "parent": "upper_arm_far", "world": [687.8, 809], "tip": [727.3, 893]}
+{"op": "bone.add", "name": "hand_far", "parent": "forearm_far", "world": [727.3, 893], "tip": [744.3, 929.2]}
+{"op": "bone.add", "name": "offhand", "parent": "hand_far", "world": [744.3, 929.2], "tip": [798.7, 954.5]}
+{"op": "bone.add", "name": "thigh_near", "parent": "pelvis", "world": [479.0, 968.0], "tip": [465.0, 1079.0]}
+{"op": "bone.add", "name": "hip_near", "parent": "pelvis", "world": [479.0, 968.0], "tip": [475.9968, 991.8114]}
+{"op": "bone.add", "name": "knee_near", "parent": "thigh_near", "world": [465.0, 1079.0], "tip": [463.0548, 1102.921]}
+{"op": "bone.add", "name": "shin_near", "parent": "thigh_near", "world": [465.0, 1079.0], "tip": [457.6, 1170.0]}
+{"op": "bone.add", "name": "foot_near", "parent": "shin_near", "world": [457.6, 1170.0], "tip": [406.8196, 1212.1587]}
+{"op": "bone.add", "name": "thigh_far", "parent": "pelvis", "world": [598.0, 968.0], "tip": [611.6, 1079.0]}
+{"op": "bone.add", "name": "hip_far", "parent": "pelvis", "world": [598.0, 968.0], "tip": [600.9187, 991.8219]}
+{"op": "bone.add", "name": "knee_far", "parent": "thigh_far", "world": [611.6, 1079.0], "tip": [615.4444, 1102.6901]}
+{"op": "bone.add", "name": "shin_far", "parent": "thigh_far", "world": [611.6, 1079.0], "tip": [626.4, 1170.2]}
+{"op": "bone.add", "name": "foot_far", "parent": "shin_far", "world": [626.4, 1170.2], "tip": [575.6196, 1212.3587]}
+{"op": "bone.add", "name": "foot_near_target", "parent": "root", "world": [457.6, 1170.0], "tip": [426.824, 1195.5507]}
+{"op": "bone.add", "name": "foot_far_target", "parent": "root", "world": [626.4, 1170.2], "tip": [595.624, 1195.7507]}
+{"op": "bone.add", "name": "hand_near_target", "parent": "root", "world": [358.3, 893], "tip": [341.297, 929.2063]}
+{"op": "bone.add", "name": "hand_far_target", "parent": "root", "world": [727.3, 893], "tip": [744.303, 929.2063]}
+{"op": "bone.set", "name": "hips", "role": "spine"}
+{"op": "bone.set", "name": "pelvis", "role": "spine"}
+{"op": "bone.set", "name": "spine_1", "role": "spine"}
+{"op": "bone.set", "name": "spine_2", "role": "spine"}
+{"op": "bone.set", "name": "chest", "role": "spine"}
+{"op": "bone.set", "name": "neck", "role": "head"}
+{"op": "bone.set", "name": "head", "role": "head"}
+{"op": "bone.set", "name": "hair_1", "role": "head"}
+{"op": "bone.set", "name": "clavicle_near", "role": "limb"}
+{"op": "bone.set", "name": "upper_arm_near", "role": "limb"}
+{"op": "bone.set", "name": "forearm_near", "role": "limb"}
+{"op": "bone.set", "name": "hand_near", "role": "limb"}
+{"op": "bone.set", "name": "clavicle_far", "role": "limb"}
+{"op": "bone.set", "name": "upper_arm_far", "role": "limb"}
+{"op": "bone.set", "name": "forearm_far", "role": "limb"}
+{"op": "bone.set", "name": "hand_far", "role": "limb"}
+{"op": "bone.set", "name": "thigh_near", "role": "limb"}
+{"op": "bone.set", "name": "shin_near", "role": "limb"}
+{"op": "bone.set", "name": "foot_near", "role": "limb"}
+{"op": "bone.set", "name": "thigh_far", "role": "limb"}
+{"op": "bone.set", "name": "shin_far", "role": "limb"}
+{"op": "bone.set", "name": "foot_far", "role": "limb"}
+{"op": "bone.set", "name": "lean", "role": "other"}
+{"op": "bone.set", "name": "elbow_near", "role": "other"}
+{"op": "bone.set", "name": "weapon", "role": "other"}
+{"op": "bone.set", "name": "weapon_tip", "role": "other"}
+{"op": "bone.set", "name": "elbow_far", "role": "other"}
+{"op": "bone.set", "name": "offhand", "role": "other"}
+{"op": "bone.set", "name": "hip_near", "role": "other"}
+{"op": "bone.set", "name": "knee_near", "role": "other"}
+{"op": "bone.set", "name": "hip_far", "role": "other"}
+{"op": "bone.set", "name": "knee_far", "role": "other"}
+{"op": "bone.set", "name": "foot_near_target", "role": "other"}
+{"op": "bone.set", "name": "foot_far_target", "role": "other"}
+{"op": "bone.set", "name": "hand_near_target", "role": "other"}
+{"op": "bone.set", "name": "hand_far_target", "role": "other"}
+{"op": "bone.limits", "name": "thigh_near", "min": -95, "max": 95}
+{"op": "bone.limits", "name": "thigh_far", "min": -95, "max": 95}
+{"op": "bone.limits", "name": "shin_near", "min": -130, "max": 2}
+{"op": "bone.limits", "name": "shin_far", "min": -130, "max": 2}
+{"op": "bone.limits", "name": "foot_near", "min": -90, "max": 90}
+{"op": "bone.limits", "name": "foot_far", "min": -90, "max": 90}
+{"op": "bone.limits", "name": "hips", "min": -30, "max": 30}
+{"op": "bone.limits", "name": "pelvis", "min": -20, "max": 20}
+{"op": "bone.limits", "name": "clavicle_near", "min": -15, "max": 15}
+{"op": "bone.limits", "name": "clavicle_far", "min": -15, "max": 15}
+{"op": "bone.limits", "name": "upper_arm_near", "min": -60, "max": 140}
+{"op": "bone.limits", "name": "upper_arm_far", "min": -140, "max": 60}
+{"op": "bone.limits", "name": "forearm_near", "min": -150, "max": 2}
+{"op": "bone.limits", "name": "forearm_far", "min": -2, "max": 150}
+{"op": "bone.limits", "name": "hand_near", "min": -45, "max": 45}
+{"op": "bone.limits", "name": "hand_far", "min": -45, "max": 45}

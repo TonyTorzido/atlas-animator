@@ -1,0 +1,389 @@
+{
+ "format": "rig-contract@1",
+ "id": "player-v2",
+ "revision": 1,
+ "legacy": "legacy-kit@1",
+ "boneAliases": {
+  "body": "hips"
+ },
+ "bones": [
+  {
+   "name": "hips",
+   "parent": "root"
+  },
+  {
+   "name": "pelvis",
+   "parent": "hips"
+  },
+  {
+   "name": "lean",
+   "parent": "hips"
+  },
+  {
+   "name": "spine_1",
+   "parent": "hips"
+  },
+  {
+   "name": "spine_2",
+   "parent": "spine_1"
+  },
+  {
+   "name": "chest",
+   "parent": "spine_2"
+  },
+  {
+   "name": "neck",
+   "parent": "chest"
+  },
+  {
+   "name": "head",
+   "parent": "neck"
+  },
+  {
+   "name": "hair_1",
+   "parent": "head"
+  },
+  {
+   "name": "clavicle_near",
+   "parent": "chest"
+  },
+  {
+   "name": "upper_arm_near",
+   "parent": "clavicle_near"
+  },
+  {
+   "name": "elbow_near",
+   "parent": "upper_arm_near"
+  },
+  {
+   "name": "forearm_near",
+   "parent": "upper_arm_near"
+  },
+  {
+   "name": "hand_near",
+   "parent": "forearm_near"
+  },
+  {
+   "name": "weapon",
+   "parent": "hand_near"
+  },
+  {
+   "name": "weapon_tip",
+   "parent": "weapon"
+  },
+  {
+   "name": "clavicle_far",
+   "parent": "chest"
+  },
+  {
+   "name": "upper_arm_far",
+   "parent": "clavicle_far"
+  },
+  {
+   "name": "elbow_far",
+   "parent": "upper_arm_far"
+  },
+  {
+   "name": "forearm_far",
+   "parent": "upper_arm_far"
+  },
+  {
+   "name": "hand_far",
+   "parent": "forearm_far"
+  },
+  {
+   "name": "offhand",
+   "parent": "hand_far"
+  },
+  {
+   "name": "thigh_near",
+   "parent": "pelvis"
+  },
+  {
+   "name": "hip_near",
+   "parent": "pelvis"
+  },
+  {
+   "name": "knee_near",
+   "parent": "thigh_near"
+  },
+  {
+   "name": "shin_near",
+   "parent": "thigh_near"
+  },
+  {
+   "name": "foot_near",
+   "parent": "shin_near"
+  },
+  {
+   "name": "thigh_far",
+   "parent": "pelvis"
+  },
+  {
+   "name": "hip_far",
+   "parent": "pelvis"
+  },
+  {
+   "name": "knee_far",
+   "parent": "thigh_far"
+  },
+  {
+   "name": "shin_far",
+   "parent": "thigh_far"
+  },
+  {
+   "name": "foot_far",
+   "parent": "shin_far"
+  },
+  {
+   "name": "foot_near_target",
+   "parent": "root"
+  },
+  {
+   "name": "foot_far_target",
+   "parent": "root"
+  },
+  {
+   "name": "hand_near_target",
+   "parent": "root"
+  },
+  {
+   "name": "hand_far_target",
+   "parent": "root"
+  }
+ ],
+ "bodySlots": [
+  {
+   "name": "skin_elbow_fill_far",
+   "bone": "elbow_far",
+   "attachment": "fill"
+  },
+  {
+   "name": "skin_wrist_fill_far",
+   "bone": "hand_far",
+   "attachment": "fill"
+  },
+  {
+   "name": "skin_arm_far",
+   "bone": "upper_arm_far",
+   "attachment": "arm"
+  },
+  {
+   "name": "skin_crease_far",
+   "bone": "elbow_far",
+   "attachment": "crease"
+  },
+  {
+   "name": "skin_hand_far",
+   "bone": "hand_far",
+   "attachment": "hand"
+  },
+  {
+   "name": "skin_foot_far",
+   "bone": "foot_far",
+   "attachment": "foot"
+  },
+  {
+   "name": "pants_leg_far",
+   "bone": "thigh_far",
+   "attachment": "leg"
+  },
+  {
+   "name": "skin_foot_near",
+   "bone": "foot_near",
+   "attachment": "foot"
+  },
+  {
+   "name": "pants_leg_near",
+   "bone": "thigh_near",
+   "attachment": "leg"
+  },
+  {
+   "name": "skin_neck",
+   "bone": "neck",
+   "attachment": "neck"
+  },
+  {
+   "name": "skin_torso",
+   "bone": "chest",
+   "attachment": "torso"
+  },
+  {
+   "name": "pants_hips",
+   "bone": "pelvis",
+   "attachment": "block"
+  },
+  {
+   "name": "skin_elbow_fill_near",
+   "bone": "elbow_near",
+   "attachment": "fill"
+  },
+  {
+   "name": "skin_wrist_fill_near",
+   "bone": "hand_near",
+   "attachment": "fill"
+  },
+  {
+   "name": "skin_arm_near",
+   "bone": "upper_arm_near",
+   "attachment": "arm"
+  },
+  {
+   "name": "skin_crease_near",
+   "bone": "elbow_near",
+   "attachment": "crease"
+  },
+  {
+   "name": "skin_hand_near",
+   "bone": "hand_near",
+   "attachment": "hand"
+  },
+  {
+   "name": "head",
+   "bone": "head",
+   "attachment": "head"
+  },
+  {
+   "name": "weapon_points",
+   "bone": "weapon",
+   "attachment": null
+  }
+ ],
+ "itemSlots": [
+  {
+   "name": "chest_torso",
+   "bone": "chest"
+  },
+  {
+   "name": "pants_hips",
+   "bone": "pelvis"
+  },
+  {
+   "name": "pants_leg_near",
+   "bone": "thigh_near"
+  },
+  {
+   "name": "pants_leg_far",
+   "bone": "thigh_far"
+  },
+  {
+   "name": "chest_sleeve_near",
+   "bone": "upper_arm_near"
+  },
+  {
+   "name": "chest_sleeve_far",
+   "bone": "upper_arm_far"
+  },
+  {
+   "name": "boot_near",
+   "bone": "foot_near"
+  },
+  {
+   "name": "boot_far",
+   "bone": "foot_far"
+  },
+  {
+   "name": "glove_near",
+   "bone": "hand_near"
+  },
+  {
+   "name": "glove_far",
+   "bone": "hand_far"
+  },
+  {
+   "name": "glove_near_fingers",
+   "bone": "hand_near"
+  },
+  {
+   "name": "glove_far_fingers",
+   "bone": "hand_far"
+  },
+  {
+   "name": "cape",
+   "bone": "chest"
+  },
+  {
+   "name": "helmet_front",
+   "bone": "head"
+  },
+  {
+   "name": "helmet_back",
+   "bone": "head"
+  },
+  {
+   "name": "chain",
+   "bone": "chest"
+  },
+  {
+   "name": "mask",
+   "bone": "head"
+  },
+  {
+   "name": "weapon",
+   "bone": "weapon"
+  }
+ ],
+ "points": [
+  {
+   "name": "grip",
+   "slot": "weapon_points",
+   "bone": "weapon",
+   "x": 0
+  },
+  {
+   "name": "tip",
+   "slot": "weapon_points",
+   "bone": "weapon",
+   "x": 410
+  }
+ ],
+ "canonicalMeshes": [
+  {
+   "slot": "pants_leg_near",
+   "attachment": "leg",
+   "vertices": 98,
+   "rings": [
+    "cap_top",
+    "cap_upper",
+    "cap_mid",
+    "hip",
+    "thigh_1",
+    "thigh_2",
+    "knee_prep",
+    "knee_above",
+    "knee",
+    "knee_below",
+    "shin_1",
+    "shin_2",
+    "shin_3",
+    "cuff"
+   ]
+  },
+  {
+   "slot": "pants_leg_far",
+   "attachment": "leg",
+   "vertices": 98,
+   "rings": [
+    "cap_top",
+    "cap_upper",
+    "cap_mid",
+    "hip",
+    "thigh_1",
+    "thigh_2",
+    "knee_prep",
+    "knee_above",
+    "knee",
+    "knee_below",
+    "shin_1",
+    "shin_2",
+    "shin_3",
+    "cuff"
+   ]
+  },
+  {
+   "slot": "pants_hips",
+   "attachment": "block",
+   "vertices": 36
+  }
+ ]
+}

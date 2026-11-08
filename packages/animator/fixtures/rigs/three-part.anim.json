@@ -1,0 +1,108 @@
+{
+  "format": "atlas-anim@1",
+  "name": "three-part",
+  "canvas": { "width": 256, "height": 256, "originX": 128, "originY": 230 },
+  "bones": [
+    { "name": "root" },
+    { "name": "hips", "parent": "root", "y": -40, "rotation": -90, "length": 60, "limits": { "min": -60, "max": 60 } },
+    { "name": "chest", "parent": "hips", "x": 60, "length": 60, "limits": { "min": -90, "max": 90 } },
+    { "name": "head", "parent": "chest", "x": 60, "length": 50 }
+  ],
+  "slots": [
+    { "name": "base", "bone": "root", "attachment": "base" },
+    { "name": "torso", "bone": "hips", "attachment": "torso" },
+    { "name": "tunic", "bone": "hips", "attachment": "tunic" },
+    { "name": "head", "bone": "head", "attachment": "head" }
+  ],
+  "skins": {
+    "body": {
+      "attachments": {
+        "base": { "base": { "type": "region", "path": "body/base", "x": 0, "y": -20, "width": 120, "height": 40 } },
+        "torso": {
+          "torso": {
+            "type": "mesh",
+            "path": "body/torso",
+            "bones": ["hips", "chest"],
+            "uvs": [0, 1, 0, 0.75, 0, 0.5, 0, 0.25, 0, 0, 1, 0, 1, 0.25, 1, 0.5, 1, 0.75, 1, 1],
+            "triangles": [0, 1, 8, 0, 8, 9, 1, 2, 7, 1, 7, 8, 2, 3, 6, 2, 6, 7, 3, 4, 5, 3, 5, 6],
+            "vertices": [
+              1, 0, 0, -30, 1,
+              1, 0, 30, -30, 1,
+              2, 0, 60, -30, 0.5, 1, 0, -30, 0.5,
+              1, 1, 30, -30, 1,
+              1, 1, 60, -30, 1,
+              1, 1, 60, 30, 1,
+              1, 1, 30, 30, 1,
+              2, 0, 60, 30, 0.5, 1, 0, 30, 0.5,
+              1, 0, 30, 30, 1,
+              1, 0, 0, 30, 1
+            ],
+            "hull": 10,
+            "width": 60,
+            "height": 120
+          }
+        },
+        "head": { "head": { "type": "region", "path": "body/head", "x": 25, "y": 0, "rotation": 90, "width": 50, "height": 50 } }
+      }
+    },
+    "tunic": {
+      "attachments": {
+        "tunic": {
+          "tunic": {
+            "type": "linkedMesh",
+            "path": "swag/tunic/torso",
+            "source": { "skin": "body", "slot": "torso", "attachment": "torso" },
+            "width": 60,
+            "height": 120
+          }
+        }
+      }
+    }
+  },
+  "events": { "hit": { "int": 1 }, "step": {} },
+  "animations": {
+    "idle": {
+      "duration": 2.4,
+      "loop": true,
+      "bones": {
+        "chest": { "rotate": [{ "time": 0, "value": 0, "curve": [0.42, 0, 0.58, 1] }, { "time": 1.2, "value": 4, "curve": [0.42, 0, 0.58, 1] }, { "time": 2.4, "value": 0 }] },
+        "hips": { "translate": [{ "time": 0, "x": 0, "y": 0, "curve": [0.42, 0, 0.58, 1] }, { "time": 1.2, "x": 0, "y": 3, "curve": [0.42, 0, 0.58, 1] }, { "time": 2.4, "x": 0, "y": 0 }] },
+        "head": { "rotate": [{ "time": 0, "value": 0, "curve": [0.42, 0, 0.58, 1] }, { "time": 1.2, "value": -3, "curve": [0.42, 0, 0.58, 1] }, { "time": 2.4, "value": 0 }] }
+      }
+    },
+    "walk": {
+      "duration": 0.8,
+      "loop": true,
+      "bones": {
+        "hips": {
+          "rotate": [{ "time": 0, "value": -6, "curve": [0.42, 0, 0.58, 1] }, { "time": 0.4, "value": 6, "curve": [0.42, 0, 0.58, 1] }, { "time": 0.8, "value": -6 }],
+          "translate": [
+            { "time": 0, "x": 0, "y": 0, "curve": [0.42, 0, 0.58, 1] }, { "time": 0.2, "x": 0, "y": -6, "curve": [0.42, 0, 0.58, 1] }, { "time": 0.4, "x": 0, "y": 0, "curve": [0.42, 0, 0.58, 1] },
+            { "time": 0.6, "x": 0, "y": -6, "curve": [0.42, 0, 0.58, 1] }, { "time": 0.8, "x": 0, "y": 0 }
+          ]
+        },
+        "chest": { "rotate": [{ "time": 0, "value": 5, "curve": [0.42, 0, 0.58, 1] }, { "time": 0.4, "value": -5, "curve": [0.42, 0, 0.58, 1] }, { "time": 0.8, "value": 5 }] }
+      },
+      "events": [{ "time": 0, "name": "step" }, { "time": 0.4, "name": "step" }]
+    },
+    "attack": {
+      "duration": 0.9,
+      "bones": {
+        "chest": {
+          "rotate": [
+            { "time": 0, "value": 0, "curve": [0.3, 0, 0.5, 1] }, { "time": 0.3, "value": -40, "curve": [0.2, 0.7, 0.4, 1] },
+            { "time": 0.45, "value": 55, "curve": [0.3, 0, 0.6, 1] }, { "time": 0.6, "value": 45, "curve": [0.42, 0, 0.58, 1] }, { "time": 0.9, "value": 0 }
+          ]
+        },
+        "head": {
+          "scale": [
+            { "time": 0, "x": 1, "y": 1, "curve": "stepped" }, { "time": 0.42, "x": 1, "y": 1 },
+            { "time": 0.48, "x": 0.85, "y": 1.15, "curve": [0.42, 0, 0.58, 1] }, { "time": 0.6, "x": 1, "y": 1 }
+          ]
+        }
+      },
+      "slots": { "tunic": { "color": [{ "time": 0, "color": "ffffffff" }, { "time": 0.45, "color": "ff9090ff", "curve": [0.42, 0, 0.58, 1] }, { "time": 0.6, "color": "ffffffff" }] } },
+      "events": [{ "time": 0.45, "name": "hit" }]
+    }
+  }
+}

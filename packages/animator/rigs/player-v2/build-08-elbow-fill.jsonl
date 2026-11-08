@@ -1,0 +1,4 @@
+{"op": "driven.add", "name": "elbow_fill_near", "bone": "forearm_near", "keys": [{"at": -110, "alpha": {"skin_elbow_fill_near": 1}}, {"at": -60, "alpha": {"skin_elbow_fill_near": 0}}, {"at": 0, "alpha": {"skin_elbow_fill_near": 0}}]}
+{"op": "driven.add", "name": "elbow_fill_far", "bone": "forearm_far", "keys": [{"at": 0, "alpha": {"skin_elbow_fill_far": 0}}, {"at": 60, "alpha": {"skin_elbow_fill_far": 0}}, {"at": 110, "alpha": {"skin_elbow_fill_far": 1}}]}
+{"op": "driven.add", "name": "elbow_crease_near", "bone": "forearm_near", "keys": [{"at": -125, "alpha": {"skin_crease_near": 1}}, {"at": -100, "alpha": {"skin_crease_near": 0}}, {"at": 0, "alpha": {"skin_crease_near": 0}}]}
+{"op": "driven.add", "name": "elbow_crease_far", "bone": "forearm_far", "keys": [{"at": 0, "alpha": {"skin_crease_far": 0}}, {"at": 100, "alpha": {"skin_crease_far": 0}}, {"at": 125, "alpha": {"skin_crease_far": 1}}]}

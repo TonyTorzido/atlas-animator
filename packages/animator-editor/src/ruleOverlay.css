@@ -1,0 +1,103 @@
+/*
+ * Atlas Animator editor: styles for the rule checker overlay (ruleOverlay.ts). The strip sits above the canvas in the Animate and Pro
+ * workspaces only. Colours come from the tokens in index.html (:root); the red is the same red the outlines use on the canvas.
+ */
+
+#rulestrip {
+  display: none;
+  position: relative;
+  z-index: 4;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+body.ws-animate:not(.setup) #rulestrip,
+body.ws-pro:not(.setup) #rulestrip {
+  display: flex;
+}
+
+#rulestrip > * {
+  pointer-events: auto;
+}
+
+#rules-toggle {
+  align-self: flex-end;
+  margin-top: var(--s1);
+}
+
+#rulerow {
+  display: flex;
+  gap: 6px;
+}
+
+#rules-pill {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#rules-pill:not(.chip-ok):not(.chip-bad) {
+  color: var(--dim);
+  background: rgba(20, 23, 29, 0.9);
+}
+
+/* The expanded list is a popover under the pill: one row per broken rule (name, frame, Go) and the off switch. */
+#rulechips {
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  z-index: var(--z-popover);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--s1);
+  min-width: 240px;
+  width: max-content;
+}
+
+.rule-empty {
+  padding: var(--s1) 0;
+  font-size: var(--fs-sm);
+  color: var(--text2);
+}
+
+#rulechips[hidden] {
+  display: none;
+}
+
+.rule-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  height: var(--ctl-md);
+  padding: 0 var(--s2);
+  border-radius: 6px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: left;
+  background: var(--ok-soft);
+  border: 1px solid var(--ok-line);
+  color: var(--ok);
+}
+
+.rule-chip .rc-name { flex: 1 1 auto; }
+.rule-chip .rc-frame { color: var(--dim); font-weight: 400; font-variant-numeric: tabular-nums; }
+.rule-chip .rc-go { color: var(--accent2); }
+
+.rule-chip:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.rule-chip.bad {
+  background: var(--bad-soft);
+  border-color: var(--bad-line);
+  color: var(--bad-hi);
+  cursor: pointer;
+}
+
+.rule-chip.bad:hover {
+  background: var(--bad-bg);
+  border-color: var(--bad);
+}

@@ -1,0 +1,49 @@
+/* The Weights tool panel (Setup > Weights). Tokens come from ui.css / index.html :root. */
+.wt { display: flex; flex-direction: column; gap: var(--s2, 8px); min-width: 0; }
+.wt-sec { display: flex; flex-direction: column; gap: 6px; padding: 8px 10px 10px; background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; }
+.wt-sec h3 { margin: 0 0 2px; font-size: var(--fs-sm); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); }
+.wt-line { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-width: 0; }
+.wt-row { display: grid; grid-template-columns: 56px minmax(0, 1fr) 54px; align-items: center; gap: 6px; font-size: var(--fs-sm); color: var(--dim); }
+.wt-lab { color: var(--dim); font-size: var(--fs-sm); display: inline-flex; align-items: center; gap: 4px; }
+.wt-val { text-align: right; color: var(--text); font-variant-numeric: tabular-nums; }
+.wt-range { width: 100%; min-width: 0; accent-color: var(--accent); }
+.wt-dim { color: var(--muted); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
+.wt-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.wt-mesh { width: 100%; min-width: 0; }
+.wt-check { display: inline-flex; align-items: center; gap: 5px; font-size: var(--fs-sm); color: var(--dim); cursor: pointer; }
+.wt-seg { align-self: flex-start; flex-wrap: wrap; }
+.wt-params { display: flex; flex-direction: column; gap: 4px; }
+.wt-bones { display: flex; flex-direction: column; gap: 2px; max-height: 188px; overflow-y: auto; scrollbar-width: none; }
+.wt-bones::-webkit-scrollbar { display: none; }
+.wt-bone { display: grid; grid-template-columns: 12px minmax(0, 1fr) 34px 52px; align-items: center; gap: 6px; padding: 2px 6px; border: 1px solid transparent; border-radius: 5px; }
+.wt-bone:hover { background: var(--panel3); }
+.wt-bone.on { background: var(--accent-soft); border-color: var(--accent-line); }
+.wt-dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(0, 0, 0, .5); }
+.wt-bname { background: transparent; border: 0; padding: 0; text-align: left; color: var(--text); font-size: var(--fs-md); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; }
+.wt-bone.on .wt-bname { color: var(--accent); font-weight: 600; }
+.wt-lock { height: var(--ctl-sm); padding: 0 6px; font-size: var(--fs-xs); border-radius: 4px; background: var(--panel); color: var(--muted); border: 1px solid var(--line); cursor: pointer; }
+.wt-lock.on { background: var(--bad-soft); border-color: var(--bad-line); color: var(--bad-hi); }
+.wt-table { display: flex; flex-direction: column; min-width: 0; border: 1px solid var(--line); border-radius: 6px; background: var(--bg0); overflow: hidden; }
+.wt-table .note { padding: 8px; }
+.wt-trow { display: grid; align-items: center; gap: 4px; height: var(--ctl-sm); padding: 0 4px; font-size: var(--fs-sm); }
+.wt-thead { background: var(--panel3); color: var(--dim); font-weight: 600; border-bottom: 1px solid var(--line); }
+.wt-tcol { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wt-tcol.on { color: var(--accent); }
+.wt-tbody { max-height: 176px; overflow-y: auto; position: relative; scrollbar-width: none; }
+.wt-tbody::-webkit-scrollbar { display: none; }
+.wt-cell { height: var(--ctl-sm); width: 100%; min-width: 0; padding: 0 3px; font-size: var(--fs-sm); text-align: right; }
+.wt-report { min-height: 16px; }
+
+/* Paint-first layout: collapsible secondary groups, compact sections so brush, bones, heat map and bend fit at 1366x768 */
+.wt { gap: 6px; }
+.wt-sec { padding: 6px 8px 8px; gap: 5px; }
+.wt-bones { max-height: 132px; }
+.wt-fold { border: 1px solid var(--line); border-radius: 8px; background: var(--panel2); }
+.wt-fold > summary { cursor: pointer; padding: 6px 10px; font-size: var(--fs-sm); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); list-style: none; display: flex; align-items: center; justify-content: space-between; }
+.wt-fold > summary::-webkit-details-marker { display: none; }
+.wt-fold > summary::after { content: ""; width: 7px; height: 7px; border-right: 2px solid var(--dim); border-bottom: 2px solid var(--dim); transform: rotate(-45deg); transition: transform var(--t-fast, .12s) ease-out; }
+.wt-fold[open] > summary::after { transform: rotate(45deg); }
+.wt-fold > summary:hover { color: var(--text); }
+.wt-fold > .wt-sec { border: 0; border-top: 1px solid var(--line); border-radius: 0 0 8px 8px; background: transparent; }
+
+@media (max-height: 820px) { .wt-bones { max-height: 84px; } .wt-sec { padding: 5px 8px 6px; } }

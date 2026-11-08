@@ -1,0 +1,66 @@
+{"op": "slot.add", "name": "foot_l", "bone": "foot_l"}
+{"op": "slot.add", "name": "leg_l", "bone": "thigh_l"}
+{"op": "slot.add", "name": "foot_r", "bone": "foot_r"}
+{"op": "slot.add", "name": "leg_r", "bone": "thigh_r"}
+{"op": "slot.add", "name": "waist", "bone": "pelvis"}
+{"op": "slot.add", "name": "neck", "bone": "neck"}
+{"op": "slot.add", "name": "head", "bone": "head"}
+{"op": "slot.add", "name": "eyes", "bone": "head"}
+{"op": "slot.add", "name": "brows", "bone": "head"}
+{"op": "slot.add", "name": "nose", "bone": "head"}
+{"op": "slot.add", "name": "mouth", "bone": "head"}
+{"op": "slot.add", "name": "hair_back", "bone": "head"}
+{"op": "slot.add", "name": "arm_l", "bone": "upper_arm_l"}
+{"op": "slot.add", "name": "arm_r", "bone": "upper_arm_r"}
+{"op": "slot.add", "name": "chest", "bone": "chest"}
+{"op": "slot.add", "name": "arm_l_fore", "bone": "forearm_l"}
+{"op": "slot.add", "name": "arm_r_fore", "bone": "forearm_r"}
+{"op": "slot.add", "name": "shoulder_l", "bone": "chest"}
+{"op": "slot.add", "name": "shoulder_r", "bone": "chest"}
+{"op": "slot.add", "name": "hand_l", "bone": "hand_l"}
+{"op": "slot.add", "name": "weapon", "bone": "weapon"}
+{"op": "slot.add", "name": "hand_l_fingers", "bone": "hand_l"}
+{"op": "slot.add", "name": "hand_r", "bone": "hand_r"}
+{"op": "slot.add", "name": "hand_r_fingers", "bone": "hand_r"}
+{"op": "slot.add", "name": "hair_front", "bone": "head"}
+{"op": "attachment.add", "skin": "body", "slot": "head", "name": "head", "attachment": {"type": "region", "path": "body/head__head", "x": 237.5, "y": 1.0, "rotation": 90.0, "width": 440, "height": 481}}
+{"op": "attachment.remove", "skin": "body", "slot": "head__head", "name": "head__head"}
+{"op": "slot.remove", "name": "head__head"}
+{"op": "attachment.add", "skin": "body", "slot": "eyes", "name": "eyes", "attachment": {"type": "region", "path": "body/eyes__eyes", "x": 177.5, "y": 0.5, "rotation": 90.0, "width": 343, "height": 69}}
+{"op": "attachment.remove", "skin": "body", "slot": "eyes__eyes", "name": "eyes__eyes"}
+{"op": "slot.remove", "name": "eyes__eyes"}
+{"op": "attachment.add", "skin": "body", "slot": "eyes", "name": "eyes_blink_half", "attachment": {"type": "region", "path": "body/eyes__eyes_blink_half", "x": 169.5, "y": 1.0, "rotation": 90.0, "width": 342, "height": 53}}
+{"op": "attachment.remove", "skin": "body", "slot": "eyes__eyes_blink_half", "name": "eyes__eyes_blink_half"}
+{"op": "slot.remove", "name": "eyes__eyes_blink_half"}
+{"op": "attachment.add", "skin": "body", "slot": "eyes", "name": "eyes_blink_closed", "attachment": {"type": "region", "path": "body/eyes__eyes_blink_closed", "x": 168.5, "y": 1.0, "rotation": 90.0, "width": 342, "height": 51}}
+{"op": "attachment.remove", "skin": "body", "slot": "eyes__eyes_blink_closed", "name": "eyes__eyes_blink_closed"}
+{"op": "slot.remove", "name": "eyes__eyes_blink_closed"}
+{"op": "attachment.add", "skin": "body", "slot": "brows", "name": "brows", "attachment": {"type": "region", "path": "body/brows__brows", "x": 240.0, "y": 0.5, "rotation": 90.0, "width": 329, "height": 28}}
+{"op": "attachment.remove", "skin": "body", "slot": "brows__brows", "name": "brows__brows"}
+{"op": "slot.remove", "name": "brows__brows"}
+{"op": "attachment.add", "skin": "body", "slot": "nose", "name": "nose", "attachment": {"type": "region", "path": "body/nose__nose", "x": 98.0, "y": 1.0, "rotation": 90.0, "width": 38, "height": 8}}
+{"op": "attachment.remove", "skin": "body", "slot": "nose__nose", "name": "nose__nose"}
+{"op": "slot.remove", "name": "nose__nose"}
+{"op": "attachment.add", "skin": "body", "slot": "mouth", "name": "mouth", "attachment": {"type": "region", "path": "body/mouth__mouth", "x": 58.5, "y": 1.0, "rotation": 90.0, "width": 94, "height": 17}}
+{"op": "attachment.remove", "skin": "body", "slot": "mouth__mouth", "name": "mouth__mouth"}
+{"op": "slot.remove", "name": "mouth__mouth"}
+{"op": "attachment.add", "skin": "body", "slot": "hair_back", "name": "hair", "attachment": {"type": "region", "path": "body/hair_back__hair", "x": 313.5, "y": 3.0, "rotation": 90.0, "width": 608, "height": 431}}
+{"op": "attachment.remove", "skin": "body", "slot": "hair_back__hair", "name": "hair_back__hair"}
+{"op": "slot.remove", "name": "hair_back__hair"}
+{"op": "attachment.add", "skin": "body", "slot": "hair_front", "name": "fringe", "attachment": {"type": "region", "path": "body/hair_front__fringe", "x": 194.5, "y": 1.0, "rotation": 90.0, "width": 438, "height": 191}}
+{"op": "attachment.remove", "skin": "body", "slot": "hair_front__fringe", "name": "hair_front__fringe"}
+{"op": "slot.remove", "name": "hair_front__fringe"}
+{"op": "attachment.add", "skin": "body", "slot": "neck", "name": "neck", "attachment": {"type": "region", "path": "body/neck__neck", "x": 43.5, "y": -0.0, "rotation": 90.0, "width": 102, "height": 113}}
+{"op": "attachment.remove", "skin": "body", "slot": "neck__neck", "name": "neck__neck"}
+{"op": "slot.remove", "name": "neck__neck"}
+{"op": "attachment.add", "skin": "body", "slot": "weapon", "name": "double_axe", "attachment": {"type": "region", "path": "body/weapon__double_axe", "x": 150.4416, "y": -2.4768, "rotation": 90.0, "scaleX": -0.8, "scaleY": 0.8, "width": 380, "height": 671}}
+{"op": "attachment.remove", "skin": "body", "slot": "weapon__double_axe", "name": "weapon__double_axe"}
+{"op": "slot.remove", "name": "weapon__double_axe"}
+{"op": "slot.set", "name": "neck", "attachment": "neck"}
+{"op": "slot.set", "name": "head", "attachment": "head"}
+{"op": "slot.set", "name": "eyes", "attachment": "eyes"}
+{"op": "slot.set", "name": "brows", "attachment": "brows"}
+{"op": "slot.set", "name": "nose", "attachment": "nose"}
+{"op": "slot.set", "name": "mouth", "attachment": "mouth"}
+{"op": "slot.set", "name": "hair_back", "attachment": "hair"}
+{"op": "slot.set", "name": "hair_front", "attachment": "fringe"}

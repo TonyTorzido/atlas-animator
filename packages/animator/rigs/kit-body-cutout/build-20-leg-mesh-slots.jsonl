@@ -1,0 +1,6 @@
+{"op": "slot.add", "name": "pants_leg_near", "bone": "thigh_near", "drawAfter": "pants_cuff_near"}
+{"op": "slot.add", "name": "pants_leg_far", "bone": "thigh_far", "drawAfter": "pants_cuff_far"}
+{"op": "slot.set", "name": "pants_crotch", "drawBefore": "skin_foot_near", "drawAfter": null}
+{"op": "slot.set", "name": "pants_leg_far", "drawBefore": "pants_leg_near", "drawAfter": null}
+{"op": "driven.remove", "name": "leg_near_knee_fold"}
+{"op": "driven.remove", "name": "leg_far_knee_fold"}

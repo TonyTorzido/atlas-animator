@@ -1,0 +1,106 @@
+/*
+ * Rig inspector (inspector.ts): one node-scoped panel in the Rig tab. Header (type icon, name, kind chip, breadcrumb), collapsible
+ * sections with X / Y axis fields, and a pinned Delete. Built on components.css (.field .btn .chip .kv .label .name); no raw hex, no
+ * scrollbars (the body scrolls by wheel and keyboard when a section is open on a short window).
+ */
+#pane-rig > #setuppanel { flex: 1 1 auto; min-height: 0; padding: 0; border-bottom: 0; flex-direction: column; overflow: hidden; }
+body.setup #pane-rig > #setuppanel { display: flex; }
+.insp { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; }
+.insp.insp-flat { flex: none; }
+.insp-head { display: flex; align-items: flex-start; gap: var(--s2); padding: var(--s2) var(--s3) var(--s2); border-bottom: 1px solid var(--line); flex: none; }
+.insp-ico { display: inline-flex; align-items: center; justify-content: center; flex: none; width: var(--ctl-lg); height: var(--ctl-lg); border-radius: 6px; background: var(--panel2); border: 1px solid var(--line); }
+.insp-id { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: var(--s1); }
+.insp-top { display: flex; align-items: center; gap: var(--s2); min-width: 0; }
+.insp-top .field, .insp-name { flex: 1 1 auto; min-width: 0; font-weight: 600; font-size: var(--fs-lg); }
+.insp-name { padding: 0 var(--s1); line-height: var(--ctl-md); }
+.insp-kind { flex: none; font-size: var(--fs-xs); letter-spacing: 0.06em; color: var(--dim); }
+.insp-crumbs { display: flex; align-items: center; flex-wrap: wrap; gap: 0 2px; min-width: 0; font-size: var(--fs-sm); color: var(--dim); }
+.insp-crumb { padding: 0 2px; max-width: 110px; background: none; border: 0; height: auto; color: var(--dim); font-size: var(--fs-sm); }
+button.insp-crumb { cursor: pointer; }
+button.insp-crumb:hover { color: var(--accent); background: none; }
+.insp-sep { display: inline-flex; color: var(--muted); }
+.insp-sep .ico { width: 10px; height: 10px; }
+.insp-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; }
+.insp-flat .insp-body { overflow: visible; }
+.insp-foot { flex: none; display: flex; flex-direction: column; gap: var(--s2); padding: var(--s2) var(--s3); border-top: 1px solid var(--line); background: var(--panel); }
+.insp-delete { width: 100%; justify-content: center; }
+.btn-danger.insp-delete { color: var(--bad); background: var(--bad-bg); border-color: var(--bad-line); }
+.insp-empty { padding: var(--s3); }
+
+/* Sections */
+.insp-sec { border-bottom: 1px solid var(--line); }
+.insp-sec-head { display: flex; align-items: center; gap: var(--s2); width: 100%; height: var(--ctl-md); padding: 0 var(--s3); border: 0; border-radius: 0; background: transparent; color: var(--text2); text-align: left; cursor: pointer; }
+.insp-sec-head:hover { background: var(--panel2); border: 0; }
+.insp-sec-head .ico { width: 12px; height: 12px; flex: none; color: var(--dim); transition: transform 0.1s; }
+.insp-sec:not(.open) .insp-sec-head .ico { transform: rotate(-90deg); }
+.insp-sec-title { font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text2); }
+.insp-sec-meta { margin-left: auto; font-size: var(--fs-sm); color: var(--dim); font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.insp-sec-body { display: flex; flex-direction: column; gap: var(--s1); padding: 0 var(--s3) var(--s1); }
+
+/* Rows: a label and one or two axis fields */
+.insp-row { display: grid; grid-template-columns: 72px repeat(2, minmax(0, 1fr)); gap: var(--s2); align-items: center; min-height: var(--ctl-md); }
+.insp-row.insp-plain { grid-template-columns: 72px minmax(0, 1fr); }
+.insp-lab { font-size: var(--fs-sm); text-transform: none; letter-spacing: 0; color: var(--text2); }
+.insp-val { display: flex; align-items: center; flex-wrap: wrap; gap: var(--s1) var(--s2); min-width: 0; }
+.insp-val > .field:not(.num), .insp-val > select { flex: 1 1 auto; min-width: 0; }
+.insp-ax { display: flex; align-items: center; min-width: 0; border: 1px solid var(--line); border-radius: 6px; background: var(--panel2); overflow: hidden; height: var(--ctl-md); }
+.insp-ax:focus-within { border-color: var(--accent2); background: var(--accent2-soft); }
+.insp-ax i { flex: none; padding: 0 var(--s2); font-style: normal; font-size: var(--fs-xs); font-weight: 600; color: var(--dim); background: var(--panel3); align-self: stretch; display: inline-flex; align-items: center; }
+.insp-ax em { flex: none; padding-right: var(--s2); font-style: normal; font-size: var(--fs-xs); color: var(--muted); }
+.insp-ax .field { flex: 1 1 auto; min-width: 0; width: 100%; height: 100%; border: 0; background: transparent; text-align: right; padding: 0 var(--s1); border-radius: 0; }
+.insp-ax .field:focus { background: transparent; }
+.insp-chips { display: inline-flex; flex-wrap: wrap; gap: var(--s1); }
+.chip-toggle { display: inline-flex; align-items: center; gap: var(--s1); height: var(--ctl-sm); padding: 0 var(--s2); border-radius: 999px; border: 1px solid var(--line); background: var(--panel2); font-size: var(--fs-sm); color: var(--text2); cursor: pointer; white-space: nowrap; }
+.chip-toggle:has(input:checked) { border-color: var(--accent-lo); color: var(--text); }
+.chip-toggle:has(input:disabled) { opacity: 0.5; cursor: not-allowed; }
+.insp-color { width: 40px; height: var(--ctl-sm); padding: 0; border: 1px solid var(--line); border-radius: 4px; background: transparent; }
+.insp-line { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2); }
+.insp-line > .label { flex: 1 1 auto; }
+.insp-moves .btn { flex: 1 1 0; min-width: 0; padding: 0 var(--s1); }
+.insp-note { font-size: var(--fs-sm); color: var(--dim); line-height: 1.4; }
+.insp-grid { display: grid; grid-template-columns: minmax(0, 1fr) 64px; gap: var(--s1) var(--s2); align-items: center; }
+.insp-grid .label { text-transform: none; letter-spacing: 0; font-size: var(--fs-sm); }
+
+/* Lists inside sections (slots on the bone, constraints, images of a slot) */
+.insp-list { display: flex; flex-direction: column; gap: var(--s1); }
+.insp-item { display: flex; align-items: center; gap: var(--s2); height: var(--ctl-md); padding: 0 var(--s2); border: 1px solid var(--line); border-radius: 6px; background: var(--panel2); color: var(--text); text-align: left; cursor: pointer; min-width: 0; }
+.insp-item.insp-pathpt { height: auto; flex-wrap: wrap; padding: var(--s2); row-gap: var(--s1); }
+.insp-item.insp-pathpt .field.num { width: 52px; }
+.insp-item:hover { border-color: var(--line2); background: var(--panel3); }
+.insp-item .ico { flex: none; color: var(--c-slot); }
+.insp-item .name { flex: 1 1 auto; }
+.insp-item .label { flex: none; text-transform: none; letter-spacing: 0; font-size: var(--fs-sm); }
+.insp-item[data-con] .ico { color: var(--c-constraint); }
+.insp-att { cursor: default; }
+.insp-att.sel { border-color: var(--accent-lo); background: var(--accent-bg); }
+.insp-att .ico { color: var(--c-image); }
+.insp-link { flex: 1 1 auto; display: flex; align-items: center; gap: var(--s2); min-width: 0; height: 100%; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+.insp-link:hover { background: transparent; border: 0; }
+.insp-trash { width: var(--ctl-sm); height: var(--ctl-sm); padding: 0; flex: none; color: var(--dim); background: transparent; border: 0; }
+.insp-trash:hover { color: var(--bad); background: transparent; border: 0; }
+.insp-images { max-height: 148px; overflow-y: auto; }
+.insp-attach { display: flex; flex-direction: column; gap: var(--s2); padding-top: var(--s1); }
+.insp-attach .insp-pick { width: 100%; height: auto; }
+
+/* Setup panel leftovers still used by the sub-tool panels and the edit log */
+#setuppanel .editlog div { padding: 1px 0; font-size: var(--fs-sm); color: var(--dim); }
+
+/* The Rig tab wants room for X / Y fields: a wider side panel while Setup is on. */
+body.setup #app { --rw: 320px; }
+@media (max-width: 1499px) { body.setup #app { --rw: 296px; } }
+@media (max-width: 1280px) { body.setup #app { --rw: 272px; } }
+
+/* Rig file menu (main.ts): the file-level commands under one button in the header. */
+#rig-file-menu { position: fixed; z-index: 60; display: none; min-width: 200px; }
+#rig-file-menu.open { display: flex; }
+#rig-file-menu .menu-item { width: 100%; justify-content: flex-start; }
+#rig-file-menu .menu-item.danger { color: var(--bad); margin-top: var(--s1); border-top: 1px solid var(--line); border-radius: 0 0 4px 4px; }
+#rig-file-menu .menu-item.danger:hover:not(:disabled) { background: var(--bad-bg); }
+.ev-card { display: flex; flex-direction: column; gap: var(--s2); padding: var(--s2); margin-bottom: var(--s2); border: 1px solid var(--line); border-radius: 6px; background: var(--panel2); }
+.ev-card.sel { border-color: var(--accent); }
+.ev-title { display: flex; align-items: center; gap: var(--s2); }
+.ev-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.ev-name { background: none; border: 0; padding: 0; cursor: pointer; color: var(--text); text-align: left; }
+.ev-card input.field[type="text"] { min-width: 0; width: 100%; }
+.insp-val.ok { color: var(--ok); }
+.insp-val.bad { color: var(--bad-hi); }

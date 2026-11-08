@@ -1,0 +1,4 @@
+{"op": "slot.add", "name": "skin_arm_near", "bone": "upper_arm_near", "drawAfter": "skin_wrist_near"}
+{"op": "slot.add", "name": "skin_arm_far", "bone": "upper_arm_far", "drawAfter": "skin_wrist_far"}
+{"op": "driven.remove", "name": "arm_near_elbow_swaps"}
+{"op": "driven.remove", "name": "arm_far_elbow_swaps"}

@@ -1,0 +1,3 @@
+{"op": "slot.add", "name": "arm_l_upper", "bone": "upper_arm_l", "before": "arm_r"}
+{"op": "slot.add", "name": "elbow_l_joint", "bone": "elbow_l", "before": "arm_l_upper"}
+{"op": "slot.add", "name": "wrist_l_joint", "bone": "wrist_l", "before": "arm_l_fore"}

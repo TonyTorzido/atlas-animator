@@ -1,0 +1,156 @@
+{"op": "slot.add", "name": "foot_l", "bone": "foot_l"}
+{"op": "slot.add", "name": "leg_l", "bone": "thigh_l"}
+{"op": "slot.add", "name": "foot_r", "bone": "foot_r"}
+{"op": "slot.add", "name": "leg_r", "bone": "thigh_r"}
+{"op": "slot.add", "name": "waist", "bone": "pelvis"}
+{"op": "slot.add", "name": "neck", "bone": "neck"}
+{"op": "slot.add", "name": "head", "bone": "head"}
+{"op": "slot.add", "name": "eyes", "bone": "head"}
+{"op": "slot.add", "name": "brows", "bone": "head"}
+{"op": "slot.add", "name": "nose", "bone": "head"}
+{"op": "slot.add", "name": "mouth", "bone": "head"}
+{"op": "slot.add", "name": "hair_back", "bone": "head"}
+{"op": "slot.add", "name": "arm_l", "bone": "upper_arm_l"}
+{"op": "slot.add", "name": "arm_r", "bone": "upper_arm_r"}
+{"op": "slot.add", "name": "chest", "bone": "chest"}
+{"op": "slot.add", "name": "arm_l_fore", "bone": "forearm_l"}
+{"op": "slot.add", "name": "arm_r_fore", "bone": "forearm_r"}
+{"op": "slot.add", "name": "shoulder_l", "bone": "chest"}
+{"op": "slot.add", "name": "shoulder_r", "bone": "chest"}
+{"op": "slot.add", "name": "hand_l", "bone": "hand_l"}
+{"op": "slot.add", "name": "weapon", "bone": "weapon"}
+{"op": "slot.add", "name": "hand_l_fingers", "bone": "hand_l"}
+{"op": "slot.add", "name": "hand_r", "bone": "hand_r"}
+{"op": "slot.add", "name": "hand_r_fingers", "bone": "hand_r"}
+{"op": "slot.add", "name": "hair_front", "bone": "head"}
+{"op": "attachment.add", "skin": "body", "slot": "head", "name": "head", "attachment": {"type": "region", "path": "body/head__head", "x": 237.5, "y": 1.0, "rotation": 90.0, "width": 440, "height": 481}}
+{"op": "attachment.remove", "skin": "body", "slot": "head__head", "name": "head__head"}
+{"op": "slot.remove", "name": "head__head"}
+{"op": "attachment.add", "skin": "body", "slot": "eyes", "name": "eyes", "attachment": {"type": "region", "path": "body/eyes__eyes", "x": 177.5, "y": -28.5, "rotation": 90.0, "width": 297, "height": 69}}
+{"op": "attachment.remove", "skin": "body", "slot": "eyes__eyes", "name": "eyes__eyes"}
+{"op": "slot.remove", "name": "eyes__eyes"}
+{"op": "attachment.add", "skin": "body", "slot": "eyes", "name": "eyes_blink_half", "attachment": {"type": "region", "path": "body/eyes__eyes_blink_half", "x": 169.5, "y": -28.5, "rotation": 90.0, "width": 297, "height": 53}}
+{"op": "attachment.remove", "skin": "body", "slot": "eyes__eyes_blink_half", "name": "eyes__eyes_blink_half"}
+{"op": "slot.remove", "name": "eyes__eyes_blink_half"}
+{"op": "attachment.add", "skin": "body", "slot": "eyes", "name": "eyes_blink_closed", "attachment": {"type": "region", "path": "body/eyes__eyes_blink_closed", "x": 168.5, "y": -28.5, "rotation": 90.0, "width": 297, "height": 51}}
+{"op": "attachment.remove", "skin": "body", "slot": "eyes__eyes_blink_closed", "name": "eyes__eyes_blink_closed"}
+{"op": "slot.remove", "name": "eyes__eyes_blink_closed"}
+{"op": "attachment.add", "skin": "body", "slot": "brows", "name": "brows", "attachment": {"type": "region", "path": "body/brows__brows", "x": 240.0, "y": -31.0, "rotation": 90.0, "width": 286, "height": 28}}
+{"op": "attachment.remove", "skin": "body", "slot": "brows__brows", "name": "brows__brows"}
+{"op": "slot.remove", "name": "brows__brows"}
+{"op": "attachment.add", "skin": "body", "slot": "nose", "name": "nose", "attachment": {"type": "region", "path": "body/nose__nose", "x": 98.0, "y": -47.5, "rotation": 90.0, "width": 37, "height": 8}}
+{"op": "attachment.remove", "skin": "body", "slot": "nose__nose", "name": "nose__nose"}
+{"op": "slot.remove", "name": "nose__nose"}
+{"op": "attachment.add", "skin": "body", "slot": "mouth", "name": "mouth", "attachment": {"type": "region", "path": "body/mouth__mouth", "x": 58.5, "y": -41.0, "rotation": 90.0, "width": 90, "height": 17}}
+{"op": "attachment.remove", "skin": "body", "slot": "mouth__mouth", "name": "mouth__mouth"}
+{"op": "slot.remove", "name": "mouth__mouth"}
+{"op": "attachment.add", "skin": "body", "slot": "hair_back", "name": "hair", "attachment": {"type": "region", "path": "body/hair_back__hair", "x": 313.5, "y": 3.0, "rotation": 90.0, "width": 608, "height": 431}}
+{"op": "attachment.remove", "skin": "body", "slot": "hair_back__hair", "name": "hair_back__hair"}
+{"op": "slot.remove", "name": "hair_back__hair"}
+{"op": "attachment.add", "skin": "body", "slot": "hair_front", "name": "fringe", "attachment": {"type": "region", "path": "body/hair_front__fringe", "x": 194.5, "y": 1.29, "rotation": 90.0, "width": 438, "height": 191}}
+{"op": "attachment.remove", "skin": "body", "slot": "hair_front__fringe", "name": "hair_front__fringe"}
+{"op": "slot.remove", "name": "hair_front__fringe"}
+{"op": "attachment.add", "skin": "body", "slot": "arm_l", "name": "straight", "attachment": {"type": "region", "path": "body/arm_l__straight", "x": 125.0091, "y": -0.5238, "rotation": -119.085, "width": 138, "height": 201}}
+{"op": "attachment.remove", "skin": "body", "slot": "arm_l__straight", "name": "arm_l__straight"}
+{"op": "slot.remove", "name": "arm_l__straight"}
+{"op": "attachment.add", "skin": "body", "slot": "arm_r", "name": "straight", "attachment": {"type": "region", "path": "body/arm_r__straight", "x": 122.4738, "y": 0.9673, "rotation": -60.915, "width": 150, "height": 211}}
+{"op": "attachment.remove", "skin": "body", "slot": "arm_r__straight", "name": "arm_r__straight"}
+{"op": "slot.remove", "name": "arm_r__straight"}
+{"op": "attachment.add", "skin": "body", "slot": "arm_l", "name": "curled", "attachment": {"type": "region", "path": "body/arm_l__curled", "x": 46.01, "y": -34.72, "rotation": -90.0, "width": 156, "height": 179}}
+{"op": "attachment.remove", "skin": "body", "slot": "arm_l__curled", "name": "arm_l__curled"}
+{"op": "slot.remove", "name": "arm_l__curled"}
+{"op": "attachment.add", "skin": "body", "slot": "arm_r", "name": "curled", "attachment": {"type": "region", "path": "body/arm_r__curled", "x": 46.25, "y": 33.08, "rotation": -90.0, "width": 159, "height": 185}}
+{"op": "attachment.remove", "skin": "body", "slot": "arm_r__curled", "name": "arm_r__curled"}
+{"op": "slot.remove", "name": "arm_r__curled"}
+{"op": "attachment.add", "skin": "body", "slot": "leg_l", "name": "straight", "attachment": {"type": "region", "path": "body/leg_l__straight", "x": 67.6839, "y": -6.5678, "rotation": -95.1211, "width": 143, "height": 246}}
+{"op": "attachment.remove", "skin": "body", "slot": "leg_l__straight", "name": "leg_l__straight"}
+{"op": "slot.remove", "name": "leg_l__straight"}
+{"op": "attachment.add", "skin": "body", "slot": "leg_r", "name": "straight", "attachment": {"type": "region", "path": "body/leg_r__straight", "x": 67.2693, "y": 5.6644, "rotation": -84.338, "width": 144, "height": 247}}
+{"op": "attachment.remove", "skin": "body", "slot": "leg_r__straight", "name": "leg_r__straight"}
+{"op": "slot.remove", "name": "leg_r__straight"}
+{"op": "attachment.add", "skin": "body", "slot": "chest", "name": "tank", "attachment": {"type": "region", "path": "body/chest__tank", "x": 157.0, "y": -0.0, "rotation": 90.0, "width": 230, "height": 296}}
+{"op": "attachment.remove", "skin": "body", "slot": "chest__tank", "name": "chest__tank"}
+{"op": "slot.remove", "name": "chest__tank"}
+{"op": "attachment.add", "skin": "body", "slot": "waist", "name": "pants", "attachment": {"type": "region", "path": "body/waist__pants", "x": 22.5, "y": -0.5, "rotation": -90.0, "width": 267, "height": 117}}
+{"op": "attachment.remove", "skin": "body", "slot": "waist__pants", "name": "waist__pants"}
+{"op": "slot.remove", "name": "waist__pants"}
+{"op": "attachment.add", "skin": "body", "slot": "neck", "name": "neck", "attachment": {"type": "region", "path": "body/neck__neck", "x": 43.5, "y": -10.5, "rotation": 90.0, "width": 123, "height": 113}}
+{"op": "attachment.remove", "skin": "body", "slot": "neck__neck", "name": "neck__neck"}
+{"op": "slot.remove", "name": "neck__neck"}
+{"op": "attachment.add", "skin": "body", "slot": "hand_l", "name": "fist", "attachment": {"type": "region", "path": "body/hand_l__fist", "x": 43.538, "y": -9.6401, "rotation": -115.1935, "width": 121, "height": 123}}
+{"op": "attachment.remove", "skin": "body", "slot": "hand_l__fist", "name": "hand_l__fist"}
+{"op": "slot.remove", "name": "hand_l__fist"}
+{"op": "attachment.add", "skin": "body", "slot": "hand_l", "name": "grip_back", "attachment": {"type": "region", "path": "body/hand_l__grip_back", "x": 53.6094, "y": -7.1582, "rotation": -86.1085, "width": 121, "height": 106}}
+{"op": "attachment.remove", "skin": "body", "slot": "hand_l__grip_back", "name": "hand_l__grip_back"}
+{"op": "slot.remove", "name": "hand_l__grip_back"}
+{"op": "attachment.add", "skin": "body", "slot": "hand_l", "name": "open", "attachment": {"type": "region", "path": "body/hand_l__open", "x": 79.263, "y": -8.5503, "rotation": -86.1085, "width": 128, "height": 169}}
+{"op": "attachment.remove", "skin": "body", "slot": "hand_l__open", "name": "hand_l__open"}
+{"op": "slot.remove", "name": "hand_l__open"}
+{"op": "attachment.add", "skin": "body", "slot": "hand_l", "name": "relaxed", "attachment": {"type": "region", "path": "body/hand_l__relaxed", "x": 67.0722, "y": -6.1522, "rotation": -86.1085, "width": 120, "height": 133}}
+{"op": "attachment.remove", "skin": "body", "slot": "hand_l__relaxed", "name": "hand_l__relaxed"}
+{"op": "slot.remove", "name": "hand_l__relaxed"}
+{"op": "attachment.add", "skin": "body", "slot": "hand_l_fingers", "name": "grip_fingers", "attachment": {"type": "region", "path": "body/hand_l_fingers__grip_fingers", "x": 68.0834, "y": -8.5205, "rotation": -86.1085, "width": 121, "height": 68}}
+{"op": "attachment.remove", "skin": "body", "slot": "hand_l_fingers__grip_fingers", "name": "hand_l_fingers__grip_fingers"}
+{"op": "slot.remove", "name": "hand_l_fingers__grip_fingers"}
+{"op": "attachment.add", "skin": "body", "slot": "foot_l", "name": "flat", "attachment": {"type": "region", "path": "body/foot_l__flat", "x": 17.1509, "y": 12.8586, "rotation": -110.6955, "width": 145, "height": 123}}
+{"op": "attachment.remove", "skin": "body", "slot": "foot_l__flat", "name": "foot_l__flat"}
+{"op": "slot.remove", "name": "foot_l__flat"}
+{"op": "attachment.add", "skin": "body", "slot": "foot_l", "name": "toe", "attachment": {"type": "region", "path": "body/foot_l__toe", "x": 28.7812, "y": -6.4687, "rotation": -110.6955, "width": 130, "height": 139}}
+{"op": "attachment.remove", "skin": "body", "slot": "foot_l__toe", "name": "foot_l__toe"}
+{"op": "slot.remove", "name": "foot_l__toe"}
+{"op": "attachment.add", "skin": "body", "slot": "hand_r", "name": "fist", "attachment": {"type": "region", "path": "body/hand_r__fist", "x": 43.0077, "y": 8.4181, "rotation": -64.8065, "width": 120, "height": 125}}
+{"op": "attachment.remove", "skin": "body", "slot": "hand_r__fist", "name": "hand_r__fist"}
+{"op": "slot.remove", "name": "hand_r__fist"}
+{"op": "attachment.add", "skin": "body", "slot": "hand_r", "name": "grip_back", "attachment": {"type": "region", "path": "body/hand_r__grip_back", "x": 53.9454, "y": 4.7298, "rotation": -93.8915, "width": 123, "height": 107}}
+{"op": "attachment.remove", "skin": "body", "slot": "hand_r__grip_back", "name": "hand_r__grip_back"}
+{"op": "slot.remove", "name": "hand_r__grip_back"}
+{"op": "attachment.add", "skin": "body", "slot": "hand_r", "name": "open", "attachment": {"type": "region", "path": "body/hand_r__open", "x": 79.1326, "y": 6.0434, "rotation": -93.8915, "width": 129, "height": 169}}
+{"op": "attachment.remove", "skin": "body", "slot": "hand_r__open", "name": "hand_r__open"}
+{"op": "slot.remove", "name": "hand_r__open"}
+{"op": "attachment.add", "skin": "body", "slot": "hand_r", "name": "relaxed", "attachment": {"type": "region", "path": "body/hand_r__relaxed", "x": 66.8971, "y": 3.5781, "rotation": -93.8915, "width": 119, "height": 133}}
+{"op": "attachment.remove", "skin": "body", "slot": "hand_r__relaxed", "name": "hand_r__relaxed"}
+{"op": "slot.remove", "name": "hand_r__relaxed"}
+{"op": "attachment.add", "skin": "body", "slot": "hand_r_fingers", "name": "grip_fingers", "attachment": {"type": "region", "path": "body/hand_r_fingers__grip_fingers", "x": 68.4508, "y": 4.904, "rotation": -93.8915, "width": 122, "height": 68}}
+{"op": "attachment.remove", "skin": "body", "slot": "hand_r_fingers__grip_fingers", "name": "hand_r_fingers__grip_fingers"}
+{"op": "slot.remove", "name": "hand_r_fingers__grip_fingers"}
+{"op": "attachment.add", "skin": "body", "slot": "foot_r", "name": "flat", "attachment": {"type": "region", "path": "body/foot_r__flat", "x": 11.3198, "y": 2.5767, "rotation": -69.3045, "width": 140, "height": 123}}
+{"op": "attachment.remove", "skin": "body", "slot": "foot_r__flat", "name": "foot_r__flat"}
+{"op": "slot.remove", "name": "foot_r__flat"}
+{"op": "attachment.add", "skin": "body", "slot": "foot_r", "name": "toe", "attachment": {"type": "region", "path": "body/foot_r__toe", "x": 15.2459, "y": 12.9538, "rotation": -69.3045, "width": 149, "height": 117}}
+{"op": "attachment.remove", "skin": "body", "slot": "foot_r__toe", "name": "foot_r__toe"}
+{"op": "slot.remove", "name": "foot_r__toe"}
+{"op": "attachment.add", "skin": "body", "slot": "shoulder_l", "name": "rest", "attachment": {"type": "region", "path": "body/shoulder_l__rest", "x": 230.0, "y": -113.0, "rotation": 90.0, "width": 84, "height": 114}}
+{"op": "attachment.remove", "skin": "body", "slot": "shoulder_l__rest", "name": "shoulder_l__rest"}
+{"op": "slot.remove", "name": "shoulder_l__rest"}
+{"op": "attachment.add", "skin": "body", "slot": "shoulder_l", "name": "raised", "attachment": {"type": "region", "path": "body/shoulder_l__raised", "x": 230.0, "y": -113.0, "rotation": 90.0, "width": 84, "height": 114}}
+{"op": "attachment.remove", "skin": "body", "slot": "shoulder_l__raised", "name": "shoulder_l__raised"}
+{"op": "slot.remove", "name": "shoulder_l__raised"}
+{"op": "attachment.add", "skin": "body", "slot": "shoulder_r", "name": "rest", "attachment": {"type": "region", "path": "body/shoulder_r__rest", "x": 229.5, "y": 115.5, "rotation": 90.0, "width": 87, "height": 113}}
+{"op": "attachment.remove", "skin": "body", "slot": "shoulder_r__rest", "name": "shoulder_r__rest"}
+{"op": "slot.remove", "name": "shoulder_r__rest"}
+{"op": "attachment.add", "skin": "body", "slot": "shoulder_r", "name": "raised", "attachment": {"type": "region", "path": "body/shoulder_r__raised", "x": 229.5, "y": 115.5, "rotation": 90.0, "width": 87, "height": 113}}
+{"op": "attachment.remove", "skin": "body", "slot": "shoulder_r__raised", "name": "shoulder_r__raised"}
+{"op": "slot.remove", "name": "shoulder_r__raised"}
+{"op": "attachment.add", "skin": "body", "slot": "weapon", "name": "double_axe", "attachment": {"type": "region", "path": "body/weapon__double_axe", "x": 150.4416, "y": -2.4768, "rotation": 90.0, "scaleX": -0.8, "scaleY": 0.8, "width": 380, "height": 671}}
+{"op": "attachment.remove", "skin": "body", "slot": "weapon__double_axe", "name": "weapon__double_axe"}
+{"op": "slot.remove", "name": "weapon__double_axe"}
+{"op": "slot.set", "name": "foot_l", "attachment": "flat"}
+{"op": "slot.set", "name": "leg_l", "attachment": "straight"}
+{"op": "slot.set", "name": "foot_r", "attachment": "flat"}
+{"op": "slot.set", "name": "leg_r", "attachment": "straight"}
+{"op": "slot.set", "name": "waist", "attachment": "pants"}
+{"op": "slot.set", "name": "neck", "attachment": "neck"}
+{"op": "slot.set", "name": "head", "attachment": "head"}
+{"op": "slot.set", "name": "eyes", "attachment": "eyes"}
+{"op": "slot.set", "name": "brows", "attachment": "brows"}
+{"op": "slot.set", "name": "nose", "attachment": "nose"}
+{"op": "slot.set", "name": "mouth", "attachment": "mouth"}
+{"op": "slot.set", "name": "hair_back", "attachment": "hair"}
+{"op": "slot.set", "name": "arm_l", "attachment": "straight"}
+{"op": "slot.set", "name": "arm_r", "attachment": "straight"}
+{"op": "slot.set", "name": "chest", "attachment": "tank"}
+{"op": "slot.set", "name": "shoulder_l", "attachment": "rest"}
+{"op": "slot.set", "name": "shoulder_r", "attachment": "rest"}
+{"op": "slot.set", "name": "hand_l", "attachment": "fist"}
+{"op": "slot.set", "name": "hand_r", "attachment": "fist"}
+{"op": "slot.set", "name": "hair_front", "attachment": "fringe"}

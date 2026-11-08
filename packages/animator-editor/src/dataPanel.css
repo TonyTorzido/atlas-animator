@@ -1,0 +1,29 @@
+/* Files dialog, Publish dialog and the newer-stock-rig banner (src/dataPanel.ts). Tokens come from ui.css / index.html. */
+.datapanel { width: min(720px, 94vw); max-height: 88vh; display: flex; flex-direction: column; overflow: hidden; }
+.dp-body { overflow-y: auto; scrollbar-width: none; display: flex; flex-direction: column; gap: var(--s3); }
+.dp-body::-webkit-scrollbar { display: none; }
+.dp-sec { display: flex; flex-direction: column; gap: var(--s2); }
+.dp-h { margin: 0; font-size: var(--fs-sm); text-transform: uppercase; letter-spacing: 0.04em; color: var(--dim); }
+.dp-row { display: flex; gap: var(--s2); align-items: center; flex-wrap: wrap; }
+.dp-path { flex: 1; min-width: 0; padding: 4px 8px; border: 1px solid var(--line); border-radius: 6px; word-break: break-all; font-size: var(--fs-xs); }
+.dp-input { flex: 1; min-width: 240px; }
+.dp-select { flex: 1; min-width: 220px; }
+.dp-note { margin: 0; font-size: var(--fs-xs); color: var(--dim); }
+.dp-folders { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: var(--fs-xs); }
+.dp-folders b { display: inline-block; min-width: 72px; }
+.dp-dim { color: var(--dim); word-break: break-all; }
+.dp-msg { min-height: 16px; font-size: var(--fs-xs); color: var(--dim); }
+.dp-msg.bad { color: var(--bad, var(--bad)); }
+.dp-ok { color: var(--good, var(--ok)); }
+.dp-plan { display: flex; flex-direction: column; gap: 4px; font-size: var(--fs-xs); word-break: break-all; }
+
+.stockbar {
+  position: fixed; left: 50%; top: 52px; transform: translateX(-50%); z-index: var(--z-hud); width: min(900px, 94vw);
+  display: flex; flex-direction: column; gap: var(--s2); padding: var(--s2) var(--s3);
+  background: rgba(48, 36, 12, 0.96); border: 1px solid var(--accent); border-radius: 8px; box-shadow: var(--shadow-2);
+}
+.stockbar-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2); }
+.stockbar-text { flex: 1; min-width: 220px; font-size: var(--fs-sm); }
+.stockbar-out { flex-basis: 100%; font-size: var(--fs-xs); color: var(--dim); display: flex; flex-direction: column; gap: 2px; }
+.stockbar-out:empty { display: none; }
+.stockbar[hidden], .stockbar:empty { display: none; }

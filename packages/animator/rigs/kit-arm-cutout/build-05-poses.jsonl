@@ -1,0 +1,70 @@
+{"op": "clip.add", "name": "pose_a_rest", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_a_rest", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_a_rest", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_a_rest", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "clip.add", "name": "pose_a_jointed", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_a_jointed", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_a_jointed", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -3.0}
+{"op": "key.set", "clip": "pose_a_jointed", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "clip.add", "name": "pose_b_raised", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_b_raised", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 80.915}
+{"op": "key.set", "clip": "pose_b_raised", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": 35.9}
+{"op": "key.set", "clip": "pose_b_raised", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": -10.0}
+{"op": "key.set", "clip": "pose_b_raised", "slot": "hand_l", "timeline": "attachment", "time": 0, "name": "guard"}
+{"op": "clip.add", "name": "pose_b_raised_plain", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_b_raised_plain", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 80.915}
+{"op": "key.set", "clip": "pose_b_raised_plain", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": 35.9}
+{"op": "key.set", "clip": "pose_b_raised_plain", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": -10.0}
+{"op": "clip.add", "name": "pose_c_cross", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_c_cross", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": -39.085}
+{"op": "key.set", "clip": "pose_c_cross", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -104.1}
+{"op": "key.set", "clip": "pose_c_cross", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": -5.0}
+{"op": "key.set", "clip": "pose_c_cross", "slot": "hand_l", "timeline": "attachment", "time": 0, "name": "guard"}
+{"op": "clip.add", "name": "pose_c_cross_plain", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_c_cross_plain", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": -39.085}
+{"op": "key.set", "clip": "pose_c_cross_plain", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -104.1}
+{"op": "key.set", "clip": "pose_c_cross_plain", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": -5.0}
+{"op": "clip.add", "name": "pose_sweep_e000", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_sweep_e000", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_sweep_e000", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_sweep_e000", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "clip.add", "name": "pose_sweep_e015", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_sweep_e015", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_sweep_e015", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -15.0}
+{"op": "key.set", "clip": "pose_sweep_e015", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "clip.add", "name": "pose_sweep_e030", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_sweep_e030", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_sweep_e030", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -30.0}
+{"op": "key.set", "clip": "pose_sweep_e030", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "clip.add", "name": "pose_sweep_e045", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_sweep_e045", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_sweep_e045", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -45.0}
+{"op": "key.set", "clip": "pose_sweep_e045", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "clip.add", "name": "pose_sweep_e060", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_sweep_e060", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_sweep_e060", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -60.0}
+{"op": "key.set", "clip": "pose_sweep_e060", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "clip.add", "name": "pose_sweep_e075", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_sweep_e075", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_sweep_e075", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -75.0}
+{"op": "key.set", "clip": "pose_sweep_e075", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "clip.add", "name": "pose_sweep_e090", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_sweep_e090", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_sweep_e090", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -90.0}
+{"op": "key.set", "clip": "pose_sweep_e090", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "clip.add", "name": "pose_sweep_e105", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_sweep_e105", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_sweep_e105", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -105.0}
+{"op": "key.set", "clip": "pose_sweep_e105", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "clip.add", "name": "pose_sweep_e120", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_sweep_e120", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_sweep_e120", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -120.0}
+{"op": "key.set", "clip": "pose_sweep_e120", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "clip.add", "name": "pose_sweep_wm30", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_sweep_wm30", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_sweep_wm30", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -45.0}
+{"op": "key.set", "clip": "pose_sweep_wm30", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": -30.0}
+{"op": "clip.add", "name": "pose_sweep_wp30", "duration": 0.0333, "loop": false}
+{"op": "key.set", "clip": "pose_sweep_wp30", "bone": "upper_arm_l", "timeline": "rotate", "time": 0, "value": 0.0}
+{"op": "key.set", "clip": "pose_sweep_wp30", "bone": "forearm_l", "timeline": "rotate", "time": 0, "value": -45.0}
+{"op": "key.set", "clip": "pose_sweep_wp30", "bone": "hand_l", "timeline": "rotate", "time": 0, "value": 30.0}

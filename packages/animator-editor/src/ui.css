@@ -1,0 +1,202 @@
+/*
+ * Atlas Animator editor: module styles that sit on top of the component layer (src/components.css): the Pro footer menu, timeline
+ * splitter, command palette, gate HUD, segment picker and the first-run cards. Tokens live on :root in index.html.
+ */
+
+/* ---- The one zoom/pan control (M5) ---- */
+.tlnav { display: inline-flex; align-items: center; gap: var(--s2); height: var(--ctl-md); padding: 0 var(--s2) 0 2px; background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; }
+.tlnav > button { height: var(--ctl-sm); border-color: transparent; background: transparent; color: var(--dim); }
+.tlnav > button:hover:not(:disabled) { color: var(--text); }
+.tlnav > input[type="range"] { width: 84px; padding: 0; border: 0; background: transparent; accent-color: var(--accent); }
+.tlnav > #tlpan { width: 110px; }
+
+/* ---- Timeline: splitter and key hover tip (main.ts) ---- */
+#lower { position: relative; }
+#tlsplit {
+  display: none; position: absolute; z-index: 3; left: 0; right: 0; top: -4px; height: 8px; cursor: ns-resize;
+  touch-action: none; background: transparent; border: 0; padding: 0; border-radius: 0;
+}
+#tlsplit::after { content: ""; position: absolute; left: 0; right: 0; top: 3px; height: 2px; background: transparent; transition: background var(--t-fast); }
+#tlsplit:hover::after, #tlsplit.drag::after { background: var(--accent); }
+#tlsplit:focus-visible { outline: none; }
+#tlsplit:focus-visible::after { background: var(--accent2); }
+body.ws-animate:not(.setup) #app:not(.graphopen) #tlsplit { display: block; }
+body.ws-animate:not(.setup) #app.tlsized:not(.graphopen) #lower { height: var(--lower-h); }
+body.tlresizing, body.tlresizing * { cursor: ns-resize !important; }
+#tlkeytip {
+  display: none; position: fixed; z-index: var(--z-popover); pointer-events: none; padding: 2px var(--s2);
+  background: rgba(20, 23, 29, 0.94); border: 1px solid var(--line2); border-radius: 4px; box-shadow: var(--shadow-1);
+  color: var(--text); font-size: var(--fs-sm); white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+
+/* ======================================================================================================================
+   Batch F: laptop fit, discoverability, consistency
+   ====================================================================================================================== */
+
+/* ---- Toggles: a filled on-state with a check, so on / off is not the amber outline a primary action also wears (P2-6) ---- */
+#held.on, #loop.on, #autokey.on, #onionbtn.on {
+  background: rgba(240, 184, 74, 0.28); border-color: var(--accent); color: var(--text); font-weight: 600;
+}
+#loop.on::before, #loop.on::before, #autokey.on::before, #held.on::before {
+  content: ""; width: 12px; height: 12px; margin-right: 5px; flex: none; background: var(--accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 8.5 3.2 3.2L13 4.8'/%3E%3C/svg%3E") center / 12px no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 8.5 3.2 3.2L13 4.8'/%3E%3C/svg%3E") center / 12px no-repeat;
+}
+#held, #loop, #autokey { display: inline-flex; align-items: center; justify-content: center; }
+#held:not(.on), #loop:not(.on), #autokey:not(.on) { color: var(--text2); }
+
+/* ---- Right panel tabs: seven Pro tabs fit a 256 px panel (the last one was cut off at 1366) ---- */
+@media (max-width: 1499px) {
+  #tabs button { padding-left: 4px; padding-right: 4px; letter-spacing: 0; }
+  body.ws-pro #app { --rw: 288px; }
+}
+
+/* ---- Keys block: first-run card, top of the ? sheet ---- */
+.wg-sec { display: block; margin: 0 0 var(--s3); padding: var(--s3); background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; column-span: all; break-inside: avoid; }
+.wg-title { margin: 0 0 2px; font-size: var(--fs-lg); font-weight: 600; color: var(--accent); text-transform: none; letter-spacing: 0; }
+.wg-blurb { margin: 0 0 var(--s2); font-size: var(--fs-sm); color: var(--text2); }
+.wg-keys { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 3px var(--s3); align-items: baseline; font-size: var(--fs-sm); color: var(--text); }
+.wg-keys kbd { justify-self: start; padding: 0 5px; font: inherit; font-size: var(--fs-xs); font-weight: 600; line-height: 17px; color: var(--accent2); background: var(--bg0); border: 1px solid var(--line2); border-radius: 4px; white-space: nowrap; }
+.wg-card {
+  position: fixed; right: var(--s4); top: 56px; z-index: var(--z-overlay); width: min(340px, calc(100vw - 32px));
+  padding: var(--s3); background: var(--panel); border: 1px solid var(--line2); border-radius: 10px; box-shadow: var(--shadow-3);
+  animation: ui-rise var(--t-pop) ease-out;
+}
+.wg-card .wg-sec { margin: 0 0 var(--s2); padding: 0; background: transparent; border: 0; }
+.wg-actions { display: flex; justify-content: flex-end; gap: var(--s2); }
+.help-top { display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3); column-span: all; }
+#helpfilter { flex: 1; min-width: 0; height: var(--ctl-md); }
+#helpbody [hidden] { display: none !important; }
+#helpbody .hk kbd { color: var(--accent2); }
+
+/* ---- Empty state on the Animate canvas: no clip open ---- */
+.wg-empty {
+  position: absolute; left: calc(var(--tp-w, 84px) + var(--s2)); top: calc(var(--vt-h, 40px) + var(--s4)); z-index: var(--z-hud); width: 280px; padding: var(--s3) var(--s4);
+  display: flex; flex-direction: column; align-items: flex-start; gap: var(--s2);
+  background: rgba(27, 31, 39, 0.94); border: 1px solid var(--line2); border-radius: 10px; box-shadow: var(--shadow-2);
+}
+.wg-empty[hidden] { display: none; }
+.wg-empty h3 { margin: 0; font-size: var(--fs-lg); font-weight: 600; color: var(--text); }
+.wg-empty p { margin: 0; font-size: var(--fs-sm); line-height: 1.4; color: var(--text2); }
+
+/* ======================================================================================================================
+   Wow batch 1: command palette, pose assist readout, pose A/B compare
+   ====================================================================================================================== */
+
+/* ---- Command palette (palette.ts) ---- */
+.palette-scrim {
+  position: fixed; inset: 0; z-index: var(--z-modal); display: flex; align-items: flex-start; justify-content: center;
+  padding: 12vh var(--s4) var(--s4); background: rgba(8, 10, 14, 0.55); animation: ui-fade var(--t-pop) ease-out;
+}
+.palette {
+  width: min(600px, 100%); max-height: min(520px, 76vh); display: flex; flex-direction: column; overflow: hidden;
+  background: var(--panel); border: 1px solid var(--line2); border-radius: 12px; box-shadow: var(--shadow-3); animation: ui-rise var(--t-pop) ease-out;
+}
+.palette .palette-input {
+  height: 46px; padding: 0 var(--s4); border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent;
+  font-size: var(--fs-h4); color: var(--text); outline: none;
+}
+.palette .palette-input::placeholder { color: var(--muted); }
+.palette .palette-input:focus-visible { outline: none; background: transparent; }
+.palette-list { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: var(--s1); }
+.palette-cap { padding: var(--s2) var(--s2) 2px; color: var(--dim); font-size: var(--fs-xs); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.palette-row {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: var(--s3); min-height: 32px; padding: 0 var(--s3);
+  border-radius: 6px; color: var(--text); font-size: var(--fs-md); cursor: pointer; border: 1px solid transparent;
+}
+.palette-row.active { background: var(--panel3); border-color: var(--line2); }
+.palette-row.active .palette-label { color: var(--white); }
+.palette-row.off { color: var(--muted); cursor: default; }
+.palette-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.palette-group { color: var(--dim); font-size: var(--fs-xs); white-space: nowrap; }
+.palette-group:empty { display: none; }
+.palette-keys { display: inline-flex; gap: var(--s1); }
+.palette kbd, .palette-foot kbd {
+  display: inline-block; min-width: 20px; padding: 1px 6px; border-radius: 4px; border: 1px solid var(--line2); border-bottom-width: 2px;
+  background: var(--bg0); color: var(--text2); font: inherit; font-size: var(--fs-xs); text-align: center; font-variant-numeric: tabular-nums;
+}
+.palette-empty { padding: var(--s5) var(--s4); color: var(--dim); text-align: center; font-size: var(--fs-md); }
+.palette-foot { display: flex; gap: var(--s4); padding: var(--s2) var(--s3); border-top: 1px solid var(--line); color: var(--dim); font-size: var(--fs-xs); }
+.palette-foot span { display: inline-flex; align-items: center; gap: var(--s1); }
+@keyframes ui-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---- Pose assist readout: the value bubble beside the cursor while dragging (main.ts showReadout) ---- */
+#hoverlabel.assist {
+  display: flex; flex-direction: column; gap: 1px; padding: var(--s1) var(--s3); border-radius: 8px; border-color: var(--line2);
+  background: rgba(20, 23, 29, 0.95); box-shadow: var(--shadow-2); font-variant-numeric: tabular-nums; z-index: var(--z-hud);
+}
+#hoverlabel.assist .as-main { font-size: var(--fs-h4); font-weight: 600; color: var(--text); letter-spacing: 0.01em; }
+#hoverlabel.assist .as-sub { font-size: var(--fs-xs); color: var(--dim); }
+#hoverlabel.assist.snap-step { border-color: var(--accent-line); }
+#hoverlabel.assist.snap-step .as-main { color: var(--accent); }
+#hoverlabel.assist.snap-key { border-color: var(--ok-line); }
+#hoverlabel.assist.snap-key .as-main { color: var(--keyed); }
+#hoverlabel.assist.snap-mirror { border-color: var(--accent2); }
+#hoverlabel.assist.snap-mirror .as-main { color: var(--accent2); }
+#hoverlabel.assist.typing { border-color: var(--accent); background: rgba(34, 28, 12, 0.96); }
+#hoverlabel.assist.typing .as-main { color: var(--accent); }
+
+/* ---- Pose A/B compare (Preview tab and the canvas badge) ---- */
+.abrow { display: flex; flex-wrap: wrap; gap: var(--s1); align-items: center; }
+.abrow button.on { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent); }
+#abinfo { color: var(--dim); font-size: var(--fs-sm); }
+#abbadge {
+  display: none; position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); z-index: var(--z-hud); pointer-events: none;
+  padding: 3px var(--s3); border-radius: 999px; background: rgba(20, 23, 29, 0.94); border: 1px solid var(--line2);
+  color: var(--text); font-size: var(--fs-sm); font-weight: 600; box-shadow: var(--shadow-1); white-space: nowrap;
+}
+#abbadge.show { display: block; }
+#abbadge.a { border-color: var(--c-mesh); color: var(--c-mesh); }
+
+/* ---- Onion skin controls (Preview tab) ---- */
+#aids .onionfoot { grid-column: 1 / -1; color: var(--dim); }
+#aids .aidrow > .label { text-transform: none; letter-spacing: 0; font-size: var(--fs-sm); color: var(--dim); }
+#aids .aidrow .seg > button { min-width: 0; }
+#aids .v > input[type="range"] { width: 100%; max-width: 100%; margin: 0; box-sizing: border-box; }
+#aids .aidrow .in.num { width: 56px; padding: 0 4px; }
+#aids .aidrow { gap: var(--s1) var(--s2); }
+#aids .aidrow .seg > button { padding: 0 8px; }
+
+/* ---- Live gate HUD (liveGateHud.ts): three chips in the canvas corner ---- */
+#gatehud {
+  display: none; position: absolute; right: 10px; bottom: calc(var(--xs-h, 0px) + 10px); z-index: var(--z-hud);
+  gap: var(--s1); padding: 3px; border-radius: 999px; background: rgba(20, 23, 29, 0.82); border: 1px solid var(--line);
+  box-shadow: var(--shadow-1); opacity: 0.86; transition: opacity var(--t-fast) ease-out;
+}
+#gatehud.show { display: inline-flex; }
+/* On a narrow canvas the outline gate card (bottom left, 260 px) would run under the chips: lift the chips above it. */
+@media (max-width: 1440px) { #gatehud { bottom: calc(var(--xs-h, 0px) + 130px); } }
+#gatehud:hover, #gatehud:focus-within { opacity: 1; }
+#gatehud .gh-chip {
+  display: inline-flex; align-items: center; gap: 5px; height: var(--ctl-sm); padding: 0 9px 0 7px; border-radius: 999px;
+  border: 1px solid transparent; background: transparent; color: var(--dim); font-size: var(--fs-xs); font-weight: 600;
+  white-space: nowrap; cursor: pointer; font-variant-numeric: tabular-nums;
+}
+#gatehud .gh-chip:hover:not(:disabled) { background: var(--panel3); border-color: var(--line2); color: var(--text); }
+#gatehud .gh-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; }
+#gatehud .gh-val { font-weight: 500; color: var(--text2); }
+#gatehud .gh-chip[data-level="ok"] .gh-dot { background: var(--ok); }
+#gatehud .gh-chip[data-level="warn"] { background: var(--warn-soft); border-color: var(--warn-line); }
+#gatehud .gh-chip[data-level="warn"] .gh-dot { background: var(--warn); }
+#gatehud .gh-chip[data-level="fail"] { background: var(--bad-soft); border-color: var(--bad-line); color: var(--text); }
+#gatehud .gh-chip[data-level="fail"] .gh-dot { background: var(--bad); }
+#gatehud .gh-chip[data-level="fail"] .gh-val { color: var(--bad-hi); }
+#gatehud .gh-chip[data-level="idle"] .gh-val { color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { #gatehud { transition: none; } }
+
+/* ---- Dopesheet curve segment picker (segPicker.ts) ---- */
+#segpicker { position: fixed; z-index: var(--z-overlay); width: 236px; max-width: calc(100vw - 16px); padding: var(--s2); }
+#segpicker[hidden] { display: none; }
+#segpicker .sp-head { margin-bottom: var(--s2); font-size: var(--fs-sm); font-weight: 600; color: var(--text); }
+#segpicker .sp-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s1); }
+#segpicker .sp-item {
+  display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 4px 2px 3px; height: auto;
+  background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; font-size: var(--fs-xs); color: var(--text2);
+}
+#segpicker .sp-item:hover { border-color: var(--line2); background: var(--panel3); color: var(--text); }
+#segpicker .sp-item.on { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent); }
+#segpicker .sp-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s1); margin-top: var(--s2); }
+#segpicker .sp-act { height: var(--ctl-sm); padding: 0 8px; font-size: var(--fs-xs); background: transparent; color: var(--accent2); border-color: transparent; }
+#segpicker .sp-act:hover { background: var(--panel3); border-color: var(--line2); }
+#segpicker .sp-state { flex: 1 1 100%; font-size: var(--fs-xs); color: var(--muted); }
+#segpicker .sp-state:empty { display: none; }

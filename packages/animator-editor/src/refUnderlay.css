@@ -1,0 +1,32 @@
+/*
+ * Atlas Animator editor: styles for the reference underlay (refUnderlay.ts). Colours come from the tokens in index.html (:root).
+ * The handle box sits over the canvas; only its edges and corners take the pointer, so the rig stays clickable through it.
+ */
+
+#refpanel .refrow { flex-wrap: wrap; gap: 6px; align-items: center; }
+#refpanel .refrow .label { color: var(--dim); min-width: 0; }
+#refpanel #refpath { flex: 1 1 140px; min-width: 120px; }
+#refpanel input[type="number"] { background: var(--panel2); color: var(--text); border: 1px solid var(--line); border-radius: 4px; padding: 2px 4px; }
+#refpanel .note.bad { color: var(--bad); }
+
+#refbox {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  outline: 1.5px dashed var(--accent2);
+  outline-offset: 0;
+}
+
+#refbox .refhandle { position: absolute; pointer-events: auto; }
+#refbox .edge.n, #refbox .edge.s { left: 10px; right: 10px; height: 12px; cursor: move; }
+#refbox .edge.e, #refbox .edge.w { top: 10px; bottom: 10px; width: 12px; cursor: move; }
+#refbox .edge.n { top: -6px; }
+#refbox .edge.s { bottom: -6px; }
+#refbox .edge.w { left: -6px; }
+#refbox .edge.e { right: -6px; }
+#refbox .corner { width: 14px; height: 16px; background: var(--accent2); border: 2px solid var(--bg0); border-radius: 3px; }
+#refbox .corner.nw { left: -7px; top: -7px; cursor: nwse-resize; }
+#refbox .corner.ne { right: -7px; top: -7px; cursor: nesw-resize; }
+#refbox .corner.sw { left: -7px; bottom: -7px; cursor: nesw-resize; }
+#refbox .corner.se { right: -7px; bottom: -7px; cursor: nwse-resize; }

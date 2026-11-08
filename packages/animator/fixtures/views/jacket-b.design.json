@@ -1,0 +1,326 @@
+{
+ "format": "atlas-design-spec/1",
+ "item": "jacket-b",
+ "front": "ART_DROPS/swag-kungfu-02/kf-B/final/garment.png",
+ "domain": "fixtures/garments/kungfu-jacket.domain.json",
+ "canvas": [
+  1086,
+  1448
+ ],
+ "palette": [
+  {
+   "role": "ink",
+   "source": "domain stroke",
+   "rgb": [
+    24,
+    18,
+    16
+   ],
+   "lab": [
+    6.0,
+    2.26,
+    2.02
+   ]
+  },
+  {
+   "role": "fabric_shadow",
+   "rgb": [
+    29,
+    29,
+    35
+   ],
+   "lab": [
+    11.0,
+    1.85,
+    -4.17
+   ]
+  },
+  {
+   "role": "fabric_base",
+   "rgb": [
+    41,
+    41,
+    49
+   ],
+   "lab": [
+    17.03,
+    2.06,
+    -5.16
+   ]
+  },
+  {
+   "role": "fabric_light",
+   "rgb": [
+    48,
+    48,
+    57
+   ],
+   "lab": [
+    20.25,
+    2.25,
+    -5.49
+   ]
+  },
+  {
+   "role": "fabric_sheen",
+   "rgb": [
+    66,
+    66,
+    78
+   ],
+   "lab": [
+    28.39,
+    2.87,
+    -7.19
+   ]
+  },
+  {
+   "role": "trim_deep",
+   "rgb": [
+    148,
+    127,
+    103
+   ],
+   "lab": [
+    54.41,
+    4.51,
+    16.0
+   ]
+  },
+  {
+   "role": "trim_shadow",
+   "rgb": [
+    213,
+    192,
+    164
+   ],
+   "lab": [
+    78.79,
+    2.82,
+    17.02
+   ]
+  },
+  {
+   "role": "trim_cream",
+   "rgb": [
+    239,
+    226,
+    205
+   ],
+   "lab": [
+    90.45,
+    0.85,
+    12.17
+   ]
+  }
+ ],
+ "bands": {
+  "collar": 19.7,
+  "cuff": 32.2,
+  "hem": 22.0,
+  "placket": 18.0
+ },
+ "outlineWidth": 8.63,
+ "motif": {
+  "count": 16,
+  "densityPer10k": 2.388,
+  "nnCV": 0.254,
+  "gridAlign": 0.312,
+  "centres": [
+   [
+    630.2,
+    684.1
+   ],
+   [
+    668.0,
+    707.0
+   ],
+   [
+    567.3,
+    705.5
+   ],
+   [
+    599.5,
+    712.0
+   ],
+   [
+    479.7,
+    712.7
+   ],
+   [
+    679.1,
+    746.1
+   ],
+   [
+    470.8,
+    802.0
+   ],
+   [
+    415.4,
+    812.2
+   ],
+   [
+    359.9,
+    832.2
+   ],
+   [
+    503.5,
+    836.2
+   ],
+   [
+    568.6,
+    841.0
+   ],
+   [
+    472.5,
+    870.9
+   ],
+   [
+    607.1,
+    870.7
+   ],
+   [
+    622.7,
+    914.7
+   ],
+   [
+    468.9,
+    920.0
+   ],
+   [
+    566.8,
+    922.0
+   ]
+  ],
+  "rule": "tonal cloud-scroll roundels, sparse and irregular on every view; never on trim, never near the outline"
+ },
+ "presence": {
+  "front": {
+   "placket": true,
+   "frogs": 3,
+   "brocade": true,
+   "collar": true,
+   "hem": true,
+   "cuffs": true
+  },
+  "side": {
+   "placket": true,
+   "frogs": 3,
+   "brocade": true,
+   "collar": true,
+   "hem": true,
+   "cuffs": true
+  },
+  "back": {
+   "placket": false,
+   "frogs": 0,
+   "brocade": true,
+   "collar": true,
+   "hem": true,
+   "cuffs": true
+  }
+ },
+ "landmarks": {
+  "front": {
+   "collarCentre": [
+    542.0,
+    656
+   ],
+   "collarBottom": 691,
+   "hemTop": 932,
+   "hemBottom": 954,
+   "cuff": {
+    "l": {
+     "top": 843,
+     "bottom": 902,
+     "cx": 355.9,
+     "cy": 871.0
+    },
+    "r": {
+     "top": 843,
+     "bottom": 901,
+     "cx": 727.7,
+     "cy": 871.1
+    }
+   },
+   "armpitApex": {
+    "r": [
+     654,
+     838
+    ],
+    "l": [
+     429,
+     840
+    ]
+   },
+   "placketX": 540.5,
+   "frogs": [
+    [
+     542.0,
+     735.0
+    ],
+    [
+     542.0,
+     813.0
+    ],
+    [
+     542.0,
+     893.5
+    ]
+   ]
+  },
+  "side": null,
+  "back": {
+   "collarCentre": [
+    542.0,
+    656
+   ],
+   "collarBottom": 691,
+   "hemTop": 932,
+   "hemBottom": 954,
+   "cuff": {
+    "l": {
+     "top": 843,
+     "bottom": 902,
+     "cx": 355.9,
+     "cy": 871.0
+    },
+    "r": {
+     "top": 843,
+     "bottom": 901,
+     "cx": 727.7,
+     "cy": 871.1
+    }
+   },
+   "armpitApex": {
+    "r": [
+     654,
+     838
+    ],
+    "l": [
+     429,
+     840
+    ]
+   },
+   "placketX": null,
+   "frogs": []
+  }
+ },
+ "mirrorSafe": {
+  "authored": true,
+  "trimMirrorIoU": 0.818
+ },
+ "quantiser": {
+  "frontMaxChannelChange": 0,
+  "frontMeanChannelChange": 0.0,
+  "frontOffsetsDE": 0.175,
+  "warmDriftMeanDE76": 6.38,
+  "warmDriftAfterRemapMeanDE76": 2.38,
+  "visuallyUnchanged": true
+ },
+ "paletteGate": {
+  "frontSpreadDE00": 2.73,
+  "thresholdDE00": 4.1,
+  "rule": "dE00 3 if the front's own half/half and torso/sleeve role spread x1.5 fits under it, else spread x1.5; dE76 6 reported alongside"
+ }
+}

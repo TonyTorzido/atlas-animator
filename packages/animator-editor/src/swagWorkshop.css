@@ -1,0 +1,918 @@
+/*
+ * Atlas Animator editor: styles for the Swag workshop and the item contact sheet. Colours come from the :root tokens in index.html.
+ * No native scrollbars (index.html hides them); only the item list and the wizard scroll.
+ */
+
+#swagws[hidden],
+#swagsheet[hidden] {
+  display: none !important;
+}
+
+/* In Swag the left column is the workshop; the bone list steps aside. */
+body.ws-swag #app {
+  --lw: 340px;
+  --rw: 300px;
+}
+@media (max-width: 1799px) {
+  body.ws-swag #app {
+    --lw: 300px;
+    --rw: 260px;
+  }
+}
+body.ws-swag #left > :not(#swagws) {
+  display: none;
+}
+
+#swagws {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+  background: linear-gradient(180deg, var(--panel), var(--bg1));
+}
+
+.swhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.swhead h2 {
+  margin: 0;
+  font-size: var(--fs-h3);
+  letter-spacing: 0.01em;
+}
+.swhead p {
+  margin: 2px 0 0;
+  font-size: var(--fs-sm);
+  color: var(--dim);
+}
+
+#swagws button,
+#swagsheet button {
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 600;
+}
+#swagws button.danger {
+  background: var(--bad-bg);
+  border-color: var(--bad-lo);
+  color: var(--bad-hi);
+}
+
+.swscroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 10px 14px 18px;
+  /* Scroll cue: a shadow shows at an edge while there is more to scroll to (B8, until the footer steps aside). */
+  background:
+    linear-gradient(var(--panel) 30%, transparent) top / 100% 24px no-repeat local,
+    linear-gradient(transparent, var(--panel) 70%) bottom / 100% 24px no-repeat local,
+    radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, 0.55), transparent) top / 100% 10px no-repeat scroll,
+    radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, 0.55), transparent) bottom / 100% 10px no-repeat scroll;
+}
+
+.swgroup {
+  margin: 14px 4px 6px;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--dim);
+}
+
+.swrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--panel2);
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+}
+.swrow:hover {
+  border-color: var(--line3);
+}
+.swrow.sel {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+.swthumb {
+  width: 46px;
+  height: 62px;
+  flex: none;
+  object-fit: contain;
+  border-radius: 8px;
+  background: var(--panel4);
+}
+.swmeta {
+  flex: 1;
+  min-width: 0;
+}
+.swname {
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.swcov {
+  margin-top: 3px;
+  font-size: var(--fs-sm);
+  color: var(--accent);
+}
+.swcov.ok {
+  color: var(--ok);
+}
+
+.swdetail {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--panel2);
+}
+.swdtitle {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: var(--fs-lg);
+}
+.swdslot {
+  font-size: var(--fs-sm);
+  color: var(--dim);
+}
+.swactions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.swchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  line-height: 1.3;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.chip.ok {
+  color: var(--ok-hi);
+  border-color: var(--ok-line);
+  background: var(--ok-soft);
+}
+.chip.warn {
+  color: var(--warn);
+  border-color: var(--warn-line);
+  background: var(--warn-soft);
+}
+.chip.bad {
+  color: var(--bad-hi);
+  border-color: var(--bad-line);
+  background: var(--bad-soft);
+}
+.swnote {
+  margin: 10px 2px;
+  font-size: var(--fs-md);
+  color: var(--dim);
+  line-height: 1.45;
+}
+.swnote.bad {
+  color: var(--bad-hi);
+}
+.swnote.ok {
+  color: var(--ok-hi);
+}
+
+/* ---- New item ---------------------------------------------------------------------------------------------------- */
+
+.swwiz {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.swstep {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: var(--fs-lg);
+}
+.swstep .n {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: var(--ctl-sm);
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: var(--fs-sm);
+  font-weight: 800;
+}
+.swpicked {
+  margin-left: auto;
+  color: var(--accent);
+  font-weight: 700;
+}
+.swhint {
+  margin-left: auto;
+  color: var(--dim);
+  font-size: var(--fs-sm);
+}
+.swdoll {
+  display: grid;
+  place-items: center;
+  padding: 6px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+.swdoll svg {
+  width: clamp(84px, 11vh, 150px);
+  height: auto;
+}
+.swdoll .zone {
+  fill: var(--line);
+  stroke: var(--line3);
+  stroke-width: 1.5;
+  cursor: pointer;
+  outline: none;
+  transition: fill 0.12s;
+}
+.swdoll .zone:hover,
+.swdoll .zone:focus-visible {
+  fill: var(--line2);
+}
+.swdoll .zone.on {
+  fill: var(--accent);
+  stroke: var(--accent-hi);
+}
+#switemname {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: var(--fs-lg);
+}
+.swskin {
+  font-size: var(--fs-sm);
+  color: var(--dim);
+}
+.swseg {
+  align-self: flex-start;
+}
+.swfile {
+  display: none;
+}
+.swdrop {
+  padding: 14px;
+  text-align: center;
+  font-size: var(--fs-md);
+  line-height: 1.45;
+  color: var(--dim);
+  border: 2px dashed var(--line3);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+}
+.swdrop.over {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  color: var(--text);
+}
+.swdrop.off {
+  opacity: 0.5;
+  cursor: default;
+}
+.swsub {
+  margin-top: 8px;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--dim);
+}
+.swcards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.swcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 78px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--warn-line);
+  background: var(--accent-bg);
+  cursor: grab;
+  font-size: var(--fs-xs);
+}
+.swcard.sel {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(240, 184, 74, 0.33);
+}
+.swcard img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+.swparts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.swpart {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 7px 9px;
+  border-radius: 10px;
+  border: 1px dashed var(--line3);
+  font-size: var(--fs-sm);
+  background: var(--bg1);
+}
+.swpart .pr {
+  font-size: var(--fs-xs);
+  color: var(--dim);
+}
+.swpart.full {
+  border-style: solid;
+  border-color: var(--ok-line);
+  background: var(--ok-soft);
+}
+.swpart.full .pr {
+  color: var(--ok-hi);
+}
+.swwiz.dragging .swpart:not(.full),
+.swpart.free {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+.swnudge {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 4px 10px;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--panel2);
+  font-size: var(--fs-sm);
+}
+.swnudge img {
+  width: 40px;
+  height: 44px;
+  object-fit: contain;
+  grid-row: span 2;
+}
+.swnudge .nm {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.swnudge .nm span {
+  color: var(--dim);
+}
+.swnudge > button {
+  padding: 3px 10px !important;
+}
+.swnudge .nv {
+  grid-column: 2 / -1;
+  display: flex;
+  gap: 10px;
+}
+.swnudge label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--dim);
+}
+.swnudge input {
+  width: 52px;
+  padding: 2px 4px;
+}
+
+/* ---- Contact sheet ----------------------------------------------------------------------------------------------- */
+
+#swagsheet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 26px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+.swshead {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+.swshead .tt {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.swshead .tt b {
+  font-size: var(--fs-h4);
+}
+.swshead .tt span {
+  font-size: var(--fs-sm);
+  color: var(--dim);
+}
+.swsbody {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  padding: 14px 18px;
+}
+/* A real table: a label column, then one column per frame. The header row is 24px (HEAD_ROW_H in swagWorkshop.ts); every other row is
+   --rowh tall, picked so the rows on the page fill the window exactly. */
+.swgrid {
+  display: grid;
+  grid-template-columns: 170px repeat(4, calc(var(--rowh, 200px) * var(--aspect, 0.6)));
+  justify-content: center;
+  grid-template-rows: 24px;
+  grid-auto-rows: var(--rowh, 200px);
+  gap: 8px 6px;
+  align-items: stretch;
+  height: 100%;
+}
+.swvh {
+  padding: 4px 0;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--line);
+}
+.swfh {
+  font-size: var(--fs-xs);
+  color: var(--dim);
+  text-align: center;
+}
+.swrl {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  padding-right: 8px;
+  min-width: 0;
+}
+.swrl small {
+  display: block;
+  margin-top: 2px;
+  font-weight: 400;
+  font-size: var(--fs-xs);
+  color: var(--dim);
+}
+.swc {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  min-height: 0;
+  padding: 0 !important;
+  overflow: hidden;
+  border-radius: 8px !important;
+  border: 1px solid var(--line);
+  background: var(--panel4);
+}
+.swc.wait {
+  background: linear-gradient(90deg, var(--panel4), var(--line), var(--panel4));
+  background-size: 200% 100%;
+  animation: swshimmer 1.2s linear infinite;
+}
+@keyframes swshimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+.swc canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.swc.bad {
+  border-color: var(--bad-line);
+}
+.swc.bad::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0 22px 22px 0;
+  border-color: transparent var(--bad-lo) transparent transparent;
+}
+.swc.flash {
+  animation: swflash 1.4s ease-out;
+}
+@keyframes swflash {
+  0% { box-shadow: 0 0 0 3px var(--accent); }
+  100% { box-shadow: 0 0 0 3px transparent; }
+}
+/* The cell's own words: the angle a sweep cell shows, and why a failing cell fails (it used to be hover only). */
+.swtag {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(18, 21, 27, 0.8);
+}
+.swwhy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3px 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--fs-xs);
+  text-align: left;
+  color: var(--bad-hi);
+  background: rgba(74, 31, 35, 0.92);
+}
+/* Failing cells, one chip each (click goes to the cell). */
+.swfails {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 0 18px;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+  font-size: var(--fs-sm);
+}
+.swflabel {
+  flex: none;
+  font-weight: 700;
+  color: var(--bad);
+}
+.swfok,
+.swfmore {
+  color: var(--dim);
+  white-space: nowrap;
+}
+.swfchip {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.swfchip:hover {
+  border-color: var(--bad);
+}
+.swc:hover {
+  border-color: var(--accent2);
+}
+.swsnav {
+  box-sizing: border-box;
+  min-height: 49px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+  font-size: var(--fs-sm);
+  color: var(--dim);
+}
+.swlegend {
+  margin-left: auto;
+}
+.swlegend i {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 4px;
+  vertical-align: middle;
+  border-style: solid;
+  border-width: 0 10px 10px 0;
+  border-color: transparent var(--bad-lo) transparent transparent;
+}
+
+/* ---- Judge bar: the user's wear / judge flow in one strip ------------------------------------------------------- */
+
+#swjudge[hidden] {
+  display: none !important;
+}
+.swjudge {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+.swjrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+#swagws button.swjtoggle,
+#swagws button.swjstep {
+  height: var(--ctl-md);
+  padding: 0 12px;
+  font-size: var(--fs-md);
+  border: 1px solid var(--line);
+  background: var(--panel2);
+  color: var(--text);
+  transition: border-color var(--t-fast) ease-out, background-color var(--t-fast) ease-out, color var(--t-fast) ease-out;
+}
+#swagws button.swjtoggle:hover,
+#swagws button.swjstep:hover:not(:disabled) {
+  border-color: var(--line2);
+  background: var(--panel3);
+}
+#swagws button.swjtoggle.on {
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+  color: var(--accent);
+}
+.swjsteps {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+}
+#swagws button.swjstep {
+  width: 26px;
+  padding: 0;
+  font-size: var(--fs-h4);
+}
+.swjpose {
+  min-width: 54px;
+  text-align: center;
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--dim);
+}
+.swjlabel {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-right: 2px;
+}
+#swagws button.swgate {
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--dim);
+  background: var(--panel2);
+  border: 1px solid var(--line);
+}
+#swagws button.swgate.ok {
+  color: var(--ok);
+  background: var(--ok-soft);
+  border-color: var(--ok-line);
+}
+#swagws button.swgate.bad {
+  color: var(--bad);
+  background: var(--bad-soft);
+  border-color: var(--bad-line);
+  cursor: pointer;
+}
+#swagws button.swgate.bad:hover {
+  border-color: var(--bad);
+}
+#swagws button.swgate.idle:hover {
+  border-color: var(--line2);
+}
+.swjnote {
+  font-size: var(--fs-sm);
+  color: var(--dim);
+  min-height: 1.3em;
+}
+/* The outline gate card lives in the judge bar here; the floating card steps aside. */
+body.ws-swag #gate-overlay {
+  display: none !important;
+}
+
+/* ---- Batch 3: Swag fits its window ------------------------------------------------------------------------------- */
+
+/* The timeline footer shrinks to one transport row in Swag (animateBar.css hides the rest): its height goes to the workshop. */
+body.ws-swag #app {
+  --tl: 44px;
+}
+/* The right panel is the Preview only: no skin editor and no reference-video panel beside the workshop. */
+body.ws-swag #skinpanel,
+body.ws-swag #refpanel {
+  display: none;
+}
+#swagws h2.sec { cursor: default; }
+#swagws h2.sec:hover { background: transparent; }
+
+/* Batch 8b: target rig row, undo / redo, search, live preview, import notes. */
+.swtools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 18px;
+  border-bottom: 1px solid var(--line);
+}
+.swtarget {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+}
+.swtarget label {
+  font-size: var(--fs-sm);
+  color: var(--dim);
+  white-space: nowrap;
+}
+.swtarget select {
+  min-width: 0;
+  flex: 1;
+}
+.swhist {
+  display: flex;
+  gap: 4px;
+}
+.swfind {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 0 8px;
+  flex-wrap: wrap;
+}
+.swfind input[type="search"] {
+  flex: 1;
+  min-width: 90px;
+}
+.swcount {
+  font-size: var(--fs-sm);
+  color: var(--dim);
+  width: 100%;
+}
+.swpreview {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 0;
+  margin-bottom: 8px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+.swstagewrap {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  max-width: 100%;
+}
+.swhandles {
+  overflow: visible;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: crosshair;
+}
+.swhandles.off {
+  pointer-events: none;
+}
+.swhandles .swh-box,
+.swhandles .swh-stalk {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+.swhandles .swh-move,
+.swhandles .swh-turn,
+.swhandles .swh-size {
+  fill: var(--accent);
+  stroke: var(--bg1);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  cursor: grab;
+}
+.swhandlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-sm);
+  color: var(--dim);
+}
+.swnudge.sel {
+  outline: 1px solid var(--accent);
+}
+.swpreview canvas {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  background: var(--bg1);
+  border-radius: 8px;
+}
+.swpvmsg {
+  font-size: var(--fs-sm);
+  color: var(--dim);
+  text-align: center;
+}
+.swpvmsg[hidden] {
+  display: none;
+}
+.swimports {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+}
+.swimp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-sm);
+  color: var(--bad);
+}
+.swimp span {
+  flex: 1;
+  min-width: 0;
+}
+.swnudge .swfile {
+  display: none;
+}
+
+/* Weapon grip and tip registration (Batch 10) */
+.swgrip { display: flex; gap: var(--s3); align-items: flex-start; padding: var(--s2) 0 var(--s3); }
+.swgrippic { position: relative; flex: none; max-width: 220px; max-height: 160px; cursor: crosshair; line-height: 0; border: 1px solid var(--line); border-radius: 8px; background: var(--panel2); }
+.swgrippic img { display: block; max-width: 220px; max-height: 160px; object-fit: contain; image-rendering: pixelated; user-select: none; }
+.swgripdots { position: absolute; inset: 0; pointer-events: none; }
+.swgripdot { position: absolute; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; border: 2px solid var(--bg); }
+.swgripdot.grip { background: var(--ok); }
+.swgripdot.tip { background: var(--accent); }
+.swgripctl { display: flex; flex-direction: column; gap: var(--s2); min-width: 0; }
+.swgripctl button.on { border-color: var(--accent); }
+.swgripread { color: var(--muted); font-size: var(--fs-sm); }
+.swbend { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; margin: -2px 0 6px 0; font-size: var(--fs-xs); color: var(--dim); }
+.swbend label { display: inline-flex; gap: 4px; align-items: center; }
+.swbendinfo { flex: 1 1 200px; min-width: 0; overflow-wrap: anywhere; }
+.swgreport { display: flex; flex-direction: column; gap: 4px; font-size: var(--fs-xs); }
+.swgreport:empty { display: none; }
+.swgsource { color: var(--dim); }
+.swgrow { display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: baseline; padding: 3px 6px; border-radius: 4px; border: 1px solid var(--line); }
+.swgrow.pass b { color: var(--ok); }
+.swgrow.fail b { color: var(--bad); }
+.swgrow.fail { border-color: var(--bad); }
+.swgjump { flex: 1 1 100%; text-align: left; font-size: var(--fs-xs); }
+#sw-gate-shot { max-width: 100%; height: auto; border-radius: 4px; }
+.swzoneoff {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin-top: 4px;
+}
+.swzoneoffchip {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px dashed var(--line3);
+  color: var(--dim);
+  font-size: var(--fs-sm);
+}

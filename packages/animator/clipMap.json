@@ -1,0 +1,65 @@
+{
+  "format": "atlas-clip-map@1",
+  "note": "Editor clip id (packages/animator-editor/src/gameClips.ts) -> the runtime clip ids a project plays. `source` is the clip name the current sheets were rendered from; `frames` is the held frame count of each sheet at `fps`. Editor clips without a row are not in the game yet. walk_down follows the editor's legacy alias (walk_in_place); the game has no separate side walk.",
+  "fps": 30,
+  "clips": {
+    "idle": {
+      "source": "idle_weight_shift",
+      "game": [
+        { "id": "idle", "side": "front", "flip": false, "frames": 96 },
+        { "id": "standL", "side": "L", "flip": false, "frames": 96 },
+        { "id": "standR", "side": "R", "flip": true, "frames": 96 }
+      ]
+    },
+    "walk_down": {
+      "source": "walk_in_place",
+      "game": [
+        { "id": "walkL", "side": "L", "flip": false, "frames": 28 },
+        { "id": "walkR", "side": "R", "flip": true, "frames": 28 }
+      ]
+    },
+    "gather_chop": {
+      "source": "gather_chop",
+      "game": [
+        { "id": "chopL", "side": "L", "flip": false, "frames": 30 },
+        { "id": "chopR", "side": "R", "flip": true, "frames": 30 }
+      ]
+    },
+    "gather_mine": {
+      "source": "gather_mine",
+      "game": [
+        { "id": "mineL", "side": "L", "flip": false, "frames": 39 },
+        { "id": "mineR", "side": "R", "flip": true, "frames": 39 }
+      ]
+    },
+    "gather_harvest": {
+      "source": "gather_harvest",
+      "game": [
+        { "id": "harvestL", "side": "L", "flip": false, "frames": 33 },
+        { "id": "harvestR", "side": "R", "flip": true, "frames": 33 }
+      ]
+    },
+    "gather_fish": {
+      "source": "gather_fish_cast",
+      "game": [
+        { "id": "fish_castL", "side": "L", "flip": false, "frames": 27 },
+        { "id": "fish_castR", "side": "R", "flip": true, "frames": 27 }
+      ]
+    },
+    "guard_walk_sword": {
+      "source": "sword_walk",
+      "game": [
+        { "id": "sword_walkL", "side": "L", "flip": false, "frames": 28 },
+        { "id": "sword_walkR", "side": "R", "flip": true, "frames": 28 }
+      ]
+    }
+  },
+  "gameOnly": {
+    "fish_holdL": "gather_fish_hold: no editor clip yet",
+    "fish_holdR": "gather_fish_hold: no editor clip yet",
+    "flag_workL": "gather_flag_work: no editor clip yet",
+    "flag_workR": "gather_flag_work: no editor clip yet",
+    "flag_plantL": "gather_flag_plant: no editor clip yet (the editor's gather_plant is planting, not a flag)",
+    "flag_plantR": "gather_flag_plant: no editor clip yet (the editor's gather_plant is planting, not a flag)"
+  }
+}

@@ -1,0 +1,310 @@
+{
+ "degrees": 0.0,
+ "phiTarget": 0.0,
+ "phiUsed": 0.0,
+ "combo": {
+  "eyes": "almond-calm",
+  "brows": "almond-calm",
+  "nose": "dash-h",
+  "mouth": "smile-line",
+  "hair": "soldier-crop-hair"
+ },
+ "hairMode": "shift",
+ "hairShiftPx": 0.0,
+ "axis": 543.0,
+ "eggHalfWidth": 219.0,
+ "faceMode": "project-clamped",
+ "fringeRow": null,
+ "farEyeMarginPx": null,
+ "pieces": [
+  {
+   "piece": "eye-far",
+   "before": [
+    371,
+    439,
+    499,
+    507
+   ],
+   "after": [
+    371,
+    439,
+    499,
+    507
+   ],
+   "dx": 0.0,
+   "kx": 1.0,
+   "anchor": 435.0,
+   "easePx": 0.0,
+   "clearance": {
+    "frontPx": 44.0,
+    "turnedPx": 44.0,
+    "easePx": 0.0,
+    "ratio": 1.0
+   }
+  },
+  {
+   "piece": "eye-near",
+   "before": [
+    587,
+    439,
+    714,
+    507
+   ],
+   "after": [
+    587,
+    439,
+    714,
+    507
+   ],
+   "dx": 0.0,
+   "kx": 1.0,
+   "anchor": 650.5,
+   "easePx": 0.0,
+   "clearance": {
+    "frontPx": 45.0,
+    "turnedPx": 45.0,
+    "easePx": 0.0,
+    "ratio": 1.0
+   }
+  },
+  {
+   "piece": "brow-far",
+   "before": [
+    379,
+    396,
+    497,
+    424
+   ],
+   "after": [
+    379,
+    396,
+    497,
+    424
+   ],
+   "dx": 0.0,
+   "kx": 1.0,
+   "anchor": 435.0,
+   "easePx": 0.0
+  },
+  {
+   "piece": "brow-near",
+   "before": [
+    588,
+    396,
+    707,
+    424
+   ],
+   "after": [
+    588,
+    396,
+    707,
+    424
+   ],
+   "dx": 0.0,
+   "kx": 1.0,
+   "anchor": 650.5,
+   "easePx": 0.0
+  },
+  {
+   "piece": "nose-mid",
+   "before": [
+    524,
+    548,
+    562,
+    555
+   ],
+   "after": [
+    524,
+    548,
+    562,
+    555
+   ],
+   "dx": 0.0,
+   "kx": 1.0,
+   "anchor": 543.0,
+   "easePx": 0.0
+  },
+  {
+   "piece": "mouth-mid",
+   "before": [
+    496,
+    583,
+    589,
+    600
+   ],
+   "after": [
+    496,
+    583,
+    589,
+    600
+   ],
+   "dx": 0.0,
+   "kx": 1.0,
+   "anchor": 542.5,
+   "easePx": 0.0
+  }
+ ],
+ "headFit": 0.742,
+ "featurePoints": {
+  "eyes": {
+   "x": 0,
+   "y": 8.4
+  },
+  "nose": {
+   "x": 0,
+   "y": 12.2
+  },
+  "mouth": {
+   "x": 0,
+   "y": 14.1
+  }
+ },
+ "gain": 1.6,
+ "bump": {
+  "eye": 0.0,
+  "brow": 0.02,
+  "nose": 0.18,
+  "mouth": 0.08
+ },
+ "farNarrow": 0.36,
+ "farDark": 0.22,
+ "mouthNarrow": 0.25,
+ "edgeMargin": 16,
+ "hairShift": 0.8,
+ "mirrorInputs": false,
+ "fringeClear": {
+  "lidTopMin": 439.0,
+  "clearedPx": 408,
+  "gapPx": 3.0,
+  "strayPxRemoved": 0,
+  "cutInk": [
+   43,
+   22,
+   14
+  ],
+  "cutInkWidthPx": 3.9,
+  "cutInkPx": 225
+ },
+ "dashNose": {
+  "style": "dash-h",
+  "point": [
+   543.0,
+   551.9
+  ],
+  "eyeWidthPx": 127,
+  "lengthPx": 34.3,
+  "weightPx": 6.67,
+  "ink": [
+   85,
+   39,
+   16
+  ],
+  "taper": 0.35,
+  "farDir": -1.0,
+  "box": [
+   524,
+   548,
+   562,
+   555
+  ]
+ },
+ "eyeWidth (P6)": 1.0,
+ "eyeClearTarget (P6)": 0.85,
+ "eyeClearMin (P6)": 0.7,
+ "lockRow (P4)": 391,
+ "lockRamp": 40,
+ "blink": {
+  "frames": {
+   "half": [
+    58,
+    61
+   ],
+   "closed": [
+    59,
+    60
+   ]
+  },
+  "inkLum": 0.16,
+  "eyes": [
+   {
+    "variant": "half",
+    "eye": "far",
+    "open": [
+     371,
+     439,
+     499,
+     507
+    ],
+    "blink": [
+     372,
+     454,
+     498,
+     507
+    ],
+    "growthPx": 0
+   },
+   {
+    "variant": "half",
+    "eye": "near",
+    "open": [
+     587,
+     439,
+     714,
+     507
+    ],
+    "blink": [
+     587,
+     454,
+     714,
+     507
+    ],
+    "growthPx": 0
+   },
+   {
+    "variant": "closed",
+    "eye": "far",
+    "open": [
+     371,
+     439,
+     499,
+     507
+    ],
+    "blink": [
+     372,
+     456,
+     498,
+     507
+    ],
+    "growthPx": 0
+   },
+   {
+    "variant": "closed",
+    "eye": "near",
+    "open": [
+     587,
+     439,
+     714,
+     507
+    ],
+    "blink": [
+     587,
+     456,
+     714,
+     507
+    ],
+    "growthPx": 0
+   }
+  ],
+  "maxGrowthPx": 0
+ },
+ "faceParts (P7)": {
+  "slots": [
+   "eyes",
+   "brows",
+   "nose",
+   "mouth"
+  ],
+  "maxDiffVsBaked255": 0
+ },
+ "rig": "../../docs/plans/atlas-animator-demos/views/turned-front/five-anims/rig/front-turn00.anim.json"
+}

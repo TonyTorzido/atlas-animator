@@ -1,0 +1,7 @@
+{
+  "format": "atlas-pack@1",
+  "scale": 1,
+  "pages": [
+    { "file": "fox.atlas.png", "width": 680, "height": 460, "regions": { "body/fox": { "x": 0, "y": 0, "width": 680, "height": 460 } } }
+  ]
+}

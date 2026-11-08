@@ -1,0 +1,26 @@
+/* View buttons (viewHud.ts): Pan and Frame selected sit in the stage context bar, the rest in the Overlays popover (toolPalette.css lays that out). */
+body:is(.ws-home, .ws-ship) :is(#vtop, #ctx-pop, #toolpalette) { display: none; }
+/* Rig (Setup mode, no clip): only the view controls that apply: Facing right, Phone size, Pan, Frame selected, Fit. */
+body.setup :is(#vh-game, #vh-onion, #vh-onion-set, #vh-ab, #vh-snap15, #vh-snapkey, #vh-onion-pop, #vh-ab-pop),
+body.setup .ctx-sec:is([data-sec="onion"], [data-sec="compare"], [data-sec="gate"]),
+body.ws-rig :is(#vh-selall, #vh-branch) { display: none; }
+.vh-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--s2); width: var(--ctl-md); height: var(--ctl-md); padding: 0; border-color: transparent; background: transparent; color: var(--text2); }
+.vh-btn:hover:not(:disabled) { color: var(--text); }
+.vh-btn.on { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent); }
+.vh-btn .ico { width: 16px; height: 16px; }
+.vh-btn .vh-txt { display: none; }
+.vh-mini { width: var(--ctl-sm); height: var(--ctl-sm); flex: none; border-color: var(--line); background: var(--panel2); }
+#palette-open { display: inline-flex; align-items: center; gap: var(--s1); height: var(--ctl-md); padding: 0 var(--s2); font-size: var(--fs-sm); color: var(--text2); }
+#palette-open .ico { width: 14px; height: 14px; }
+.vh-pop { position: absolute; z-index: var(--z-popover); display: flex; flex-direction: column; gap: var(--s2); min-width: 220px; padding: var(--s2) var(--s3); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow-2); }
+.vh-pop[hidden] { display: none; }
+.vh-row { display: flex; align-items: center; gap: var(--s2); }
+.vh-lbl { flex: 0 0 56px; font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--dim); }
+.vh-pop input[type="number"] { width: 56px; }
+.vh-pop input[type="range"] { flex: 1; min-width: 0; }
+.vh-btnrow { display: flex; flex-wrap: wrap; gap: var(--s1); }
+.vh-info { font-size: var(--fs-sm); color: var(--text2); }
+body.pan-tool #view canvas { cursor: grab; }
+#outliner .ol-ico { display: inline-flex; align-items: center; padding: 1px 4px; }
+#outliner .ol-ico span { display: none; }
+#outliner .ol-ico .ico { width: 14px; height: 14px; }

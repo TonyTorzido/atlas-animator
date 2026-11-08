@@ -1,0 +1,633 @@
+{
+  "format": "atlas-anim@1",
+  "name": "test-humanoid",
+  "canvas": {
+    "width": 512,
+    "height": 768,
+    "originX": 256,
+    "originY": 700
+  },
+  "bones": [
+    {
+      "name": "root",
+      "rotate": 10
+    },
+    {
+      "name": "pelvis",
+      "parent": "root",
+      "y": -300
+    },
+    {
+      "name": "chest",
+      "parent": "pelvis",
+      "length": 120,
+      "y": -20,
+      "rotation": -90,
+      "limits": {
+        "min": -20,
+        "max": 20
+      }
+    },
+    {
+      "name": "head",
+      "parent": "chest",
+      "length": 80,
+      "x": 140,
+      "inherit": "noScale"
+    },
+    {
+      "name": "upper_arm_r",
+      "parent": "chest",
+      "length": 90,
+      "x": 110,
+      "y": 60,
+      "rotation": 180,
+      "limits": {
+        "min": -30,
+        "max": 105
+      }
+    },
+    {
+      "name": "forearm_r",
+      "parent": "upper_arm_r",
+      "length": 80,
+      "x": 90,
+      "limits": {
+        "min": 0,
+        "max": 70
+      }
+    },
+    {
+      "name": "hand_r",
+      "parent": "forearm_r",
+      "length": 30,
+      "x": 80
+    },
+    {
+      "name": "hand_r_target",
+      "parent": "root",
+      "x": 60,
+      "y": -150
+    },
+    {
+      "name": "hat",
+      "parent": "root",
+      "inherit": "onlyTranslation"
+    },
+    {
+      "name": "cape_1",
+      "parent": "chest",
+      "length": 60,
+      "x": 100,
+      "rotation": 180,
+      "skin": true
+    },
+    {
+      "name": "cape_2",
+      "parent": "cape_1",
+      "length": 60,
+      "x": 60,
+      "skin": true
+    }
+  ],
+  "slots": [
+    {
+      "name": "cape",
+      "bone": "cape_1",
+      "attachment": "cape"
+    },
+    {
+      "name": "torso",
+      "bone": "chest",
+      "attachment": "torso"
+    },
+    {
+      "name": "torso_cloth",
+      "bone": "chest",
+      "attachment": "torso_cloth"
+    },
+    {
+      "name": "arm_r",
+      "bone": "upper_arm_r",
+      "attachment": "arm_r"
+    },
+    {
+      "name": "hair",
+      "bone": "head",
+      "attachment": "hair"
+    },
+    {
+      "name": "weapon",
+      "bone": "hand_r",
+      "blend": "normal",
+      "attachment": "sword"
+    },
+    {
+      "name": "grip",
+      "bone": "hand_r",
+      "attachment": "grip"
+    },
+    {
+      "name": "aura",
+      "bone": "chest",
+      "color": "ffffff80",
+      "blend": "additive"
+    }
+  ],
+  "skins": {
+    "body": {
+      "attachments": {
+        "torso": {
+          "torso": {
+            "type": "mesh",
+            "path": "body/torso",
+            "uvs": [
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            "triangles": [
+              0,
+              1,
+              2,
+              0,
+              2,
+              3
+            ],
+            "bones": [
+              "chest",
+              "pelvis"
+            ],
+            "vertices": [
+              1,
+              0,
+              -50,
+              -100,
+              1,
+              1,
+              0,
+              50,
+              -100,
+              1,
+              2,
+              0,
+              50,
+              0,
+              0.5,
+              1,
+              50,
+              -20,
+              0.5,
+              2,
+              0,
+              -50,
+              0,
+              0.5,
+              1,
+              -50,
+              -20,
+              0.5
+            ],
+            "hull": 4,
+            "width": 100,
+            "height": 120
+          }
+        },
+        "arm_r": {
+          "arm_r": {
+            "type": "region",
+            "path": "body/arm_r",
+            "x": 45,
+            "rotation": 90,
+            "width": 40,
+            "height": 100
+          }
+        },
+        "hair": {
+          "hair": {
+            "type": "region",
+            "path": "body/hair",
+            "width": 90,
+            "height": 60
+          }
+        }
+      }
+    },
+    "tunic": {
+      "attachments": {
+        "torso_cloth": {
+          "torso_cloth": {
+            "type": "linkedMesh",
+            "path": "swag/tunic/torso",
+            "source": {
+              "skin": "body",
+              "slot": "torso",
+              "attachment": "torso"
+            },
+            "width": 108,
+            "height": 128
+          }
+        }
+      }
+    },
+    "helmet": {
+      "hides": [
+        "hair"
+      ]
+    },
+    "cape": {
+      "attachments": {
+        "cape": {
+          "cape": {
+            "type": "mesh",
+            "path": "swag/cape/cape",
+            "uvs": [
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            "triangles": [
+              0,
+              1,
+              2,
+              0,
+              2,
+              3
+            ],
+            "bones": [
+              "cape_1",
+              "cape_2"
+            ],
+            "vertices": [
+              1,
+              0,
+              0,
+              -30,
+              1,
+              1,
+              0,
+              0,
+              30,
+              1,
+              1,
+              1,
+              60,
+              30,
+              1,
+              1,
+              1,
+              60,
+              -30,
+              1
+            ],
+            "hull": 4,
+            "width": 60,
+            "height": 120
+          }
+        }
+      },
+      "bones": [
+        "cape_2"
+      ],
+      "constraints": [
+        "cape_1_physics",
+        "cape_2_physics"
+      ]
+    },
+    "sword": {
+      "attachments": {
+        "weapon": {
+          "sword": {
+            "type": "region",
+            "path": "swag/sword",
+            "x": 40,
+            "width": 120,
+            "height": 24
+          }
+        },
+        "grip": {
+          "grip": {
+            "type": "point",
+            "x": 10,
+            "rotation": 0
+          }
+        }
+      }
+    }
+  },
+  "drawOrder": [
+    "cape",
+    "torso",
+    "torso_cloth",
+    "hair",
+    "arm_r",
+    "weapon",
+    "grip",
+    "aura"
+  ],
+  "ik": [
+    {
+      "name": "hand_r_ik",
+      "bones": [
+        "upper_arm_r",
+        "forearm_r"
+      ],
+      "target": "hand_r_target",
+      "bendPositive": false,
+      "mix": 0
+    }
+  ],
+  "transform": [
+    {
+      "name": "hat_follow",
+      "bones": [
+        "hat"
+      ],
+      "target": "head",
+      "mixRotate": 0,
+      "offset": {
+        "y": -40
+      }
+    }
+  ],
+  "physics": [
+    {
+      "name": "cape_1_physics",
+      "bone": "cape_1",
+      "rotate": 1,
+      "inertia": 0.6,
+      "strength": 60,
+      "damping": 0.85,
+      "gravity": 60,
+      "skin": true
+    },
+    {
+      "name": "cape_2_physics",
+      "bone": "cape_2",
+      "rotate": 1,
+      "inertia": 0.6,
+      "strength": 60,
+      "damping": 0.85,
+      "gravity": 60,
+      "skin": true
+    }
+  ],
+  "driven": [
+    {
+      "name": "elbow_r_fix",
+      "bone": "forearm_r",
+      "keys": [
+        {
+          "at": 0
+        },
+        {
+          "at": 70,
+          "deform": {
+            "body": {
+              "torso": {
+                "torso": {
+                  "offset": 8,
+                  "vertices": [
+                    0,
+                    3,
+                    0,
+                    3
+                  ]
+                }
+              }
+            }
+          },
+          "drawOrder": [
+            {
+              "slot": "arm_r",
+              "offset": -2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "hit": {},
+    "footstep": {
+      "string": "grass"
+    }
+  },
+  "animations": {
+    "idle": {
+      "duration": 2.4,
+      "loop": true,
+      "bones": {
+        "chest": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.2,
+              "x": 0,
+              "y": -3
+            },
+            {
+              "time": 2.4,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "upper_arm_r": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.2,
+              "value": 10,
+              "curve": {
+                "value": [
+                  0.5,
+                  0,
+                  0.5,
+                  1
+                ]
+              }
+            }
+          ]
+        },
+        "pelvis": {
+          "scale": [
+            {
+              "time": 0,
+              "x": 1,
+              "y": 1,
+              "curve": {
+                "x": "linear",
+                "y": [
+                  0.3,
+                  0,
+                  0.7,
+                  1.2
+                ]
+              }
+            }
+          ],
+          "shear": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 2
+            }
+          ]
+        }
+      },
+      "slots": {
+        "aura": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1.2,
+              "color": "ffffff80",
+              "curve": {
+                "a": [
+                  0.4,
+                  0,
+                  0.6,
+                  1
+                ]
+              }
+            }
+          ]
+        },
+        "weapon": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "sword"
+            },
+            {
+              "time": 2,
+              "name": null
+            }
+          ]
+        }
+      },
+      "ik": {
+        "hand_r_ik": [
+          {
+            "time": 0,
+            "mix": 0
+          },
+          {
+            "time": 1,
+            "mix": 1,
+            "bendPositive": true
+          }
+        ]
+      },
+      "transform": {
+        "hat_follow": [
+          {
+            "time": 0,
+            "mixRotate": 0,
+            "mixX": 1
+          }
+        ]
+      },
+      "physics": {
+        "cape_1_physics": {
+          "mix": [
+            {
+              "time": 0,
+              "value": 1
+            }
+          ],
+          "reset": [
+            {
+              "time": 0
+            }
+          ]
+        }
+      },
+      "deform": {
+        "body": {
+          "torso": {
+            "torso": [
+              {
+                "time": 0,
+                "vertices": []
+              },
+              {
+                "time": 1.2,
+                "offset": 4,
+                "vertices": [
+                  1,
+                  0,
+                  1,
+                  0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "drawOrder": [
+        {
+          "time": 0
+        },
+        {
+          "time": 1,
+          "offsets": [
+            {
+              "slot": "arm_r",
+              "offset": -3
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "time": 0.6,
+          "name": "footstep"
+        },
+        {
+          "time": 0.6,
+          "name": "hit",
+          "int": 2
+        },
+        {
+          "time": 1.8,
+          "name": "footstep"
+        }
+      ]
+    }
+  },
+  "atlas": {
+    "pages": [
+      "test-humanoid.0.png"
+    ],
+    "scale": 0.5
+  }
+}

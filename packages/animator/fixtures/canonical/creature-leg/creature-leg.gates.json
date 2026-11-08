@@ -1,0 +1,684 @@
+{
+  "preset": "creature-leg",
+  "build": [
+    "skin: 267 vertices (144 hull), 388 triangles, groups {\"body\":[[0,210]],\"leg\":[[210,388]]}, 10 partition vertices",
+    "inner transition search (solver, both root limits): 0.25 W: infeasible (continuation stalled at u 0.3982 (carried start min det 0.199 at t211)); 0.3 W: infeasible (continuation stalled at u 0.9146 (carried start min det 0.200 at t322)); 0.35 W: infeasible (continuation stalled at u 0.9099 (carried start min det 0.200 at t322)); 0.4 W: infeasible (continuation stalled at u 0.9250 (carried start min det 0.198 at t308)); 0.45 W: infeasible (continuation stalled at u 0.9300 (carried start min det 0.199 at t308)); 0.5 W: feasible",
+    "corrective hip: keys -30, 0, 30, 60; 87 samples between keys, 0 failing",
+    "corrective knee: keys 0, 30, 60, 80; 77 samples between keys, 0 failing",
+    "corrective paw: keys -30, 0, 30; 58 samples between keys, 0 failing",
+    "grid hip_knee: 3x3 keys (x -30, 0, 60; y 0, 40, 80); 20 cell samples, 0 failing",
+    "solve + bake: 1.3 s",
+    "garment band: 119 vertices, 235 triangles",
+    "rig build 3.6 s (offline, at rig build time)"
+  ],
+  "buildSeconds": 3.6,
+  "bake": {
+    "ms": 1273,
+    "singles": [
+      {
+        "name": "hip",
+        "bone": "thigh",
+        "seeds": [
+          -30,
+          0,
+          30,
+          60
+        ],
+        "added": [],
+        "samples": 87,
+        "failing": 0,
+        "worst": ""
+      },
+      {
+        "name": "knee",
+        "bone": "shin",
+        "seeds": [
+          0,
+          30,
+          60,
+          80
+        ],
+        "added": [],
+        "samples": 77,
+        "failing": 0,
+        "worst": ""
+      },
+      {
+        "name": "paw",
+        "bone": "paw",
+        "seeds": [
+          -30,
+          0,
+          30
+        ],
+        "added": [],
+        "samples": 58,
+        "failing": 0,
+        "worst": ""
+      }
+    ],
+    "grids": [
+      {
+        "name": "hip_knee",
+        "x": [
+          -30,
+          0,
+          60
+        ],
+        "y": [
+          0,
+          40,
+          80
+        ],
+        "added": [],
+        "capBinds": [],
+        "samples": 20,
+        "failing": 0,
+        "worst": ""
+      }
+    ],
+    "unsolved": [],
+    "unreachable": [],
+    "interpolation": {
+      "samples": 242,
+      "failing": 0,
+      "minRatio": 0.213,
+      "worstShape": 0.754,
+      "worstVertex": 3.075,
+      "worstAt": "thigh=-14"
+    }
+  },
+  "files": {
+    "document": "fixtures/canonical/creature-leg/creature-leg.anim.json",
+    "atlas": "fixtures/canonical/creature-leg/creature-leg.atlas.json"
+  },
+  "geometry": {
+    "frames": 252,
+    "weightErrors": [],
+    "maxInfluences": 2,
+    "partitionMismatches": 0,
+    "inverted": [],
+    "minAreaRatio": 0.2121667410030398,
+    "minAreaAt": "hip_knee80 frame 0 body t211 near (205, 249)",
+    "embed": [
+      {
+        "mesh": "band",
+        "vertices": 119,
+        "mismatches": 0
+      }
+    ],
+    "coverage": [],
+    "contourOnPartition": 0,
+    "doubled": [],
+    "clearance": {
+      "checked": 253,
+      "holds": 17,
+      "violations": [],
+      "transient": {
+        "frames": 236,
+        "streaks": 0,
+        "maxDegrees": 0,
+        "at": "",
+        "over": []
+      },
+      "limit": {
+        "maxAngle": 15,
+        "minSpan": 3,
+        "minGap": 3.8333333333333335,
+        "transientDegrees": 6
+      },
+      "passThroughHolds": [],
+      "passThrough": []
+    },
+    "doubledAtRest": [],
+    "kinks": {
+      "checked": 56419,
+      "violations": 1033,
+      "maxExcess": 1.57791707755126,
+      "worst": "hip_knee80_paw30 frame 24 leg/outline at (81, 220): 125.4 deg over 3 game px (bind 21.4)",
+      "first": [
+        "hip frame 0 leg/outline at (225, 266): -50.0 deg over 3 game px (bind 4.7)",
+        "hip frame 0 band_cuff/hem at (198, 234): 43.3 deg over 3 game px (bind -0.0)",
+        "knee frame 27 leg/outline at (155, 273): 36.8 deg over 3 game px (bind -16.9)",
+        "hip_knee80 frame 0 leg/outline at (190, 279): 41.7 deg over 3 game px (bind -15.5)",
+        "hip_knee80 frame 0 band_cuff/hem at (198, 233): 45.2 deg over 3 game px (bind -0.0)",
+        "knee_at_hip-30 frame 0 leg/outline at (225, 266): -50.0 deg over 3 game px (bind 4.7)",
+        "knee_at_hip-30 frame 0 band_cuff/hem at (198, 234): 43.3 deg over 3 game px (bind -0.0)",
+        "paw frame 18 leg/outline at (174, 330): 35.7 deg over 3 game px (bind -0.2)",
+        "hip_knee80_paw30 frame 0 leg/outline at (190, 279): 41.7 deg over 3 game px (bind -15.5)",
+        "hip_knee80_paw30 frame 0 band_cuff/hem at (198, 233): 45.2 deg over 3 game px (bind -0.0)",
+        "hip_knee40_paw-30 frame 0 leg/outline at (225, 266): -50.0 deg over 3 game px (bind 4.7)",
+        "hip_knee40_paw-30 frame 0 band_cuff/hem at (198, 234): 43.8 deg over 3 game px (bind -0.0)"
+      ]
+    },
+    "flankLock": {
+      "vertices": 13,
+      "maxDeviation": 0,
+      "at": ""
+    },
+    "apexMotion": [
+      {
+        "index": 0,
+        "permitted": 0,
+        "max": 0,
+        "maxAllowed": 0,
+        "excess": 0,
+        "at": "hip frame 0: 0.00 vs 0.00"
+      }
+    ],
+    "occlusion": [
+      {
+        "garment": "band",
+        "limit": 2,
+        "maxDepth": 0,
+        "at": ""
+      }
+    ],
+    "partitionHidden": [
+      {
+        "group": "leg",
+        "kind": "above",
+        "piece": "band",
+        "samples": 2,
+        "exposed": 0,
+        "minDepth": 2.01,
+        "worst": ""
+      }
+    ],
+    "endsHidden": {
+      "checked": 3036,
+      "exposed": 0,
+      "clearance": 0.5,
+      "ends": [
+        {
+          "contour": "body/outline",
+          "end": 0,
+          "rule": "shared"
+        },
+        {
+          "contour": "body/outline",
+          "end": 1,
+          "rule": "shared"
+        },
+        {
+          "contour": "leg/outline",
+          "end": 0,
+          "rule": "shared"
+        },
+        {
+          "contour": "leg/outline",
+          "end": 1,
+          "rule": "shared"
+        },
+        {
+          "contour": "body/belly",
+          "end": 0,
+          "rule": "shared"
+        },
+        {
+          "contour": "body/belly",
+          "end": 1,
+          "rule": "shared"
+        },
+        {
+          "contour": "band/edge",
+          "end": 0,
+          "rule": "shared"
+        },
+        {
+          "contour": "band/edge",
+          "end": 1,
+          "rule": "shared"
+        },
+        {
+          "contour": "band_cuff/hem",
+          "end": 0,
+          "rule": "shared"
+        },
+        {
+          "contour": "band_cuff/hem",
+          "end": 1,
+          "rule": "shared"
+        },
+        {
+          "contour": "band/end",
+          "end": 0,
+          "rule": "shared"
+        },
+        {
+          "contour": "band/end",
+          "end": 1,
+          "rule": "shared"
+        }
+      ],
+      "first": []
+    },
+    "junctionContainment": [
+      {
+        "overlay": "band_cuff",
+        "clearance": 0.5,
+        "points": [
+          "body/outline end 1"
+        ],
+        "poses": 253,
+        "minDepth": 0.82,
+        "worst": ""
+      }
+    ],
+    "pops": [
+      {
+        "sweep": "hip",
+        "maxSecondDiffGamePx": 0.129,
+        "atFrame": 15,
+        "medianGamePx": 0.052
+      },
+      {
+        "sweep": "knee",
+        "maxSecondDiffGamePx": 0.043,
+        "atFrame": 15,
+        "medianGamePx": 0.03
+      },
+      {
+        "sweep": "hip_knee80",
+        "maxSecondDiffGamePx": 0.089,
+        "atFrame": 10,
+        "medianGamePx": 0.05
+      },
+      {
+        "sweep": "knee_at_hip-30",
+        "maxSecondDiffGamePx": 0.043,
+        "atFrame": 15,
+        "medianGamePx": 0.03
+      },
+      {
+        "sweep": "paw",
+        "maxSecondDiffGamePx": 0.03,
+        "atFrame": 15,
+        "medianGamePx": 0.01
+      },
+      {
+        "sweep": "hip_knee80_paw30",
+        "maxSecondDiffGamePx": 0.089,
+        "atFrame": 10,
+        "medianGamePx": 0.048
+      },
+      {
+        "sweep": "hip_knee40_paw-30",
+        "maxSecondDiffGamePx": 0.088,
+        "atFrame": 10,
+        "medianGamePx": 0.055
+      }
+    ],
+    "shape": {
+      "flips": 0,
+      "collapses": 0,
+      "selfIntersections": 0,
+      "selfIntersectionAt": "",
+      "areas": [
+        {
+          "joint": "thigh",
+          "band": [
+            0.85,
+            1.35
+          ],
+          "min": 0.88,
+          "max": 1.281,
+          "minAt": "knee_at_hip-30 frame 0 thigh -30 shin 0",
+          "maxAt": "hip frame 44 thigh 58"
+        },
+        {
+          "joint": "shin",
+          "band": [
+            0.9,
+            1.1
+          ],
+          "min": 0.92,
+          "max": 1.015,
+          "minAt": "hip_knee80_paw30 frame 0 shin 80 paw 30 thigh -30",
+          "maxAt": "hip frame 45 thigh 60"
+        },
+        {
+          "joint": "paw",
+          "band": [
+            0.85,
+            1.1
+          ],
+          "min": 0.88,
+          "max": 1.08,
+          "minAt": "hip_knee80_paw30 frame 30 shin 80 paw 30 thigh 60",
+          "maxAt": "hip_knee40_paw-30 frame 30 shin 40 paw -30 thigh 60"
+        }
+      ],
+      "silhouette": {
+        "canvasPx": 0.754,
+        "gamePx": 0.197,
+        "at": "hip frame 8 thigh -14 hull vertex 143",
+        "limitGamePx": 0.25
+      },
+      "unsolvedFrames": 0,
+      "unsolvedFirst": "",
+      "lobes": 0,
+      "coreDeviation": 0.000010253634357888675,
+      "widths": {
+        "checked": 1260,
+        "outside": 0,
+        "worst": "",
+        "bindOutside": 0,
+        "min": 30.3,
+        "max": 38.9
+      },
+      "swelling": {
+        "checked": 7560,
+        "outside": 0,
+        "maxRatio": 0.0284,
+        "maxRatioAt": "hip_knee40_paw-30 frame 30 shin 40 paw -30 thigh 60 shin row s 128.7: 27.6 vs bind 26.8",
+        "worst": ""
+      },
+      "residualJumpGamePx": 0.102,
+      "residualJumpAt": "knee_at_hip-30 frame 22 thigh -30 shin 44"
+    }
+  },
+  "structure": {
+    "connectivity": {
+      "meshes": [
+        {
+          "mesh": "skin",
+          "components": 1,
+          "nonManifold": 0,
+          "boundaryMismatch": 0
+        },
+        {
+          "mesh": "band",
+          "components": 1,
+          "nonManifold": 0,
+          "boundaryMismatch": 0
+        }
+      ],
+      "conformUnembedded": [
+        {
+          "mesh": "band",
+          "vertices": 0
+        }
+      ]
+    },
+    "support": {
+      "violations": 0,
+      "first": [],
+      "overlaps": 0,
+      "patches": [
+        {
+          "name": "hip_inner",
+          "side": "inner",
+          "joint": "thigh",
+          "extent": 20.29,
+          "width": 40.58,
+          "ratio": 0.5,
+          "sEnd": 53.88,
+          "feasible": true,
+          "minBlendRatio": 0.239,
+          "chain": [
+            0,
+            143,
+            142,
+            141,
+            140
+          ]
+        },
+        {
+          "name": "hip_outer",
+          "side": "outer",
+          "joint": "thigh",
+          "extent": 140,
+          "sEnd": 49.17,
+          "feasible": true,
+          "minBlendRatio": 0.632,
+          "chain": [
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81
+          ]
+        },
+        {
+          "name": "knee",
+          "side": "both",
+          "joint": "shin",
+          "extent": 28,
+          "sEnd": 84.2,
+          "feasible": true,
+          "minBlendRatio": null,
+          "chain": []
+        },
+        {
+          "name": "ankle",
+          "side": "both",
+          "joint": "paw",
+          "extent": 23,
+          "sEnd": 146,
+          "feasible": true,
+          "minBlendRatio": null,
+          "chain": []
+        }
+      ],
+      "infeasible": [],
+      "regions": {
+        "apex": 1,
+        "belly": 12,
+        "hip_outer": 27,
+        "thigh": 9,
+        "knee": 28,
+        "shin": 29,
+        "ankle": 12,
+        "paw": 20,
+        "hip_inner": 18
+      }
+    },
+    "ownership": {
+      "ownerMismatch": 0,
+      "ownerMismatchAt": [],
+      "sharedSpans": 0,
+      "looseEnds": []
+    },
+    "registration": {
+      "conformCrossings": [
+        {
+          "mesh": "band",
+          "triangles": 235,
+          "crossing": 0
+        }
+      ]
+    }
+  },
+  "gateTable": {
+    "geometric": [
+      {
+        "gate": "connectivity",
+        "subpass": "3a",
+        "status": "pass",
+        "detail": "skin: 1 component(s), 0 non-manifold, 0 boundary/hull mismatches; band: 1 component(s), 0 non-manifold, 0 boundary/hull mismatches; group boundary mismatches 0; conform vertices not embedded [{\"mesh\":\"band\",\"vertices\":0}]"
+      },
+      {
+        "gate": "weight support",
+        "subpass": "3a",
+        "status": "pass",
+        "detail": "0 forbidden influences, 0 vertices in a root patch and a hinge band (allowed; the band's mask applies), 0 weight errors; patches hip_inner inner extent 20.29 (0.5 W, W 40.58) ends s 53.88, hip_outer outer extent 140 ends s 49.17, knee both extent 28 ends s 84.2, ankle both extent 23 ends s 146; regions {\"apex\":1,\"belly\":12,\"hip_outer\":27,\"thigh\":9,\"knee\":28,\"shin\":29,\"ankle\":12,\"paw\":20,\"hip_inner\":18}"
+      },
+      {
+        "gate": "fixed flank",
+        "subpass": "3a",
+        "status": "pass",
+        "detail": "13 fixed/anchored vertices, max deviation from their bone 0.00e+0 canvas px (tolerance 0.001); apex motion max 0.00 (allowance 0; worst hip frame 0: 0.00 vs 0.00)"
+      },
+      {
+        "gate": "triangle validity > 0.2",
+        "subpass": "3b",
+        "status": "pass",
+        "detail": "min area ratio 0.212 (hip_knee80 frame 0 body t211 near (205, 249)); below the floor: 0 flipped and 0 collapsed triangle-frames (0 frames); inner transition (solver search over both root limits): hip_inner 0.5 W feasible (min 0.239), hip_outer feasible (min 0.632)"
+      },
+      {
+        "gate": "global validity (no self-intersection per patch)",
+        "subpass": "3b",
+        "status": "pass",
+        "detail": "0 boundary-edge crossings inside a joint region over every frame"
+      },
+      {
+        "gate": "joint area (declared band, default +-10%)",
+        "subpass": "3b",
+        "status": "pass",
+        "detail": "thigh 0.88..1.281 in [0.85, 1.35] (min at knee_at_hip-30 frame 0 thigh -30 shin 0; max at hip frame 44 thigh 58); shin 0.92..1.015 in [0.9, 1.1] (min at hip_knee80_paw30 frame 0 shin 80 paw 30 thigh -30; max at hip frame 45 thigh 60); paw 0.88..1.08 in [0.85, 1.1] (min at hip_knee80_paw30 frame 30 shin 80 paw 30 thigh 60; max at hip_knee40_paw-30 frame 30 shin 40 paw -30 thigh 60)"
+      },
+      {
+        "gate": "silhouette <= 0.25 game px",
+        "subpass": "3b",
+        "status": "pass",
+        "detail": "max 0.197 game px (0.754 canvas px) against the procedural target at hip frame 8 thigh -14 hull vertex 143; 0 reversing curves; 0 sweep frames unsolved; 0 key targets unsolved"
+      },
+      {
+        "gate": "limb shape",
+        "subpass": "3b",
+        "status": "pass",
+        "detail": "rigid cores: max deviation 1.03e-5 canvas px; hinge thickness 30.3..38.9 canvas px over 1260 checks, 0 outside the width envelope, 0 rows outside it at bind"
+      },
+      {
+        "gate": "no swelling (cores <= bind +3% outside bulge zones)",
+        "subpass": "3c",
+        "status": "pass",
+        "detail": "7560 row checks, 0 over the limit; largest growth outside bulge zones +2.8% at hip_knee40_paw-30 frame 30 shin 40 paw -30 thigh 60 shin row s 128.7: 27.6 vs bind 26.8"
+      },
+      {
+        "gate": "garment registration",
+        "subpass": "3a",
+        "status": "pass",
+        "detail": "embedded mismatches [{\"mesh\":\"band\",\"vertices\":119,\"mismatches\":0}]; conform triangles crossing a skin edge [{\"mesh\":\"band\",\"triangles\":235,\"crossing\":0}]; coverage []"
+      },
+      {
+        "gate": "visible kink (<= 35 deg over 3 game px outside declared corners, or the bind turn + 5)",
+        "subpass": "3d",
+        "status": "fail",
+        "detail": "56419 window checks, 1033 over (hip frame 0 leg/outline at (225, 266): -50.0 deg over 3 game px (bind 4.7) | hip frame 0 band_cuff/hem at (198, 234): 43.3 deg over 3 game px (bind -0.0) | knee frame 27 leg/outline at (155, 273): 36.8 deg over 3 game px (bind -16.9) | hip_knee80 frame 0 leg/outline at (190, 279): 41.7 deg over 3 game px (bind -15.5) | hip_knee80 frame 0 band_cuff/hem at (198, 233): 45.2 deg over 3 game px (bind -0.0) | knee_at_hip-30 frame 0 leg/outline at (225, 266): -50.0 deg over 3 game px (bind 4.7) | knee_at_hip-30 frame 0 band_cuff/hem at (198, 234): 43.3 deg over 3 game px (bind -0.0) | paw frame 18 leg/outline at (174, 330): 35.7 deg over 3 game px (bind -0.2) | hip_knee80_paw30 frame 0 leg/outline at (190, 279): 41.7 deg over 3 game px (bind -15.5) | hip_knee80_paw30 frame 0 band_cuff/hem at (198, 233): 45.2 deg over 3 game px (bind -0.0) | hip_knee40_paw-30 frame 0 leg/outline at (225, 266): -50.0 deg over 3 game px (bind 4.7) | hip_knee40_paw-30 frame 0 band_cuff/hem at (198, 234): 43.8 deg over 3 game px (bind -0.0)); worst hip_knee80_paw30 frame 24 leg/outline at (81, 220): 125.4 deg over 3 game px (bind 21.4) (excess 90.4 deg)"
+      },
+      {
+        "gate": "partition hidden",
+        "subpass": "3d",
+        "status": "pass",
+        "detail": "leg skin on 'band' at bind: 2 samples, min cover depth 2.01, 0 uncovered"
+      },
+      {
+        "gate": "junction containment",
+        "subpass": "3d",
+        "status": "pass",
+        "detail": "band_cuff: 1 points (body/outline end 1) over 253 poses (rest, sweeps, limit vertices), min depth 0.82 vs clearance 0.5"
+      },
+      {
+        "gate": "ends hidden or joined",
+        "subpass": "3d",
+        "status": "pass",
+        "detail": "3036 contour-end checks over every frame (clearance 0.5 px under a higher garment, else a declared junction or a shared end): 0 exposed"
+      },
+      {
+        "gate": "draw-group occlusion",
+        "subpass": "3a",
+        "status": "pass",
+        "detail": "band: deepest 0 <= 2"
+      },
+      {
+        "gate": "ownership",
+        "subpass": "3a",
+        "status": "pass",
+        "detail": "0 contour segments over another group, 0 shared spans, loose ends [], doubled at rest 0, doubled in motion 0"
+      },
+      {
+        "gate": "interpolation",
+        "subpass": "3b",
+        "status": "pass",
+        "detail": "242 runtime samples between keys and inside grid cells, 0 failing; min det 0.213, worst silhouette 0.754 canvas px (thigh=-14), worst vertex 3.075 canvas px; keys hip [-30, 0, 30, 60], knee [0, 30, 60, 80], paw [-30, 0, 30]; grids hip_knee 3x3"
+      },
+      {
+        "gate": "temporal",
+        "subpass": "3b",
+        "status": "pass",
+        "detail": "max second difference 0.129 game px per (2 deg)^2 (limit 0.25); largest frame-to-frame jump of the silhouette residual from the solved target 0.102 game px (limit 0.25) at knee_at_hip-30 frame 22 thigh -30 shin 44"
+      },
+      {
+        "gate": "pose limits (sweeps, seeds and gates inside; validator flags clips outside)",
+        "subpass": "3d",
+        "status": "pass",
+        "detail": "none declared; sweep frames clipped {\"hip\":0,\"knee\":0,\"hip_knee80\":0,\"knee_at_hip-30\":0,\"paw\":0,\"hip_knee80_paw30\":0,\"hip_knee40_paw-30\":0}; frames outside 0; validator issues on the rig 0; validator flags a clip outside: true; unreachable none"
+      },
+      {
+        "gate": "stroke clearance (no sub-pixel crack < 3.83 canvas px between near-parallel contours at held/end poses; in motion <= 6 deg of the moving joint)",
+        "subpass": "3d",
+        "status": "pass",
+        "detail": "17 held/end frames: 0 crack runs >= 3 canvas px (angle < 15 deg, gap in (0, 3.83)); 236 motion frames, 0 crack streaks, longest 0 deg, 0 over the cap; pass-through ranges [], held/end poses inside them 0"
+      },
+      {
+        "gate": "generality",
+        "subpass": "all",
+        "status": "pass",
+        "detail": "one implementation and one set of thresholds for every preset"
+      }
+    ],
+    "raster": [
+      {
+        "gate": "outline p99 <= 0.25 game px",
+        "subpass": "3c",
+        "status": "not measured",
+        "detail": "not rendered (run with --demos)"
+      },
+      {
+        "gate": "calibration",
+        "subpass": "3c",
+        "status": "not measured",
+        "detail": "not rendered (run with --demos)"
+      },
+      {
+        "gate": "alpha (no unexplained holes)",
+        "subpass": "3c",
+        "status": "not measured",
+        "detail": "not rendered (run with --demos)"
+      }
+    ]
+  },
+  "subpasses": {
+    "3a": "green",
+    "3b": "green",
+    "3c": "red",
+    "3d": "red"
+  },
+  "failures": [
+    "gate visible kink (<= 35 deg over 3 game px outside declared corners, or the bind turn + 5): 56419 window checks, 1033 over (hip frame 0 leg/outline at (225, 266): -50.0 deg over 3 game px (bind 4.7) | hip frame 0 band_cuff/hem at (198, 234): 43.3 deg over 3 game px (bind -0.0) | knee frame 27 leg/outline at (155, 273): 36.8 deg over 3 game px (bind -16.9) | hip_knee80 frame 0 leg/outline at (190, 279): 41.7 deg over 3 game px (bind -15.5) | hip_knee80 frame 0 band_cuff/hem at (198, 233):"
+  ],
+  "ok": false
+}

@@ -1,0 +1,277 @@
+{
+ "format": "atlas-pack@1",
+ "scale": 1,
+ "pages": [
+  {
+   "file": "kit-arm-cutout.b2.0.png",
+   "width": 2016,
+   "height": 1160,
+   "regions": {
+    "body/weapon__double_axe": {
+     "x": 2,
+     "y": 2,
+     "width": 380,
+     "height": 671
+    },
+    "body/head__head": {
+     "x": 384,
+     "y": 2,
+     "width": 440,
+     "height": 481
+    },
+    "body/hair_back__hair": {
+     "x": 826,
+     "y": 2,
+     "width": 608,
+     "height": 431
+    },
+    "body/arm_l_upper__straight": {
+     "x": 1436,
+     "y": 2,
+     "width": 197,
+     "height": 312
+    },
+    "body/chest__tank": {
+     "x": 1635,
+     "y": 2,
+     "width": 230,
+     "height": 296
+    },
+    "body/leg_r__straight": {
+     "x": 1867,
+     "y": 2,
+     "width": 144,
+     "height": 247
+    },
+    "body/leg_l__straight": {
+     "x": 2,
+     "y": 675,
+     "width": 143,
+     "height": 246
+    },
+    "body/arm_r__straight": {
+     "x": 147,
+     "y": 675,
+     "width": 150,
+     "height": 211
+    },
+    "body/arm_l__straight": {
+     "x": 299,
+     "y": 675,
+     "width": 138,
+     "height": 201
+    },
+    "body/hair_front__fringe": {
+     "x": 439,
+     "y": 675,
+     "width": 438,
+     "height": 191
+    },
+    "body/arm_r__curled": {
+     "x": 879,
+     "y": 675,
+     "width": 159,
+     "height": 185
+    },
+    "body/arm_l__curled": {
+     "x": 1040,
+     "y": 675,
+     "width": 156,
+     "height": 179
+    },
+    "body/hand_r__open": {
+     "x": 1198,
+     "y": 675,
+     "width": 129,
+     "height": 169
+    },
+    "body/hand_l__open": {
+     "x": 1329,
+     "y": 675,
+     "width": 128,
+     "height": 169
+    },
+    "body/arm_l_upper__upper": {
+     "x": 1459,
+     "y": 675,
+     "width": 125,
+     "height": 144
+    },
+    "body/foot_l__toe": {
+     "x": 1586,
+     "y": 675,
+     "width": 130,
+     "height": 139
+    },
+    "body/hand_l__relaxed": {
+     "x": 1718,
+     "y": 675,
+     "width": 120,
+     "height": 133
+    },
+    "body/hand_r__relaxed": {
+     "x": 1840,
+     "y": 675,
+     "width": 119,
+     "height": 133
+    },
+    "body/hand_r__fist": {
+     "x": 2,
+     "y": 923,
+     "width": 120,
+     "height": 125
+    },
+    "body/foot_l__flat": {
+     "x": 124,
+     "y": 923,
+     "width": 145,
+     "height": 123
+    },
+    "body/foot_r__flat": {
+     "x": 271,
+     "y": 923,
+     "width": 140,
+     "height": 123
+    },
+    "body/hand_l__fist": {
+     "x": 413,
+     "y": 923,
+     "width": 121,
+     "height": 123
+    },
+    "body/hand_l__fist_c": {
+     "x": 536,
+     "y": 923,
+     "width": 121,
+     "height": 123
+    },
+    "body/arm_l_fore__fore": {
+     "x": 659,
+     "y": 923,
+     "width": 118,
+     "height": 120
+    },
+    "body/waist__pants": {
+     "x": 779,
+     "y": 923,
+     "width": 267,
+     "height": 117
+    },
+    "body/foot_r__toe": {
+     "x": 1048,
+     "y": 923,
+     "width": 149,
+     "height": 117
+    },
+    "body/hand_l__guard": {
+     "x": 1199,
+     "y": 923,
+     "width": 125,
+     "height": 115
+    },
+    "body/shoulder_l__raised": {
+     "x": 1326,
+     "y": 923,
+     "width": 84,
+     "height": 114
+    },
+    "body/shoulder_l__rest": {
+     "x": 1412,
+     "y": 923,
+     "width": 84,
+     "height": 114
+    },
+    "body/neck__neck": {
+     "x": 1498,
+     "y": 923,
+     "width": 123,
+     "height": 113
+    },
+    "body/shoulder_r__raised": {
+     "x": 1623,
+     "y": 923,
+     "width": 87,
+     "height": 113
+    },
+    "body/shoulder_r__rest": {
+     "x": 1712,
+     "y": 923,
+     "width": 87,
+     "height": 113
+    },
+    "body/hand_r__grip_back": {
+     "x": 1801,
+     "y": 923,
+     "width": 123,
+     "height": 107
+    },
+    "body/hand_l__grip_back": {
+     "x": 2,
+     "y": 1050,
+     "width": 121,
+     "height": 106
+    },
+    "body/wrist_l_joint__joint": {
+     "x": 125,
+     "y": 1050,
+     "width": 89,
+     "height": 88
+    },
+    "body/elbow_l_joint__joint": {
+     "x": 216,
+     "y": 1050,
+     "width": 87,
+     "height": 88
+    },
+    "body/eyes__eyes": {
+     "x": 305,
+     "y": 1050,
+     "width": 297,
+     "height": 69
+    },
+    "body/hand_r_fingers__grip_fingers": {
+     "x": 604,
+     "y": 1050,
+     "width": 122,
+     "height": 68
+    },
+    "body/hand_l_fingers__grip_fingers": {
+     "x": 728,
+     "y": 1050,
+     "width": 121,
+     "height": 68
+    },
+    "body/eyes__eyes_blink_half": {
+     "x": 851,
+     "y": 1050,
+     "width": 297,
+     "height": 53
+    },
+    "body/eyes__eyes_blink_closed": {
+     "x": 1150,
+     "y": 1050,
+     "width": 297,
+     "height": 51
+    },
+    "body/brows__brows": {
+     "x": 1449,
+     "y": 1050,
+     "width": 286,
+     "height": 28
+    },
+    "body/mouth__mouth": {
+     "x": 1737,
+     "y": 1050,
+     "width": 90,
+     "height": 17
+    },
+    "body/nose__nose": {
+     "x": 1829,
+     "y": 1050,
+     "width": 37,
+     "height": 8
+    }
+   }
+  }
+ ]
+}

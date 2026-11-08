@@ -1,0 +1,193 @@
+{
+  "name": "template7-shoulder",
+  "description": "Humanoid preset, template7 body: the screen-left shoulder, arm and tank armhole as one continuous skin surface plus the tank garment layer (first milestone). The tank owns the visible edge along the strap and the whole flank, so the torso has no flank contour; the *_cut junctions are where contours leave the preset (the rest of the body is).",
+  "canvas": { "width": 1086, "height": 1448, "originX": 542, "originY": 960 },
+  "figureHeight": 1074,
+  "gamePixels": 140,
+  "bones": [
+    { "name": "root" },
+    { "name": "pelvis", "parent": "root", "at": [542, 960], "toward": [542, 1010] },
+    { "name": "chest", "parent": "pelvis", "at": [542, 960], "toward": [542, 660], "limits": [-10, 10] },
+    { "name": "neck", "parent": "chest", "at": [542, 700], "toward": [542, 650], "limits": [-10, 10], "inherit": "noScale" },
+    { "name": "head", "parent": "neck", "at": [542, 650], "toward": [542, 400], "limits": [-15, 15] },
+    { "name": "clavicle_l", "parent": "chest", "at": [505, 708], "toward": [436, 729], "limits": [-6, 6], "inherit": "noScale" },
+    { "name": "upper_arm_l", "parent": "clavicle_l", "at": [436, 729], "toward": [391.5, 809], "limits": [-15, 105] },
+    { "name": "forearm_l", "parent": "upper_arm_l", "at": [391.5, 809], "toward": [352, 893], "limits": [0, 70] },
+    { "name": "hand_l", "parent": "forearm_l", "at": [352, 893], "toward": [334.98, 929.18], "limits": [-30, 30] }
+  ],
+  "base": "chest",
+  "girdle": { "bone": "clavicle_l", "center": [436, 729], "r0": 45, "r1": 130, "belowScale": 1.6, "feather": 24 },
+  "chain": {
+    "bones": ["upper_arm_l", "forearm_l", "hand_l"],
+    "branches": [
+      { "parent": "root", "bones": ["pelvis", "chest", "neck", "head"] },
+      { "parent": "chest", "bones": ["clavicle_l"] }
+    ]
+  },
+  "skin": {
+    "slot": "torso",
+    "attachment": "skin",
+    "texture": "canonical/template7-shoulder-skin",
+    "silhouette": [
+      { "at": [542, 600], "corner": true },
+      { "at": [493, 600], "corner": true },
+      [493, 630], [492, 650], [488, 661], [480, 669.5], [468, 675.5], [450, 678.5], [432, 680], [421, 682.5], [413, 688.5],
+      { "s": -12, "v": 40 }, { "s": 0, "v": 40 }, { "s": 45, "v": 40 }, { "s": 91.5, "v": 40 }, { "s": 140, "v": 40 }, { "s": 178, "v": 40 },
+      { "arc": { "s": 220, "r": 48, "from": 226, "to": -2, "step": 9 } },
+      { "s": 184, "v": -38 }, { "s": 140, "v": -38 }, { "s": 100, "v": -38 }, { "s": 88, "v": -37.2 }, { "s": 78, "v": -35.8 }, { "s": 68, "v": -34.6 },
+      { "at": [439.6, 793], "corner": true },
+      [439, 800], [438.5, 808], [437, 816], [436.6, 824], [438.5, 834], [440.5, 850], [442, 864], [440.5, 880], [437.5, 896], [434.5, 912], [430.5, 940], [427.5, 975],
+      { "at": [425, 1010], "corner": true },
+      { "at": [542, 1010], "corner": true }
+    ],
+    "spacing": 6,
+    "lattice": 20,
+    "minDistance": 8,
+    "topology": {
+      "from": 4, "to": 186, "halfWidth": 40, "columns": 10, "core": 14, "minRowGap": 4,
+      "joints": [ { "s": 91.5, "band": 40, "rows": 9 }, { "s": 184.3, "band": 8, "rows": 3 } ],
+      "extraRows": [61.5, 66.5, 71.5, 76.5, 81.5, 86.5, 91.5, 96.5, 101.5, 106.5, 111.5, 136],
+      "rings": [ { "joint": 0, "radii": [16, 30], "from": 150, "to": 290, "step": 20 } ],
+      "apexes": [ { "at": [439.6, 793], "side": "-", "reach": 180 } ]
+    },
+    "groups": [
+      { "slot": "torso", "bone": "chest" },
+      { "slot": "upper_arm", "bone": "upper_arm_l", "s": [-1000, 91.5], "polygon": [[250, 600], [446, 600], [446, 684], [437, 692], [438.5, 702], [440.5, 712], [443, 726], [444.5, 736], [446.5, 752], [446.5, 784], [439.6, 793], [410, 1020], [410, 1100], [250, 1100]] },
+      { "slot": "forearm", "bone": "forearm_l", "s": [91.5, 1000], "polygon": [[250, 600], [446, 600], [446, 684], [437, 692], [438.5, 702], [440.5, 712], [443, 726], [444.5, 736], [446.5, 752], [446.5, 784], [439.6, 793], [410, 1020], [410, 1100], [250, 1100]] }
+    ],
+    "base": "fac59b",
+    "fills": [
+      { "color": "e4a074", "polygon": [ { "s": -30, "v": -90, "corner": true }, { "s": -30, "v": -21, "corner": true }, { "s": 196, "v": -21, "corner": true }, { "s": 196, "v": -90, "corner": true } ] },
+      { "color": "e4a074", "polygon": [ { "at": [470, 590], "corner": true }, { "at": [550, 590], "corner": true }, { "at": [550, 667], "corner": true }, [515, 666], [490, 664], { "at": [470, 662], "corner": true } ] },
+      { "color": "fbdbbe", "polygon": [ { "arc": { "center": [317, 925], "r": 15, "from": 0, "to": 345, "step": 15 } } ] }
+    ],
+    "root": {
+      "zeros": [ { "polygon": [[485, 590], [560, 590], [560, 1020], [415, 1020], [421, 975], [425, 940], [429, 912], [432, 896], [435, 880], [437, 864], [435, 848], [433, 834], [434, 822], [445, 812], [462, 792], [478, 768], [486, 740], [488, 700]] } ]
+    },
+    "regions": {
+      "patches": [
+        { "name": "underarm", "joint": "upper_arm_l", "side": "inner", "from": { "apex": 0 }, "extent": { "width": [0.25, 0.4] }, "profile": "smooth", "bones": ["chest", "clavicle_l", "upper_arm_l"], "permittedApexMotion": 11, "apexGirdle": { "bone": "clavicle_l", "gain": 1 }, "boundary": "crease", "fillet": 0.15, "creaseArc": { "ramp": [8, 45], "linear": true }, "envelope": { "width": [70, 86], "bulge": 6, "area": [0.85, 1.25] } },
+        { "name": "outer_shoulder", "joint": "upper_arm_l", "side": "outer", "from": [480, 669.5], "toward": [379, 749], "extent": 140, "profile": "linear", "bones": ["chest", "clavicle_l", "upper_arm_l"], "boundary": "cap", "arc": { "from": 0, "to": 40, "tension": 1, "ramp": [0, 30], "move": 30, "neck": 40, "gateByRaise": [[60, 10], [75, 32], [90, 29], [105, 26]] }, "envelope": { "width": [70, 86], "bulge": 2, "area": [0.85, 1.25] } },
+        { "name": "elbow", "joint": "forearm_l", "side": "both", "s": 91.5, "band": 16, "foldBand": 34, "fold": "+", "bones": ["upper_arm_l", "forearm_l"], "envelope": { "width": [62, 84], "bulge": 6, "area": [0.9, 1.25] } },
+        { "name": "wrist", "joint": "hand_l", "side": "both", "s": 176, "band": 16, "bones": ["forearm_l", "hand_l"], "envelope": { "area": [0.85, 1.15] } }
+      ],
+      "cores": [
+        { "name": "upper_arm", "bone": "upper_arm_l", "sMin": 0, "sMax": 91.5 },
+        { "name": "forearm", "bone": "forearm_l", "sMin": 91.5, "sMax": 176 },
+        { "name": "hand", "bone": "hand_l", "sMin": 176, "sMax": 400 }
+      ],
+      "fixed": [
+        { "name": "flank", "bone": "chest", "polygon": [[439.8, 792], [560, 792], [560, 900], [428.7, 900], [430, 880], [432, 830], [434.5, 816], [437, 805]] }
+      ],
+      "bends": [
+        { "name": "waist", "from": "chest", "to": "pelvis", "a": [542, 900], "b": [542, 1000] },
+        { "name": "neck", "from": "chest", "to": "neck", "a": [542, 708], "b": [542, 652], "r0": 0, "r1": 55 }
+      ]
+    },
+    "junctions": [
+      { "name": "shoulder_top", "at": [428, 681], "radius": 18 },
+      { "name": "strap_neck", "at": [470, 676.5], "on": "tank", "radius": 14 },
+      { "name": "armpit", "at": [439.6, 793], "radius": 30 },
+      { "name": "neck_cut", "at": [493, 600], "radius": 2 },
+      { "name": "hem_cut", "at": [429.4, 934], "on": "tank", "radius": 2 },
+      { "name": "hem_mid", "at": [542, 946], "on": "tank", "radius": 2 },
+      { "name": "midline_cut", "at": [542, 740], "on": "tank", "radius": 2 }
+    ],
+    "contours": [
+      { "name": "outline", "owner": "torso", "from": [493, 600], "to": { "junction": "strap_neck" }, "width": 10, "color": "3a1001ff" },
+      { "name": "outline", "owner": "upper_arm", "from": [440, 679], "to": { "row": 91.5, "side": "+" }, "width": 10, "color": "3a1001ff", "caps": "round" },
+      { "name": "outline", "owner": "forearm", "from": { "row": 91.5, "side": "+" }, "to": { "row": 91.5, "side": "-" }, "width": 10, "color": "3a1001ff", "caps": "round" },
+      { "name": "underside", "owner": "upper_arm", "from": { "row": 91.5, "side": "-" }, "to": { "apex": 0 }, "width": 10, "color": "3a1001ff", "caps": "round" }
+    ]
+  },
+  "garments": [
+    {
+      "name": "tank", "slot": "tank", "bone": "chest", "attachment": "tank", "texture": "canonical/template7-shoulder-tank",
+      "path": [
+        { "at": [542, 946], "corner": true }, [500, 943], [465, 939],
+        { "at": [429.4, 934], "corner": true },
+        [432.5, 912], [435.5, 896], [438.5, 880], [440.5, 864], [438.5, 848], [436.5, 832], [434.8, 824], [435, 816], [436.5, 808], [437.5, 800], { "at": [439.6, 793], "corner": true }, [440.5, 784], [440.5, 752], [438.5, 736], [437, 726], [434.5, 712], [432.5, 702], [431, 692],
+        { "at": [430, 681], "corner": true },
+        [450, 679.5],
+        { "at": [470, 676.5], "corner": true },
+        [471, 688], [474, 696], [479, 704], [486, 712], [494, 720], [508, 729], [525, 736],
+        { "at": [542, 740], "corner": true }
+      ],
+      "spacing": 6,
+      "lattice": 22,
+      "embed": true,
+      "conform": true,
+      "base": "e9e0db",
+      "fills": [
+        { "color": "cec4c1", "polygon": [ { "at": [438, 792], "corner": true }, { "at": [474, 846], "corner": true }, { "at": [453, 840], "corner": true }, { "at": [440, 868], "corner": true } ] },
+        { "color": "cec4c1", "polygon": [ { "at": [438, 862], "corner": true }, { "at": [470, 906], "corner": true }, { "at": [450, 900], "corner": true }, { "at": [434, 932], "corner": true } ] }
+      ],
+      "contours": [
+        { "name": "hem", "owner": "tank", "from": [542, 946], "to": [429.4, 934], "width": 14, "color": "45403dff" },
+        { "name": "flank", "owner": "tank", "from": [429.4, 934], "to": [436.5, 832], "width": 10, "color": "45403dff" },
+        { "name": "edge", "owner": "tank_armhole", "from": [436.5, 832], "to": [470, 676.5], "width": 10, "color": "45403dff", "caps": "round" },
+        { "name": "neckline", "owner": "tank", "from": [470, 676.5], "to": [542, 740], "width": 10, "color": "45403dff" }
+      ],
+      "overlays": [
+        { "name": "tank_armhole", "region": [[380, 650], [486, 650], [486, 845], [380, 845]], "contours": ["edge"], "fillBand": 8, "above": "upper_arm" }
+      ]
+    }
+  ],
+  "regions": [
+    { "name": "head", "slot": "head", "bone": "head", "texture": "canonical/template7-head", "image": "../body/template7-clean.png", "crop": [270, 160, 276, 497],
+      "keep": [[270, 160], [546, 160], [546, 653], [497, 653], [489, 652], [470, 648], [456, 645], [440, 641], [300, 630], [270, 630]] },
+    { "name": "fist", "slot": "hand", "bone": "hand_l", "texture": "canonical/template7-fist", "image": "../body/template7-clean.png", "crop": [276, 880, 130, 124],
+      "keep": [[276, 912], [296, 897], [312, 893], [390, 893], [406, 912], [406, 1004], [276, 1004]] }
+  ],
+  "drawOrder": ["torso", "tank", "upper_arm", "forearm", "hand", "head"],
+  "correctives": [
+    { "name": "shoulder_l", "bone": "upper_arm_l", "at": [-15, 0, 30, 45, 60, 90, 105] },
+    { "name": "elbow_l", "bone": "forearm_l", "at": [0, 35, 70] },
+    { "name": "wrist_l", "bone": "hand_l", "at": [-30, 0, 30] }
+  ],
+  "grids": [
+    { "name": "raise_shrug_l", "x": { "bone": "upper_arm_l", "at": [-15, 8, 30, 45, 75, 105] }, "y": { "bone": "clavicle_l", "at": [-6, -3, 0, 3, 6] }, "cap": [6, 5] },
+    { "name": "raise_elbow_l", "x": { "bone": "upper_arm_l", "at": [-15, 8, 30, 45, 90, 105] }, "y": { "bone": "forearm_l", "at": [0, 35, 70] } }
+  ],
+  "poseLimits": [
+    { "name": "hand_head_raise_elbow", "x": "upper_arm_l", "y": "forearm_l", "auto": { "collide": ["hand", "head"], "margin": 13, "hold": { "clavicle_l": [-6, 0, 6] } } },
+    { "name": "forearm_head_raise_elbow", "x": "upper_arm_l", "y": "forearm_l", "auto": { "collide": ["forearm", "head"], "margin": 13, "hold": { "clavicle_l": [-6, 0, 6] } } },
+    { "name": "hand_head_raise_shrug", "x": "upper_arm_l", "y": "clavicle_l", "auto": { "collide": ["hand", "head"], "margin": 13 } },
+    { "name": "forearm_head_raise_shrug", "x": "upper_arm_l", "y": "clavicle_l", "auto": { "collide": ["forearm", "head"], "margin": 13 } },
+    { "name": "hand_head_lean", "x": "upper_arm_l", "y": "neck", "plus": ["head"], "auto": { "collide": ["hand", "head"], "margin": 13, "hold": { "forearm_l": [0, 35, 70], "clavicle_l": [-6, 0, 6] } } },
+    { "name": "forearm_head_lean", "x": "upper_arm_l", "y": "neck", "plus": ["head"], "auto": { "collide": ["forearm", "head"], "margin": 13, "hold": { "forearm_l": [0, 35, 70], "clavicle_l": [-6, 0, 6] } } },
+    { "name": "elbow_never_outward", "x": "upper_arm_l", "y": "forearm_l", "scope": "clips", "polygon": [[-15, 0], [105, 0], [105, 70], [45, 70], [16, 10], [-15, 10]] }
+  ],
+  "frame": { "left": 300, "top": 600, "right": 540, "bottom": 900 },
+  "sweeps": [
+    { "name": "raise", "phases": [ { "bone": "upper_arm_l", "from": -15, "to": 105, "step": 2 } ] },
+    { "name": "near_rest", "phases": [ { "bone": "upper_arm_l", "from": -6, "to": 6, "step": 0.5 } ] },
+    { "name": "shrug", "phases": [ { "bone": "clavicle_l", "from": -6, "to": 6, "step": 1 } ] },
+    { "name": "elbow", "phases": [ { "bone": "forearm_l", "from": 0, "to": 70, "step": 2 } ] },
+    { "name": "wrist", "phases": [ { "bone": "hand_l", "from": -30, "to": 30, "step": 2 } ] },
+    { "name": "raise_elbow70", "hold": { "forearm_l": 70 }, "phases": [ { "bone": "upper_arm_l", "from": -15, "to": 105, "step": 3 } ] },
+    { "name": "raise_shrug_up", "hold": { "clavicle_l": 6 }, "phases": [ { "bone": "upper_arm_l", "from": -15, "to": 105, "step": 3 } ] },
+    { "name": "raise_shrug_down", "hold": { "clavicle_l": -6 }, "phases": [ { "bone": "upper_arm_l", "from": -15, "to": 105, "step": 3 } ] },
+    { "name": "elbow_at_raise90", "hold": { "upper_arm_l": 90 }, "phases": [ { "bone": "forearm_l", "from": 0, "to": 70, "step": 2 } ] },
+    { "name": "elbow_at_raise-15", "hold": { "upper_arm_l": -15 }, "phases": [ { "bone": "forearm_l", "from": 0, "to": 70, "step": 2 } ] },
+    { "name": "raise_shrug_up_elbow70", "hold": { "clavicle_l": 6, "forearm_l": 70 }, "phases": [ { "bone": "upper_arm_l", "from": -15, "to": 105, "step": 3 } ] },
+    { "name": "raise_shrug_down_elbow40", "hold": { "clavicle_l": -6, "forearm_l": 40 }, "phases": [ { "bone": "upper_arm_l", "from": -15, "to": 105, "step": 3 } ] },
+    { "name": "head_tilt", "phases": [ { "bone": "head", "from": -15, "to": 15, "step": 2.5 } ] },
+    { "name": "neck_lean", "phases": [ { "bone": "neck", "from": -10, "to": 10, "step": 2.5 } ] },
+    { "name": "lean", "phases": [ { "bone": "chest", "from": -10, "to": 10, "step": 2 } ] }
+  ],
+  "runtime": { "budget": { "skin": 180, "garment": 110 } },
+  "mirror": { "x": 542, "rename": [["_l", "_r"]], "slots": { "upper_arm": "upper_arm_r", "forearm": "forearm_r", "tank_armhole": "tank_armhole_r", "hand": "hand_r" }, "asymmetric": ["head"], "feather": 24 },
+  "gates": {
+    "combined": { "breathe": { "bone": "chest", "x": 1.012, "y": 1.01 } },
+    "visibleDistortion": { "exceptions": [ { "id": "compress/torso/skin/t32", "poses": { "clavicle_l": [-6, 6], "upper_arm_l": [85, 105] }, "rigHash": "1f05677865258839", "debt": "Armpit web re-solve (raise 0..40 under shrug) / shoulder-top compression", "reason": "a skin triangle (torso skin t32 at the shoulder top; skin, not the tank garment) of the sparse rig compresses to 0.6669..0.6688 (limit 0.67) at raise 85..105 (worst shrug +6 raise ~96); the dense rig fails the same spot (t214/t218 0.6684); fixed with the armpit-web re-solve, not by loosening the allowance" } ] },
+    "clearance": { "contacts": [ { "name": "forearm_flank", "pair": ["forearm/outline", "tank/flank"], "x": "upper_arm_l", "y": "clavicle_l", "step": [1.5, 1], "note": "the hanging forearm passes the tank flank: a diagonal raise x shrug band (probe: raise -15 shrug 4..6, raise -10 shrug 0..3, raise -5 shrug -4..-1, raise 0 shrug -6..-5)" },
+      { "name": "forearm_flank_elbow", "pair": ["forearm/outline", "tank/flank"], "x": "upper_arm_l", "y": "forearm_l", "step": [2.5, 2.5], "note": "the same pair as the elbow bends at low raise (elbow_at_raise-15)" },
+      { "name": "arm_flank", "pair": ["upper_arm/outline", "tank/flank"], "x": "upper_arm_l", "y": "clavicle_l", "step": [2.5, 1], "note": " closeout run: the upper-arm outline closes on the tank flank at low raise (4 cracks, raise frames near -15)" },
+      { "name": "underside_flank", "pair": ["upper_arm/underside", "tank/flank"], "x": "upper_arm_l", "y": "clavicle_l", "step": [2.5, 1], "note": "the arm underside closes on the tank flank under shrug" },
+      { "name": "strap_torso", "pair": ["tank/neckline", "torso/outline"], "x": "upper_arm_l", "y": "clavicle_l", "step": [2.5, 1], "note": "the strap/neckline ink runs along the shoulder outline at high raise" } ] },
+    "kink": { "hard": [ { "contour": "upper_arm/underside", "turn": 20, "when": { "upper_arm_l": [40, 105] }, "s": [0, 76] } ] },
+    "coverage": [ { "contour": "edge", "from": [440, 784], "to": [432, 702], "side": -1 } ],
+    "occlusion": [ { "garment": "tank", "poses": [ { "upper_arm_l": -15 }, { "upper_arm_l": -15, "forearm_l": 70 }, { "upper_arm_l": -15, "clavicle_l": -6 }, { "upper_arm_l": -15, "clavicle_l": 6 } ] } ]
+  }
+}

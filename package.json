@@ -1,0 +1,26 @@
+{
+  "name": "atlas-animator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Atlas Animator: a 2D skeletal animation editor that runs in the browser.",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@11.10.0",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @atlas-animator/editor dev",
+    "build": "pnpm --filter @atlas-animator/editor build",
+    "test": "pnpm -r --if-present test",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "verify": "pnpm --filter @atlas-animator/editor verify",
+    "dev:sandbox": "pnpm --filter @atlas-animator/editor dev:sandbox"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

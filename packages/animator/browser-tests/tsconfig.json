@@ -1,0 +1,11 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022", "DOM"],
+    "noEmit": true
+  },
+  "include": [".", "../src/tools/cdt2d.d.ts"],
+  "exclude": ["dist"]
+}

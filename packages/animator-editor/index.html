@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atlas Animator</title>
+    <style>
+      :root {
+        --bg: #14171d;
+        --panel: #1b1f27;
+        --panel2: #222733;
+        --line: #2d3443;
+        --text: #d9dee8;
+        --dim: #9aa4b7;
+        --accent: #f0b84a;
+        --accent2: #5fb3ff;
+        --bad: #ff6b6b;
+        --warn: #ffc65c;
+        --ok: #6bd68f;
+        /* Design tokens. Components using them live in src/ui.css. */
+        /* Surface ramp (dark to light) and line ramp */
+        --bg0: #0f1115; --bg1: #171a21; --panel3: #2a3140; --panel4: #262b36; --line2: #3a4256; --line3: #46506a;
+        /* Text ramp */
+        --text-hi: #e8eaf0; --dim2: #8c96a8; --white: #ffffff; --black: #000000;
+        /* Accent (amber) and status tones: -hi = text on dark, -lo = muted fill, -bg = tinted surface */
+        --accent-hi: #ffd98a; --accent-lo: #a98a45; --accent-bg: #2a2619;
+        --info-bg: #1c2635; --info-line: #34507a;
+        --bad-hi: #ffb3b6; --bad-lo: #e5484d; --bad-bg: #3a1d20;
+        --ok-hi: #8be8ab; --ok-lo: #5d8c3a; --ok-bg: #0e2216;
+        /* Node-kind colours (tree icons, badges, dopesheet diamonds) */
+        --c-bone: #9fb5ff; --c-slot: #8fd3a7; --c-image: #d9b36b; --c-mesh: #c69bff; --c-constraint: #ff8fb0; --c-constraint-bg: #2a1d27; --c-constraint-line: #6a3558; --c-skin: #7fd7e6;
+        --c-key-rotate: #5fb3ff; --c-key-translate: #6bd68f; --c-key-scale: #f0b84a; --c-key-attach: #d9b36b; --c-key-event: #ff6b6b;
+        --text2: #b9c4d8; --muted: #7d879b;
+        --accent-ink: #1d1505; --accent-soft: rgba(240, 184, 74, 0.14); --accent-line: #4a3d1c;
+        --accent2-soft: rgba(95, 179, 255, 0.16);
+        --ok-soft: #17271e; --ok-line: #2f5a42; --warn-soft: #2a2314; --warn-line: #6b5524;
+        --bad-soft: #2b1719; --bad-line: #6a2a2e;
+        --keyed: #6bd68f; --changed: #f0b84a;
+        --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px;
+        --fs-xs: 11px; --fs-sm: 12px; --fs-md: 13px; --fs-lg: 14px; --fs-h4: 16px; --fs-h3: 18px; --fs-h2: 22px; --fs-h1: 26px;
+        --ctl-sm: 24px; --ctl-md: 28px; --ctl-lg: 32px;
+        --shadow-1: 0 2px 6px rgba(0, 0, 0, 0.3); --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.45); --shadow-3: 0 16px 40px rgba(0, 0, 0, 0.5);
+        --z-hud: 4; --z-popover: 8; --z-overlay: 40; --z-modal: 50; --z-toast: 60;
+        --dock-w: 324px; --gv-w: 500px;
+        --t-fast: 120ms; --t-pop: 160ms; --t-panel: 180ms;
+        font: 13px/1.35 "Segoe UI", system-ui, sans-serif;
+        color-scheme: dark;
+      }
+      * { box-sizing: border-box; scrollbar-width: none; }
+      *::-webkit-scrollbar { display: none; }
+      html, body { margin: 0; height: 100%; overflow: hidden; user-select: none; background: var(--bg); color: var(--text); }
+      input { user-select: text; }
+      button, select, input { font: inherit; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 4px; padding: 3px 8px; }
+      button { cursor: pointer; }
+      button:hover:not(:disabled) { border-color: var(--line2); background: var(--panel3); }
+      button:disabled, button.off { opacity: 0.45; cursor: not-allowed; border-style: solid; }
+      button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent2); outline-offset: 1px; }
+      #view, aside, footer { min-width: 0; }
+      input[type="number"] { width: 72px; }
+      #app { display: grid; height: 100%; --tl: 300px; --lw: 220px; --rw: 340px; grid-template-columns: var(--lw) minmax(0, 1fr) var(--rw); grid-template-rows: auto 1fr var(--tl) 26px; grid-template-areas: "top top top" "left view right" "time time right" "stat stat stat"; }
+      header { grid-area: top; display: flex; flex-wrap: nowrap; align-items: center; gap: 8px; padding: 0 10px; height: 44px; overflow: hidden; background: var(--panel); border-bottom: 1px solid var(--line); white-space: nowrap; min-width: 0; }
+      header > * { flex: none; }
+      header > #clip { flex: 0 1 auto; min-width: 70px; max-width: 150px; text-overflow: ellipsis; }
+      header > .spacer { flex: 1 1 0; min-width: 0; }
+      header h1 { font-size: var(--fs-lg); margin: 0 10px 0 0; color: var(--accent); letter-spacing: 0.02em; }
+      .spacer { flex: 1; }
+      #statusbar { grid-area: stat; display: flex; align-items: center; gap: 0; background: var(--panel); border-top: 1px solid var(--line); font-size: var(--fs-sm); min-width: 0; overflow: hidden; white-space: nowrap; }
+      #statusbar .sb { padding: 0 12px; height: 100%; display: inline-flex; align-items: center; gap: 6px; border-right: 1px solid var(--line); color: var(--text); font-variant-numeric: tabular-nums; flex: none; }
+      #statusbar .sb b { font-weight: 600; color: var(--accent); }
+      #statusbar .sb .dim { color: var(--dim); }
+      #sb-save .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); }
+      #sb-save[data-state="unsaved"] .dot { background: var(--warn); }
+      #sb-save[data-state="unsaved"] { cursor: pointer; }
+      #sb-save[data-state="autosaving"] .dot { background: var(--accent2); animation: pulse 0.9s ease-in-out infinite; }
+      @keyframes pulse { 50% { opacity: 0.3; } }
+      #status { color: var(--dim); flex: 1 1 160px; min-width: 0; padding: 0 12px; text-align: right; overflow: hidden; text-overflow: ellipsis; }
+      #status.bad { color: var(--bad); }
+      #status.ok { color: var(--ok); }
+      aside { background: var(--panel); display: flex; flex-direction: column; min-height: 0; }
+      #left { grid-area: left; border-right: 1px solid var(--line); }
+      #right { grid-area: right; border-left: 1px solid var(--line); overflow: hidden; }
+      #tabs { display: flex; flex-wrap: wrap; overflow: hidden; flex: none; background: var(--bg); border-bottom: 1px solid var(--line); }
+      #tabs button { flex: 1 1 auto; min-width: max-content; border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: transparent; color: var(--dim); padding: 7px 5px 6px; font-size: var(--fs-sm); font-weight: 500; white-space: nowrap; }
+      #tabs button:hover:not(:disabled) { color: var(--text); background: var(--panel2); border-color: transparent transparent var(--line); }
+      #tabs button.on { color: var(--accent); background: var(--panel); border-bottom-color: var(--accent); }
+      #panes { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+      .pane { display: none; flex: 1; min-height: 0; overflow-y: auto; flex-direction: column; }
+      .pane.active { display: flex; }
+      .pane > section { flex: none; }
+      .pane > section.gates { flex: 1 1 auto; min-height: 160px; }
+      body.setup:not(.ws-rig) #tabs button:not([data-tab="rig"]) { display: none; }
+      .head { padding: 8px 10px 6px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 6px; }
+      .list { flex: 1; overflow: auto; min-height: 0; }
+      #bonefilter { flex: 1; min-width: 0; width: 100%; }
+      #right select, #right input[type="text"] { max-width: 100%; min-width: 0; }
+      .bone { padding: 3px 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; border-left: 2px solid transparent; }
+      .bone:hover { background: var(--panel2); }
+      .bone.sel { background: var(--accent-bg); border-left-color: var(--accent); color: var(--accent); }
+      .bone.multi { background: var(--accent-bg); border-left-color: var(--accent-lo); color: var(--accent-hi); }
+      .bone.helper { color: var(--dim); font-style: italic; }
+      .bone.helper.sel, .bone.helper.multi { font-style: normal; }
+      .bone .k { margin-left: auto; width: 8px; height: 8px; transform: rotate(45deg); border: 1px solid var(--dim); }
+      .bone .k.has { background: var(--dim); }
+      .bone .k.here { background: var(--accent); border-color: var(--accent); }
+      .bone .ik { font-size: var(--fs-xs); color: var(--accent2); }
+      #view { grid-area: view; position: relative; overflow: hidden; background: var(--bg0); }
+      #view canvas { display: block; }
+      .hud { position: absolute; display: flex; gap: 6px; align-items: center; background: rgba(20, 23, 29, 0.85); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; }
+      .hud.bl { left: 10px; bottom: 10px; color: var(--dim); }
+      .hud.br { right: 10px; bottom: 10px; flex-direction: column; align-items: stretch; z-index: 5; max-width: calc(100% - 20px); max-height: calc(100% - 64px); overflow: auto; background: rgba(20, 23, 29, 0.94); }
+      .pvhead { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+      .pvrow { display: flex; gap: 8px; align-items: flex-start; }
+      .pvcell canvas { display: block; image-rendering: pixelated; background: var(--bg0); border: 1px solid var(--line); }
+      .pvcell .label { margin: 0 0 3px; }
+      .swatch { width: 20px; height: 20px; padding: 0; border-radius: 4px; }
+      .swatch.on { outline: 2px solid var(--accent); }
+      #limitflash { position: absolute; left: 50%; top: 14px; transform: translateX(-50%); background: var(--bad-bg); color: var(--bad-hi); border: 1px solid var(--bad); border-radius: 6px; padding: 4px 10px; display: none; }
+      section.detail { padding: 10px; border-bottom: 1px solid var(--line); }
+      section.detail h2, section.gates h2 { font-size: var(--fs-xs); margin: 0 0 8px; min-height: var(--ctl-sm); color: var(--dim); text-transform: uppercase; letter-spacing: 0.06em; display: flex; align-items: center; gap: 6px; }
+      .range { position: relative; height: 18px; background: var(--panel2); border: 1px solid var(--line); border-radius: 4px; margin-top: 6px; }
+      .range .zero { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--dim); }
+      .range .cur { position: absolute; top: -3px; bottom: -3px; width: 3px; background: var(--accent); border-radius: 2px; }
+      .range.limit .cur { background: var(--bad); }
+      .rangelabels { display: flex; justify-content: space-between; color: var(--dim); font-size: var(--fs-xs); }
+      section.detail[id]:not(#detail):not(#ikpanel) h2 { cursor: pointer; }
+      section.detail.collapsed > :not(h2) { display: none; }
+      section.detail.collapsed h2 { margin-bottom: 0; }
+      .row { display: flex; gap: 6px; align-items: center; margin-top: 8px; flex-wrap: wrap; }
+      .note { color: var(--text2); font-size: var(--fs-sm); line-height: 1.35; margin-top: 6px; }
+      section.gates { flex: 1 0 230px; display: flex; flex-direction: column; min-height: 0; padding: 10px 0 0; }
+      section.gates h2 { padding: 0 10px; }
+      .gatelist { flex: 1; overflow: auto; min-height: 0; padding: 0 10px 10px; }
+      .gate { padding: 5px 8px; margin-bottom: 4px; border-radius: 4px; background: var(--panel2); border-left: 3px solid var(--dim); cursor: default; }
+      .gate.error { border-left-color: var(--bad); }
+      .gate.warning { border-left-color: var(--warn); }
+      .gate.info { border-left-color: var(--accent2); }
+      .gate.jump { cursor: pointer; }
+      .gate .kind { font-size: var(--fs-xs); color: var(--dim); text-transform: uppercase; letter-spacing: 0.05em; }
+      .pill { font-size: var(--fs-xs); border-radius: 9px; padding: 0 7px; background: var(--panel2); border: 1px solid var(--line); }
+      .pill.ok { color: var(--ok); border-color: var(--ok-line); }
+      .pill.bad { color: var(--bad); border-color: var(--bad-line); }
+      footer { grid-area: time; background: var(--panel); border-top: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; min-width: 0; overflow: hidden; }
+      @media (max-width: 1799px) {
+        #app { --lw: 190px; --rw: 280px; }
+      }
+      @media (max-width: 1599px) {
+        #app { --tl: clamp(210px, 31vh, 300px); --lw: 180px; }
+        header h1 { margin-right: 2px; }
+        header button, header select { padding: 3px 6px; }
+        .readout { min-width: 110px; }
+        section.detail { padding: 8px; }
+        :root .kv { grid-template-columns: 80px minmax(0, 1fr); }
+        .bone { padding: 2px 6px; }
+      }
+      @media (max-width: 1499px) {
+        #app { --rw: 256px; }
+        #app.graphopen .gbar { flex-wrap: nowrap; }
+      }
+      @media (max-width: 1280px) {
+        #app { --lw: 150px; --rw: 240px; }
+        :root .label { letter-spacing: 0.03em; }
+      }
+      .readout { font-variant-numeric: tabular-nums; min-width: 150px; color: var(--text); }
+      #lower { flex: 1; display: flex; min-height: 0; min-width: 0; }
+      #timeline { flex: 1; position: relative; min-height: 0; min-width: 0; }
+      #graphwrap { display: none; flex: 1 1 0; flex-direction: column; min-width: 0; min-height: 0; border-top: 1px solid var(--line); }
+      /* The graph sits under the dopesheet (a vertical split), so opening it never narrows the canvas or the keys. */
+      #app.graphopen #lower { flex-direction: column; }
+      #app.graphopen #timeline { flex: 0 0 38%; min-height: 96px; }
+      #app.graphopen { --tl: clamp(340px, 42vh, 460px); }
+      #app.graphopen #graphwrap { display: flex; }
+      .gbar { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; padding: 4px 8px; border-bottom: 1px solid var(--line); }
+      .gbar .gb-group { display: flex; flex-wrap: nowrap; gap: 4px; align-items: center; min-width: 0; }
+      .gbar .gb-chans { flex: 1 1 auto; overflow-x: auto; scrollbar-width: none; }
+      .gbar .gb-chans::-webkit-scrollbar { display: none; }
+      .gbar .gb-group > * { flex: none; }
+      .gbar #graphvalue { width: 72px; }
+      .gbar .chip { padding: 1px 7px; font-size: var(--fs-xs); border-width: 2px; background: transparent; }
+      .gbar .chip.on { color: var(--text); }
+      #graphbox { flex: 1; position: relative; min-height: 0; }
+      #gr { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; }
+      #bonecrumb { max-width: calc(100% - 20px); flex-wrap: wrap; gap: 2px; font-size: var(--fs-sm); z-index: 4; }
+      #bonecrumb .crumb { padding: 1px 6px; font-size: var(--fs-sm); }
+      #bonecrumb .sep { color: var(--dim); }
+      #bonecrumb .vals { margin-left: 10px; color: var(--dim); white-space: pre; font-variant-numeric: tabular-nums; }
+      #hoverlabel { display: none; position: absolute; pointer-events: none; z-index: 5; padding: 2px 7px; border-radius: 4px; background: rgba(20, 23, 29, 0.92); border: 1px solid var(--line); color: var(--text); font-size: var(--fs-sm); white-space: nowrap; }
+      #timeline canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+      .lenbox { display: inline-flex; align-items: center; gap: 4px; }
+      .lenbox input { width: 56px; text-align: right; font-variant-numeric: tabular-nums; }
+      #evtools { position: absolute; left: 0; z-index: 2; display: flex; align-items: center; gap: 3px; height: var(--ctl-sm); width: calc(var(--tl-label-w, 184px) - 2px); padding: 0 3px; box-sizing: border-box; background: var(--panel); }
+      #evtools[hidden] { display: none; }
+      #evtools button { height: var(--ctl-sm); padding: 0 6px; font-size: var(--fs-xs); line-height: 16px; border-radius: 4px; }
+      .newclip { display: none; gap: 8px; align-items: center; }
+      .newclip.open { display: inline-flex; position: fixed; z-index: var(--z-popover); }
+      #curvecanvas { background: var(--panel2); border: 1px solid var(--line); border-radius: 4px; cursor: crosshair; touch-action: none; }
+      .curvenums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+      .curvenums input { width: 100%; padding: 2px 4px; }
+      #exportresult .imgs { display: flex; gap: 8px; align-items: flex-start; }
+      #exportresult img { display: block; max-width: 340px; max-height: 360px; border: 1px solid var(--line); background: var(--bg0); image-rendering: pixelated; }
+      #restorebar { position: fixed; top: 44px; left: 50%; transform: translateX(-50%); z-index: 50; max-width: 900px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 8px 12px; background: var(--accent-bg); border: 1px solid var(--accent-lo); border-radius: 6px; color: var(--accent-hi); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5); }
+      #restorebar[hidden] { display: none; }
+      .versionlist { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+      .version { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 6px; }
+      .version.on { border-color: var(--accent-lo); }
+      .posecard .pill { margin-left: 6px; }
+      .poselist { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+      .posecard { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 6px; }
+      .posecard img { display: block; width: 100%; height: auto; image-rendering: pixelated; background: var(--bg0); border-radius: 3px; }
+      .skinrow { display: flex; gap: 6px; align-items: center; padding: 3px 6px; border-radius: 4px; background: var(--panel2); border: 1px solid transparent; margin-top: 4px; cursor: pointer; }
+      .skinrow.sel { border-color: var(--accent); }
+      .skinrow .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .skinrow .tag { font-size: var(--fs-xs); color: var(--dim); }
+      .phrow { display: flex; gap: 6px; align-items: center; margin-top: 4px; font-size: var(--fs-sm); }
+      .phrow .name { flex: 1; overflow: hidden; text-overflow: ellipsis; }
+      .phrow.won .name { color: var(--accent2); }
+      kbd { font: var(--fs-xs) ui-monospace, monospace; color: var(--dim); }
+      #help { position: fixed; inset: 0; z-index: 50; display: none; align-items: center; justify-content: center; background: rgba(8, 10, 14, 0.72); }
+      #help.open { display: flex; }
+      #helpcard { width: min(760px, calc(100vw - 32px)); max-height: calc(100vh - 48px); overflow: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 18px 18px; }
+      #helpcard h2 { margin: 0 0 4px; font-size: var(--fs-lg); color: var(--accent); display: flex; align-items: center; }
+      #helpbody { columns: 2 300px; column-gap: 28px; }
+      #helpbody h3 { font-size: var(--fs-xs); margin: 12px 0 4px; color: var(--dim); text-transform: uppercase; letter-spacing: 0.06em; break-after: avoid; }
+      .hk { display: grid; grid-template-columns: 150px 1fr; gap: 8px; align-items: baseline; padding: 2px 0; break-inside: avoid; }
+      .hk kbd { color: var(--accent2); }
+      /* Setup mode (rig building) */
+      #setuphud, #setupsavebox, #setuphint, #setuppanel { display: none; }
+      body.setup #setuphud { display: flex; flex-wrap: nowrap; }
+      body.setup #setupsavebox { display: flex; flex-wrap: nowrap; }
+      #setuphud .btn-primary { margin-left: var(--s2); }
+      body.setup #setuphint { display: block; left: 10px; bottom: 10px; max-width: 70%; }
+      body.setup #setuppanel { display: block; }
+      body.setup .hud.tl, body.setup .hud.bl, body.setup #pane-rig > section:not(#setuppanel) { display: none; }
+      body.setup:not(.ws-rig) footer { opacity: 0.4; pointer-events: none; }
+      /* The Rig workspace has no clip, so the dopesheet footer goes and the canvas takes its height (H3, ws-rig part). */
+      body.ws-rig #app { --tl: 0px; }
+      body.ws-rig footer { display: none; }
+      #setupopts { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4); margin-top: var(--s2); }
+      #setupopts label { display: inline-flex; align-items: center; gap: var(--s1); font-size: var(--fs-sm); }
+      #setuppanel select, #setuppanel input:not([type="checkbox"]):not([type="radio"]):not([type="color"]) { max-width: 100%; }
+      #setuppanel label { font-size: var(--fs-sm); display: inline-flex; align-items: center; gap: 4px; }
+      #setuppanel .attlist { margin-top: 6px; border: 1px solid var(--line); border-radius: 4px; }
+      #setuppanel .att { display: flex; align-items: center; gap: 6px; padding: 2px 6px; }
+      #setuppanel .att.sel { background: var(--accent-bg); }
+      #setuppanel .con { border: 1px solid var(--line); border-radius: 4px; padding: 6px; margin-top: 6px; background: var(--panel2); }
+      #setuppanel .conhead { display: flex; gap: 8px; align-items: baseline; margin-bottom: 4px; }
+      #setuppanel .mixgrid { display: grid; grid-template-columns: auto 1fr auto 1fr; gap: 2px 6px; align-items: center; margin: 2px 0 6px; }
+      #setuppanel .editlog div { padding: 1px 0; font-size: var(--fs-sm); color: var(--dim); }
+      .bone.helper { opacity: 0.55; }
+      .bone.drop { outline: 1px dashed var(--accent2); outline-offset: -2px; }
+      .bone .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+    </style>
+  </head>
+  <body>
+    <div id="restorebar" hidden></div>
+    <div id="app">
+      <header>
+        <h1><button id="logo" type="button" title="Home (Shift+H)" aria-label="Atlas Animator, Home"><svg class="ico" aria-hidden="true"><use href="#ico-home"/></svg>Atlas Animator</button></h1>
+        <nav id="wsbar" class="seg pill" role="tablist" aria-label="Workspace"></nav>
+        <span class="label outfit-label" data-ws="animate swag rig pro">Outfit</span>
+        <span class="seg" id="outfits" data-ws="animate swag rig pro"></span>
+        <span class="label" data-ws="pro">Mode</span>
+        <span class="seg" id="modeseg" data-ws="pro"><button data-mode="animate" class="on">Animate</button><button data-mode="setup">Setup</button></span>
+        <span class="label" data-ws="animate pro">Clip</span>
+        <select id="clip" data-ws="animate pro"></select>
+        <button id="newclip-open" class="btn" data-ws="animate pro" title="Start a new clip" aria-haspopup="true">New</button>
+        <span class="newclip pop" id="newclip"><input id="newclip-name" class="in" placeholder="clip_name" size="12" /><button id="newclip-make" class="btn-primary">Create</button><button id="newclip-cancel" class="btn">Cancel</button></span>
+        <span class="spacer"></span>
+        <button id="filesbtn" class="btn" type="button" title="Files: where your work is saved, backups and restore">Files</button>
+        <button id="helpbtn" class="btn" type="button" title="Help: user guide, keyboard shortcuts, troubleshooting, data folder, about" aria-label="Help: user guide, keyboard shortcuts, troubleshooting, data folder, about">Help ?</button>
+      </header>
+      <aside id="left">
+        <button id="left-open" type="button" class="pn-rail" title="Open the bone list">Bones</button>
+        <button id="left-collapse" type="button" class="pn-btn" title="Collapse the bone list" aria-label="Collapse the bone list"><svg class="ico" aria-hidden="true"><use href="#ico-chevL"/></svg></button>
+        <div class="head"><span class="label">Bones</span><span class="spacer"></span><input id="bonefilter" placeholder="filter" size="10" /></div>
+        <div class="list" id="bones"></div>
+        <div id="outliner" hidden></div>
+      </aside>
+      <div id="view">
+        <div id="vtop" role="toolbar" aria-label="Stage options" data-contextbar>
+          <span class="ctx-grp" id="ctx-axes" role="group" aria-label="Axes"></span>
+          <span class="ctx-grp" id="ctx-keep" role="group" aria-label="Keep in place"></span>
+          <button id="compensate" class="btn ctx-btn" type="button" aria-pressed="false" data-ws="animate pro" title="Compensate: while a bone moves or rotates, its children stay where they were on screen (and get keys too)">Compensate</button>
+          <span class="ctx-grp" id="ctx-snap" role="group" aria-label="Snapping"></span>
+          <button id="ctx-overlays" class="btn ctx-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="ctx-pop" title="Overlays: background, paths and pins, pose rules, game view, onion skin, pose compare, layers, rulers, bone view, selection">
+            <svg class="ico" aria-hidden="true"><use href="#ico-eye"/></svg><span>Overlays</span><svg class="ico" aria-hidden="true"><use href="#ico-chevD"/></svg>
+          </button>
+          <span class="spacer"></span>
+          <div class="hud" id="setuphud"></div>
+          <span class="ctx-grp" id="ctx-view" role="group" aria-label="View">
+            <button id="zoomout" type="button">-</button><span id="zoom" class="readout">100%</span><button id="zoomin" type="button">+</button>
+            <button id="fit" type="button">Fit</button>
+          </span>
+          <span class="ctx-grp" id="ctx-vis" role="group" aria-label="Show">
+            <button id="bonesvis" class="on" type="button">Bones</button>
+            <button id="helpersvis" type="button">Helpers</button>
+          </span>
+        </div>
+        <div id="ctx-pop" class="vh-pop" hidden role="dialog" aria-label="Overlays">
+          <section class="ctx-sec" data-sec="bg"><h3 class="ctx-h">Background</h3><div class="ctx-body"><span id="bgs" style="display: inline-flex; gap: 4px"></span></div></section>
+          <section class="ctx-sec" data-sec="paths"><h3 class="ctx-h">Paths and pins</h3><div class="ctx-body"><div id="pathstack"></div></div></section>
+          <section class="ctx-sec" data-sec="polys"><h3 class="ctx-h">Hit boxes and masks</h3><div class="ctx-body" id="ov-polys"></div></section>
+          <section class="ctx-sec" data-sec="rules"><h3 class="ctx-h">Pose rules</h3><div class="ctx-body"><div id="vmid"></div></div></section>
+          <section class="ctx-sec" data-sec="view"><h3 class="ctx-h">View</h3><div class="ctx-body" id="ov-view"></div></section>
+          <section class="ctx-sec" data-sec="onion"><h3 class="ctx-h">Onion skin</h3><div class="ctx-body" id="ov-onion"></div></section>
+          <section class="ctx-sec" data-sec="compare"><h3 class="ctx-h">Compare poses</h3><div class="ctx-body" id="ov-compare"></div></section>
+          <section class="ctx-sec" data-sec="layers"><h3 class="ctx-h">Layers</h3><div class="ctx-body" id="ov-layers"></div></section>
+          <section class="ctx-sec" data-sec="zoom"><h3 class="ctx-h">Zoom and bones</h3><div class="ctx-body" id="ov-zoom"><button id="boneview" type="button">Bone view</button><input id="bonesize" type="range" min="50" max="200" value="100" /></div></section>
+          <section class="ctx-sec" data-sec="select"><h3 class="ctx-h">Selection</h3><div class="ctx-body" id="ov-select"></div></section>
+          <section class="ctx-sec" data-sec="gate"><h3 class="ctx-h">Outline gate</h3><div class="ctx-body" id="ov-gate"></div></section>
+        </div>
+        <div class="hud" id="setuphint"></div>
+        <div id="limitflash"></div>
+        <div id="abbadge" role="status"></div>
+        <div id="soon" hidden></div>
+      </div>
+      <aside id="dock" aria-label="Phone preview dock"></aside>
+      <aside id="right">
+        <button id="right-open" type="button" class="pn-rail" title="Open the side panel">Panel</button>
+        <div id="right-head"><button id="right-collapse" type="button" class="pn-btn" title="Collapse the side panel" aria-label="Collapse the side panel"><svg class="ico" aria-hidden="true"><use href="#ico-chevR"/></svg></button><nav id="tabs" role="tablist"></nav></div>
+        <div id="panes">
+          <div class="pane" id="pane-pose" data-tab="pose">
+            <section class="detail" id="detail"></section>
+            <section class="detail" id="ikpanel"></section>
+            <section class="detail" id="mirrorpanel">
+              <h2 class="sec">Mirror pose</h2>
+              <div class="row" style="margin-top: 0">
+                <button id="mirrorsel">Mirror selection</button>
+                <label class="label"><input type="checkbox" id="mirrorlimb" /> whole limb</label>
+                <button id="flippose">Flip pose</button>
+              </div>
+              <details class="more">
+                <summary>More: copy one limb to the other side</summary>
+                <div class="row">
+                  <button id="mirror-arm-nf">Arm near to far</button>
+                  <button id="mirror-arm-fn">Arm far to near</button>
+                  <button id="mirror-leg-nf">Leg near to far</button>
+                  <button id="mirror-leg-fn">Leg far to near</button>
+                </div>
+              </details>
+            </section>
+          </div>
+          <div class="pane" id="pane-keys" data-tab="keys">
+            <section class="detail" id="keyinspector" title="Key inspector: what the selected key holds. Type a value, change the interpolation, or add a key on a slot colour or constraint mix"></section>
+            <section class="detail" id="curvepanel"></section>
+            <section class="detail" id="slotpanel"></section>
+            <section class="detail" id="eventpanel"></section>
+            <section class="detail" id="arcpanel"></section>
+            <section class="detail" id="tweenpanel"></section>
+            <section class="detail" id="reducepanel"></section>
+            <section class="detail" id="lockpanel"></section>
+            <section class="detail" id="smearpanel"></section>
+          </div>
+          <div class="pane" id="pane-rig" data-tab="rig">
+            <section class="detail" id="setuppanel"></section>
+          </div>
+          <div class="pane" id="pane-skins" data-tab="skins">
+            <section class="detail" id="skinpanel"></section>
+          </div>
+          <div class="pane" id="pane-preview" data-tab="preview">
+            <section class="detail" id="trackpanel"></section>
+            <section class="detail" id="viewpanel">
+              <h2 class="sec">Game-size preview</h2>
+              <div class="row" style="margin-top: 0"><button id="gameviewbtn">Game view</button><button id="previewbtn">Game size</button><button id="silhouette">Silhouette</button><button id="facingbtn">Preview facing right</button></div>
+            </section>
+            <section class="detail" id="abpanel">
+              <h2 class="sec">Pose A / B compare</h2>
+              <div class="abrow"><button id="abpin">Pin A</button><button id="abghost">Ghost A</button><button id="abswap">Swap A / B</button><button id="abclear">Clear</button></div>
+              <div id="abinfo">No pose pinned</div>
+            </section>
+            <section class="detail" id="aidspanel">
+              <h2 class="sec">Onion skin and underlay</h2>
+              <div id="aids" class="kv">
+                <span class="label">Onion skin</span>
+                <span class="v aidrow"><button id="onionbtn" aria-pressed="false">Onion</button><span class="seg" id="onionmode" role="group" aria-label="Onion skin frames"><button type="button" data-v="frames">Frames</button><button type="button" data-v="keys">Keys</button></span></span>
+                <span class="label">Style</span>
+                <span class="v aidrow"><span class="seg" id="onionstyle" role="group" aria-label="Onion skin style"><button type="button" data-v="tint">Tint</button><button type="button" data-v="outline">Outline</button></span></span>
+                <span class="label">Ghosts of</span>
+                <span class="v aidrow"><span class="seg" id="onionscope" role="group" aria-label="Onion skin scope"><button type="button" data-v="all" title="Ghosts show the whole character">Whole character</button><button type="button" data-v="selected" title="Ghosts show only the selected bones, so the limb you are refining is not hidden behind the rest of the figure">Selected bones</button></span></span>
+                <span class="label">Before</span>
+                <span class="v aidrow"><input id="onionbefore" class="in num" type="number" min="0" max="6" step="1" value="2" /><span class="label">After</span><input id="onionafter" class="in num" type="number" min="0" max="6" step="1" value="2" /></span>
+                <span class="label">Every</span>
+                <span class="v aidrow"><input id="onionstep" class="in num" type="number" min="1" max="12" step="1" value="1" /><span class="label">frames (Frames mode)</span></span>
+                <span class="label">Opacity</span>
+                <span class="v"><input id="onionopacity" type="range" min="5" max="100" value="42" style="width: 100%" /></span>
+                <span class="label">Falloff</span>
+                <span class="v"><input id="onionfalloff" type="range" min="0" max="90" value="50" style="width: 100%" /></span>
+                <span id="onionfoot" class="help onionfoot">Off. Alt+O turns it on.</span>
+                <span class="label">Underlay</span>
+                <span class="v aidrow"><input id="underinput" type="file" accept="image/*" hidden /><button id="underpick" type="button" title="Choose the underlay image or sprite strip (a faded reference behind the rig)">Choose image</button><span id="underfile" class="help filename">No image</span></span>
+                <span class="label">Frames</span>
+                <span class="v"><input id="underframes" class="in num" type="number" min="1" step="1" value="1" title="Underlay: frames in the sprite strip (1 = a single image)" /></span>
+                <span class="label">Opacity</span>
+                <span class="v"><input id="underopacity" type="range" min="0" max="100" value="35" title="Underlay opacity" style="width: 100%" /></span>
+                <span class="label">Size %</span>
+                <span class="v aidrow"><input id="underscale" class="in num" type="number" min="10" step="5" value="100" title="Underlay size in percent" /><button id="underclear">Clear</button></span>
+              </div>
+            </section>
+          </div>
+          <div class="pane" id="pane-transitions" data-tab="transitions">
+            <section class="detail" id="transpanel"></section>
+          </div>
+          <div class="pane" id="pane-library" data-tab="library">
+            <section class="detail" id="posepanel"></section>
+            <section class="detail" id="historypanel"></section>
+            <section class="detail" id="copypanel">
+              <h2 class="sec">Copy and paste pose</h2>
+              <div class="row" style="margin-top: 0">
+                <button id="copypose">Copy pose</button>
+                <button id="copyposesel">Copy selected</button>
+                <button id="pastepose" disabled>Paste pose</button>
+                <span id="clipinfo" class="label"></span>
+              </div>
+            </section>
+          </div>
+          <div class="pane" id="pane-export" data-tab="export">
+            <section class="detail" id="exportpanel">
+              <h2 class="sec">Save and export</h2>
+              <div class="row" style="margin-top: 0">
+                <button id="save-export" type="button">Save</button>
+                <button id="export">Export</button>
+              </div>
+              <div class="row">
+                <button id="apply">Apply to rig</button>
+                <label class="label"><input type="checkbox" id="applyall" /> all rigs</label>
+                <button id="render">Render sheets</button>
+              </div>
+            </section>
+            <section class="detail" id="spinepanel">
+              <h2 class="sec">Spine</h2>
+              <div class="row" style="margin-top: 0">
+                <button id="spine-import" title="Pick a Spine 4.3 .json: meshes, weights, linked meshes, deform and clips merge into the saved rig by slot and attachment name">Import from Spine</button>
+                <button id="spine-revert" title="Put the rig back as it was before the last Spine import" disabled>Revert import</button>
+                <button id="spine-export" title="Write the full Spine skeleton (meshes, weights, deform, linked meshes, clips) with the engine exporter">Export Spine</button>
+                <input type="file" id="spine-file" accept=".json,application/json" hidden />
+              </div>
+              <div class="note" id="spine-result">Merges into the saved rig file. Save first if you have unsaved Setup edits.</div>
+            </section>
+            <section class="gates">
+              <h2>Live gates <span id="gatepill" class="pill">...</span><span class="spacer" style="flex: 1"></span><button id="checkclip">Check clip</button></h2>
+              <div class="gatelist" id="gates"></div>
+            </section>
+          </div>
+        </div>
+      </aside>
+      <footer>
+        <div id="transport" role="toolbar" data-transport aria-label="Transport and keys">
+          <fieldset id="tb-set" class="tb-set" disabled>
+            <span class="tb-grp" role="group" aria-label="Play and step">
+              <button id="play" type="button" class="tb-play" data-ico="play"><span class="tb-label">Play</span></button>
+              <button id="firstframe" type="button" data-ico="first" title="First frame (Home)" aria-label="First frame"></button>
+              <button id="prev" type="button" data-ico="prev" aria-label="Previous frame"></button>
+              <button id="next" type="button" data-ico="next" aria-label="Next frame"></button>
+              <button id="lastframe" type="button" data-ico="last" title="Last frame (End)" aria-label="Last frame"></button>
+              <button id="ab-prevkey" type="button" data-ico="prevkey" aria-label="Previous key"></button>
+              <button id="ab-nextkey" type="button" data-ico="nextkey" aria-label="Next key"></button>
+            </span>
+            <span class="readout" id="readout">Frame 0 / 0</span>
+            <span class="tb-grp" role="group" aria-label="Playback">
+              <button id="loop" type="button">Loop</button>
+              <button id="returnstart" class="on" type="button">Return</button>
+            </span>
+            <span class="lenbox" id="lenbox" role="group" aria-label="Clip length and frame rate"><input id="duration" type="number" step="0.03333" min="0.03333" aria-label="Length in seconds" /><span class="label">s</span><input id="durframes" type="number" step="1" min="1" aria-label="Length in frames" /><span class="label">fr</span><input id="fps" type="number" step="1" min="1" max="60" aria-label="Frames per second" /><span class="label">fps</span></span>
+            <button id="autokey" type="button" class="on">Auto key</button>
+            <span class="spacer"></span>
+            <span class="tb-split" role="group" aria-label="Key">
+              <button id="setkey" type="button" class="tb-key" data-ico="key"><span class="tb-label">Key selected<span class="tb-more"> bones</span></span></button>
+              <button id="key-menu-btn" type="button" class="tb-chev" data-ico="chevD" aria-haspopup="menu" aria-expanded="false" aria-controls="key-menu" aria-label="Key menu"></button>
+            </span>
+            <button id="mirror-menu-btn" type="button" data-ico="mirror" aria-haspopup="menu" aria-expanded="false" aria-controls="mirror-menu"><span class="tb-label">Mirror</span><svg class="ico" aria-hidden="true"><use href="#ico-chevD"/></svg></button>
+            <span class="tb-grp" role="group" aria-label="History">
+              <button id="undo" type="button" data-ico="undo" aria-label="Undo"></button>
+              <button id="redo" type="button" data-ico="redo" aria-label="Redo"></button>
+            </span>
+            <button id="save" type="button" data-ico="save"><span class="tb-label">Save</span></button>
+            <button id="ab-done" type="button" class="done" data-ico="done"><span class="tb-label">Mark done</span></button>
+          </fieldset>
+          <div id="key-menu" class="pop" role="menu" aria-label="Key" hidden>
+            <button id="ab-key" type="button" role="menuitem">Key character pose</button>
+            <button id="keyall" type="button" role="menuitem" title="Key all channels of the active bone: rotate, move, scale and shear of the one active bone (not every bone) at the playhead; Shift-click on a channel key does the same">Key all channels</button>
+            <button id="delkey" type="button" role="menuitem">Delete key here</button>
+            <button id="ab-breakdown" type="button" role="menuitem">Breakdown<kbd>N</kbd></button>
+            <button id="bd-open" type="button" role="menuitem" data-keep aria-expanded="false" title="Breakdown percentage: choose how far between the previous and next keys N keys the selected bones (0 previous, 100 next, beyond overshoots)">Breakdown %...</button>
+            <div id="bdrow" hidden>
+              <input type="range" id="bdslider" min="-50" max="150" step="1" value="50" aria-label="Breakdown percent" />
+              <input type="number" id="bdvalue" class="in num" min="-50" max="150" step="1" value="50" aria-label="Breakdown percent value" /><span class="label">%</span>
+              <div class="seg" id="bdpresets" role="group" aria-label="Breakdown presets"></div>
+            </div>
+            <hr />
+            <button id="selall" type="button" role="menuitem">Select all keys</button>
+            <button id="selrange" type="button" role="menuitem">Select keys in play range</button>
+            <button id="copykeys" type="button" role="menuitem">Copy keys</button>
+            <button id="pastekeys" type="button" role="menuitem" disabled>Paste keys</button>
+            <hr />
+            <button id="scale-open" type="button" role="menuitem" data-keep aria-expanded="false">Scale timing...</button>
+            <div id="scalerow" hidden>
+              <input id="scalepct" type="number" step="5" min="5" max="1000" value="100" aria-label="Timing scale percent" /><span class="label">%</span>
+              <button id="applyscale" type="button">Apply</button>
+            </div>
+            <button id="rangein" type="button" role="menuitem">Play range: start here</button>
+            <button id="rangeout" type="button" role="menuitem">Play range: end here</button>
+            <button id="rangeclear" type="button" role="menuitem">Play range: clear</button>
+            <hr />
+            <button id="evmenu-btn" type="button" role="menuitem" data-keep aria-haspopup="menu">Events...</button>
+            <button id="resetpose" type="button" role="menuitem">Reset pose</button>
+          </div>
+          <div id="mirror-menu" class="pop" role="menu" aria-label="Mirror" hidden>
+            <button id="mm-mirror" type="button" role="menuitem">Mirror selected bones<kbd>M</kbd></button>
+            <button id="mm-flip" type="button" role="menuitem">Flip pose<kbd>Shift+M</kbd></button>
+            <hr />
+            <button id="mm-arm-nf" type="button" role="menuitem">Copy arm near to far</button>
+            <button id="mm-arm-fn" type="button" role="menuitem">Copy arm far to near</button>
+            <button id="mm-leg-nf" type="button" role="menuitem">Copy leg near to far</button>
+            <button id="mm-leg-fn" type="button" role="menuitem">Copy leg far to near</button>
+          </div>
+        </div>
+        <div id="dockbar" role="group" aria-label="Dopesheet tools">
+          <span class="db-title">Dopesheet</span>
+          <button id="graphbtn" type="button">Graph</button>
+          <button id="held" type="button" class="on">Snap to frames</button>
+          <button id="transitionsbtn" type="button" title="Transitions: a graph of this rig's clips with blend times; opens the Transitions panel (in Pro) and plays the graph on the stage">Transitions</button>
+          <button id="audiobtn" type="button" aria-pressed="false" title="Audio reference track: load a wav or mp3 under the dopesheet to time the animation against sound. It plays with the clip and is never exported">Audio</button>
+          <span class="speedbox" id="speedbox" role="group" aria-label="Playback speed"><input id="speed" type="number" min="0.1" max="2" step="0.05" value="1" aria-label="Playback speed" /><span class="label">x speed</span></span>
+          <span class="db-frames" role="group" aria-label="Frame operations"><input id="framecount" type="number" min="1" max="600" step="1" value="5" aria-label="Number of frames" /><span class="label">frames</span><button id="insframes" type="button">Insert</button><button id="delframes" type="button">Delete</button><button id="revkeys" type="button">Reverse keys</button></span>
+          <span class="spacer"></span>
+          <span class="readout" id="rangeinfo"></span>
+          <span class="tlnav" role="group" aria-label="Timeline zoom and pan">
+            <button id="tlfit" type="button">Fit</button>
+            <input id="tlzoom" type="range" min="0" max="1000" value="0" aria-label="Timeline zoom" />
+            <input id="tlpan" type="range" min="0" max="1000" value="0" aria-label="Timeline pan" />
+          </span>
+        </div>
+        <div id="lower">
+          <div id="tlsplit" role="separator" aria-orientation="horizontal" aria-label="Resize the timeline" tabindex="0"></div>
+          <div id="timeline"><canvas id="tl"></canvas><div id="evtools" hidden><button id="addevent" type="button">+ Event</button><button id="evrename" type="button">Rename</button><button id="evdelete" type="button">Delete</button></div></div>
+          <div id="graphwrap">
+            <div class="gbar" id="graphbar"></div>
+            <div id="graphbox"><canvas id="gr"></canvas></div>
+          </div>
+        </div>
+        <div id="audiotrack" hidden>
+          <div class="at-bar" role="group" aria-label="Audio reference track">
+            <span class="db-title">Audio</span>
+            <button id="audioload" type="button" title="Load a .wav or .mp3 as the timing reference of this clip. A copy is kept in the data folder; it is not part of the clip or the project">Load audio...</button>
+            <input id="audiofile" type="file" accept=".wav,.mp3,audio/wav,audio/mpeg" hidden aria-label="Audio file" />
+            <span id="audioname" class="label" title="The audio file loaded for this clip"></span>
+            <label class="label" data-needs-audio title="Shift the sound in time: milliseconds after the clip start where the audio begins (negative: it starts earlier)">Offset <input id="audiooffset" type="number" step="10" value="0" aria-label="Audio offset in milliseconds" title="Shift the sound in time: milliseconds after the clip start where the audio begins (negative: it starts earlier)" /> ms</label>
+            <label class="label" data-needs-audio title="Volume of the audio reference">Volume <input id="audiovolume" type="range" min="0" max="100" step="1" value="100" aria-label="Audio volume" title="Volume of the audio reference" /></label>
+            <button id="audiomute" type="button" data-needs-audio aria-pressed="false" title="Mute or unmute the audio reference (the waveform stays)">Mute</button>
+            <button id="audioremove" type="button" data-needs-audio title="Remove the audio reference from this clip and delete its copy in the data folder">Remove</button>
+          </div>
+          <canvas id="audiowave" aria-label="Audio waveform"></canvas>
+        </div>
+      </footer>
+      <div id="statusbar">
+        <span class="sb" id="sb-tool"></span>
+        <span class="sb" id="sb-sel"></span>
+        <span class="sb" id="sb-frame"></span>
+        <span class="sb" id="sb-save" data-state="saved"></span>
+        <div id="vtip">
+          <div class="hud" id="bonecrumb" style="display: none"></div>
+          <span class="spacer"></span>
+          <div class="hud bl" id="canvastip"><span>Drag a bone. Wheel zooms, Space pans. ? for keys</span><button id="tipdismiss" type="button" title="Hide this tip (the ? keys sheet can bring it back)">Hide tip</button></div>
+        </div>
+        <span id="status">Loading...</span>
+      </div>
+    </div>
+    <div id="home" hidden></div>
+    <div id="tlkeytip" role="tooltip"></div>
+    <div id="help"><div id="helpcard"><h2>Hotkeys and controls<span class="spacer"></span><button id="helpclose">Close</button></h2><div id="helpbody"></div></div></div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

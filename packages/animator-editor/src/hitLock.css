@@ -1,0 +1,67 @@
+/*
+ * Atlas Animator editor: styles for the server-tick hit lock chip (hitLock.ts). It matches the rule checker's pill (ruleOverlay.css)
+ * and sits at the top right of the canvas, in the Animate and Pro workspaces.
+ */
+
+#hitlock {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+body.ws-animate:not(.setup) #hitlock:not([hidden]),
+body.ws-pro:not(.setup) #hitlock:not([hidden]) {
+  display: flex;
+}
+
+#hitlock-pill {
+  height: var(--ctl-sm);
+  border-radius: 999px;
+  padding: 0 10px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  background: var(--ok-soft);
+  border: 1px solid var(--ok-line);
+  color: var(--ok);
+}
+
+#hitlock-pill.bad {
+  background: var(--warn-soft);
+  border-color: var(--warn-line);
+  color: var(--warn);
+}
+
+#hitlock-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  z-index: var(--z-popover);
+  width: max-content;
+  max-width: 300px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(20, 23, 29, 0.96);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#hitlock-menu[hidden] {
+  display: none;
+}
+
+#hitlock-menu .hitlock-line {
+  color: var(--dim);
+}
+
+#hitlock-menu .hitlock-snap {
+  align-self: flex-start;
+  border-color: var(--warn);
+  color: var(--warn);
+}

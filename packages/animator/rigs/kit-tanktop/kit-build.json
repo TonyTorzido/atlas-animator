@@ -1,0 +1,213 @@
+{
+ "bones": {
+  "pelvis": {
+   "start": [
+    542.0,
+    960.0
+   ],
+   "tip": [
+    542.0,
+    1010.0
+   ],
+   "angle": 90.0
+  },
+  "chest": {
+   "start": [
+    542.0,
+    960.0
+   ],
+   "tip": [
+    542.0,
+    660.0
+   ],
+   "angle": -90.0
+  },
+  "neck": {
+   "start": [
+    542.0,
+    700.0
+   ],
+   "tip": [
+    542.0,
+    650.0
+   ],
+   "angle": -90.0
+  },
+  "head": {
+   "start": [
+    535.71,
+    650
+   ],
+   "tip": [
+    535.71,
+    400
+   ],
+   "angle": -90.0
+  },
+  "upper_arm_l": {
+   "start": [
+    442.31,
+    729
+   ],
+   "tip": [
+    397.81,
+    809
+   ],
+   "angle": 119.08499973522467
+  },
+  "forearm_l": {
+   "start": [
+    397.81,
+    809
+   ],
+   "tip": [
+    358.31,
+    893
+   ],
+   "angle": 115.18469710363355
+  },
+  "hand_l": {
+   "start": [
+    358.31,
+    893
+   ],
+   "tip": [
+    341.29,
+    929.18
+   ],
+   "angle": 115.1934966148882
+  },
+  "thigh_l": {
+   "start": [
+    470.0,
+    1000.0
+   ],
+   "tip": [
+    460.59,
+    1105
+   ],
+   "angle": 95.12111223673529
+  },
+  "shin_l": {
+   "start": [
+    460.59,
+    1105
+   ],
+   "tip": [
+    457.59,
+    1170
+   ],
+   "angle": 92.64254529406472
+  },
+  "foot_l": {
+   "start": [
+    457.59,
+    1170
+   ],
+   "tip": [
+    440.59,
+    1215
+   ],
+   "angle": 110.69545073406329
+  },
+  "upper_arm_r": {
+   "start": [
+    643.31,
+    729
+   ],
+   "tip": [
+    687.81,
+    809
+   ],
+   "angle": 60.91500026477534
+  },
+  "forearm_r": {
+   "start": [
+    687.81,
+    809
+   ],
+   "tip": [
+    727.31,
+    893
+   ],
+   "angle": 64.81530289636646
+  },
+  "hand_r": {
+   "start": [
+    727.31,
+    893
+   ],
+   "tip": [
+    744.33,
+    929.18
+   ],
+   "angle": 64.80650338511164
+  },
+  "thigh_r": {
+   "start": [
+    613.0,
+    1000.0
+   ],
+   "tip": [
+    623.41,
+    1105
+   ],
+   "angle": 84.33803540163152
+  },
+  "shin_r": {
+   "start": [
+    623.41,
+    1105
+   ],
+   "tip": [
+    626.41,
+    1170
+   ],
+   "angle": 87.35745470593528
+  },
+  "foot_r": {
+   "start": [
+    626.41,
+    1170
+   ],
+   "tip": [
+    643.41,
+    1215
+   ],
+   "angle": 69.30454926593673
+  }
+ },
+ "curled_bend": {
+  "arm_l": -135.13412111460173,
+  "arm_r": 135.5124552747376
+ },
+ "forearm_setup_local": {
+  "arm_l": -3.900302631591103,
+  "arm_r": 3.9003026315911313
+ },
+ "sources": {
+  "arm_front": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "arm_rear": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "arm_front_curled": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "arm_rear_curled": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "leg_front": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "leg_rear": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "chest": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "waist": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "neck": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "hand_front_fist": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "hand_front_grip_back": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "hand_front_open": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "hand_front_relaxed": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "hand_front_grip_fingers": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "foot_front_flat": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-A",
+  "foot_front_toe": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "hand_rear_fist": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "hand_rear_grip_back": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "hand_rear_open": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "hand_rear_relaxed": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "hand_rear_grip_fingers": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-B",
+  "foot_rear_flat": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r3-A",
+  "foot_rear_toe": "..\\..\\docs\\plans\\player-rig-kit\\cut\\r2-A"
+ }
+}

@@ -1,0 +1,86 @@
+// Batch 12b screenshots (path, path constraint, path keys, PNG sequence import). Starts its own sandboxed server (never :5211).
+//   node packages/animator-editor/scripts/demo-batch12b.mjs [outDir]
+import { createRequire } from "node:module";
+import { mkdirSync } from "node:fs";
+import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import { demoServer } from "./demo-server.mjs";
+
+const here = fileURLToPath(new URL(".", import.meta.url));
+const require = createRequire(resolve(here, "../../animator/package.json"));
+const { chromium } = require("@playwright/test");
+const out = resolve(process.argv[2] && !process.argv[2].startsWith("--") ? process.argv[2] : resolve(here, "../../../test-results/batch-shots/b12"));
+const { url } = await demoServer(undefined);
+mkdirSync(out, { recursive: true });
+const browser = await chromium.launch({ args: ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"] });
+const page = await browser.newPage({ viewport: { width: 1600, height: 1000 } });
+const errors = [];
+page.on("pageerror", (e) => errors.push(String(e)));
+page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
+await page.addInitScript(() => {
+  const Real = window.WebSocket;
+  const Stub = function (u, p) {
+    if (String(p ?? "").includes("vite")) return { addEventListener() {}, removeEventListener() {}, send() {}, close() {}, readyState: 1 };
+    return new Real(u, p);
+  };
+  Stub.prototype = Real.prototype;
+  Object.assign(Stub, { CONNECTING: 0, OPEN: 1, CLOSING: 2, CLOSED: 3 });
+  window.WebSocket = Stub;
+});
+await page.goto(url);
+await page.waitForFunction(() => !!window.atlasEditor, null, { timeout: 60_000 });
+await page.addStyleTag({ content: "#restorebar { display: none !important; }" });
+await page.waitForTimeout(1500);
+const E = (fn, arg) => page.evaluate(fn, arg);
+let failed = 0;
+const check = (label, ok, detail) => {
+  if (!ok) failed++;
+  console.log(`${ok ? "PASS" : "FAIL"} ${label}${detail !== undefined ? ` ${JSON.stringify(detail)}` : ""}`);
+};
+const shot = async (name) => {
+  await page.waitForTimeout(500);
+  await page.screenshot({ path: resolve(out, name) });
+};
+const raw = () => E(() => window.atlasEditor.setupRaw());
+const edits = () => E(() => window.atlasEditor.setupState().undoable);
+await E(() => window.atlasEditor.workspace("rig"));
+await page.waitForTimeout(800);
+await E(() => window.atlasEditor.showTab("rig"));
+await E(() => window.atlasEditor.setupSelectSlot("skin_forearm_near"));
+await page.waitForTimeout(500);
+await shot("09-slot-add-path.png");
+await page.click("#setup-add-path");
+await page.waitForTimeout(800);
+await E(() => window.atlasEditor.setupTool("attachment"));
+await page.waitForTimeout(500);
+await shot("10-path-page-and-stage.png");
+check("path added", (await raw()).skins.body.attachments.skin_forearm_near_path?.path?.type === "path");
+await E(() => window.atlasEditor.select("head"));
+await page.waitForTimeout(400);
+await page.click("#setup-addpath");
+await page.waitForTimeout(800);
+await page.locator("#setuppanel [data-con].insp-item").last().click();
+await page.waitForTimeout(500);
+await shot("11-path-constraint-page.png");
+await page.fill("#outliner .ol-search", "path");
+await page.waitForTimeout(500);
+await shot("12-tree-path-icons-badges.png");
+await page.fill("#outliner .ol-search", "");
+await E(() => window.atlasEditor.workspace("animate"));
+await page.waitForTimeout(800);
+await E(() => window.atlasEditor.showTab("keys"));
+const name = (await raw()).path.at(-1).name;
+await page.selectOption("#ki-target", `path:${name}`);
+await E(() => window.atlasEditor.setTime(5 / 30));
+await page.click("#ki-addkey");
+await page.waitForTimeout(600);
+await shot("13-animate-path-key-row.png");
+await E(() => window.atlasEditor.workspace("rig"));
+await page.waitForTimeout(600);
+await page.click("#idk-tab-images");
+await page.waitForTimeout(600);
+await shot("14-images-dock-import-sequence.png");
+console.log(errors.length ? `console errors: ${errors.join(" | ")}` : "no console errors");
+console.log(failed ? `${failed} FAILED` : "all passed");
+await browser.close();
+process.exit(failed || errors.length ? 1 : 0);

@@ -1,0 +1,24 @@
+/* Rig panel sections added in hidden-features batch 3 (setupRigUi.ts): slots manager, constraint order, tool key letters, tree drag. */
+#setuppanel .slotmgr { margin-top: var(--s2); }
+#setuppanel .slotmgr .row { flex-wrap: wrap; gap: var(--s1); }
+#setuppanel .rigflags { display: inline-flex; flex-wrap: wrap; gap: var(--s1) var(--s3); }
+#setuppanel .drawlist { max-height: 220px; overflow-y: auto; }
+#setuppanel .drow { cursor: grab; border-top: 2px solid transparent; border-bottom: 2px solid transparent; }
+#setuppanel .drow.drop-above { border-top-color: var(--accent); }
+#setuppanel .drow.drop-below { border-bottom-color: var(--accent); }
+#setuppanel .conhead { flex-wrap: wrap; }
+#setuppanel .conorder { display: inline-flex; align-items: center; gap: var(--s1); margin-left: auto; }
+#setuppanel .conorder button { padding: 0 var(--s2); }
+#setuphud .tkey { margin-left: 3px; font-size: var(--fs-xs); color: var(--dim); font-family: ui-monospace, monospace; }
+#setuphud button.on .tkey { color: var(--accent); }
+/* Tree rows: drop target while a bone row is dragged onto another. */
+#outliner .ol-row.k-bone[draggable="true"] { cursor: grab; }
+#outliner .ol-row.drop-into { outline: 2px solid var(--accent); outline-offset: -2px; background: var(--accent-soft); }
+#outliner .ol-row .ol-rename { flex: 1 1 auto; min-width: 0; height: var(--ctl-sm); padding: 0 var(--s1); font: inherit; }
+#outliner .ol-showall { font-size: var(--fs-xs); padding: 1px 7px; }
+#setuppanel .conorder { margin-top: var(--s1); }
+#setuppanel .rigflags, #setuppanel .rowlim { white-space: nowrap; }
+/* Narrow windows drop the key letters on the tool row so Undo, Redo and Save rig all stay in view (the tooltips name each key). */
+@media (max-width: 1500px) {
+  #setuphud .tkey { display: none; }
+}

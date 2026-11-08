@@ -1,0 +1,109 @@
+{
+ "format": "atlas-pack@1",
+ "scale": 1,
+ "pages": [
+  {
+   "file": "front-turn00-faceA.atlas.png",
+   "width": 1160,
+   "height": 2004,
+   "regions": {
+    "canonical/template7-head": {
+     "x": 2,
+     "y": 2,
+     "width": 544,
+     "height": 497
+    },
+    "canonical/template7-shoulder-skin": {
+     "x": 2,
+     "y": 503,
+     "width": 522,
+     "height": 422
+    },
+    "canonical/template7-leg-skin": {
+     "x": 2,
+     "y": 929,
+     "width": 336,
+     "height": 336
+    },
+    "canonical/template7-shoulder-tank": {
+     "x": 2,
+     "y": 1269,
+     "width": 238,
+     "height": 282
+    },
+    "garment/pants": {
+     "x": 242,
+     "y": 1269,
+     "width": 287,
+     "height": 252
+    },
+    "canonical/template7-leg-shorts": {
+     "x": 2,
+     "y": 1555,
+     "width": 276,
+     "height": 129
+    },
+    "canonical/template7-fist": {
+     "x": 280,
+     "y": 1555,
+     "width": 130,
+     "height": 124
+    },
+    "canonical/template7-fist_r": {
+     "x": 412,
+     "y": 1555,
+     "width": 130,
+     "height": 124
+    },
+    "garment/jacketb": {
+     "x": 2,
+     "y": 1688,
+     "width": 471,
+     "height": 314
+    },
+    "face/eyes": {
+     "x": 550,
+     "y": 2,
+     "width": 343,
+     "height": 204
+    },
+    "face/brows": {
+     "x": 550,
+     "y": 208,
+     "width": 343,
+     "height": 204
+    },
+    "face/nose": {
+     "x": 550,
+     "y": 414,
+     "width": 343,
+     "height": 204
+    },
+    "face/mouth": {
+     "x": 550,
+     "y": 620,
+     "width": 343,
+     "height": 204
+    },
+    "face/hair": {
+     "x": 550,
+     "y": 826,
+     "width": 608,
+     "height": 431
+    },
+    "face/eyes_blink_half": {
+     "x": 550,
+     "y": 1259,
+     "width": 343,
+     "height": 204
+    },
+    "face/eyes_blink_closed": {
+     "x": 550,
+     "y": 1465,
+     "width": 343,
+     "height": 204
+    }
+   }
+  }
+ ]
+}

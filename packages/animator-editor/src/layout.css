@@ -1,0 +1,70 @@
+/*
+ * Atlas Animator editor: the canvas-first layout (collapsible side panels, the canvas toolbar row, the tip / breadcrumb line above the
+ * transform strip). Colours come from the tokens in index.html (:root). Nothing here scrolls.
+ */
+
+/* ---- Collapsible side panels ---------------------------------------------------------------------------------------- */
+#app.lcol { --lw: 28px !important; }
+#app.rcol { --rw: 28px !important; }
+
+.pn-btn { position: absolute; z-index: 3; width: 22px; height: var(--ctl-sm); padding: 0; line-height: 1; font-size: var(--fs-lg); color: var(--dim); background: transparent; border-color: transparent; }
+.pn-btn:hover:not(:disabled) { color: var(--text); background: var(--panel2); }
+/* A rail (28 px): a chevron drawn as SVG at the top (it never rotates) and the label running down the side. */
+.pn-rail { display: none; flex: 1; width: 100%; padding: 10px 0; border: 0; border-radius: 0; background: transparent; color: var(--dim); letter-spacing: 0.08em; cursor: pointer; flex-direction: column; align-items: center; gap: 10px; }
+.pn-rail svg, .dk-rail svg { width: 14px; height: 14px; flex: none; }
+.pn-rail .rail-label, .dk-rail .rail-label { writing-mode: vertical-rl; font-size: var(--fs-sm); }
+.pn-rail:hover:not(:disabled) { color: var(--text); background: rgba(255, 255, 255, 0.05); }
+#left { position: relative; }
+#left-collapse { right: 4px; top: 6px; }
+#left > .head { padding-right: 30px; }
+body.ol-on #outliner .ol-head { padding-right: 32px; }
+#right { position: relative; }
+#right-head { display: flex; align-items: stretch; flex: none; background: var(--bg); border-bottom: 1px solid var(--line); }
+#right-head #tabs { flex: 1; min-width: 0; border-bottom: 0; }
+#right-collapse { position: static; align-self: center; flex: none; margin: 0 2px; }
+#app.lcol #left > :not(.pn-rail), #app.rcol #right > :not(.pn-rail) { display: none !important; }
+#app.lcol #left .pn-rail, #app.rcol #right .pn-rail { display: flex; }
+
+/* ---- Canvas toolbar: one row across the top (tools, rules pill, Paths / Pins icons, zoom) ---------------------------------- */
+/* One row that never wraps: what does not fit moves into the "..." popover (installOverflow in canvasTools.ts). */
+#vtop { position: absolute; left: 8px; right: 8px; top: 8px; z-index: var(--z-hud); display: flex; flex-wrap: nowrap; align-items: center; gap: var(--s2); pointer-events: none; }
+#vtop > * { pointer-events: auto; flex: none; }
+#vtop > .spacer { flex: 1 1 0; min-width: 0; pointer-events: none; }
+#vtop > .hud { position: static; }
+#vtop button { padding-top: 2px; padding-bottom: 2px; }
+.ovf-btn[hidden], .ovf-pop[hidden] { display: none; }
+.ovf-pop { top: 100%; right: 0; margin-top: 4px; z-index: var(--z-popover); display: flex; flex-direction: column; align-items: flex-start; gap: var(--s2); width: max-content; }
+.ovf-pop.up { top: auto; bottom: 100%; margin: 0 0 4px; }
+.ovf-pop > * { margin: 0; }
+#vmid { position: relative; display: flex; }
+body.xs-ruler #vtop { left: 28px; top: 28px; right: 8px; }
+
+/* ---- Tip / breadcrumb: a segment of the status bar (index.html moved #vtip there; the canvas no longer has a tip line) ---- */
+#vtip { flex: 1 1 0; min-width: 0; display: flex; align-items: center; gap: 10px; height: 100%; padding: 0 12px; font-size: var(--fs-sm); color: var(--dim); overflow: hidden; white-space: nowrap; }
+#vtip > .spacer { flex: 0 0 0; }
+#vtip .hud { position: static; display: flex; align-items: center; background: none; border: 0; padding: 0; min-width: 0; }
+#vtip { container-type: inline-size; }
+/* The breadcrumb comes first: when the canvas is too narrow for both, the tip gives way (the ? sheet lists every hotkey). */
+@container (max-width: 600px) { #vtip #canvastip { display: none; } }
+#vtip #bonecrumb { max-width: 100%; flex: 0 0 auto; flex-wrap: nowrap; gap: 2px; overflow: hidden; }
+#vtip #bonecrumb .crumb { padding: 0 6px; font-size: var(--fs-sm); line-height: 18px; background: transparent; border-color: transparent; color: var(--dim); }
+#vtip #bonecrumb .crumb:hover { color: var(--text); }
+#vtip #bonecrumb .crumb.on { background: var(--accent-soft, rgba(240, 184, 74, 0.14)); color: var(--accent); }
+#vtip #bonecrumb .crumb.more { color: var(--accent2); }
+body:is(.ws-animate, .ws-pro) #vtip #bonecrumb .vals { display: none; }
+#vtip #canvastip { flex: 1 1 0; justify-content: flex-end; gap: 8px; min-width: 0; }
+#vtip #canvastip span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#vtip #tipdismiss { flex: none; padding: 0 8px; font-size: var(--fs-xs); line-height: 18px; color: var(--dim); background: transparent; }
+body.tip-off #vtip #canvastip { display: none; }
+body.setup #vtip #canvastip { display: none; }
+body:is(.ws-swag, .ws-ship, .ws-home) #vtip > * { display: none !important; }
+
+/* The Setup hint starts to the right of the edge column (and of the rulers when they are on). */
+body.setup #view #setuphint { left: calc(var(--tp-w, 84px) + var(--s2)); bottom: calc(var(--xs-h, 0px) + 46px); max-width: calc(100% - var(--tp-w, 84px) - var(--s4)); }
+body.setup #view #setuphud { flex: none; flex-wrap: nowrap; max-width: none; }
+#setuphud > * { flex: none; }
+body.ws-swag #left-collapse { display: none; }
+#help #tipshow { grid-column: 1 / -1; margin-bottom: 6px; }
+
+#statusbar .sb[hidden] { display: none; }
+#statusbar #status { flex: 0 1 auto; max-width: 42%; }

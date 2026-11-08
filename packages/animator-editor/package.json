@@ -1,0 +1,26 @@
+{
+  "name": "@atlas-animator/editor",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Atlas Animator editor: pose and key clips on the template rig in the browser (written from scratch).",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "qa": "node scripts/qa-core.mjs",
+    "qa:persistence": "node scripts/qa-persistence.mjs",
+    "qa:data-safety": "node scripts/qa-data-safety.mjs",
+    "qa:pipeline": "node scripts/qa-pipeline.mjs",
+    "verify": "node scripts/verify.mjs",
+    "dev:sandbox": "node scripts/dev.mjs --sandbox"
+  },
+  "dependencies": {
+    "@atlas-animator/core": "workspace:*",
+    "pixi.js": "8.19.0"
+  },
+  "devDependencies": {
+    "vite": "7.3.6"
+  }
+}

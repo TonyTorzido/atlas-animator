@@ -1,0 +1,91 @@
+// Batch 6b screenshots (pose scopes, audio, bake, onion scope, Breakdown menu). Own sandboxed server (never :5211).
+//   node packages/animator-editor/scripts/demo-batch6b.mjs [outDir]
+import { createRequire } from "node:module";
+import { mkdirSync } from "node:fs";
+import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import { demoServer } from "./demo-server.mjs";
+
+const here = fileURLToPath(new URL(".", import.meta.url));
+const require = createRequire(resolve(here, "../../animator/package.json"));
+const { chromium } = require("@playwright/test");
+const out = resolve(process.argv[2] ?? resolve(here, "../../../test-results/batch-shots/b6"));
+const { url } = await demoServer(undefined);
+mkdirSync(out, { recursive: true });
+const browser = await chromium.launch({ args: ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"] });
+const page = await browser.newPage({ viewport: { width: 1600, height: 1000 } });
+await page.addInitScript(() => {
+  const Real = window.WebSocket;
+  const Stub = function (u, p) { if (String(p ?? "").includes("vite")) return { addEventListener() {}, removeEventListener() {}, send() {}, close() {}, readyState: 1 }; return new Real(u, p); };
+  Stub.prototype = Real.prototype;
+  Object.assign(Stub, { CONNECTING: 0, OPEN: 1, CLOSING: 2, CLOSED: 3 });
+  window.WebSocket = Stub;
+});
+await page.goto(url);
+await page.waitForFunction(() => !!window.atlasEditor, null, { timeout: 60_000 });
+await page.addStyleTag({ content: "#restorebar { display: none !important; }" });
+await page.waitForTimeout(1500);
+const E = (fn, arg) => page.evaluate(fn, arg);
+await E(() => window.atlasEditor.workspace("pro"));
+await page.waitForTimeout(450);
+await page.click("#newclip-open");
+await page.fill("#newclip-name", "b6b_shots");
+await page.click("#newclip-make");
+await page.waitForTimeout(500);
+await E(() => {
+  const a = window.atlasEditor;
+  for (const [f, v] of [[0, 0], [6, 40], [12, 10]]) {
+    a.setTime(f / 30);
+    a.select("upper_arm_near");
+    a.rotate("upper_arm_near", v);
+    a.key();
+  }
+  a.workspace("animate");
+});
+await page.waitForTimeout(600);
+const wav = (() => {
+  const rate = 8000, n = rate * 2;
+  const buf = Buffer.alloc(44 + n * 2);
+  buf.write("RIFF", 0); buf.writeUInt32LE(36 + n * 2, 4); buf.write("WAVEfmt ", 8); buf.writeUInt32LE(16, 16); buf.writeUInt16LE(1, 20); buf.writeUInt16LE(1, 22);
+  buf.writeUInt32LE(rate, 24); buf.writeUInt32LE(rate * 2, 28); buf.writeUInt16LE(2, 32); buf.writeUInt16LE(16, 34); buf.write("data", 36); buf.writeUInt32LE(n * 2, 40);
+  for (let i = 0; i < n; i++) buf.writeInt16LE(Math.round(Math.sin((i / rate) * 2 * Math.PI * 330) * 14000 * Math.max(0, Math.sin((i / rate) * Math.PI * 3)) ** 2), 44 + i * 2);
+  return buf;
+})();
+await E(() => { const a = window.atlasEditor; a.setTime(6 / 30); a.select("chest"); a.shear("chest", 6, 0); });
+await E(() => window.atlasEditor.showTab("library"));
+await page.click("#posescope-full");
+await page.fill("#posename", "demo_full");
+await page.click("#savepose");
+await page.waitForTimeout(900);
+await E(() => window.atlasEditor.rotate("upper_arm_near", 70));
+await page.click('#posegrid .pcard[data-pose="demo_full"]');
+await page.click("#posereplace");
+await page.waitForSelector('.modal-backdrop [data-act="confirm"]');
+await page.screenshot({ path: resolve(out, "b6b-pose-replace-confirm.png") });
+await page.click('.modal-backdrop [data-act="confirm"]');
+await page.waitForTimeout(900);
+await page.screenshot({ path: resolve(out, "b6b-pose-scopes-previous.png") });
+await page.click("#audiobtn");
+await page.setInputFiles("#audiofile", { name: "steps.wav", mimeType: "audio/wav", buffer: wav });
+await page.waitForFunction(() => window.atlasEditor.audioTrack()?.loaded, null, { timeout: 15000 });
+await page.waitForTimeout(500);
+await page.screenshot({ path: resolve(out, "b6b-audio-waveform.png") });
+await E(() => window.atlasEditor.setOnion({ enabled: true, before: 2, after: 2, scope: "selected" }));
+await E(() => window.atlasEditor.select("upper_arm_near"));
+await page.waitForTimeout(700);
+await page.screenshot({ path: resolve(out, "b6b-onion-selected-bones.png") });
+await page.click("#key-menu-btn");
+await page.click("#bd-open");
+await page.waitForTimeout(300);
+await page.screenshot({ path: resolve(out, "b6b-breakdown-menu-compensate.png") });
+await page.keyboard.press("Escape");
+await E(() => window.atlasEditor.workspace("pro"));
+await page.waitForTimeout(400);
+await E(() => window.atlasEditor.showTab("preview"));
+await E(() => { const a = window.atlasEditor; a.tracksOpen(true); for (let i = a.tracksInfo().tracks.length - 1; i > 0; i--) a.trackRemove(i); });
+await page.fill("#bakename", "demo_baked");
+await page.click("#bakeclip");
+await page.waitForTimeout(700);
+await page.screenshot({ path: resolve(out, "b6b-bake-new-clip.png") });
+await browser.close();
+process.exit(0);

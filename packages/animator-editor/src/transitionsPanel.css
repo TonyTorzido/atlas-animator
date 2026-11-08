@@ -1,0 +1,90 @@
+/*
+ * Atlas Animator editor: styles for the Transitions panel (clip state graph). Colours come from the :root tokens in index.html.
+ */
+#transpanel .note.bad {
+  color: var(--bad);
+}
+#transpanel .transgraph {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  margin-top: 8px;
+  background: var(--bg1);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+#transpanel .transnode {
+  cursor: pointer;
+}
+#transpanel .transnode rect {
+  fill: var(--panel2);
+  stroke: var(--line);
+  stroke-width: 1.5;
+}
+#transpanel .transnode text {
+  fill: var(--text);
+  font-size: var(--fs-xs);
+  pointer-events: none;
+}
+#transpanel .transnode.sel rect {
+  stroke: var(--accent2);
+}
+#transpanel .transnode.entry rect {
+  stroke-dasharray: 3 2;
+}
+#transpanel .transnode.cur rect {
+  fill: var(--accent2-soft);
+  stroke: var(--ok);
+  stroke-width: 2.5;
+}
+#transpanel .transnode.from rect {
+  stroke: var(--warn);
+}
+#transpanel .transnode.missing rect {
+  stroke: var(--bad);
+}
+#transpanel .transnode:focus-visible rect {
+  stroke: var(--accent2);
+  stroke-width: 3;
+}
+#transpanel .transedge path {
+  fill: none;
+  stroke: var(--text2);
+  stroke-width: 1.4;
+}
+#transpanel .transedge text {
+  fill: var(--text2);
+  font-size: var(--fs-xs);
+  stroke: var(--bg1);
+  stroke-width: 3px;
+  paint-order: stroke;
+}
+#transpanel .transedge.hot path {
+  stroke: var(--warn);
+  stroke-width: 2.2;
+}
+#transpanel .transhead {
+  fill: var(--text2);
+}
+#transpanel .transtriggers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+#transpanel .transedgerow input[type="number"] {
+  width: 62px;
+}
+#transpanel .transedgerow input:not([type="number"]) {
+  flex: 1;
+  min-width: 70px;
+}
+#transpanel .transedgename {
+  flex: 1 1 100%;
+  font-size: var(--fs-sm);
+  color: var(--text2);
+}
+#transpanel .readout {
+  margin-top: 6px;
+  font-size: var(--fs-sm);
+  color: var(--text2);
+}

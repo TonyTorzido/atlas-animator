@@ -1,0 +1,35 @@
+{
+ "format": "atlas-held/1",
+ "name": "sword",
+ "hand": {
+  "bone": "hand_l",
+  "fistSlot": "hand"
+ },
+ "grip": {
+  "at": [
+   341,
+   951
+  ],
+  "angle": 135.891,
+  "curve": {
+   "maxDegPerSecond": 2700,
+   "minReversalGapFrames": 3
+  }
+ },
+ "art": {
+  "axis": 90,
+  "behind": 99,
+  "ahead": 331,
+  "halfWidth": 70,
+  "minAhead": 280,
+  "fistRadius": 48,
+  "handleHalfWidth": 24
+ },
+ "drawBefore": "hand",
+ "stroke": {
+  "color": "1c1f26ff"
+ },
+ "source": {
+  "note": "one-handed sword in the screen-left fist (hand_l) of the template7 body (phase-4d4m). grip.at = 9 px below the fist region's centre at rest (centre: hand_l world (352, 893) + R(115.19 deg) (49.02, -10.90) = (341, 942)), on the art's handle line: the fist's opaque shape is flat at the knuckles (32 px above the centre) and round below (51 px), so the handle runs through its middle; with the 135 grip the handle crosses the fist steeply and stays inside the outline (handleInFist). Art frame: painted straight down from the fist (axis 90), so the blade clears the arm and the guide stays readable; the item then rides the grip bone turned grip.angle from the hand.  (2026-10-17): grip.angle 141.768 is solved by scripts/sword-clips.ts so that in sword_ready (the live rest arm, straight, 17 deg out) the blade stands 25 deg off vertical toward the outside, above the fist: the live idle carry (rotationDegrees -25; docs/plans/atlas-animator-demos/attacks/sword/live-reference). Clips turn the sword in the fist only by declared grip keys (the live swing turns the weapon about the fist along SWING_PROGRAMS.swing tool), at most 2700 deg/s (the live strike runs about 2550 deg/s per 30 fps frame), direction changes only on keys and at least 3 frames apart (gripCurveGate). Box 99 px behind (pommel) and 331 ahead (blade): the sword is about 0.38 of the body's height, readable at game scale. fistRadius 48 = the fist's opaque half-size minus a few px, handleHalfWidth 24: the fist (about 104 px tall) hides a handle up to 48 px wide."
+ }
+}

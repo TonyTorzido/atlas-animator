@@ -1,0 +1,35 @@
+{
+ "plan": "animator layers plan (side-layers.parts.json)",
+ "parts": {
+  "far_arm": {
+   "visible": 14339,
+   "hidden": 8491,
+   "full": 22830,
+   "greyInkToTorso": 75
+  },
+  "far_leg": {
+   "visible": 20044,
+   "hidden": 6289,
+   "full": 26333,
+   "greyInkToTorso": 1745
+  },
+  "near_leg": {
+   "visible": 25501,
+   "hidden": 4544,
+   "full": 30045,
+   "greyInkToTorso": 413
+  },
+  "torso": {
+   "visible": 53058,
+   "hidden": 17972,
+   "full": 71021,
+   "greyInkToTorso": 0
+  },
+  "near_arm": {
+   "visible": 28629,
+   "hidden": 0,
+   "full": 28581,
+   "greyInkToTorso": 1782
+  }
+ }
+}

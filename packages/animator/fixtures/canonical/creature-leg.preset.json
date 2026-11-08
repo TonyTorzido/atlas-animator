@@ -1,0 +1,111 @@
+{
+  "name": "creature-leg",
+  "description": "Second test input (not humanoid): a round-bodied creature hind leg with a reverse knee and a paw, no garment and no girdle; proves the builder runs from data alone.",
+  "canvas": { "width": 400, "height": 400, "originX": 200, "originY": 300 },
+  "figureHeight": 230,
+  "gamePixels": 60,
+  "bones": [
+    { "name": "root" },
+    { "name": "body", "parent": "root", "at": [200, 200], "toward": [260, 200] },
+    { "name": "thigh", "parent": "body", "at": [200, 210], "toward": [170, 280], "limits": [-30, 60] },
+    { "name": "shin", "parent": "thigh", "at": [170, 280], "toward": [195, 345], "limits": [0, 80] },
+    { "name": "paw", "parent": "shin", "at": [195, 345], "toward": [180, 360], "limits": [-30, 30] }
+  ],
+  "base": "body",
+  "chain": { "bones": ["thigh", "shin", "paw"] },
+  "skin": {
+    "slot": "body",
+    "attachment": "skin",
+    "texture": "canonical/creature-leg-skin",
+    "silhouette": [
+      { "arc": { "center": [215, 195], "r": 55, "from": 270, "to": 152, "step": 10 } },
+      { "s": 36, "v": 24 }, { "s": 76, "v": 19 }, { "s": 120, "v": 14 }, { "s": 132, "v": 13.5 },
+      { "arc": { "s": 158, "r": 16, "from": 205, "to": 25, "step": 15 } },
+      { "s": 140, "v": -12 }, { "s": 100, "v": -14 }, { "s": 76, "v": -16 }, { "s": 48, "v": -19.5 },
+      { "at": [205.2, 249.2], "corner": true },
+      { "arc": { "center": [215, 195], "r": 55, "from": 98, "to": -80, "step": 10 } }
+    ],
+    "spacing": 4,
+    "lattice": 12,
+    "minDistance": 5,
+    "topology": {
+      "from": 4, "to": 146, "halfWidth": 26, "columns": 7, "core": 10, "minRowGap": 3.5,
+      "joints": [ { "s": 76.2, "band": 18, "rows": 5 }, { "s": 145.8, "band": 6, "rows": 3 } ],
+      "extraRows": [110],
+      "apexes": [ { "at": [205.2, 249.2], "side": "-", "reach": 84 } ]
+    },
+    "groups": [
+      { "slot": "body", "bone": "body" },
+      { "slot": "leg", "bone": "thigh", "polygon": [[205.2, 249.2], [216, 260], [240, 300], [240, 400], [100, 400], [100, 190], [166.4, 220.8]] }
+    ],
+    "base": "b98a5a",
+    "fills": [
+      { "color": "8f6640", "polygon": [ { "s": -10, "v": -60, "corner": true }, { "s": -10, "v": -7, "corner": true }, { "s": 175, "v": -7, "corner": true }, { "s": 175, "v": -60, "corner": true } ] },
+      { "color": "d8b48a", "polygon": [ { "arc": { "center": [232, 210], "r": 26, "from": 0, "to": 340, "step": 20 } } ] }
+    ],
+    "root": {
+      "zeros": [ { "polygon": [[228, 120], [300, 120], [300, 270], [214, 270], [222, 200]] } ]
+    },
+    "regions": {
+      "patches": [
+        { "name": "hip_inner", "joint": "thigh", "side": "inner", "from": { "apex": 0 }, "extent": { "width": [0.25, 0.6] }, "profile": "smooth", "bones": ["body", "thigh"], "permittedApexMotion": 0, "envelope": { "width": [34, 48], "bulge": 4, "area": [0.85, 1.35] } },
+        { "name": "hip_outer", "joint": "thigh", "side": "outer", "from": [215, 140], "toward": [166.4, 220.8], "extent": 140, "profile": "linear", "bones": ["body", "thigh"], "envelope": { "width": [34, 48], "bulge": 5, "area": [0.85, 1.35] } },
+        { "name": "knee", "joint": "shin", "side": "both", "s": 76.2, "band": 8, "foldBand": 20, "fold": "+", "bones": ["thigh", "shin"], "envelope": { "width": [26, 40], "bulge": 4 } },
+        { "name": "ankle", "joint": "paw", "side": "both", "s": 140, "band": 6, "foldBand": 17, "fold": "+", "bones": ["shin", "paw"], "envelope": { "area": [0.85, 1.1] } }
+      ],
+      "cores": [
+        { "name": "thigh", "bone": "thigh", "sMin": 0, "sMax": 76.2 },
+        { "name": "shin", "bone": "shin", "sMin": 76.2, "sMax": 140 },
+        { "name": "paw", "bone": "paw", "sMin": 140, "sMax": 400 }
+      ],
+      "fixed": [
+        { "name": "belly", "bone": "body", "polygon": [[205.4, 249.2], [212, 238], [240, 236], [260, 250], [260, 300], [212, 300]] }
+      ]
+    },
+    "junctions": [
+      { "name": "hip_outer", "at": [166.4, 220.8], "radius": 8 },
+      { "name": "crease", "at": [205.2, 249.2], "radius": 12 }
+    ],
+    "contours": [
+      { "name": "outline", "owner": "body", "from": [215, 140], "to": [166.16, 224.68], "width": 6, "color": "2b1a0eff" },
+      { "name": "outline", "owner": "leg", "from": [166.16, 224.68], "to": { "apex": 0 }, "width": 6, "color": "2b1a0eff" },
+      { "name": "belly", "owner": "body", "from": { "apex": 0 }, "to": [215, 140], "width": 6, "color": "2b1a0eff" }
+    ]
+  },
+  "garments": [
+    {
+      "name": "band", "slot": "band", "bone": "body", "texture": "canonical/creature-leg-band",
+      "path": [ { "s": 14, "v": -30, "corner": true }, { "s": 14, "v": 24, "corner": true }, { "s": 26, "v": 25, "corner": true }, { "s": 26, "v": -30, "corner": true } ],
+      "spacing": 3,
+      "lattice": 8,
+      "embed": true,
+      "conform": true,
+      "base": "5d7fa8",
+      "fills": [],
+      "contours": [
+        { "name": "edge", "owner": "band", "from": [222.05, 234.67], "to": [172.43, 213.41], "width": 4, "color": "1d2a3aff" },
+        { "name": "hem", "owner": "band_cuff", "from": [172.43, 213.41], "to": [217.32, 245.69], "width": 4, "color": "1d2a3aff", "caps": "round" },
+        { "name": "end", "owner": "band", "from": [217.32, 245.69], "to": [222.05, 234.67], "width": 4, "color": "1d2a3aff" }
+      ],
+      "overlays": [
+        { "name": "band_cuff", "region": [[150, 200], [235, 200], [235, 260], [150, 260]], "contours": ["hem"], "fillBand": 4, "above": "leg", "taper": 8, "clearance": 0.5 }
+      ]
+    }
+  ],
+  "regions": [],
+  "drawOrder": ["body", "band", "leg"],
+  "correctives": [ { "name": "hip", "bone": "thigh" }, { "name": "knee", "bone": "shin" }, { "name": "paw", "bone": "paw" } ],
+  "grids": [ { "name": "hip_knee", "x": { "bone": "thigh", "at": [-30, 0, 60] }, "y": { "bone": "shin", "at": [0, 40, 80] } } ],
+  "frame": { "left": 110, "top": 160, "right": 280, "bottom": 330 },
+  "sweeps": [
+    { "name": "hip", "phases": [ { "bone": "thigh", "from": -30, "to": 60, "step": 2 } ] },
+    { "name": "knee", "phases": [ { "bone": "shin", "from": 0, "to": 80, "step": 2 } ] },
+    { "name": "hip_knee80", "hold": { "shin": 80 }, "phases": [ { "bone": "thigh", "from": -30, "to": 60, "step": 3 } ] },
+    { "name": "knee_at_hip-30", "hold": { "thigh": -30 }, "phases": [ { "bone": "shin", "from": 0, "to": 80, "step": 2 } ] },
+    { "name": "paw", "phases": [ { "bone": "paw", "from": -30, "to": 30, "step": 2 } ] },
+    { "name": "hip_knee80_paw30", "hold": { "shin": 80, "paw": 30 }, "phases": [ { "bone": "thigh", "from": -30, "to": 60, "step": 3 } ] },
+    { "name": "hip_knee40_paw-30", "hold": { "shin": 40, "paw": -30 }, "phases": [ { "bone": "thigh", "from": -30, "to": 60, "step": 3 } ] }
+  ],
+  "runtime": { "budget": { "skin": 160, "garment": 100 } },
+  "gates": { "occlusion": [ { "garment": "band", "poses": [ { "thigh": -30 }, { "thigh": 60, "shin": 80 } ] } ] }
+}

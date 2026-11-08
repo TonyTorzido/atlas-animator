@@ -1,0 +1,707 @@
+{
+ "name": "sword_slash_2",
+ "about": "ON HOLD: the round-1 backhand rising cut, authored for the old 135 deg locked grip (no grip keys). f0-2 anticipation across the body, f3-4 strike out and up, f4 contact (`hit`), f4-6 hitstop, f8 follow-through high, f10 settle, f21 ready.",
+ "clip": {
+  "duration": 0.7,
+  "loop": true,
+  "fps": 30,
+  "bones": {
+   "pelvis": {
+    "translate": [
+     {
+      "time": 0,
+      "x": 0,
+      "y": 0,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.066667,
+      "x": 6,
+      "y": 4,
+      "curve": "linear"
+     },
+     {
+      "time": 0.1,
+      "x": 7,
+      "y": 5,
+      "curve": "linear"
+     },
+     {
+      "time": 0.133333,
+      "x": -3,
+      "y": 2,
+      "curve": "linear"
+     },
+     {
+      "time": 0.2,
+      "x": -3,
+      "y": 2,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.266667,
+      "x": -6,
+      "y": -2,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.333333,
+      "x": -6,
+      "y": -1,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.7,
+      "x": 0,
+      "y": 0,
+      "curve": "linear"
+     }
+    ]
+   },
+   "chest": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": -1,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.066667,
+      "value": 4,
+      "curve": "linear"
+     },
+     {
+      "time": 0.1,
+      "value": 5,
+      "curve": "linear"
+     },
+     {
+      "time": 0.133333,
+      "value": -3,
+      "curve": "linear"
+     },
+     {
+      "time": 0.2,
+      "value": -3,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.266667,
+      "value": -5,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.333333,
+      "value": -4.5,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.7,
+      "value": -1,
+      "curve": "linear"
+     }
+    ]
+   },
+   "head": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": 1,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.066667,
+      "value": -1,
+      "curve": "linear"
+     },
+     {
+      "time": 0.1,
+      "value": -1,
+      "curve": "linear"
+     },
+     {
+      "time": 0.133333,
+      "value": 2,
+      "curve": "linear"
+     },
+     {
+      "time": 0.2,
+      "value": 2,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.266667,
+      "value": 3,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.333333,
+      "value": 3,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.7,
+      "value": 1,
+      "curve": "linear"
+     }
+    ]
+   },
+   "clavicle_l": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": 0,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.066667,
+      "value": 0,
+      "curve": "linear"
+     },
+     {
+      "time": 0.1,
+      "value": 0,
+      "curve": "linear"
+     },
+     {
+      "time": 0.133333,
+      "value": 0,
+      "curve": "linear"
+     },
+     {
+      "time": 0.2,
+      "value": 0,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.266667,
+      "value": 3,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.333333,
+      "value": 2,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.7,
+      "value": 0,
+      "curve": "linear"
+     }
+    ]
+   },
+   "upper_arm_l": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": 14,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.066667,
+      "value": -48,
+      "curve": "linear"
+     },
+     {
+      "time": 0.1,
+      "value": -51,
+      "curve": "linear"
+     },
+     {
+      "time": 0.133333,
+      "value": 2,
+      "curve": "linear"
+     },
+     {
+      "time": 0.2,
+      "value": 2,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.266667,
+      "value": 95,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.333333,
+      "value": 93,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.7,
+      "value": 14,
+      "curve": "linear"
+     }
+    ]
+   },
+   "forearm_l": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": -24,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.066667,
+      "value": -42,
+      "curve": "linear"
+     },
+     {
+      "time": 0.1,
+      "value": -44,
+      "curve": "linear"
+     },
+     {
+      "time": 0.133333,
+      "value": -6,
+      "curve": "linear"
+     },
+     {
+      "time": 0.2,
+      "value": -6,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.266667,
+      "value": -12,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.333333,
+      "value": -14,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.7,
+      "value": -24,
+      "curve": "linear"
+     }
+    ]
+   },
+   "hand_l": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": -15,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.066667,
+      "value": 2,
+      "curve": "linear"
+     },
+     {
+      "time": 0.1,
+      "value": 4,
+      "curve": "linear"
+     },
+     {
+      "time": 0.133333,
+      "value": -30,
+      "curve": "linear"
+     },
+     {
+      "time": 0.2,
+      "value": -30,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.266667,
+      "value": -19,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.333333,
+      "value": -21,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.7,
+      "value": -15,
+      "curve": "linear"
+     }
+    ]
+   },
+   "upper_arm_r": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": -6,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.066667,
+      "value": -18,
+      "curve": "linear"
+     },
+     {
+      "time": 0.1,
+      "value": -18,
+      "curve": "linear"
+     },
+     {
+      "time": 0.133333,
+      "value": 8,
+      "curve": "linear"
+     },
+     {
+      "time": 0.2,
+      "value": 8,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.266667,
+      "value": 16,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.333333,
+      "value": 16,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.7,
+      "value": -6,
+      "curve": "linear"
+     }
+    ]
+   },
+   "forearm_r": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": 12,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.066667,
+      "value": 6,
+      "curve": "linear"
+     },
+     {
+      "time": 0.1,
+      "value": 6,
+      "curve": "linear"
+     },
+     {
+      "time": 0.133333,
+      "value": 18,
+      "curve": "linear"
+     },
+     {
+      "time": 0.2,
+      "value": 18,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.266667,
+      "value": 26,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.333333,
+      "value": 26,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.7,
+      "value": 12,
+      "curve": "linear"
+     }
+    ]
+   },
+   "hand_r": {
+    "rotate": [
+     {
+      "time": 0,
+      "value": 0,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.066667,
+      "value": 4,
+      "curve": "linear"
+     },
+     {
+      "time": 0.1,
+      "value": 4,
+      "curve": "linear"
+     },
+     {
+      "time": 0.133333,
+      "value": -4,
+      "curve": "linear"
+     },
+     {
+      "time": 0.2,
+      "value": -4,
+      "curve": [
+       0.2,
+       0.7,
+       0.4,
+       1
+      ]
+     },
+     {
+      "time": 0.266667,
+      "value": -8,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.333333,
+      "value": -8,
+      "curve": [
+       0.45,
+       0,
+       0.55,
+       1
+      ]
+     },
+     {
+      "time": 0.7,
+      "value": 0,
+      "curve": "linear"
+     }
+    ]
+   }
+  }
+ },
+ "hit": {
+  "time": 0.133333,
+  "holdFrames": 2
+ },
+ "drawPhases": [
+  {
+   "from": 0,
+   "to": 0.016667,
+   "order": "back",
+   "arm": "front"
+  },
+  {
+   "from": 0.016667,
+   "to": 0.216667,
+   "order": "hand",
+   "arm": "front"
+  },
+  {
+   "from": 0.216667,
+   "to": 0.700001,
+   "order": "back",
+   "arm": "front"
+  }
+ ],
+ "smears": [
+  {
+   "name": "smear1",
+   "from": 0.1,
+   "to": 0.133333,
+   "show": 0.116667,
+   "hide": 0.15,
+   "inner": [
+    0.95,
+    0.5
+   ]
+  },
+  {
+   "name": "smear2",
+   "from": 0.2,
+   "to": 0.266667,
+   "show": 0.216667,
+   "hide": 0.25,
+   "inner": [
+    0.97,
+    0.7
+   ]
+  }
+ ]
+}

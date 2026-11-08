@@ -1,0 +1,13 @@
+{
+  "description": "Pose references for template7-shoulder (item 5 / pass 3d-1 item 4): the generated drawings in pose-reference-01/output, same 1086x1448 frame as the rig canvas. Body alignment pivots (midline, chin, crotch) are measured from each image by `animator ref-compare` and written to its report; the arm pivots below (canvas px of the reference image, the viewer-left arm = the rig's arm) are hand-marked on a 50 px grid (the shoulder pivot is not visible in a drawing: it stays at the rig pivot unless the drawing lifts the shoulder, as in shrug) and drive the rig pose (raise from the upper-arm direction, elbow from the forearm, shrug from the clavicle base to the shoulder pivot), clamped to the bone limits.",
+  "rest": "ref/template7-clean.png",
+  "rig": { "clavicle": "clavicle_l", "upper": "upper_arm_l", "fore": "forearm_l", "shoulder": [436, 729], "elbow": [391.5, 809], "wrist": [352, 893], "clavicleBase": [505, 708] },
+  "references": [
+    { "name": "arm-out-45", "file": "output/arm-out-45.png", "shoulder": [436, 729], "elbow": [348, 808], "wrist": [255, 905] },
+    { "name": "arm-out-90", "file": "output/arm-out-90.png", "shoulder": [436, 729], "elbow": [318, 712], "wrist": [195, 708] },
+    { "name": "arm-up-135", "file": "output/arm-up-135.png", "shoulder": [436, 729], "elbow": [338, 620], "wrist": [235, 515] },
+    { "name": "both-arms-up", "file": "output/both-arms-up.png", "shoulder": [436, 729], "elbow": [365, 610], "wrist": [290, 510], "note": "both arms raised; the rig has the viewer-left arm only, so only that side is compared" },
+    { "name": "shrug", "file": "output/shrug.png", "shoulder": [436, 676], "elbow": [400, 760], "wrist": [360, 850], "note": "the drawing lifts the shoulder ~50 canvas px (about 40 degrees of clavicle); the rig shrug limit is 12" },
+    { "name": "elbow-bent-90", "file": "output/elbow-bent-90.png", "shoulder": [436, 729], "elbow": [283, 733], "wrist": [280, 590], "note": "the drawn forearm bends ~99 degrees; the rig elbow is capped at 70 (pose limit)" }
+  ]
+}

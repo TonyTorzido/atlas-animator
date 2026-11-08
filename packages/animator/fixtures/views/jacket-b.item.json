@@ -1,0 +1,13 @@
+{
+ "item": "jacket-b",
+ "name": "Jacket B (tonal cloud brocade kung-fu jacket)",
+ "front": "ART_DROPS/swag-kungfu-02/kf-B/final/garment.png",
+ "domain": "fixtures/garments/kungfu-jacket.domain.json",
+ "presence": {
+  "front": { "placket": true, "frogs": 3, "brocade": true, "collar": true, "hem": true, "cuffs": true },
+  "side": { "placket": true, "frogs": 3, "brocade": true, "collar": true, "hem": true, "cuffs": true },
+  "back": { "placket": false, "frogs": 0, "brocade": true, "collar": true, "hem": true, "cuffs": true }
+ },
+ "motif": "tonal cloud-scroll roundels, sparse and irregular on every view; never on trim, never near the outline",
+ "mirrorSafe": true
+}

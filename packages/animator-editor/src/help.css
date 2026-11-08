@@ -1,0 +1,38 @@
+/* Help menu, in-app user guide and About (src/helpMenu.ts). */
+#helpmenu { position: fixed; z-index: 10040; min-width: 230px; display: flex; flex-direction: column; padding: 4px; background: var(--panel2, var(--panel2)); border: 1px solid var(--line, var(--line2)); border-radius: 8px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); }
+#helpmenu[hidden] { display: none; }
+#helpmenu button { text-align: left; border: 0; background: transparent; color: var(--text, var(--text-hi)); padding: 7px 10px; border-radius: 6px; font: var(--fs-md) system-ui, sans-serif; cursor: pointer; }
+#helpmenu button:hover, #helpmenu button:focus-visible { background: rgba(255, 255, 255, 0.09); outline: none; }
+#helpview { position: fixed; inset: 0; z-index: 10045; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.6); }
+#helpview .hv-card { width: min(1000px, calc(100vw - 32px)); max-height: calc(100vh - 32px); display: flex; flex-direction: column; background: var(--panel, var(--panel)); color: var(--text, var(--text-hi)); border: 1px solid var(--line, var(--line2)); border-radius: 10px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5); }
+#helpview #aboutview { width: min(640px, calc(100vw - 32px)); }
+#helpview .hv-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--line, var(--line2)); }
+#helpview .hv-head h2 { margin: 0; font-size: var(--fs-lg); }
+#helpview .hv-body { padding: 14px 20px 20px; overflow: auto; font: var(--fs-lg)/1.55 system-ui, sans-serif; }
+#helpview .hv-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+#helpview .hv-k { width: 96px; flex: none; color: var(--dim, var(--dim)); }
+#helpview .hv-row code { flex: 1; word-break: break-all; }
+#helpview .hv-note { color: var(--dim, var(--dim)); }
+#helpview .guide h1 { font-size: var(--fs-h2); margin: 0 0 8px; }
+#helpview .guide h2 { font-size: var(--fs-h3); margin: 26px 0 8px; padding-top: 8px; border-top: 1px solid var(--line, var(--line2)); }
+#helpview .guide h3 { font-size: var(--fs-lg); margin: 18px 0 6px; }
+#helpview .guide p, #helpview .guide li { margin: 6px 0; }
+#helpview .guide code { background: rgba(255, 255, 255, 0.08); padding: 1px 5px; border-radius: 4px; font-size: var(--fs-sm); }
+#helpview .guide table { border-collapse: collapse; margin: 10px 0; width: 100%; }
+#helpview .guide th, #helpview .guide td { border: 1px solid var(--line, var(--line2)); padding: 5px 8px; text-align: left; vertical-align: top; }
+#helpview .guide th { background: rgba(255, 255, 255, 0.05); }
+#helpview .guide img { display: block; max-width: 100%; margin: 10px 0; border: 1px solid var(--line, var(--line2)); border-radius: 6px; }
+#helpview .guide a { color: var(--accent2, var(--accent2)); }
+.keymap-modal { width: min(760px, 94vw); max-height: 86vh; display: flex; flex-direction: column; }
+.keymap-modal .modal-body { overflow: auto; min-height: 0; }
+.km-top { display: flex; gap: var(--s2); align-items: center; position: sticky; top: 0; background: var(--panel); padding-bottom: var(--s2); z-index: 1; }
+.km-top input { flex: 1 1 auto; min-width: 0; }
+.km-note { color: var(--dim); font-size: var(--fs-xs); margin: var(--s1) 0; }
+.km-live { min-height: 16px; font-size: var(--fs-xs); color: var(--text2); }
+.km-list h3 { margin: var(--s3) 0 var(--s1); font-size: var(--fs-sm); color: var(--text2); }
+.km-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2); padding: 3px 0; border-bottom: 1px solid var(--line); }
+.km-row kbd { min-width: 96px; }
+.km-row .km-label { flex: 1 1 200px; min-width: 0; }
+.km-row.changed kbd { border-color: var(--accent); }
+.km-row.capturing { background: var(--panel2); }
+.km-row.conflict .km-flag, .km-flag { color: var(--warn); font-size: var(--fs-xs); }

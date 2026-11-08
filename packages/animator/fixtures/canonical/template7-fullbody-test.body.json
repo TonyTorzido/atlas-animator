@@ -1,0 +1,42 @@
+{
+  "name": "template7-fullbody-test",
+  "description": "Full-body non-mirrored mode test fixture: the front arm-layer half (near arm over its torso sheet), a renamed copy of its arm moved toward the centre (far, under the torso), the front leg half (far) and an independent second leg (near), the legs under the torso, composed without the mirror.",
+  "canvas": {
+    "width": 1086,
+    "height": 1448,
+    "originX": 542,
+    "originY": 960
+  },
+  "figureHeight": 1074,
+  "gamePixels": 140,
+  "parts": [
+    {
+      "name": "near_arm",
+      "file": "template7-fullbody-test-arm.part.json",
+      "depth": "near",
+      "kind": "arm",
+      "partner": "far_arm"
+    },
+    {
+      "name": "far_arm",
+      "file": "template7-fullbody-test-fararm.part.json",
+      "depth": "far",
+      "kind": "arm",
+      "partner": "near_arm"
+    },
+    {
+      "name": "far_leg",
+      "file": "template7-fullbody-test-leg.part.json",
+      "depth": "far",
+      "kind": "leg",
+      "partner": "near_leg"
+    },
+    {
+      "name": "near_leg",
+      "file": "template7-fullbody-test-nearleg.part.json",
+      "depth": "near",
+      "kind": "leg",
+      "partner": "far_leg"
+    }
+  ]
+}

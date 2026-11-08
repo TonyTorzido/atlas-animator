@@ -1,0 +1,1037 @@
+{
+  "name": "template7-fullbody-test-nearleg",
+  "description": "Full-body test part: a second, independent leg (the front leg renamed _n, moved 150 px right), not mirrored. Test fixture only.",
+  "bones": [
+    {
+      "name": "root"
+    },
+    {
+      "name": "pelvis",
+      "parent": "root",
+      "at": [
+        542,
+        960
+      ],
+      "toward": [
+        542,
+        1010
+      ]
+    },
+    {
+      "name": "thigh_n",
+      "parent": "pelvis",
+      "at": [
+        616,
+        1000
+      ],
+      "toward": [
+        608,
+        1105
+      ],
+      "limits": [
+        -6,
+        8
+      ]
+    },
+    {
+      "name": "shin_n",
+      "parent": "thigh_n",
+      "at": [
+        608,
+        1105
+      ],
+      "toward": [
+        605,
+        1170
+      ],
+      "limits": [
+        -25,
+        5
+      ]
+    },
+    {
+      "name": "foot_n",
+      "parent": "shin_n",
+      "at": [
+        605,
+        1170
+      ],
+      "toward": [
+        588,
+        1215
+      ],
+      "limits": [
+        -10,
+        10
+      ]
+    }
+  ],
+  "base": "pelvis",
+  "chain": {
+    "bones": [
+      "thigh_n",
+      "shin_n",
+      "foot_n"
+    ]
+  },
+  "skin": {
+    "slot": "hips_n",
+    "attachment": "skin",
+    "texture": "canonical/template7-leg-skin-n",
+    "silhouette": [
+      {
+        "at": [
+          692,
+          915
+        ],
+        "corner": true
+      },
+      {
+        "at": [
+          581,
+          915
+        ],
+        "corner": true
+      },
+      [
+        580.5,
+        940
+      ],
+      [
+        579,
+        958
+      ],
+      [
+        577.5,
+        975
+      ],
+      [
+        576.2,
+        992
+      ],
+      [
+        575,
+        1010
+      ],
+      [
+        572,
+        1024
+      ],
+      [
+        569.5,
+        1036
+      ],
+      [
+        567,
+        1050
+      ],
+      [
+        565,
+        1064
+      ],
+      [
+        563,
+        1076
+      ],
+      [
+        561,
+        1088
+      ],
+      [
+        560,
+        1100
+      ],
+      [
+        559,
+        1112
+      ],
+      [
+        558,
+        1124
+      ],
+      [
+        557,
+        1136
+      ],
+      [
+        556,
+        1148
+      ],
+      [
+        556,
+        1158
+      ],
+      {
+        "at": [
+          553,
+          1166
+        ],
+        "corner": true
+      },
+      [
+        546,
+        1172
+      ],
+      [
+        540,
+        1178
+      ],
+      [
+        536,
+        1184
+      ],
+      [
+        533.5,
+        1190
+      ],
+      [
+        532,
+        1196
+      ],
+      [
+        531,
+        1202
+      ],
+      [
+        531.5,
+        1208
+      ],
+      [
+        532.5,
+        1214
+      ],
+      [
+        535.5,
+        1220
+      ],
+      [
+        542,
+        1226
+      ],
+      [
+        551,
+        1232
+      ],
+      [
+        562,
+        1236
+      ],
+      [
+        575,
+        1238
+      ],
+      [
+        590,
+        1238.5
+      ],
+      [
+        605,
+        1238.5
+      ],
+      [
+        620,
+        1236.5
+      ],
+      [
+        631,
+        1232
+      ],
+      [
+        642,
+        1227
+      ],
+      [
+        650,
+        1221
+      ],
+      [
+        655,
+        1214
+      ],
+      [
+        658,
+        1207
+      ],
+      [
+        659,
+        1200
+      ],
+      [
+        659,
+        1193
+      ],
+      [
+        658,
+        1186
+      ],
+      [
+        656,
+        1179
+      ],
+      {
+        "at": [
+          653.5,
+          1173
+        ],
+        "corner": true
+      },
+      [
+        653,
+        1166
+      ],
+      [
+        654,
+        1156
+      ],
+      [
+        655.5,
+        1146
+      ],
+      [
+        657,
+        1136
+      ],
+      [
+        658.5,
+        1124
+      ],
+      [
+        660,
+        1112
+      ],
+      [
+        662,
+        1100
+      ],
+      [
+        663.5,
+        1088
+      ],
+      [
+        665,
+        1076
+      ],
+      [
+        666.5,
+        1064
+      ],
+      [
+        668.5,
+        1052
+      ],
+      [
+        671,
+        1040
+      ],
+      [
+        674,
+        1028
+      ],
+      {
+        "at": [
+          678,
+          1016
+        ],
+        "corner": true
+      },
+      [
+        685,
+        1014
+      ],
+      {
+        "at": [
+          692,
+          1013
+        ],
+        "corner": true
+      }
+    ],
+    "spacing": 6,
+    "lattice": 20,
+    "minDistance": 8,
+    "topology": {
+      "from": 4,
+      "to": 236,
+      "halfWidth": 84,
+      "columns": 16,
+      "core": 14,
+      "minRowGap": 4,
+      "joints": [
+        {
+          "s": 105.1,
+          "band": 24,
+          "rows": 7
+        },
+        {
+          "s": 170.4,
+          "band": 12,
+          "rows": 5
+        }
+      ],
+      "apexes": [
+        {
+          "at": [
+            678,
+            1016
+          ],
+          "side": "-",
+          "reach": 90
+        }
+      ]
+    },
+    "groups": [
+      {
+        "slot": "hips_n",
+        "bone": "pelvis"
+      }
+    ],
+    "base": "fac59b",
+    "fills": [
+      {
+        "color": "e4a074",
+        "polygon": [
+          {
+            "s": -30,
+            "v": -90,
+            "corner": true
+          },
+          {
+            "s": -30,
+            "v": -34,
+            "corner": true
+          },
+          {
+            "s": 172,
+            "v": -32,
+            "corner": true
+          },
+          {
+            "s": 172,
+            "v": -90,
+            "corner": true
+          }
+        ]
+      },
+      {
+        "color": "fbdbbe",
+        "polygon": [
+          {
+            "arc": {
+              "center": [
+                560,
+                1192
+              ],
+              "r": 11,
+              "from": 0,
+              "to": 345,
+              "step": 15
+            }
+          }
+        ]
+      }
+    ],
+    "root": {
+      "zeros": [
+        {
+          "polygon": [
+            [
+              550,
+              900
+            ],
+            [
+              710,
+              900
+            ],
+            [
+              710,
+              1022
+            ],
+            [
+              684,
+              1022
+            ],
+            [
+              680,
+              1010
+            ],
+            [
+              655,
+              982
+            ],
+            [
+              550,
+              982
+            ]
+          ]
+        }
+      ]
+    },
+    "regions": {
+      "patches": [
+        {
+          "name": "hip_inner",
+          "joint": "thigh_n",
+          "side": "inner",
+          "from": {
+            "apex": 0
+          },
+          "extent": {
+            "width": [
+              0.25,
+              0.5
+            ]
+          },
+          "profile": "smooth",
+          "bones": [
+            "pelvis",
+            "thigh_n"
+          ],
+          "permittedApexMotion": 0,
+          "envelope": {
+            "width": [
+              88,
+              118
+            ],
+            "bulge": 6,
+            "area": [
+              0.85,
+              1.3
+            ]
+          }
+        },
+        {
+          "name": "hip_outer",
+          "joint": "thigh_n",
+          "side": "outer",
+          "from": [
+            564,
+            990
+          ],
+          "toward": [
+            560,
+            1100
+          ],
+          "extent": 60,
+          "profile": "linear",
+          "bones": [
+            "pelvis",
+            "thigh_n"
+          ],
+          "envelope": {
+            "width": [
+              88,
+              118
+            ],
+            "bulge": 6,
+            "area": [
+              0.72,
+              1.3
+            ]
+          }
+        },
+        {
+          "name": "knee",
+          "joint": "shin_n",
+          "side": "both",
+          "s": 105.1,
+          "band": 12,
+          "foldBand": 24,
+          "fold": "-",
+          "bones": [
+            "thigh_n",
+            "shin_n"
+          ],
+          "envelope": {
+            "width": [
+              84,
+              112
+            ],
+            "bulge": 6,
+            "area": [
+              0.9,
+              1.25
+            ]
+          }
+        },
+        {
+          "name": "ankle",
+          "joint": "foot_n",
+          "side": "both",
+          "s": 170.4,
+          "band": 14,
+          "bones": [
+            "shin_n",
+            "foot_n"
+          ],
+          "envelope": {
+            "area": [
+              0.85,
+              1.15
+            ]
+          }
+        }
+      ],
+      "cores": [
+        {
+          "name": "thigh",
+          "bone": "thigh_n",
+          "sMin": 20,
+          "sMax": 105.1
+        },
+        {
+          "name": "shin",
+          "bone": "shin_n",
+          "sMin": 105.1,
+          "sMax": 170.4
+        },
+        {
+          "name": "foot",
+          "bone": "foot_n",
+          "sMin": 170.4,
+          "sMax": 400
+        }
+      ],
+      "fixed": []
+    },
+    "junctions": [
+      {
+        "name": "crotch",
+        "at": [
+          678,
+          1016
+        ],
+        "radius": 10
+      },
+      {
+        "name": "hem_outer",
+        "at": [
+          567,
+          1050
+        ],
+        "radius": 6
+      },
+      {
+        "name": "hem_inner",
+        "at": [
+          677,
+          1042
+        ],
+        "radius": 10
+      },
+      {
+        "name": "crotch_cut",
+        "at": [
+          692,
+          1012
+        ],
+        "on": "shorts_n",
+        "radius": 2
+      },
+      {
+        "name": "waist_mid",
+        "at": [
+          692,
+          938
+        ],
+        "on": "shorts_n",
+        "radius": 2
+      }
+    ],
+    "contours": [
+      {
+        "name": "outline",
+        "owner": "hips_n",
+        "from": [
+          567,
+          1050
+        ],
+        "to": [
+          671,
+          1040
+        ],
+        "width": 10,
+        "color": "3a1001ff",
+        "caps": "round"
+      }
+    ]
+  },
+  "garments": [
+    {
+      "name": "shorts_n",
+      "slot": "shorts_n",
+      "bone": "pelvis",
+      "attachment": "shorts_n",
+      "texture": "canonical/template7-leg-shorts-n",
+      "path": [
+        {
+          "at": [
+            692,
+            938
+          ],
+          "corner": true
+        },
+        [
+          650,
+          935
+        ],
+        [
+          615,
+          931
+        ],
+        {
+          "at": [
+            577,
+            926
+          ],
+          "corner": true
+        },
+        [
+          574,
+          945
+        ],
+        [
+          570,
+          962
+        ],
+        [
+          566,
+          985
+        ],
+        [
+          563,
+          1004
+        ],
+        {
+          "at": [
+            561.5,
+            1030
+          ],
+          "corner": true
+        },
+        [
+          580,
+          1034.5
+        ],
+        [
+          600,
+          1037
+        ],
+        [
+          620,
+          1039.5
+        ],
+        [
+          640,
+          1041
+        ],
+        [
+          660,
+          1042
+        ],
+        {
+          "at": [
+            681,
+            1043
+          ],
+          "corner": true
+        },
+        [
+          682,
+          1028
+        ],
+        {
+          "at": [
+            683,
+            1012
+          ],
+          "corner": true
+        },
+        {
+          "at": [
+            692,
+            1012
+          ],
+          "corner": true
+        }
+      ],
+      "spacing": 6,
+      "lattice": 22,
+      "embed": true,
+      "conform": true,
+      "base": "e9e0db",
+      "fills": [
+        {
+          "color": "cec4c1",
+          "polygon": [
+            {
+              "at": [
+                590,
+                1005
+              ],
+              "corner": true
+            },
+            {
+              "at": [
+                650,
+                1012
+              ],
+              "corner": true
+            },
+            {
+              "at": [
+                635,
+                1022
+              ],
+              "corner": true
+            },
+            {
+              "at": [
+                600,
+                1020
+              ],
+              "corner": true
+            }
+          ]
+        }
+      ],
+      "contours": [
+        {
+          "name": "waist",
+          "owner": "shorts_n",
+          "from": [
+            692,
+            938
+          ],
+          "to": [
+            577,
+            926
+          ],
+          "width": 14,
+          "color": "45403dff"
+        },
+        {
+          "name": "side",
+          "owner": "shorts_n",
+          "from": [
+            577,
+            926
+          ],
+          "to": [
+            561.5,
+            1030
+          ],
+          "width": 10,
+          "color": "45403dff"
+        },
+        {
+          "name": "hem",
+          "owner": "shorts_n",
+          "from": [
+            561.5,
+            1030
+          ],
+          "to": [
+            681,
+            1043
+          ],
+          "width": 10,
+          "color": "45403dff",
+          "caps": "round"
+        },
+        {
+          "name": "inseam",
+          "owner": "shorts_n",
+          "from": [
+            681,
+            1043
+          ],
+          "to": [
+            683,
+            1012
+          ],
+          "width": 10,
+          "color": "45403dff",
+          "caps": "round"
+        },
+        {
+          "name": "crotch",
+          "owner": "shorts_n",
+          "from": [
+            683,
+            1012
+          ],
+          "to": [
+            692,
+            1012
+          ],
+          "width": 10,
+          "color": "45403dff"
+        }
+      ]
+    }
+  ],
+  "regions": [],
+  "drawOrder": [
+    "hips_n",
+    "shorts_n"
+  ],
+  "correctives": [
+    {
+      "name": "hip_l_n",
+      "bone": "thigh_n",
+      "at": [
+        -6,
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "knee_l_n",
+      "bone": "shin_n",
+      "at": [
+        -25,
+        -12,
+        0,
+        5
+      ]
+    },
+    {
+      "name": "ankle_l_n",
+      "bone": "foot_n",
+      "at": [
+        -10,
+        0,
+        10
+      ]
+    }
+  ],
+  "grids": [
+    {
+      "name": "hip_knee_l",
+      "x": {
+        "bone": "thigh_n",
+        "at": [
+          -6,
+          0,
+          4,
+          8
+        ]
+      },
+      "y": {
+        "bone": "shin_n",
+        "at": [
+          -25,
+          -12,
+          0
+        ]
+      }
+    }
+  ],
+  "frame": {
+    "left": 510,
+    "top": 930,
+    "right": 710,
+    "bottom": 1260
+  },
+  "sweeps": [
+    {
+      "name": "hip_swing",
+      "phases": [
+        {
+          "bone": "thigh_n",
+          "from": -6,
+          "to": 8,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "name": "knee_bend",
+      "phases": [
+        {
+          "bone": "shin_n",
+          "from": 5,
+          "to": -25,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "name": "ankle",
+      "phases": [
+        {
+          "bone": "foot_n",
+          "from": -10,
+          "to": 10,
+          "step": 0.5
+        }
+      ]
+    },
+    {
+      "name": "wide_stance",
+      "hold": {
+        "foot_n": -10
+      },
+      "phases": [
+        {
+          "bone": "thigh_n",
+          "from": 0,
+          "to": 8,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "name": "step",
+      "hold": {
+        "thigh_n": 6,
+        "foot_n": 8
+      },
+      "phases": [
+        {
+          "bone": "shin_n",
+          "from": 0,
+          "to": -25,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "name": "hip_at_knee-25",
+      "hold": {
+        "shin_n": -25
+      },
+      "phases": [
+        {
+          "bone": "thigh_n",
+          "from": -6,
+          "to": 8,
+          "step": 1.5
+        }
+      ]
+    },
+    {
+      "name": "knee_near_extension",
+      "phases": [
+        {
+          "bone": "shin_n",
+          "from": 5,
+          "to": -8,
+          "step": 0.5
+        }
+      ]
+    }
+  ],
+  "runtime": {
+    "budget": {
+      "skin": 200,
+      "garment": 90
+    }
+  },
+  "gates": {},
+  "ik": {
+    "stance": "foreshorten",
+    "blend": 0.25
+  }
+}

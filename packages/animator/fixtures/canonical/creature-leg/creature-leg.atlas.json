@@ -1,0 +1,25 @@
+{
+  "format": "atlas-pack@1",
+  "scale": 1,
+  "pages": [
+    {
+      "file": "creature-leg.atlas.png",
+      "width": 512,
+      "height": 248,
+      "regions": {
+        "canonical/creature-leg-skin": {
+          "x": 2,
+          "y": 2,
+          "width": 129,
+          "height": 244
+        },
+        "canonical/creature-leg-band": {
+          "x": 133,
+          "y": 2,
+          "width": 69,
+          "height": 45
+        }
+      }
+    }
+  ]
+}

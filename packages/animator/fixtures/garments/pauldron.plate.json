@@ -1,0 +1,47 @@
+{
+ "format": "atlas-plate/1",
+ "name": "pauldron",
+ "sides": {
+  "l": {
+   "bone": "upper_arm_l",
+   "drawAfter": "hand"
+  },
+  "r": {
+   "bone": "upper_arm_r",
+   "drawAfter": "hand_r"
+  }
+ },
+ "area": {
+  "cx": 412,
+  "cy": 736,
+  "rx": 80,
+  "ry": 50,
+  "rotation": -45
+ },
+ "socket": [
+  436,
+  729
+ ],
+ "follow": 0.65,
+ "requiredScale": 0.6,
+ "maxHeadOverlapPx": 0,
+ "maxCentreInsideJointPx": 6,
+ "stroke": {
+  "color": "1c1f26ff"
+ },
+ "source": {
+  "note": "left shoulder at rest on the template7 body (phase-4d4m).: the area is a larger ellipse over the shoulder cap, centred 32 px outward of the joint (top and outer deltoid, its top edge above the shoulder line, about twice the upper arm's width); the plate rides a socket bone at the upper_arm_l joint that turns by follow 0.65 of the arm's rotation (swept 0.55-0.8 with a synthetic plate: 0.75 brings the centre to the joint at full raise, 0.65 keeps it 5 px outside); the socket is the upper_arm_l joint; drawn after the hand (over the whole arm and any sleeve), before the head.  (): the area is a shoulder CAP following the shoulder slope (rotation -45, rx 80 along the slope, ry 50), moved out and up so its outer edge runs 12-21 px past the leather r14 shoulder outline from the shoulder top (y 676) down the outer upper arm (y 780); that overhang is the declared overflow zone shoulder_overhang. Fitted on the leather r14 rest render: every shoulder outline point 6 px outward lies inside the area, the area stays 10 px clear of the head and neck skin."
+ },
+ "overflow": [
+  {
+   "name": "shoulder_overhang",
+   "rect": [
+    340,
+    664,
+    450,
+    790
+   ],
+   "note": "the cap's overhang past the worn rig's shoulder outline (the area outside the leather r14 rest silhouette spans x 345-446, y 669-784)"
+  }
+ ]
+}

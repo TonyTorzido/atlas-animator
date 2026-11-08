@@ -1,0 +1,155 @@
+{"op": "clip.add", "name": "t_rest", "duration": 0.5, "loop": false}
+{"op": "clip.add", "name": "t_walk_contact", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_walk_contact", "bone": "hips", "timeline": "translate", "time": 0, "x": 0, "y": -4}
+{"op": "key.set", "clip": "t_walk_contact", "bone": "thigh_near", "timeline": "rotate", "time": 0, "value": 28}
+{"op": "key.set", "clip": "t_walk_contact", "bone": "shin_near", "timeline": "rotate", "time": 0, "value": -12}
+{"op": "key.set", "clip": "t_walk_contact", "bone": "foot_near", "timeline": "rotate", "time": 0, "value": -16}
+{"op": "key.set", "clip": "t_walk_contact", "bone": "thigh_far", "timeline": "rotate", "time": 0, "value": -24}
+{"op": "key.set", "clip": "t_walk_contact", "bone": "shin_far", "timeline": "rotate", "time": 0, "value": -4}
+{"op": "key.set", "clip": "t_walk_contact", "bone": "foot_far", "timeline": "rotate", "time": 0, "value": 28}
+{"op": "clip.add", "name": "t_walk_pass", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_walk_pass", "bone": "hips", "timeline": "translate", "time": 0, "x": 0, "y": 3}
+{"op": "key.set", "clip": "t_walk_pass", "bone": "thigh_near", "timeline": "rotate", "time": 0, "value": 20}
+{"op": "key.set", "clip": "t_walk_pass", "bone": "shin_near", "timeline": "rotate", "time": 0, "value": -55}
+{"op": "key.set", "clip": "t_walk_pass", "bone": "foot_near", "timeline": "rotate", "time": 0, "value": 20}
+{"op": "key.set", "clip": "t_walk_pass", "bone": "thigh_far", "timeline": "rotate", "time": 0, "value": -6}
+{"op": "key.set", "clip": "t_walk_pass", "bone": "shin_far", "timeline": "rotate", "time": 0, "value": -3}
+{"op": "key.set", "clip": "t_walk_pass", "bone": "foot_far", "timeline": "rotate", "time": 0, "value": 9}
+{"op": "clip.add", "name": "t_hip_turn_p15", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_hip_turn_p15", "bone": "hips", "timeline": "rotate", "time": 0, "value": 15}
+{"op": "key.set", "clip": "t_hip_turn_p15", "bone": "hips", "timeline": "translate", "time": 0, "x": 0, "y": 18}
+{"op": "key.set", "clip": "t_hip_turn_p15", "ik": "leg_ik_near", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_hip_turn_p15", "transform": "foot_plant_near", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "key.set", "clip": "t_hip_turn_p15", "ik": "leg_ik_far", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_hip_turn_p15", "transform": "foot_plant_far", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "clip.add", "name": "t_hip_turn_m15", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_hip_turn_m15", "bone": "hips", "timeline": "rotate", "time": 0, "value": -15}
+{"op": "key.set", "clip": "t_hip_turn_m15", "bone": "hips", "timeline": "translate", "time": 0, "x": 0, "y": 18}
+{"op": "key.set", "clip": "t_hip_turn_m15", "ik": "leg_ik_near", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_hip_turn_m15", "transform": "foot_plant_near", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "key.set", "clip": "t_hip_turn_m15", "ik": "leg_ik_far", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_hip_turn_m15", "transform": "foot_plant_far", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "clip.add", "name": "t_crouch", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_crouch", "bone": "hips", "timeline": "translate", "time": 0, "x": 14, "y": 92}
+{"op": "key.set", "clip": "t_crouch", "bone": "spine_1", "timeline": "rotate", "time": 0, "value": 8}
+{"op": "key.set", "clip": "t_crouch", "bone": "chest", "timeline": "rotate", "time": 0, "value": 4}
+{"op": "key.set", "clip": "t_crouch", "ik": "leg_ik_near", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_crouch", "transform": "foot_plant_near", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "key.set", "clip": "t_crouch", "ik": "leg_ik_far", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_crouch", "transform": "foot_plant_far", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "clip.add", "name": "t_legs_cross", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_legs_cross", "bone": "thigh_near", "timeline": "rotate", "time": 0, "value": -36}
+{"op": "key.set", "clip": "t_legs_cross", "bone": "thigh_far", "timeline": "rotate", "time": 0, "value": 24}
+{"op": "key.set", "clip": "t_legs_cross", "bone": "shin_near", "timeline": "rotate", "time": 0, "value": -6}
+{"op": "key.set", "clip": "t_legs_cross", "bone": "shin_far", "timeline": "rotate", "time": 0, "value": -6}
+{"op": "key.set", "clip": "t_legs_cross", "bone": "foot_near", "timeline": "rotate", "time": 0, "value": 35}
+{"op": "key.set", "clip": "t_legs_cross", "bone": "foot_far", "timeline": "rotate", "time": 0, "value": -18}
+{"op": "clip.add", "name": "t_fk_kick", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_fk_kick", "bone": "thigh_near", "timeline": "rotate", "time": 0, "value": 60}
+{"op": "key.set", "clip": "t_fk_kick", "bone": "shin_near", "timeline": "rotate", "time": 0, "value": -95}
+{"op": "key.set", "clip": "t_fk_kick", "bone": "foot_near", "timeline": "rotate", "time": 0, "value": 20}
+{"op": "key.set", "clip": "t_fk_kick", "bone": "thigh_far", "timeline": "rotate", "time": 0, "value": -10}
+{"op": "key.set", "clip": "t_fk_kick", "bone": "shin_far", "timeline": "rotate", "time": 0, "value": -2}
+{"op": "key.set", "clip": "t_fk_kick", "bone": "foot_far", "timeline": "rotate", "time": 0, "value": 12}
+{"op": "clip.add", "name": "t_wide_stance", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_wide_stance", "bone": "thigh_near", "timeline": "rotate", "time": 0, "value": 45}
+{"op": "key.set", "clip": "t_wide_stance", "bone": "thigh_far", "timeline": "rotate", "time": 0, "value": -45}
+{"op": "key.set", "clip": "t_wide_stance", "bone": "foot_near", "timeline": "rotate", "time": 0, "value": -45}
+{"op": "key.set", "clip": "t_wide_stance", "bone": "foot_far", "timeline": "rotate", "time": 0, "value": 45}
+{"op": "clip.add", "name": "t_full_spread", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_full_spread", "bone": "thigh_near", "timeline": "rotate", "time": 0, "value": 75}
+{"op": "key.set", "clip": "t_full_spread", "bone": "thigh_far", "timeline": "rotate", "time": 0, "value": -75}
+{"op": "key.set", "clip": "t_full_spread", "bone": "foot_near", "timeline": "rotate", "time": 0, "value": -75}
+{"op": "key.set", "clip": "t_full_spread", "bone": "foot_far", "timeline": "rotate", "time": 0, "value": 75}
+{"op": "clip.add", "name": "t_kick_side_90", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_kick_side_90", "bone": "thigh_near", "timeline": "rotate", "time": 0, "value": 90}
+{"op": "key.set", "clip": "t_kick_side_90", "bone": "foot_near", "timeline": "rotate", "time": 0, "value": -90}
+{"op": "key.set", "clip": "t_kick_side_90", "bone": "thigh_far", "timeline": "rotate", "time": 0, "value": -8}
+{"op": "key.set", "clip": "t_kick_side_90", "bone": "foot_far", "timeline": "rotate", "time": 0, "value": 8}
+{"op": "clip.add", "name": "t_hips_down_right", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_hips_down_right", "bone": "hips", "timeline": "translate", "time": 0, "x": 30, "y": 40}
+{"op": "key.set", "clip": "t_hips_down_right", "ik": "leg_ik_near", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_hips_down_right", "transform": "foot_plant_near", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "key.set", "clip": "t_hips_down_right", "ik": "leg_ik_far", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_hips_down_right", "transform": "foot_plant_far", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "clip.add", "name": "t_hips_down_left", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_hips_down_left", "bone": "hips", "timeline": "translate", "time": 0, "x": -30, "y": 40}
+{"op": "key.set", "clip": "t_hips_down_left", "ik": "leg_ik_near", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_hips_down_left", "transform": "foot_plant_near", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "key.set", "clip": "t_hips_down_left", "ik": "leg_ik_far", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_hips_down_left", "transform": "foot_plant_far", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "clip.add", "name": "t_hips_fk", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_hips_fk", "bone": "hips", "timeline": "translate", "time": 0, "x": 30, "y": 40}
+{"op": "clip.add", "name": "t_ik_in_reach", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_ik_in_reach", "bone": "foot_near_target", "timeline": "translate", "time": 0, "x": -70, "y": -60}
+{"op": "key.set", "clip": "t_ik_in_reach", "bone": "foot_far_target", "timeline": "translate", "time": 0, "x": 70, "y": -60}
+{"op": "key.set", "clip": "t_ik_in_reach", "ik": "leg_ik_near", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_ik_in_reach", "transform": "foot_plant_near", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "key.set", "clip": "t_ik_in_reach", "ik": "leg_ik_far", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_ik_in_reach", "transform": "foot_plant_far", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "clip.add", "name": "t_ik_out_of_reach", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_ik_out_of_reach", "bone": "foot_near_target", "timeline": "translate", "time": 0, "x": -220, "y": -20}
+{"op": "key.set", "clip": "t_ik_out_of_reach", "bone": "foot_far_target", "timeline": "translate", "time": 0, "x": 220, "y": -20}
+{"op": "key.set", "clip": "t_ik_out_of_reach", "ik": "leg_ik_near", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_ik_out_of_reach", "transform": "foot_plant_near", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "key.set", "clip": "t_ik_out_of_reach", "ik": "leg_ik_far", "time": 0, "mix": 1, "bendPositive": false}
+{"op": "key.set", "clip": "t_ik_out_of_reach", "transform": "foot_plant_far", "time": 0, "mixRotate": 1, "mixX": 0, "mixY": 0, "mixScaleX": 0, "mixScaleY": 0, "mixShearY": 0}
+{"op": "clip.add", "name": "t_far_leg_front", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_far_leg_front", "bone": "thigh_far", "timeline": "rotate", "time": 0, "value": 70}
+{"op": "key.set", "clip": "t_far_leg_front", "bone": "thigh_near", "timeline": "rotate", "time": 0, "value": -30}
+{"op": "key.set", "clip": "t_far_leg_front", "bone": "shin_near", "timeline": "rotate", "time": 0, "value": -5}
+{"op": "key.set", "clip": "t_far_leg_front", "bone": "foot_far", "timeline": "rotate", "time": 0, "value": -20}
+{"op": "key.set", "clip": "t_far_leg_front", "drawOrder": true, "time": 0, "offsets": [{"slot": "skin_foot_far", "offset": 2}, {"slot": "pants_leg_far", "offset": 2}]}
+{"op": "clip.add", "name": "t_far_knee_up_front", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_far_knee_up_front", "bone": "thigh_far", "timeline": "rotate", "time": 0, "value": 80}
+{"op": "key.set", "clip": "t_far_knee_up_front", "bone": "shin_far", "timeline": "rotate", "time": 0, "value": -100}
+{"op": "key.set", "clip": "t_far_knee_up_front", "bone": "foot_far", "timeline": "rotate", "time": 0, "value": 20}
+{"op": "key.set", "clip": "t_far_knee_up_front", "drawOrder": true, "time": 0, "offsets": [{"slot": "skin_foot_far", "offset": 2}, {"slot": "pants_leg_far", "offset": 2}]}
+{"op": "clip.add", "name": "t_arms_raised", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_arms_raised", "bone": "upper_arm_near", "timeline": "rotate", "time": 0, "value": 120}
+{"op": "key.set", "clip": "t_arms_raised", "bone": "forearm_near", "timeline": "rotate", "time": 0, "value": -20}
+{"op": "key.set", "clip": "t_arms_raised", "bone": "upper_arm_far", "timeline": "rotate", "time": 0, "value": -120}
+{"op": "key.set", "clip": "t_arms_raised", "bone": "forearm_far", "timeline": "rotate", "time": 0, "value": 20}
+{"op": "key.set", "clip": "t_arms_raised", "bone": "clavicle_near", "timeline": "rotate", "time": 0, "value": 10}
+{"op": "key.set", "clip": "t_arms_raised", "bone": "clavicle_far", "timeline": "rotate", "time": 0, "value": -10}
+{"op": "clip.add", "name": "t_arm_across", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_arm_across", "bone": "upper_arm_near", "timeline": "rotate", "time": 0, "value": -40}
+{"op": "key.set", "clip": "t_arm_across", "bone": "forearm_near", "timeline": "rotate", "time": 0, "value": -80}
+{"op": "key.set", "clip": "t_arm_across", "bone": "upper_arm_far", "timeline": "rotate", "time": 0, "value": 40}
+{"op": "key.set", "clip": "t_arm_across", "bone": "forearm_far", "timeline": "rotate", "time": 0, "value": 50}
+{"op": "key.set", "clip": "t_arm_across", "drawOrder": true, "time": 0, "offsets": [{"slot": "skin_elbow_fill_far", "offset": 7}, {"slot": "skin_wrist_fill_far", "offset": 7}, {"slot": "skin_arm_far", "offset": 7}, {"slot": "skin_crease_far", "offset": 7}, {"slot": "skin_hand_far", "offset": 7}]}
+{"op": "clip.add", "name": "t_attack_windup", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_attack_windup", "bone": "upper_arm_near", "timeline": "rotate", "time": 0, "value": 130}
+{"op": "key.set", "clip": "t_attack_windup", "bone": "forearm_near", "timeline": "rotate", "time": 0, "value": -100}
+{"op": "key.set", "clip": "t_attack_windup", "bone": "upper_arm_far", "timeline": "rotate", "time": 0, "value": 20}
+{"op": "key.set", "clip": "t_attack_windup", "bone": "forearm_far", "timeline": "rotate", "time": 0, "value": 60}
+{"op": "key.set", "clip": "t_attack_windup", "bone": "hips", "timeline": "rotate", "time": 0, "value": -10}
+{"op": "key.set", "clip": "t_attack_windup", "bone": "spine_1", "timeline": "rotate", "time": 0, "value": -8}
+{"op": "key.set", "clip": "t_attack_windup", "bone": "chest", "timeline": "rotate", "time": 0, "value": -6}
+{"op": "key.set", "clip": "t_attack_windup", "bone": "weapon", "timeline": "rotate", "time": 0, "value": 40}
+{"op": "clip.add", "name": "t_elbow_145", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_elbow_145", "bone": "upper_arm_near", "timeline": "rotate", "time": 0, "value": 15}
+{"op": "key.set", "clip": "t_elbow_145", "bone": "forearm_near", "timeline": "rotate", "time": 0, "value": -145}
+{"op": "key.set", "clip": "t_elbow_145", "bone": "upper_arm_far", "timeline": "rotate", "time": 0, "value": -50}
+{"op": "key.set", "clip": "t_elbow_145", "bone": "forearm_far", "timeline": "rotate", "time": 0, "value": 145}
+{"op": "key.set", "clip": "t_elbow_145", "drawOrder": true, "time": 0, "offsets": [{"slot": "skin_elbow_fill_far", "offset": 7}, {"slot": "skin_wrist_fill_far", "offset": 7}, {"slot": "skin_arm_far", "offset": 7}, {"slot": "skin_crease_far", "offset": 7}, {"slot": "skin_hand_far", "offset": 7}]}
+{"op": "clip.add", "name": "t_two_hand_grip", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_two_hand_grip", "bone": "upper_arm_near", "timeline": "rotate", "time": 0, "value": -20}
+{"op": "key.set", "clip": "t_two_hand_grip", "bone": "forearm_near", "timeline": "rotate", "time": 0, "value": -100}
+{"op": "key.set", "clip": "t_two_hand_grip", "bone": "weapon", "timeline": "rotate", "time": 0, "value": 10}
+{"op": "key.set", "clip": "t_two_hand_grip", "ik": "hand_ik_far", "time": 0, "mix": 1, "bendPositive": true}
+{"op": "key.set", "clip": "t_two_hand_grip", "bone": "hand_far_target", "timeline": "translate", "time": 0, "x": -160.918, "y": -174.562}
+{"op": "key.set", "clip": "t_two_hand_grip", "drawOrder": true, "time": 0, "offsets": [{"slot": "skin_elbow_fill_far", "offset": 7}, {"slot": "skin_wrist_fill_far", "offset": 7}, {"slot": "skin_arm_far", "offset": 7}, {"slot": "skin_crease_far", "offset": 7}, {"slot": "skin_hand_far", "offset": 7}]}
+{"op": "clip.add", "name": "t_walk_arms", "duration": 0.5, "loop": false}
+{"op": "key.set", "clip": "t_walk_arms", "bone": "hips", "timeline": "translate", "time": 0, "x": 0, "y": -4}
+{"op": "key.set", "clip": "t_walk_arms", "bone": "thigh_near", "timeline": "rotate", "time": 0, "value": 28}
+{"op": "key.set", "clip": "t_walk_arms", "bone": "shin_near", "timeline": "rotate", "time": 0, "value": -12}
+{"op": "key.set", "clip": "t_walk_arms", "bone": "foot_near", "timeline": "rotate", "time": 0, "value": -16}
+{"op": "key.set", "clip": "t_walk_arms", "bone": "thigh_far", "timeline": "rotate", "time": 0, "value": -24}
+{"op": "key.set", "clip": "t_walk_arms", "bone": "shin_far", "timeline": "rotate", "time": 0, "value": -4}
+{"op": "key.set", "clip": "t_walk_arms", "bone": "foot_far", "timeline": "rotate", "time": 0, "value": 28}
+{"op": "key.set", "clip": "t_walk_arms", "bone": "upper_arm_near", "timeline": "rotate", "time": 0, "value": 24}
+{"op": "key.set", "clip": "t_walk_arms", "bone": "forearm_near", "timeline": "rotate", "time": 0, "value": -20}
+{"op": "key.set", "clip": "t_walk_arms", "bone": "upper_arm_far", "timeline": "rotate", "time": 0, "value": -24}
+{"op": "key.set", "clip": "t_walk_arms", "bone": "forearm_far", "timeline": "rotate", "time": 0, "value": 20}
+{"op": "key.set", "clip": "t_walk_arms", "bone": "spine_2", "timeline": "rotate", "time": 0, "value": 4}

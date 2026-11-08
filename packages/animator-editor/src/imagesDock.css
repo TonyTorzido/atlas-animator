@@ -1,0 +1,38 @@
+/*
+ * Bottom dock of the Rig workspace (imagesDock.ts): a 32 px tab strip on the lower edge of the stage that opens a drawer over the canvas,
+ * never resizing it. Shown only in Setup (body.setup). No native scrollbars (index.html hides them); the grid and lists scroll by wheel.
+ */
+.idk { position: absolute; left: var(--tp-w, 84px); right: 0; bottom: 0; z-index: calc(var(--z-hud) + 2); display: flex; flex-direction: column; background: var(--panel); border-top: 1px solid var(--line); }
+.idk[hidden] { display: none; }
+body:not(.setup) .idk { display: none; }
+.idk-tabs { display: flex; align-items: center; gap: var(--s1); height: var(--ctl-lg); padding: 0 var(--s2); flex: none; }
+.idk-tab { display: inline-flex; align-items: center; gap: var(--s2); height: var(--ctl-md); padding: 0 var(--s3); border-color: transparent; background: transparent; color: var(--dim); font-weight: 600; font-size: var(--fs-md); }
+.idk-tab:hover:not(:disabled) { color: var(--text); background: var(--panel2); border-color: transparent; }
+.idk-tab.on { color: var(--text); background: var(--panel3); }
+.idk-ct { color: var(--muted); font-weight: 500; font-size: var(--fs-sm); }
+.idk-fold { width: var(--ctl-md); padding: 0; border-color: transparent; background: transparent; display: inline-flex; align-items: center; justify-content: center; }
+.idk-fold .ico { transition: transform var(--t-fast); }
+.idk-fold.on .ico { transform: rotate(180deg); }
+.idk-hint { color: var(--dim); font-size: var(--fs-sm); padding-right: var(--s2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.idk-body { position: absolute; left: 0; right: 0; bottom: 100%; height: 232px; display: flex; gap: var(--s4); padding: var(--s3) var(--s4); background: var(--panel); border-top: 1px solid var(--line2); box-shadow: 0 -12px 28px rgba(0, 0, 0, 0.4); overflow: hidden; }
+.idk-body[hidden] { display: none; }
+.idk-thumbs { flex: 1 1 auto; min-width: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(98px, 1fr)); gap: var(--s2); align-content: start; overflow-y: auto; }
+.idk-fam { grid-column: 1 / -1; padding-top: var(--s1); }
+.idk-th { display: flex; flex-direction: column; gap: var(--s1); padding: 6px; border-radius: 8px; background: var(--bg0); border: 1px solid var(--line); cursor: pointer; min-width: 0; }
+.idk-th:hover { border-color: var(--line2); }
+.idk-th.sel { border-color: var(--accent-line); background: var(--accent-soft); }
+.idk-im { height: 60px; border-radius: 5px; display: flex; align-items: center; justify-content: center; background: repeating-conic-gradient(var(--panel) 0 25%, var(--bg) 0 50%) 0 0 / 12px 12px; overflow: hidden; }
+.idk-im img { max-width: 100%; max-height: 100%; display: block; }
+.idk-th small { font-size: var(--fs-xs); color: var(--dim); display: block; }
+.idk-side { flex: none; width: 270px; border-left: 1px solid var(--line); padding-left: var(--s4); display: flex; flex-direction: column; gap: var(--s2); min-width: 0; }
+.idk-search { display: block; }
+.idk-search input { width: 100%; }
+.idk-btns { margin-top: auto; display: flex; gap: var(--s2); flex-wrap: wrap; }
+.idk-list, .idk-cols { flex: 1 1 auto; min-width: 0; overflow-y: auto; display: flex; flex-direction: column; gap: var(--s1); align-content: start; }
+.idk-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s1) var(--s2); align-content: start; }
+.idk-row { display: flex; align-items: center; gap: var(--s2); height: var(--ctl-sm); padding: 0 var(--s2); border-radius: 4px; background: var(--panel2); border: 1px solid transparent; min-width: 0; }
+.idk-slotrow { cursor: grab; border-top: 2px solid transparent; border-bottom: 2px solid transparent; box-sizing: border-box; }
+.idk-slotrow.drop-above { border-top-color: var(--accent); }
+.idk-slotrow.drop-below { border-bottom-color: var(--accent); }
+.idk-tag { color: var(--muted); font-size: var(--fs-xs); min-width: 20px; text-align: right; }
+.idk-row .name { flex: 1 1 auto; min-width: 0; }

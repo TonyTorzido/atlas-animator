@@ -1,0 +1,121 @@
+{
+ "format": "atlas-pack@1",
+ "scale": 1,
+ "pages": [
+  {
+   "file": "player-v2.b1.0.png",
+   "width": 1864,
+   "height": 648,
+   "regions": {
+    "body/head__head": {
+     "x": 2,
+     "y": 2,
+     "width": 551,
+     "height": 533
+    },
+    "body/skin_torso__torso": {
+     "x": 555,
+     "y": 2,
+     "width": 232,
+     "height": 355
+    },
+    "body/pants_leg_far__leg": {
+     "x": 789,
+     "y": 2,
+     "width": 154,
+     "height": 262
+    },
+    "body/pants_leg_near__leg": {
+     "x": 945,
+     "y": 2,
+     "width": 142,
+     "height": 258
+    },
+    "body/skin_arm_far__arm": {
+     "x": 1089,
+     "y": 2,
+     "width": 176,
+     "height": 230
+    },
+    "body/skin_arm_near__arm": {
+     "x": 1267,
+     "y": 2,
+     "width": 169,
+     "height": 229
+    },
+    "body/skin_foot_far__foot": {
+     "x": 1438,
+     "y": 2,
+     "width": 147,
+     "height": 127
+    },
+    "body/skin_foot_near__foot": {
+     "x": 1587,
+     "y": 2,
+     "width": 147,
+     "height": 127
+    },
+    "body/skin_neck__neck": {
+     "x": 1736,
+     "y": 2,
+     "width": 123,
+     "height": 113
+    },
+    "body/pants_hips__block": {
+     "x": 2,
+     "y": 537,
+     "width": 267,
+     "height": 108
+    },
+    "body/skin_hand_far__hand": {
+     "x": 271,
+     "y": 537,
+     "width": 87,
+     "height": 100
+    },
+    "body/skin_hand_near__hand": {
+     "x": 360,
+     "y": 537,
+     "width": 88,
+     "height": 99
+    },
+    "body/skin_wrist_fill_far__fill": {
+     "x": 450,
+     "y": 537,
+     "width": 94,
+     "height": 95
+    },
+    "body/skin_wrist_fill_near__fill": {
+     "x": 546,
+     "y": 537,
+     "width": 86,
+     "height": 87
+    },
+    "body/skin_elbow_fill_far__fill": {
+     "x": 634,
+     "y": 537,
+     "width": 68,
+     "height": 68
+    },
+    "body/skin_elbow_fill_near__fill": {
+     "x": 704,
+     "y": 537,
+     "width": 68,
+     "height": 68
+    },
+    "body/skin_crease_far__crease": {
+     "x": 774,
+     "y": 537,
+     "width": 67,
+     "height": 67
+    },
+    "body/skin_crease_near__crease": {
+     "x": 843,
+     "y": 537,
+     "width": 67,
+     "height": 67
+    }
+   }
+  }
+ ]
+}

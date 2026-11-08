@@ -1,0 +1,17 @@
+/* Ship screen (Batch 8a): staged checklist, preflight, Published table, render presets. Tokens from components.css only. */
+.ship-card { max-width: 860px; width: min(860px, 94vw); max-height: calc(100vh - var(--hdr, 44px) - 24px); overflow: auto; scrollbar-width: none; }
+.ship-card::-webkit-scrollbar { display: none; }
+.ship-checklist { list-style: none; margin: 0 0 var(--s2); padding: 0; display: flex; flex-direction: column; gap: var(--s1); }
+.ship-check { display: grid; grid-template-columns: 56px minmax(0, 14rem) minmax(0, 1fr); gap: var(--s2); align-items: center; font-size: var(--fs-sm); }
+.ship-check-label { color: var(--text); font-weight: 600; }
+.ship-dim { color: var(--dim); }
+.ship-preflight { margin: var(--s2) 0; padding: var(--s2) var(--s3); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+.ship-preflight .kv { grid-template-columns: 170px minmax(0, 1fr); }
+.ship-table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); margin: var(--s2) 0; }
+.ship-table caption { text-align: left; color: var(--dim); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em; padding-bottom: var(--s1); }
+.ship-table th { text-align: left; color: var(--dim); font-weight: 600; padding: var(--s1) var(--s2); border-bottom: 1px solid var(--line); }
+.ship-table td { padding: var(--s1) var(--s2); border-bottom: 1px solid var(--line); vertical-align: middle; }
+.ship-table-empty { color: var(--dim); }
+.ship-preset { display: flex; flex-wrap: wrap; gap: var(--s2); align-items: center; margin: var(--s2) 0; }
+.ship-preset .field { min-width: 0; }
+.ship-preset #ship-preset-note { flex-basis: 100%; }

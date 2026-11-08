@@ -1,0 +1,79 @@
+{
+ "format": "atlas-pack@1",
+ "scale": 1,
+ "pages": [
+  {
+   "file": "kit-tanktop-front0.b1.0.png",
+   "width": 1980,
+   "height": 748,
+   "regions": {
+    "body/weapon__double_axe": {
+     "x": 2,
+     "y": 2,
+     "width": 380,
+     "height": 671
+    },
+    "body/head__head": {
+     "x": 384,
+     "y": 2,
+     "width": 440,
+     "height": 481
+    },
+    "body/hair_back__hair": {
+     "x": 826,
+     "y": 2,
+     "width": 608,
+     "height": 431
+    },
+    "body/hair_front__fringe": {
+     "x": 1436,
+     "y": 2,
+     "width": 438,
+     "height": 191
+    },
+    "body/neck__neck": {
+     "x": 1876,
+     "y": 2,
+     "width": 102,
+     "height": 113
+    },
+    "body/eyes__eyes": {
+     "x": 2,
+     "y": 675,
+     "width": 343,
+     "height": 69
+    },
+    "body/eyes__eyes_blink_half": {
+     "x": 347,
+     "y": 675,
+     "width": 342,
+     "height": 53
+    },
+    "body/eyes__eyes_blink_closed": {
+     "x": 691,
+     "y": 675,
+     "width": 342,
+     "height": 51
+    },
+    "body/brows__brows": {
+     "x": 1035,
+     "y": 675,
+     "width": 329,
+     "height": 28
+    },
+    "body/mouth__mouth": {
+     "x": 1366,
+     "y": 675,
+     "width": 94,
+     "height": 17
+    },
+    "body/nose__nose": {
+     "x": 1462,
+     "y": 675,
+     "width": 38,
+     "height": 8
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,1381 @@
+{
+  "name": "template7-fullbody-test-arm",
+  "description": "Full-body test part (non-mirrored build mode): template7-armlayer without its mirror rule and without the fields the full body declares.",
+  "bones": [
+    {
+      "name": "root"
+    },
+    {
+      "name": "pelvis",
+      "parent": "root",
+      "at": [
+        542,
+        960
+      ],
+      "toward": [
+        542,
+        1010
+      ]
+    },
+    {
+      "name": "chest",
+      "parent": "pelvis",
+      "at": [
+        542,
+        960
+      ],
+      "toward": [
+        542,
+        660
+      ],
+      "limits": [
+        -10,
+        10
+      ]
+    },
+    {
+      "name": "neck",
+      "parent": "chest",
+      "at": [
+        542,
+        700
+      ],
+      "toward": [
+        542,
+        650
+      ],
+      "limits": [
+        -10,
+        10
+      ],
+      "inherit": "noScale"
+    },
+    {
+      "name": "head",
+      "parent": "neck",
+      "at": [
+        542,
+        650
+      ],
+      "toward": [
+        542,
+        400
+      ],
+      "limits": [
+        -15,
+        15
+      ]
+    },
+    {
+      "name": "clavicle_l",
+      "parent": "chest",
+      "at": [
+        505,
+        708
+      ],
+      "toward": [
+        436,
+        729
+      ],
+      "limits": [
+        -6,
+        6
+      ],
+      "inherit": "noScale"
+    },
+    {
+      "name": "upper_arm_l",
+      "parent": "clavicle_l",
+      "at": [
+        436,
+        729
+      ],
+      "toward": [
+        391.5,
+        809
+      ],
+      "limits": [
+        -70,
+        105
+      ]
+    },
+    {
+      "name": "forearm_l",
+      "parent": "upper_arm_l",
+      "at": [
+        391.5,
+        809
+      ],
+      "toward": [
+        352,
+        893
+      ],
+      "limits": [
+        -85,
+        70
+      ]
+    },
+    {
+      "name": "hand_l",
+      "parent": "forearm_l",
+      "at": [
+        352,
+        893
+      ],
+      "toward": [
+        334.98,
+        929.18
+      ],
+      "limits": [
+        -30,
+        30
+      ]
+    }
+  ],
+  "base": "chest",
+  "girdle": {
+    "bone": "clavicle_l",
+    "center": [
+      436,
+      729
+    ],
+    "r0": 45,
+    "r1": 130,
+    "belowScale": 1.6,
+    "feather": 24
+  },
+  "chain": {
+    "bones": [
+      "upper_arm_l",
+      "forearm_l",
+      "hand_l"
+    ],
+    "branches": [
+      {
+        "parent": "root",
+        "bones": [
+          "pelvis",
+          "chest",
+          "neck",
+          "head"
+        ]
+      },
+      {
+        "parent": "chest",
+        "bones": [
+          "clavicle_l"
+        ]
+      }
+    ]
+  },
+  "skin": {
+    "slot": "upper_arm",
+    "attachment": "arm",
+    "texture": "canonical/template7-armlayer-arm",
+    "silhouette": [
+      {
+        "s": 14,
+        "v": 40
+      },
+      {
+        "s": 45,
+        "v": 40
+      },
+      {
+        "s": 91.5,
+        "v": 40
+      },
+      {
+        "s": 140,
+        "v": 40
+      },
+      {
+        "s": 178,
+        "v": 40
+      },
+      {
+        "arc": {
+          "s": 220,
+          "r": 48,
+          "from": 226,
+          "to": -2,
+          "step": 9
+        }
+      },
+      {
+        "s": 184,
+        "v": -38
+      },
+      {
+        "s": 140,
+        "v": -38
+      },
+      {
+        "s": 100,
+        "v": -38
+      },
+      {
+        "s": 88,
+        "v": -37.2
+      },
+      {
+        "s": 78,
+        "v": -35.8
+      },
+      {
+        "s": 68,
+        "v": -34.6
+      },
+      {
+        "s": 45,
+        "v": -35.6
+      },
+      {
+        "s": 22,
+        "v": -37.5
+      },
+      {
+        "arc": {
+          "center": [
+            436.1,
+            726.77
+          ],
+          "r": 41,
+          "from": 29.08,
+          "to": -150.92,
+          "step": 12
+        }
+      }
+    ],
+    "spacing": 6,
+    "lattice": 20,
+    "minDistance": 8,
+    "topology": {
+      "from": 4,
+      "to": 186,
+      "halfWidth": 40,
+      "columns": 10,
+      "core": 14,
+      "minRowGap": 4,
+      "joints": [
+        {
+          "s": 91.5,
+          "band": 64,
+          "rows": 15
+        },
+        {
+          "s": 184.3,
+          "band": 8,
+          "rows": 3
+        }
+      ],
+      "extraRows": [
+        61.5,
+        66.5,
+        71.5,
+        76.5,
+        81.5,
+        86.5,
+        91.5,
+        96.5,
+        101.5,
+        106.5,
+        111.5,
+        136
+      ],
+      "rings": [
+        {
+          "joint": 0,
+          "radii": [
+            14,
+            28
+          ],
+          "from": 200,
+          "to": 400,
+          "step": 20
+        }
+      ]
+    },
+    "groups": [
+      {
+        "slot": "upper_arm",
+        "bone": "upper_arm_l"
+      },
+      {
+        "slot": "forearm",
+        "bone": "forearm_l",
+        "s": [
+          91.5,
+          1000
+        ]
+      }
+    ],
+    "base": "fac59b",
+    "fills": [],
+    "root": {
+      "zeros": []
+    },
+    "regions": {
+      "patches": [
+        {
+          "name": "elbow",
+          "joint": "forearm_l",
+          "side": "both",
+          "s": 91.5,
+          "band": 64,
+          "foldBand": 48,
+          "fold": "+",
+          "bones": [
+            "upper_arm_l",
+            "forearm_l"
+          ],
+          "envelope": {
+            "width": [
+              62,
+              84
+            ],
+            "bulge": 6,
+            "area": [
+              0.9,
+              1.25
+            ],
+            "squash": 0.36
+          },
+          "push": {
+            "side": "-",
+            "keys": [
+              [
+                -55,
+                0
+              ],
+              [
+                -45,
+                9
+              ],
+              [
+                -35,
+                18
+              ],
+              [
+                -20,
+                14
+              ],
+              [
+                -8,
+                0
+              ]
+            ],
+            "s": [
+              50,
+              100,
+              138,
+              176
+            ]
+          }
+        },
+        {
+          "name": "wrist",
+          "joint": "hand_l",
+          "side": "both",
+          "s": 176,
+          "band": 16,
+          "bones": [
+            "forearm_l",
+            "hand_l"
+          ],
+          "envelope": {
+            "area": [
+              0.85,
+              1.15
+            ]
+          }
+        }
+      ],
+      "cores": [
+        {
+          "name": "upper_arm",
+          "bone": "upper_arm_l",
+          "sMin": -80,
+          "sMax": 91.5
+        },
+        {
+          "name": "forearm",
+          "bone": "forearm_l",
+          "sMin": 91.5,
+          "sMax": 176
+        },
+        {
+          "name": "hand",
+          "bone": "hand_l",
+          "sMin": 176,
+          "sMax": 400
+        }
+      ],
+      "fixed": [],
+      "bends": [
+        {
+          "name": "waist",
+          "from": "chest",
+          "to": "pelvis",
+          "a": [
+            542,
+            900
+          ],
+          "b": [
+            542,
+            1000
+          ]
+        },
+        {
+          "name": "neck",
+          "from": "chest",
+          "to": "neck",
+          "a": [
+            542,
+            708
+          ],
+          "b": [
+            542,
+            652
+          ],
+          "r0": 0,
+          "r1": 55
+        }
+      ]
+    },
+    "junctions": [],
+    "contours": [
+      {
+        "name": "outline",
+        "owner": "upper_arm",
+        "from": [
+          400.27,
+          706.84
+        ],
+        "to": {
+          "row": 91.5,
+          "side": "+"
+        },
+        "width": 10,
+        "color": "3a1001ff",
+        "caps": "round",
+        "coverUnder": "torso"
+      },
+      {
+        "name": "outline_front",
+        "owner": "upper_arm",
+        "from": [
+          400.27,
+          706.84
+        ],
+        "to": {
+          "row": 91.5,
+          "side": "+"
+        },
+        "width": 10,
+        "color": "3a1001ff",
+        "caps": "round",
+        "fade": {
+          "bone": "upper_arm_l",
+          "keys": [
+            [
+              -13.25,
+              1
+            ],
+            [
+              -12.75,
+              0
+            ]
+          ]
+        }
+      },
+      {
+        "name": "outline",
+        "owner": "forearm",
+        "from": {
+          "row": 91.5,
+          "side": "+"
+        },
+        "to": {
+          "row": 91.5,
+          "side": "-"
+        },
+        "width": 10,
+        "color": "3a1001ff",
+        "caps": "round",
+        "trimAtOutline": true
+      },
+      {
+        "name": "underside",
+        "owner": "upper_arm",
+        "from": {
+          "row": 91.5,
+          "side": "-"
+        },
+        "to": [
+          433.18,
+          805.24
+        ],
+        "width": 10,
+        "color": "3a1001ff",
+        "caps": "round",
+        "coverUnder": "torso"
+      },
+      {
+        "name": "underside_front",
+        "owner": "upper_arm",
+        "from": {
+          "row": 91.5,
+          "side": "-"
+        },
+        "to": [
+          471.93,
+          746.7
+        ],
+        "width": 10,
+        "color": "3a1001ff",
+        "caps": "round",
+        "fade": {
+          "bone": "upper_arm_l",
+          "keys": [
+            [
+              -13.25,
+              1
+            ],
+            [
+              -12.75,
+              0
+            ]
+          ],
+          "or": [
+            [
+              {
+                "bone": "forearm_l",
+                "keys": [
+                  [
+                    -8.25,
+                    1
+                  ],
+                  [
+                    -7.75,
+                    0
+                  ]
+                ]
+              },
+              {
+                "bone": "upper_arm_l",
+                "keys": [
+                  [
+                    32.25,
+                    1
+                  ],
+                  [
+                    32.75,
+                    0
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "name": "cap_front",
+        "owner": "upper_arm",
+        "from": [
+          471.93,
+          746.7
+        ],
+        "to": [
+          400.27,
+          706.84
+        ],
+        "width": 10,
+        "color": "3a1001ff",
+        "caps": "round",
+        "fade": {
+          "bone": "upper_arm_l",
+          "keys": [
+            [
+              -13.25,
+              1
+            ],
+            [
+              -12.75,
+              0
+            ]
+          ],
+          "or": [
+            [
+              {
+                "bone": "forearm_l",
+                "keys": [
+                  [
+                    -8.25,
+                    1
+                  ],
+                  [
+                    -7.75,
+                    0
+                  ]
+                ]
+              },
+              {
+                "bone": "upper_arm_l",
+                "keys": [
+                  [
+                    32.25,
+                    1
+                  ],
+                  [
+                    32.75,
+                    0
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "name": "cap",
+        "owner": "upper_arm",
+        "from": [
+          433.18,
+          805.24
+        ],
+        "to": [
+          400.27,
+          706.84
+        ],
+        "width": 10,
+        "color": "3a1001ff",
+        "caps": "round",
+        "coverUnder": "torso"
+      }
+    ]
+  },
+  "garments": [],
+  "regions": [
+    {
+      "name": "head",
+      "slot": "head",
+      "bone": "head",
+      "texture": "canonical/template7-head",
+      "image": "../body/template7-clean.png",
+      "crop": [
+        270,
+        160,
+        276,
+        497
+      ],
+      "keep": [
+        [
+          270,
+          160
+        ],
+        [
+          546,
+          160
+        ],
+        [
+          546,
+          653
+        ],
+        [
+          497,
+          653
+        ],
+        [
+          489,
+          652
+        ],
+        [
+          470,
+          648
+        ],
+        [
+          456,
+          645
+        ],
+        [
+          440,
+          641
+        ],
+        [
+          300,
+          630
+        ],
+        [
+          270,
+          630
+        ]
+      ]
+    },
+    {
+      "name": "fist",
+      "slot": "hand",
+      "bone": "hand_l",
+      "texture": "canonical/template7-fist",
+      "image": "../body/template7-clean.png",
+      "crop": [
+        276,
+        880,
+        130,
+        124
+      ],
+      "keep": [
+        [
+          276,
+          912
+        ],
+        [
+          296,
+          897
+        ],
+        [
+          312,
+          893
+        ],
+        [
+          390,
+          893
+        ],
+        [
+          406,
+          912
+        ],
+        [
+          406,
+          1004
+        ],
+        [
+          276,
+          1004
+        ]
+      ]
+    }
+  ],
+  "drawOrder": [
+    "torso",
+    "upper_arm",
+    "forearm",
+    "hand",
+    "head"
+  ],
+  "correctives": [
+    {
+      "name": "elbow_l",
+      "bone": "forearm_l",
+      "at": [
+        -85,
+        -67.5,
+        -45,
+        -22.5,
+        0,
+        17.5,
+        35,
+        52.5,
+        70
+      ]
+    },
+    {
+      "name": "wrist_l",
+      "bone": "hand_l",
+      "at": [
+        -30,
+        0,
+        30
+      ]
+    }
+  ],
+  "grids": [],
+  "poseLimits": [
+    {
+      "name": "hand_head_raise_elbow",
+      "x": "upper_arm_l",
+      "y": "forearm_l",
+      "auto": {
+        "collide": [
+          "hand",
+          "head"
+        ],
+        "margin": 13,
+        "hold": {
+          "clavicle_l": [
+            -6,
+            0,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "name": "forearm_head_raise_elbow",
+      "x": "upper_arm_l",
+      "y": "forearm_l",
+      "auto": {
+        "collide": [
+          "forearm",
+          "head"
+        ],
+        "margin": 13,
+        "hold": {
+          "clavicle_l": [
+            -6,
+            0,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "name": "hand_head_raise_shrug",
+      "x": "upper_arm_l",
+      "y": "clavicle_l",
+      "auto": {
+        "collide": [
+          "hand",
+          "head"
+        ],
+        "margin": 13
+      }
+    },
+    {
+      "name": "forearm_head_raise_shrug",
+      "x": "upper_arm_l",
+      "y": "clavicle_l",
+      "auto": {
+        "collide": [
+          "forearm",
+          "head"
+        ],
+        "margin": 13
+      }
+    },
+    {
+      "name": "hand_head_lean",
+      "x": "upper_arm_l",
+      "y": "neck",
+      "plus": [
+        "head"
+      ],
+      "auto": {
+        "collide": [
+          "hand",
+          "head"
+        ],
+        "margin": 13,
+        "hold": {
+          "forearm_l": [
+            0,
+            35,
+            70
+          ],
+          "clavicle_l": [
+            -6,
+            0,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "name": "forearm_head_lean",
+      "x": "upper_arm_l",
+      "y": "neck",
+      "plus": [
+        "head"
+      ],
+      "auto": {
+        "collide": [
+          "forearm",
+          "head"
+        ],
+        "margin": 13,
+        "hold": {
+          "forearm_l": [
+            0,
+            35,
+            70
+          ],
+          "clavicle_l": [
+            -6,
+            0,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "name": "elbow_never_outward",
+      "x": "upper_arm_l",
+      "y": "forearm_l",
+      "scope": "clips",
+      "polygon": [
+        [
+          -70,
+          -85
+        ],
+        [
+          105,
+          -85
+        ],
+        [
+          105,
+          70
+        ],
+        [
+          45,
+          70
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          -70,
+          10
+        ]
+      ]
+    }
+  ],
+  "frame": {
+    "left": 300,
+    "top": 600,
+    "right": 540,
+    "bottom": 900
+  },
+  "sweeps": [
+    {
+      "name": "raise",
+      "phases": [
+        {
+          "bone": "upper_arm_l",
+          "from": -70,
+          "to": 105,
+          "step": 2.5
+        }
+      ]
+    },
+    {
+      "name": "across",
+      "phases": [
+        {
+          "bone": "upper_arm_l",
+          "from": 0,
+          "to": -70,
+          "step": 2
+        }
+      ]
+    },
+    {
+      "name": "shrug",
+      "phases": [
+        {
+          "bone": "clavicle_l",
+          "from": -6,
+          "to": 6,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "name": "elbow",
+      "phases": [
+        {
+          "bone": "forearm_l",
+          "from": 0,
+          "to": 70,
+          "step": 2
+        }
+      ]
+    },
+    {
+      "name": "wrist",
+      "phases": [
+        {
+          "bone": "hand_l",
+          "from": -30,
+          "to": 30,
+          "step": 3
+        }
+      ]
+    },
+    {
+      "name": "elbow_at_raise90",
+      "hold": {
+        "upper_arm_l": 90
+      },
+      "phases": [
+        {
+          "bone": "forearm_l",
+          "from": 0,
+          "to": 70,
+          "step": 3
+        }
+      ]
+    },
+    {
+      "name": "raise_shrug_up",
+      "hold": {
+        "clavicle_l": 6
+      },
+      "phases": [
+        {
+          "bone": "upper_arm_l",
+          "from": -70,
+          "to": 105,
+          "step": 5
+        }
+      ]
+    },
+    {
+      "name": "raise_shrug_down",
+      "hold": {
+        "clavicle_l": -6
+      },
+      "phases": [
+        {
+          "bone": "upper_arm_l",
+          "from": -70,
+          "to": 105,
+          "step": 5
+        }
+      ]
+    },
+    {
+      "name": "across_lean",
+      "hold": {
+        "upper_arm_l": -60
+      },
+      "phases": [
+        {
+          "bone": "chest",
+          "from": -10,
+          "to": 10,
+          "step": 2
+        }
+      ]
+    },
+    {
+      "name": "head_tilt",
+      "phases": [
+        {
+          "bone": "head",
+          "from": -15,
+          "to": 15,
+          "step": 5
+        }
+      ]
+    },
+    {
+      "name": "neck_lean",
+      "phases": [
+        {
+          "bone": "neck",
+          "from": -10,
+          "to": 10,
+          "step": 5
+        }
+      ]
+    },
+    {
+      "name": "lean",
+      "phases": [
+        {
+          "bone": "chest",
+          "from": -10,
+          "to": 10,
+          "step": 2
+        }
+      ]
+    }
+  ],
+  "gates": {
+    "combined": {
+      "breathe": {
+        "bone": "chest",
+        "x": 1.012,
+        "y": 1.01
+      }
+    }
+  },
+  "assembly": {
+    "sheets": [
+      {
+        "name": "torso",
+        "slot": "torso",
+        "attachment": "skin",
+        "texture": "canonical/template7-armlayer-torso",
+        "silhouette": [
+          {
+            "at": [
+              542,
+              600
+            ],
+            "corner": true
+          },
+          {
+            "at": [
+              493,
+              600
+            ],
+            "corner": true
+          },
+          [
+            493,
+            630
+          ],
+          [
+            492,
+            650
+          ],
+          [
+            488,
+            661
+          ],
+          [
+            480,
+            669.5
+          ],
+          [
+            468,
+            675.5
+          ],
+          [
+            450,
+            678.5
+          ],
+          [
+            432,
+            680.5
+          ],
+          [
+            423,
+            684
+          ],
+          [
+            419.5,
+            690
+          ],
+          [
+            423,
+            700
+          ],
+          [
+            431,
+            713
+          ],
+          [
+            436.5,
+            730
+          ],
+          [
+            439.5,
+            752
+          ],
+          [
+            439.2,
+            772
+          ],
+          [
+            439.6,
+            793
+          ],
+          [
+            439,
+            800
+          ],
+          [
+            438.5,
+            808
+          ],
+          [
+            437,
+            816
+          ],
+          [
+            436.6,
+            824
+          ],
+          [
+            438.5,
+            834
+          ],
+          [
+            440.5,
+            850
+          ],
+          [
+            442,
+            864
+          ],
+          [
+            440.5,
+            880
+          ],
+          [
+            437.5,
+            896
+          ],
+          [
+            434.5,
+            912
+          ],
+          [
+            430.5,
+            940
+          ],
+          [
+            427.5,
+            975
+          ],
+          {
+            "at": [
+              425,
+              1010
+            ],
+            "corner": true
+          },
+          {
+            "at": [
+              542,
+              1010
+            ],
+            "corner": true
+          }
+        ],
+        "spacing": 6,
+        "lattice": 20,
+        "minDistance": 8,
+        "base": "fac59b",
+        "fills": [],
+        "contours": [
+          {
+            "name": "outline",
+            "owner": "torso",
+            "from": [
+              493,
+              600
+            ],
+            "to": [
+              425,
+              1010
+            ],
+            "width": 10,
+            "color": "3a1001ff",
+            "caps": "round",
+            "coverTight": true
+          }
+        ]
+      }
+    ],
+    "connections": [
+      {
+        "name": "shoulder",
+        "kind": "overlap",
+        "over": "upper_arm",
+        "under": "torso",
+        "closure": "upper_arm/cap",
+        "clearance": 6
+      }
+    ],
+    "order": [
+      "torso",
+      "upper_arm",
+      "forearm",
+      "hand"
+    ],
+    "poses": [
+      {
+        "name": "rest",
+        "pose": {}
+      },
+      {
+        "name": "raise45",
+        "pose": {
+          "upper_arm_l": 45
+        }
+      },
+      {
+        "name": "raise90",
+        "pose": {
+          "upper_arm_l": 90
+        }
+      },
+      {
+        "name": "raise95",
+        "pose": {
+          "upper_arm_l": 95
+        }
+      },
+      {
+        "name": "flex",
+        "pose": {
+          "upper_arm_l": 58,
+          "forearm_l": 68
+        }
+      },
+      {
+        "name": "across20",
+        "pose": {
+          "upper_arm_l": -20
+        }
+      },
+      {
+        "name": "across40",
+        "pose": {
+          "upper_arm_l": -40
+        }
+      },
+      {
+        "name": "across60",
+        "pose": {
+          "upper_arm_l": -60
+        }
+      },
+      {
+        "name": "across70",
+        "pose": {
+          "upper_arm_l": -70
+        }
+      },
+      {
+        "name": "across60_shrug_up",
+        "pose": {
+          "upper_arm_l": -60,
+          "clavicle_l": 6
+        }
+      },
+      {
+        "name": "across60_shrug_down",
+        "pose": {
+          "upper_arm_l": -60,
+          "clavicle_l": -6
+        }
+      },
+      {
+        "name": "across60_lean",
+        "pose": {
+          "upper_arm_l": -60,
+          "chest": 10
+        }
+      },
+      {
+        "name": "across60_lean_back",
+        "pose": {
+          "upper_arm_l": -60,
+          "chest": -10
+        }
+      },
+      {
+        "name": "raise95_shrug_up",
+        "pose": {
+          "upper_arm_l": 95,
+          "clavicle_l": 6
+        }
+      }
+    ]
+  }
+}

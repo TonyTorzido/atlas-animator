@@ -1,0 +1,3 @@
+{"op": "slot.set", "name": "arm_l_upper", "attachment": "straight"}
+{"op": "slot.set", "name": "arm_l_fore", "attachment": null}
+{"op": "slot.set", "name": "hand_l", "attachment": "fist_c"}
