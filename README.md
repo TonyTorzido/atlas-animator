@@ -20,7 +20,7 @@ Works on Windows, macOS and Linux.
 ## Quick start
 
 ```sh
-git clone <this repository>
+git clone https://github.com/TonyTorzido/atlas-animator.git
 cd atlas-animator
 pnpm install
 pnpm dev
