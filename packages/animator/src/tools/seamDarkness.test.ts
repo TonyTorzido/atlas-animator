@@ -34,7 +34,10 @@ function check(paint: (x: number, y: number) => number[], extra: string[] = []):
   return { status: r.status, out: `${r.stdout}${r.stderr}` };
 }
 
-describe("seam darkness check (per material)", { timeout: 30_000 }, () => {
+// The seam check is a Python script (numpy, Pillow, scipy); skip when those are not installed.
+const PYTHON_DEPS = spawnSync("python", ["-c", "import numpy, PIL, scipy"], { encoding: "utf8" }).status === 0;
+
+describe.skipIf(!PYTHON_DEPS)("seam darkness check (per material)", { timeout: 30_000 }, () => {
   it("a clean two-material seam passes", () => {
     const r = check((x) => twoMaterial(x));
     expect(r.out).toMatch(/PASS/);

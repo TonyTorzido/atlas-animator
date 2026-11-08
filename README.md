@@ -14,6 +14,7 @@ rig, and a small PixiJS runtime (`@atlas-animator/core`) for playing the rigs ba
 - Node.js 24
 - pnpm 11 (`corepack enable` is enough if you have a recent Node)
 - A current desktop browser (Chrome, Edge, Firefox, Safari) with a window of about 1600 x 1000 or larger
+- Optional: Python 3 with numpy, Pillow and scipy, only for the seam-ink polish tool (`packages/animator/scripts/polish-seam-ink.py`); its test is skipped without them
 
 Works on Windows, macOS and Linux.
 
